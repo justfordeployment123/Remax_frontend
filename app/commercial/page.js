@@ -260,37 +260,7 @@ export default function Commercial() {
                 </div>
             </section>
 
-            {/* Support Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* Left Content */}
-                        <div>
-                            <div className="text-red-600 text-xs font-semibold uppercase tracking-wide mb-2">
-                                Support
-                            </div>
-                            <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-                                Giving Back
-                            </h2>
-                            <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                                Children's Miracle Network Hospitals®
-                            </h3>
-                            <p className="text-base text-gray-600 leading-relaxed">
-                                RE/MAX® is built on a culture of giving. For over 32 years, RE/MAX has partnered with Children's Miracle Network Hospitals to change kids' health and support communities worldwide, including initiatives in the UAE.
-                            </p>
-                        </div>
 
-                        {/* Right Image */}
-                        <div className="relative">
-                            <img
-                                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                                alt="Children's Hospital"
-                                className="w-full h-96 object-cover rounded-lg"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <Footer />
         </main>

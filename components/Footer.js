@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Youtube, Linkedin, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -49,16 +49,6 @@ export default function Footer() {
               <li><a href="#" className="hover:text-gray-300 transition-colors">Advertise on the RE/MAX Media Network</a></li>
               <li><a href="#" className="hover:text-gray-300 transition-colors">LifeLock™ Home Title Protect</a></li>
             </ul>
-            
-            {/* Location Icon */}
-            <div className="flex items-start gap-2">
-              <MapPin className="w-6 h-6 flex-shrink-0" />
-              <div className="text-xs leading-tight">
-                <div>Children's</div>
-                <div>Miracle Network</div>
-                <div>Hospitals</div>
-              </div>
-            </div>
           </div>
         </div>
 

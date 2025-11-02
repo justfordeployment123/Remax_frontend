@@ -195,11 +195,6 @@ export default function Home() {
                 title: 'Virtual Tours', 
                 image: 'https://static-images.remax.com/assets/web/homepage/05_VirtualTours.jpg',
                 link: '/homes-for-sale?hasVirtualTour=1'
-              },
-              { 
-                title: 'Miracle Homes', 
-                image: 'https://static-images.remax.com/assets/web/childrens_hospitals/childrens_hospital.jpg',
-                link: 'https://www.remax.com/resources/childrensmiraclenetwork'
               }
             ].map((item, index) => (
               <div 
@@ -313,6 +308,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">Our Trusted Partners</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              We collaborate with leading real estate platforms and trusted partners to provide comprehensive property solutions across the UAE.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Bayut */}
+            <div className="flex flex-col items-center text-center p-6 border border-gray-200 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow duration-300">
+              <div className="mb-4 h-16 flex items-center justify-center">
+                <img
+                  src="https://static.bayut.com/assets/logoBayutGreenEN_noinline.68ecc5e338a09cc96f4d88ab0feb815f.svg"
+                  alt="Bayut Logo"
+                  className="h-12 object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Bayut</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                UAE's leading property portal, connecting buyers, sellers, and renters with comprehensive property listings and market insights.
+              </p>
+            </div>
+
+            {/* Dubizzle */}
+            <div className="flex flex-col items-center text-center p-6 border border-gray-200 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow duration-300">
+              <div className="mb-4 h-16 flex items-center justify-center">
+                <img
+                  src="https://dbz-monolith-media.dubizzle.com/images/location_switcher/logos/dubizzle-logo.png"
+                  alt="Dubizzle Logo"
+                  className="h-12 object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Dubizzle</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                The region's largest online marketplace, providing extensive reach for property listings and connecting with a vast network of potential clients.
+              </p>
+            </div>
+
+            {/* TrueBuild */}
+            <div className="flex flex-col items-center text-center p-6 border border-gray-200 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow duration-300">
+              <div className="mb-4 h-16 flex items-center justify-center">
+                <img
+                  src="https://truebuild.ae/images/logo3.png"
+                  alt="TrueBuild Logo"
+                  className="h-12 object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">TrueBuild</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Innovative construction and development partner, specializing in high-quality residential and commercial projects across the UAE.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Enhanced Footer - City Links Section */}
       <section className="py-16 bg-gray-50">

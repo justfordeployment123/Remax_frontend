@@ -5,16 +5,19 @@ import Footer from '../../components/Footer';
 export default function AboutUs() {
   const partners = [
     {
-      name: 'RE/MAX Global Network',
-      description: '140K+ agents collaborating across 110+ countries to share listings, buyers, and market knowledge.'
+      name: 'Bayut',
+      description: 'UAE leading property portal, connecting buyers, sellers, and renters with comprehensive property listings and market insights.',
+      logo: 'https://static.bayut.com/assets/logoBayutGreenEN_noinline.68ecc5e338a09cc96f4d88ab0feb815f.svg'
     },
     {
-      name: 'Aldar Properties',
-      description: 'Strategic access to Abu Dhabi’s flagship residential and commercial developments.'
+      name: 'Dubizzle',
+      description: 'The region largest online marketplace, providing extensive reach for property listings and connecting with a vast network of potential clients.',
+      logo: 'https://dbz-monolith-media.dubizzle.com/images/location_switcher/logos/dubizzle-logo.png'
     },
     {
-      name: 'Purple Bricks',
-      description: 'Hybrid agency expertise delivering digital-first marketing and streamlined customer journeys.'
+      name: 'TrueBuild',
+      description: 'Innovative construction and development partner, specializing in high-quality residential and commercial projects across the UAE.',
+      logo: 'https://truebuild.ae/images/logo3.png'
     }
   ];
 
@@ -155,18 +158,27 @@ export default function AboutUs() {
       {/* Partners Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-3">Our Partners</h2>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto">
-              We collaborate with trusted developers and global networks to bring our clients vetted opportunities and full market coverage.
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">Our Trusted Partners</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              We collaborate with leading real estate platforms, trusted developers, and global networks to provide comprehensive property solutions and market coverage.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {partners.map((partner) => (
-              <div key={partner.name} className="border border-gray-200 rounded-xl bg-gray-50 p-6 flex flex-col gap-3 h-full">
-                <span className="text-sm font-semibold text-[#00458b] uppercase tracking-wide">
+              <div key={partner.name} className="flex flex-col items-center text-center p-6 border border-gray-200 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow duration-300 h-full">
+                {partner.logo && (
+                  <div className="mb-4 h-16 flex items-center justify-center">
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} Logo`}
+                      className="h-12 object-contain"
+                    />
+                  </div>
+                )}
+                <h3 className="text-xl font-semibold text-[#00458b] mb-3">
                   {partner.name}
-                </span>
+                </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   {partner.description}
                 </p>
