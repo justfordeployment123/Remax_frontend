@@ -35,7 +35,7 @@ export const menuConfig = {
       },
       {
         title: "Find a Rental Agent",
-        href: "/rental-agent",
+        href: "/find-agent?expertise=Rentals",
       },
       {
         title: "Rental Guide",

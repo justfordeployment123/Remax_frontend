@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Search, ChevronDown, MapPin, Phone, X, Loader2 } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 export default function FindAgent() {
+  const searchParams = useSearchParams();
   const [searchCity, setSearchCity] = useState("");
   const [searchName, setSearchName] = useState("");
   const [agents, setAgents] = useState([]);
@@ -14,12 +16,12 @@ export default function FindAgent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   
-  // Filter states
+  // Filter states - initialize with URL parameters
   const [filters, setFilters] = useState({
     language: "",
     experience: "",
     licenseState: "",
-    expertise: "",
+    expertise: searchParams?.get('expertise') || "",
     mustHavePhoto: false
   });
   
