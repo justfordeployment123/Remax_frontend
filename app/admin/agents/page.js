@@ -81,7 +81,6 @@ export default function AdminAgents() {
     setError(errorMessage);
     setSuccess(null);
     
-    // Clear error message after 7 seconds
     setTimeout(() => {
       setError(null);
     }, 7000);
@@ -101,7 +100,6 @@ export default function AdminAgents() {
     setError('');
     fetchAgents();
     
-    // Clear success message after 5 seconds
     setTimeout(() => {
       setSuccess('');
     }, 5000);
@@ -127,19 +125,19 @@ export default function AdminAgents() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Agents Management</h1>
-              <p className="text-gray-600 mt-2">Manage all real estate agents in the system</p>
+              <p className="text-gray-800 mt-2 font-medium">Manage all real estate agents in the system</p>
             </div>
             <div className="flex items-center space-x-3">
               <button 
                 onClick={handleRefresh}
-                className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 font-semibold flex items-center space-x-2"
+                className="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400 font-semibold flex items-center space-x-2 transition-colors"
               >
                 <RefreshCcw className="w-4 h-4" />
                 <span>Refresh</span>
               </button>
               <button 
                 onClick={handleAdd}
-                className="bg-remax-blue text-white px-4 py-2 rounded-lg hover:bg-remax-dark-blue font-semibold flex items-center space-x-2"
+                className="bg-remax-blue text-white px-4 py-2 rounded-lg hover:bg-remax-dark-blue font-semibold flex items-center space-x-2 transition-colors"
               >
                 <Plus className="w-4 h-4" />
                 <span>Add Agent</span>
@@ -149,14 +147,14 @@ export default function AdminAgents() {
         </div>
 
         {success && (
-          <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-            <p className="text-green-800">{success}</p>
+          <div className="mb-4 p-4 bg-green-100 border border-green-300 rounded-lg">
+            <p className="text-green-800 font-medium">{success}</p>
           </div>
         )}
 
         {error && (
-          <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-            <p className="text-red-800">{error}</p>
+          <div className="mb-4 p-4 bg-red-100 border border-red-300 rounded-lg">
+            <p className="text-red-800 font-medium">{error}</p>
           </div>
         )}
 

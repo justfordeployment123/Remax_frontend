@@ -149,14 +149,14 @@ export default function Home() {
 
               {/* Buttons - Matching Official Style */}
               <div className="flex flex-col gap-4">
-                <button className="bg-remax-blue text-white px-6 py-3 hover:bg-remax-dark-blue transition-all duration-300 font-semibold text-sm w-fit rounded-lg">
+                <button className="bg-[#1A3668] text-white px-6 py-3 hover:bg-remax-dark-blue transition-all duration-300 font-semibold text-sm w-fit rounded-lg">
                   Find Your RE/MAX Agent Today
                 </button>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <button className="bg-remax-blue text-white px-6 py-3 hover:bg-remax-dark-blue transition-all duration-300 font-semibold text-sm flex-1 rounded-lg">
+                  <button className="bg-[#1A3668] text-white px-6 py-3 hover:bg-remax-dark-blue transition-all duration-300 font-semibold text-sm flex-1 rounded-lg">
                     Get the Homebuyer's Guide
                   </button>
-                  <button className="bg-remax-blue text-white px-6 py-3 hover:bg-remax-dark-blue transition-all duration-300 font-semibold text-sm flex-1 rounded-lg">
+                  <button className="bg-[#1A3668] text-white px-6 py-3 hover:bg-remax-dark-blue transition-all duration-300 font-semibold text-sm flex-1 rounded-lg">
                     Get the Homeseller's Guide
                   </button>
                 </div>
