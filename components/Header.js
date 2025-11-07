@@ -116,8 +116,9 @@ export default function Header() {
 
           {/* Desktop Navigation Menu */}
           <div className="hidden lg:flex items-center space-x-1">
-            {/* Buy Menu */}
-            <div
+            
+            {/* !!! Note that just commented it as mentioned on the document to do so, not removing*/}
+            {/* <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("buy")}
               onMouseLeave={handleMouseLeave}
@@ -158,7 +159,7 @@ export default function Header() {
                   </ul>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Sell Menu */}
             <div
@@ -203,14 +204,16 @@ export default function Header() {
               {openMenu === "rent" && (
                 <div className="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-lg border border-gray-400">
                   <ul className="py-2">
-                    <li>
+
+                    {/* commented out the rental search, mentioned in document */}
+                    {/* <li>
                       <Link
                         href="/rental-search"
                         className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
                       >
                         Rental Search
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         href="/rental-agent"
@@ -444,6 +447,7 @@ export default function Header() {
                 </>
               )}
             </div>
+            
           </div>
         </div>
 

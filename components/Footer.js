@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -7,7 +7,6 @@ export default function Footer() {
       <div className="max-w-9xl mx-auto px-6 py-8">
         {/* Main Footer Content */}
         <div className="grid font-bold grid-cols-1 md:grid-cols-4 gap-8 mb-6">
-          {/* Column 1 - Worldwide Property Search */}
           <div>
             <h3 className="font-bold text-sm mb-3">Worldwide Property Search</h3>
             <ul className="space-y-1.5 text-sm">
@@ -18,7 +17,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2 - Homes For Sale */}
           <div>
             <h3 className="font-bold text-sm mb-3">Homes For Sale</h3>
             <ul className="space-y-1.5 text-sm">
@@ -91,23 +89,41 @@ export default function Footer() {
           <div className="flex flex-col items-start md:items-end gap-3">
             {/* Social Icons */}
             <div className="flex gap-3">
-              <a href="#" className="hover:text-gray-300 transition-colors" aria-label="Facebook">
-                <Facebook className="w-4 h-4" />
+              <a 
+                href="https://facebook.com/remaxhubdubai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-gray-300 transition-colors" 
+                aria-label="Facebook"
+              >
+                <FaFacebookF className="w-4 h-4" />
               </a>
-              <a href="#" className="hover:text-gray-300 transition-colors" aria-label="Twitter">
-                <Twitter className="w-4 h-4" />
+              <a 
+                href="https://instagram.com/remaxhubdubai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-gray-300 transition-colors" 
+                aria-label="Instagram"
+              >
+                <FaInstagram className="w-4 h-4" />
               </a>
-              <a href="#" className="hover:text-gray-300 transition-colors" aria-label="Instagram">
-                <Instagram className="w-4 h-4" />
+              <a 
+                href="https://youtube.com/@remaxhubdubai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-gray-300 transition-colors" 
+                aria-label="YouTube"
+              >
+                <FaYoutube className="w-4 h-4" />
               </a>
-              <a href="#" className="hover:text-gray-300 transition-colors" aria-label="YouTube">
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a href="#" className="hover:text-gray-300 transition-colors" aria-label="Pinterest">
-                <div className="w-4 h-4 flex items-center justify-center font-bold text-xs">P</div>
-              </a>
-              <a href="#" className="hover:text-gray-300 transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-4 h-4" />
+              <a 
+                href="https://tiktok.com/@remaxhubdubai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-gray-300 transition-colors" 
+                aria-label="TikTok"
+              >
+                <FaTiktok className="w-4 h-4" />
               </a>
             </div>
 

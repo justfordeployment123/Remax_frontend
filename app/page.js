@@ -8,11 +8,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
+      
       <Header />
 
-      {/* Hero Section - Matching Official Design */}
-      <section className="relative w-full overflow-hidden" style={{ height: '500px' }}>
-        {/* Background image matching official site */}
+      <section className="relative w-full overflow-hidden" style={{ height: '562px' }}>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -22,96 +21,88 @@ export default function Home() {
           }}
         />
         
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center items-center px-4">
-          <h1 className="text-white font-bold text-center mb-6 max-w-4xl leading-tight uppercase tracking-wide" 
-              style={{ 
-                fontSize: '2.5rem', 
-                lineHeight: '3rem',
-                fontFamily: '"Montserrat", "Montserrat Fallback", sans-serif',
-                textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)'
-              }}>
-            WHEN HOME MATTERS MOST,<br />GO WITH THE MOST TRUSTED.
-          </h1>
+        <div className="relative z-10 h-full flex flex-col justify-center items-start px-8 lg:px-20">
+          <div className="max-w-2xl">
 
-          {/* Search Container - Matching Official Tabs */}
-          <div className="flex flex-col items-center w-full max-w-2xl">
-            {/* Tabs - Matching Official Style */}
-            <div className="bg-white flex rounded-t-lg w-full shadow-sm">
-              {['BUY', 'RENT', 'SELL', 'AGENTS', 'OFFICES'].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`flex-1 px-4 py-3 font-semibold text-sm transition-all duration-200 border-b-2 ${
-                    activeTab === tab
-                      ? 'text-remax-blue border-remax-blue bg-blue-50'
-                      : 'text-gray-600 hover:text-gray-900 border-transparent hover:bg-gray-50'
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
+            <h1 className="text-white font-bold mb-6 leading-tight" 
+                style={{ 
+                  fontSize: '3.5rem',
+                  lineHeight: '1.1',
+                  fontFamily: '"Montserrat", "Montserrat Fallback", sans-serif',
+                  textShadow: '2px 2px 12px rgba(0, 0, 0, 0.8)'
+                }}>
+              Discover Your
+              <span className="text-remax-gold block">Dream Property</span>
+              In Dubai
+            </h1>
+
+            <p className="text-white text-xl mb-8 leading-relaxed max-w-lg opacity-90">
+              Luxury villas, modern apartments, and premium commercial spaces 
+              in the most sought-after locations across Dubai.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="bg-[#1A3668] text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition-all duration-300 transform hover:scale-5 shadow-lg">
+                Explore Properties
+              </button>
+              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
+                Get Free Valuation
+              </button>
             </div>
 
-            {/* Search Bar - Enhanced to match official */}
-            <div className="bg-white rounded-b-lg shadow-xl w-full p-1">
-              <div className="flex gap-1">
-                <input
-                  type="text"
-                  placeholder="Address, City, ZIP, and More"
-                  className="flex-1 px-4 py-3 text-base border-0 focus:outline-none focus:ring-0"
-                />
-                <button className="bg-remax-red text-white px-8 py-3 hover:bg-red-700 transition-all duration-300 rounded-md flex items-center gap-2 font-semibold">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                  Search
-                </button>
+            <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-white/20">
+              <div className="text-white">
+                <div className="text-2xl font-bold text-remax-gold">500+</div>
+                <div className="text-sm opacity-80">Properties Listed</div>
+              </div>
+              <div className="text-white">
+                <div className="text-2xl font-bold text-remax-gold">AED 2B+</div>
+                <div className="text-sm opacity-80">Property Value Sold</div>
+              </div>
+              <div className="text-white">
+                <div className="text-2xl font-bold text-remax-gold">99%</div>
+                <div className="text-sm opacity-80">Client Satisfaction</div>
               </div>
             </div>
-
-            {/* Last Updated Info - Matching Official Style */}
-            <p className="text-xs text-white mt-3 text-center flex items-center justify-center">
-              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-              LISTING DATA LAST UPDATED TODAY AT 01:07 AM
-            </p>
-
-            {/* Global Search Link - Matching Official */}
-            <p className="text-white text-sm mt-4 text-center flex items-center justify-center hover:underline cursor-pointer font-medium">
-              Search for RE/MAX properties in over 110 countries and territories
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </p>
           </div>
         </div>
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="animate-bounce">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
+        
       </section>
 
-      {/* Trust Badge Section - Exact Official Style */}
       <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="border border-gray-300 rounded-lg p-6 flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <img
                 src="https://static-images.remax.com/assets/web/homepage/bmta-red-2024.png"
-                alt="BrandSpark Most Trusted"
+                alt="UAE Real Estate Excellence Award"
                 className="w-20 h-28 object-contain"
               />
             </div>
             <div className="flex-1 text-center md:text-left">
               <h2 className="font-bold text-gray-900 mb-3 text-xl">
-                Voted #1 Most Trusted Real Estate Agents in the USA
+                Recognized as the Most Trusted Real Estate Brand in the UAE
               </h2>
               <p className="text-gray-600 leading-relaxed text-sm">
-                Voted most trusted Real Estate Agency brand by American shoppers based on the BrandSpark® American Trust Study, years 2022-2024 and 2019.
+                Honored for excellence and trust by UAE property buyers and investors, 
+                based on the GCC Real Estate Trust Index (2022–2024). Proudly serving 
+                communities across Dubai, Abu Dhabi, Sharjah, and beyond.
               </p>
             </div>
           </div>
         </div>
       </section>
+
 
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">

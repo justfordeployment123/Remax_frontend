@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok, FaHome, FaUserTie, FaChartLine } from 'react-icons/fa';
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -24,11 +25,54 @@ export default function ContactUs() {
     console.log('Form submitted:', formData);
   };
 
+  const socialLinks = [
+    {
+      name: 'instagram',
+      icon: <FaInstagram className="w-4 h-4" />,
+      url: 'https://instagram.com/remaxhubdubai'
+    },
+    {
+      name: 'facebook',
+      icon: <FaFacebookF className="w-4 h-4" />,
+      url: 'https://facebook.com/remaxhubdubai'
+    },
+    {
+      name: 'youtube',
+      icon: <FaYoutube className="w-4 h-4" />,
+      url: 'https://youtube.com/@remaxhubdubai'
+    },
+    {
+      name: 'tiktok',
+      icon: <FaTiktok className="w-4 h-4" />,
+      url: 'https://tiktok.com/@remaxhubdubai'
+    }
+  ];
+
+  const quickLinks = [
+    {
+      href: '/selling-guide',
+      title: 'Sell Property',
+      copy: 'Request a property valuation',
+      icon: <FaHome className="w-6 h-6 text-[#00458b] mb-3" />
+    },
+    {
+      href: '/find-agent',
+      title: 'Find an Agent',
+      copy: 'Connect with local specialists',
+      icon: <FaUserTie className="w-6 h-6 text-[#00458b] mb-3" />
+    },
+    {
+      href: '/join-remax',
+      title: 'Join RE/MAX',
+      copy: 'Build your career with us',
+      icon: <FaChartLine className="w-6 h-6 text-[#00458b] mb-3" />
+    }
+  ];
+
   return (
     <main className="min-h-screen bg-[#F4F4F4]">
       <Header />
 
-      {/* Enhanced Hero Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
@@ -43,7 +87,6 @@ export default function ContactUs() {
         </div>
       </section>
 
-      {/* Contact Form and Info Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
@@ -95,7 +138,7 @@ export default function ContactUs() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline_NONE focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b]"
                       placeholder="+971 XX XXX XXXX"
                     />
                   </div>
@@ -139,7 +182,7 @@ export default function ContactUs() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold"
+                  className="w-full bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#003366] transition-colors duration-200"
                 >
                   Send Message
                 </button>
@@ -161,15 +204,14 @@ export default function ContactUs() {
                 <div>
                   <h3 className="text-sm font-semibold text-gray-900 mb-2">Phone</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    +971 4 XXX XXXX<br />
-                    +971 50 XXX XXXX (WhatsApp)
+                    +971 4 398 3527 (Phone) <br />
+                    +971 4 398 3527 (WhatsApp)
                   </p>
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-gray-900 mb-2">Email</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    info@remax.ae<br />
-                    careers@remax.ae
+                    hub@remax.ae
                   </p>
                 </div>
               </div>
@@ -187,10 +229,17 @@ export default function ContactUs() {
 
               <div>
                 <h3 className="text-sm font-semibold text-gray-900 mb-2">Follow Us</h3>
-                <div className="flex gap-4 text-gray-500">
-                  {['facebook', 'instagram', 'linkedin'].map((network) => (
-                    <a key={network} href="#" className="h-10 w-10 border border-gray-200 rounded-full flex items-center justify-center hover:text-[#00458b] hover:border-[#00458b] transition-colors">
-                      <span className="text-xs font-semibold uppercase">{network.slice(0,2)}</span>
+                <div className="flex gap-4">
+                  {socialLinks.map((social) => (
+                    <a 
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-10 w-10 border border-gray-200 rounded-full flex items-center justify-center hover:text-[#00458b] hover:border-[#00458b] transition-colors duration-200"
+                      aria-label={`Follow us on ${social.name}`}
+                    >
+                      {social.icon}
                     </a>
                   ))}
                 </div>
@@ -218,7 +267,6 @@ export default function ContactUs() {
         </div>
       </section>
 
-      {/* Quick Links Section */}
       <section className="py-16 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
@@ -226,19 +274,16 @@ export default function ContactUs() {
             <p className="text-base text-gray-600">Quick links to help you get started.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { href: '/property-search', title: 'Buy Property', copy: 'Search for your next home' },
-              { href: '/selling-guide', title: 'Sell Property', copy: 'Request a property valuation' },
-              { href: '/find-agent', title: 'Find an Agent', copy: 'Connect with local specialists' },
-              { href: '/join-remax', title: 'Join RE/MAX', copy: 'Build your career with us' }
-            ].map((link) => (
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            {quickLinks.map((link) => (
               <a
                 key={link.title}
                 href={link.href}
-                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#00458b] transition-colors"
+                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#00458b] transition-colors duration-200 hover:shadow-lg group"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{link.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#00458b] transition-colors">
+                  {link.title}
+                </h3>
                 <p className="text-sm text-gray-600">{link.copy}</p>
               </a>
             ))}
