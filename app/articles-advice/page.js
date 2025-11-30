@@ -4,16 +4,16 @@ import Footer from '../../components/Footer';
 
 export default function ArticlesAdvice() {
     const images = [
-        { id: 1, src: "/assets/1.jpeg", alt: "Property 1" },
-        { id: 2, src: "/assets/2.jpeg", alt: "Property 2" },
-        { id: 3, src: "/assets/3.jpeg", alt: "Property 3" },
-        { id: 4, src: "/assets/4.jpeg", alt: "Property 4" },
-        { id: 5, src: "/assets/5.jpeg", alt: "Property 5" },
-        { id: 6, src: "/assets/6.jpeg", alt: "Property 6" },
-        { id: 7, src: "/assets/7.jpeg", alt: "Property 7" },
-        { id: 8, src: "/assets/8.jpeg", alt: "Property 8" },
-        { id: 9, src: "/assets/9.jpeg", alt: "Property 9" },
-        { id: 10, src: "/assets/10.jpeg", alt: "Property 10" }
+        { id: 1, src: "/assets/1.jpeg", alt: "Luxury Dubai villa with modern architecture" },
+        { id: 2, src: "/assets/2.jpeg", alt: "Contemporary apartment building in Dubai Marina" },
+        { id: 3, src: "/assets/3.jpeg", alt: "Spacious villa interior with ocean view" },
+        { id: 4, src: "/assets/4.jpeg", alt: "Commercial property in Dubai downtown" },
+        { id: 5, src: "/assets/5.jpeg", alt: "Modern penthouse with city skyline view" },
+        { id: 6, src: "/assets/6.jpeg", alt: "Luxury residential community in Dubai" },
+        { id: 7, src: "/assets/7.jpeg", alt: "Investment property opportunity in UAE" },
+        { id: 8, src: "/assets/8.jpeg", alt: "Family villa with private garden space" },
+        { id: 9, src: "/assets/9.jpeg", alt: "Premium rental property in Dubai" },
+        { id: 10, src: "/assets/10.jpeg", alt: "Beachfront property with waterfront access" }
     ];
 
     return (

@@ -4,6 +4,10 @@ export const menuConfig = {
     title: "Buy",
     items: [
       {
+        title: "Homes for Sale",
+        href: "/homes-for-sale",
+      },
+      {
         title: "Property Search",
         href: "/property-search",
       },

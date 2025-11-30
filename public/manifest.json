@@ -1,0 +1,25 @@
+{
+  "name": "RE/MAX Dubai - Real Estate Solutions",
+  "short_name": "RE/MAX Dubai",
+  "description": "Discover luxury properties, villas, apartments, and commercial spaces in Dubai",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1A3668",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["real estate"],
+  "screenshots": [
+    {
+      "src": "/assets/screenshot-1.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ]
+}
