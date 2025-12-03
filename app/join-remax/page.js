@@ -1,27 +1,79 @@
 "use client";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 export default function JoinRemaxHub() {
+  const formRef = useRef(null);
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
-    experience: '',
+    licenseStatus: '',
+    interest: '',
+    joinAs: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Application submitted:', formData);
+    setError('');
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.licenseStatus || !formData.interest || !formData.joinAs) {
+      setError('Please fill in all required fields');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/agent-applications/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          licenseStatus: '',
+          interest: '',
+          joinAs: '',
+          message: ''
+        });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError(data.message || 'Failed to submit application');
+      }
+    } catch (err) {
+      console.error('Submission error:', err);
+      setError('Failed to submit application. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -39,7 +91,10 @@ export default function JoinRemaxHub() {
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 At RE/MAX UAE, we believe success in real estate should have no ceiling. Whether you're an experienced broker in Dubai or just starting your career in the UAE property market, we give you the platform, training, and tools to build your business and maximize your earnings.
               </p>
-              <button className="bg-remax-blue text-white px-8 py-3 rounded hover:bg-remax-dark-blue transition font-semibold">
+              <button 
+                onClick={scrollToForm}
+                className="bg-[#1A3668] text-white px-8 py-3 rounded hover:bg-remax-dark-blue transition font-semibold"
+              >
                 APPLY NOW
               </button>
             </div>
@@ -253,7 +308,7 @@ export default function JoinRemaxHub() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-remax-blue text-white">
+      <section className="py-16 bg-[#1A3668] text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Build Your Future with RE/MAX?
@@ -261,43 +316,76 @@ export default function JoinRemaxHub() {
           <p className="text-lg mb-8 leading-relaxed">
             Join a global brand with local expertise and unlimited growth potential. Your ambition. Our platform. Unlimited potential.
           </p>
-          <button className="bg-white text-remax-blue px-8 py-3 rounded hover:bg-gray-100 transition font-semibold text-lg">
+          <button 
+            onClick={scrollToForm}
+            className="bg-white text-[#1A3668] px-8 py-3 rounded hover:bg-gray-100 transition font-semibold text-lg"
+          >
             APPLY TO JOIN NOW
           </button>
         </div>
       </section>
 
       {/* Application Form Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white" ref={formRef}>
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Application</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Get Started</h2>
             <p className="text-lg text-gray-600">
-              Fill out the form below and our recruitment team will get in touch with you.
+              Complete the form below to apply for our agent program
             </p>
           </div>
 
           <div className="bg-white rounded-lg p-8 shadow-lg">
+            {submitted && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-green-800 font-semibold">✓ Thank you for your application! Our team will review it shortly and contact you within 3-5 business days.</p>
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 font-semibold">{error}</p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Full Name *
+                  <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
+                    First Name <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-remax-blue"
-                    placeholder="Your full name"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                    placeholder="First"
                   />
                 </div>
                 <div>
+                  <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Last Name <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                    placeholder="Last"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email *
+                    Email <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="email"
@@ -306,16 +394,13 @@ export default function JoinRemaxHub() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-remax-blue"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                     placeholder="your.email@example.com"
                   />
                 </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone *
+                    Phone <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="tel"
@@ -324,72 +409,107 @@ export default function JoinRemaxHub() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-remax-blue"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                     placeholder="+971 XX XXX XXXX"
                   />
                 </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="experience" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Real Estate Experience
+                  <label htmlFor="licenseStatus" className="block text-sm font-semibold text-gray-700 mb-2">
+                    License Status <span className="text-red-600">*</span>
                   </label>
                   <select
-                    id="experience"
-                    name="experience"
-                    value={formData.experience}
+                    id="licenseStatus"
+                    name="licenseStatus"
+                    value={formData.licenseStatus}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-remax-blue"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   >
-                    <option value="">Select experience level</option>
-                    <option value="New to Real Estate">New to Real Estate</option>
-                    <option value="1-2 years">1-2 years</option>
-                    <option value="3-5 years">3-5 years</option>
-                    <option value="5+ years">5+ years</option>
+                    <option value="">Select license status</option>
+                    <option value="Active License">Active License</option>
+                    <option value="Expired License">Expired License</option>
+                    <option value="No License">No License</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="interest" className="block text-sm font-semibold text-gray-700 mb-2">
+                    I am interested in <span className="text-red-600">*</span>
+                  </label>
+                  <select
+                    id="interest"
+                    name="interest"
+                    value={formData.interest}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                  >
+                    <option value="">Select interest</option>
+                    <option value="Dubai">Dubai</option>
+                    <option value="International">International</option>
                   </select>
                 </div>
               </div>
 
               <div>
+                <label htmlFor="joinAs" className="block text-sm font-semibold text-gray-700 mb-2">
+                  I would like to join as <span className="text-red-600">*</span>
+                </label>
+                <select
+                  id="joinAs"
+                  name="joinAs"
+                  value={formData.joinAs}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                >
+                  <option value="">Select role</option>
+                  <option value="Agent">Agent</option>
+                  <option value="Broker">Broker</option>
+                  <option value="Team Lead">Team Lead</option>
+                </select>
+              </div>
+
+              <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Tell us about yourself
+                  Message <span className="text-gray-500">(0 of 250 max characters)</span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
+                  maxLength={250}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-remax-blue"
-                  placeholder="Why are you interested in joining RE/MAX? What are your goals?"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                  placeholder="Tell us why you're interested in joining RE/MAX"
                 />
+              </div>
+
+              <div className="text-xs text-gray-600 leading-relaxed">
+                By clicking "SUBMIT" below, you are agreeing to the{" "}
+                <a href="#" className="text-[#1A3668] hover:underline">
+                  Terms of Use
+                </a>{" "}
+                and{" "}
+                <a href="#" className="text-[#1A3668] hover:underline">
+                  Privacy Policy
+                </a>{" "}
+                and are agreeing to receive marketing email messages from RE/MAX, LLC and/or marketing emails, calls or texts placed by or on behalf of a local RE/MAX franchised office, to any phone number and/or email address that you provided, even if your number is on a federal, state, or our internal Do Not Call List. You further agree that call/texts may be sent with an automated system for selection or dialing of numbers and/or with an artificial or prerecorded voice. Please note: Consent is not a condition of purchase. Standard data and messaging rate may apply. You may unsubscribe at any time.
               </div>
 
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-remax-blue text-white px-8 py-3 rounded hover:bg-remax-dark-blue transition font-semibold"
+                  disabled={loading}
+                  className="bg-[#1A3668] text-white px-10 py-3 rounded-lg hover:bg-[#0f2447] transition font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Application
+                  {loading ? 'Submitting...' : 'SUBMIT'}
                 </button>
               </div>
             </form>
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-6">Have questions? Get in touch with us:</p>
-            <div className="flex flex-wrap justify-center gap-8">
-              <div>
-                <p className="font-semibold text-gray-900">Phone</p>
-                <p className="text-gray-600">+971 XXX XXX XXX</p>
-              </div>
-              <div>
-                <p className="font-semibold text-gray-900">Email</p>
-                <p className="text-gray-600">careers@remax.ae</p>
-              </div>
-              <div>
-                <p className="font-semibold text-gray-900">Location</p>
-                <p className="text-gray-600">Dubai, UAE</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

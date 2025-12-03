@@ -62,6 +62,8 @@ export default function AdminLayout({ children }) {
     { name: 'Agents', href: '/admin/agents', icon: FiCheckSquare },
     { name: 'Properties', href: '/admin/properties', icon: FiHome },
     { name: 'Guide Submissions', href: '/admin/guide-submissions', icon: FiFileText },
+    { name: 'Agent Applications', href: '/admin/agent-applications', icon: FiFileText },
+    { name: 'Contact Submissions', href: '/admin/contact-submissions', icon: FiFileText },
     // { name: 'Analytics', href: '/admin/analytics', icon: FiBarChart2 },
     { name: 'Settings', href: '/admin/settings', icon: FiSettings },
   ];

@@ -19,6 +19,8 @@ export async function GET(request) {
     '/about-us': 'index, follow',
     '/contact-us': 'index, follow',
     '/homes-for-sale': 'index, follow',
+    '/rental-search': 'index, follow',
+    '/property': 'index, follow',
   };
 
   const rule = robotsRules[page] || 'index, follow';

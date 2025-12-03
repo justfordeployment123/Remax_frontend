@@ -70,13 +70,13 @@ export default function ArticlesAdvice() {
                             <div className="p-6">
                                 <div className="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-2">Market Analysis</div>
                                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                                    Dubai Real Estate Market Trends 2024
+                                    Dubai Real Estate Market Trends 2025
                                 </h3>
                                 <p className="text-sm text-gray-600 mb-4">
                                     Discover the latest trends shaping Dubai's real estate market, from luxury developments to affordable housing initiatives.
                                 </p>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-500">March 15, 2024</span>
+                                    <span className="text-xs text-gray-500">March 15, 2025</span>
                                     <button className="text-[#00458b] text-sm font-semibold">
                                         Read More →
                                     </button>
@@ -100,7 +100,7 @@ export default function ArticlesAdvice() {
                                     Explore the best investment opportunities across Dubai's diverse real estate landscape, from commercial to residential.
                                 </p>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-500">March 12, 2024</span>
+                                    <span className="text-xs text-gray-500">March 12, 2025</span>
                                     <button className="text-[#00458b] text-sm font-semibold">
                                         Read More →
                                     </button>
@@ -124,7 +124,7 @@ export default function ArticlesAdvice() {
                                     Learn the essential strategies for effective property management and maximizing your rental income.
                                 </p>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-500">March 10, 2024</span>
+                                    <span className="text-xs text-gray-500">March 10, 2025</span>
                                     <button className="text-[#00458b] text-sm font-semibold">
                                         Read More →
                                     </button>
@@ -148,7 +148,7 @@ export default function ArticlesAdvice() {
                                     Get insights into Dubai's luxury real estate market and the most sought-after properties and locations.
                                 </p>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-500">March 8, 2024</span>
+                                    <span className="text-xs text-gray-500">March 8, 2025</span>
                                     <button className="text-[#00458b] text-sm font-semibold">
                                         Read More →
                                     </button>
@@ -172,7 +172,7 @@ export default function ArticlesAdvice() {
                                     Everything you need to know about investing in commercial office spaces in Dubai's business districts.
                                 </p>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-500">March 5, 2024</span>
+                                    <span className="text-xs text-gray-500">March 5, 2025</span>
                                     <button className="text-[#00458b] text-sm font-semibold">
                                         Read More →
                                     </button>
@@ -196,7 +196,7 @@ export default function ArticlesAdvice() {
                                     How technology is revolutionizing the real estate industry and what it means for buyers and sellers.
                                 </p>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-500">March 3, 2024</span>
+                                    <span className="text-xs text-gray-500">March 3, 2025</span>
                                     <button className="text-[#00458b] text-sm font-semibold">
                                         Read More →
                                     </button>

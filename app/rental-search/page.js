@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { FaBed, FaBath, FaRulerCombined, FaMapMarkerAlt, FaSearch, FaFilter } from "react-icons/fa";
 
 export default function RentalSearch() {
+  const router = useRouter();
   const [searchFilters, setSearchFilters] = useState({
     address: "",
     minPrice: "",
@@ -33,8 +35,16 @@ export default function RentalSearch() {
   };
 
   const handleSearch = () => {
-    console.log("Search filters:", searchFilters);
-    alert("Searching with filters: " + JSON.stringify(searchFilters, null, 2));
+    const params = new URLSearchParams();
+    params.append("type", "rental");
+    if (searchFilters.address) params.append("address", searchFilters.address);
+    if (searchFilters.minPrice) params.append("minPrice", searchFilters.minPrice);
+    if (searchFilters.maxPrice) params.append("maxPrice", searchFilters.maxPrice);
+    if (searchFilters.minBeds !== "NO MIN") params.append("minBeds", searchFilters.minBeds);
+    if (searchFilters.maxBeds !== "NO MAX") params.append("maxBeds", searchFilters.maxBeds);
+    if (searchFilters.baths !== "ANY") params.append("baths", searchFilters.baths);
+
+    router.push(`/property?${params.toString()}`);
   };
 
   return (
@@ -173,7 +183,7 @@ export default function RentalSearch() {
               </button>
               <button
                 onClick={handleSearch}
-                className="flex items-center gap-2 px-8 py-3 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-200"
+                className="flex items-center gap-2 px-8 py-3 bg-[#1A3668] text-white font-medium rounded-md hover:bg-[#0f2447] focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:ring-offset-2 transition-all duration-200"
               >
                 <FaSearch className="w-4 h-4" />
                 Search Rentals

@@ -1,8 +1,11 @@
 "use client";
+import { useRouter } from 'next/navigation';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 export default function AboutUs() {
+  const router = useRouter();
+
   const partners = [
     {
       name: 'Bayut',
@@ -20,6 +23,34 @@ export default function AboutUs() {
       logo: 'https://truebuild.ae/images/logo3.png'
     }
   ];
+
+  const handleListingFilter = (type) => {
+    const params = new URLSearchParams();
+    
+    switch(type) {
+      case 'Off-Plan Projects':
+        params.append('type', 'offplan');
+        break;
+      case 'Ready Properties':
+        params.append('type', 'ready');
+        break;
+      case 'Commercial':
+        params.append('type', 'commercial');
+        break;
+      case 'For Rent':
+        params.append('type', 'rental');
+        break;
+    }
+    
+    router.push(`/property?${params.toString()}`);
+  };
+
+  const scrollToStory = () => {
+    const storySection = document.getElementById('story-section');
+    if (storySection) {
+      storySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <main className="min-h-screen bg-[#F4F4F4]">
@@ -70,7 +101,10 @@ export default function AboutUs() {
               <p className="text-base text-gray-600 mb-6 leading-relaxed">
                 Whether you're looking to find your dream home in the UAE, invest in Dubai real estate, or accelerate your property career, RE/MAX Hub is your trusted partner in every step of the journey.
               </p>
-              <button className="bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold">
+              <button 
+                onClick={scrollToStory}
+                className="bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#003366] transition-colors"
+              >
                 Learn More About Us
               </button>
             </div>
@@ -78,8 +112,8 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {}
-      <section className="py-16 bg-[#F9FAFB]">
+      {/* Our Story Timeline Section */}
+      <section id="story-section" className="py-16 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-gray-900 mb-3">Our Story</h2>
@@ -202,7 +236,8 @@ export default function AboutUs() {
             {['Off-Plan Projects', 'Ready Properties', 'Commercial', 'For Rent'].map((label) => (
               <button
                 key={label}
-                className="bg-white text-gray-800 px-5 py-3 rounded-lg text-sm font-medium border border-gray-200"
+                onClick={() => handleListingFilter(label)}
+                className="bg-white text-gray-800 px-5 py-3 rounded-lg text-sm font-medium border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-colors"
               >
                 {label}
               </button>
@@ -210,7 +245,10 @@ export default function AboutUs() {
           </div>
 
           <div className="text-center">
-            <button className="bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold">
+            <button 
+              onClick={() => router.push('/property')}
+              className="bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#003366] transition-colors"
+            >
               Browse All Listings
             </button>
           </div>

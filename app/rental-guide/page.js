@@ -131,7 +131,7 @@ export default function RentalGuide() {
           </div>
 
           <div className="max-w-6xl">
-            <h1 className="text-4xl font-semibold text-[#00458b] mb-4 leading-tight">
+            <h1 className="text-4xl font-semibold text-[#1A3668] mb-4 leading-tight">
               Dubai Landlord & Leasing Guide
             </h1>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">
@@ -346,7 +346,7 @@ export default function RentalGuide() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-left mb-8">
-            <h2 className="text-2xl font-semibold text-remax-blue">
+            <h2 className="text-2xl font-semibold text-[#1A3668]">
               Essentials for a Successful Lease
             </h2>
             <p className="text-sm text-gray-600 max-w-3xl mt-4">
@@ -366,7 +366,7 @@ export default function RentalGuide() {
               </div>
               <div className="p-4">
                 <div className="flex gap-3 mb-4">
-                  <h3 className="font-semibold text-remax-blue" style={{ fontSize: "20px" }}>
+                  <h3 className="font-semibold text-[#1A3668]" style={{ fontSize: "20px" }}>
                     Marketing Your Property
                   </h3>
                 </div>
@@ -387,7 +387,7 @@ export default function RentalGuide() {
               </div>
               <div className="p-4">
                 <div className="flex gap-3 mb-4">
-                  <h3 className="font-semibold text-remax-blue" style={{ fontSize: "20px" }}>
+                  <h3 className="font-semibold text-[#1A3668]" style={{ fontSize: "20px" }}>
                     Tenant Screening
                   </h3>
                 </div>
@@ -408,7 +408,7 @@ export default function RentalGuide() {
               </div>
               <div className="p-4">
                 <div className="flex gap-3 mb-4">
-                  <h3 className="font-semibold text-remax-blue" style={{ fontSize: "20px" }}>
+                  <h3 className="font-semibold text-[#1A3668]" style={{ fontSize: "20px" }}>
                     Property Management
                   </h3>
                 </div>
@@ -424,7 +424,7 @@ export default function RentalGuide() {
       {/* Tools Section */}
       <section className="py-4 pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold text-[#00458b] mb-6">
+          <h2 className="text-2xl font-semibold text-[#1A3668] mb-6">
             Tools to Support Your Rental Strategy
           </h2>
           <p className="text-gray-700 mb-8 leading-relaxed">
@@ -459,7 +459,7 @@ export default function RentalGuide() {
           </div>
 
           <div className="mt-16">
-            <h2 className="text-2xl font-semibold text-[#00458b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#1A3668] mb-6">
               List Your Property with RE/MAX Hub
             </h2>
             <p className="text-gray-700 mb-8 leading-relaxed">

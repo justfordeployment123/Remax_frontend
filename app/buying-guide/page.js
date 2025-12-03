@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -499,9 +500,11 @@ export default function BuyingGuide() {
 
             {}
             <div className="flex justify-center">
-              <button className="bg-[#1A3668] text-white px-8 py-3 rounded font-semibold hover:bg-[#003a75] transition-all duration-300 uppercase text-sm">
-                Browse Listings
-              </button>
+              <Link href="/property">
+                <button className="bg-[#1A3668] text-white px-8 py-3 rounded font-semibold hover:bg-[#003a75] transition-all duration-300 uppercase text-sm">
+                  Browse Listings
+                </button>
+              </Link>
             </div>
           </div>
         </div>

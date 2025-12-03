@@ -219,7 +219,7 @@ export default function MyGoals() {
                     { value: 'first-home', label: 'I am buying my first home' },
                     { value: 'next-home', label: 'I am finding my next home' },
                     { value: 'right-sizing', label: 'I am right sizing my home' },
-                    { value: 'moving-to-us', label: 'I am moving to the United States' },
+                    { value: 'moving-to-us', label: 'I am moving to the Dubai' },
                     { value: 'just-browsing', label: 'None, I\'m just browsing' }
                   ].map((option) => (
                     <label key={option.value} className="flex items-center space-x-3 cursor-pointer">
@@ -343,7 +343,6 @@ export default function MyGoals() {
             </div>
           </div>
 
-          {/* Submit Button */}
           <div className="flex justify-end">
             <button
               type="submit"
@@ -417,14 +416,13 @@ export default function MyGoals() {
   );
 }
 
-// Helper functions to get display labels
 function getGoalLabel(category, value) {
   const labels = {
     buying: {
       'first-home': 'Buying first home',
       'next-home': 'Finding next home',
       'right-sizing': 'Right sizing home',
-      'moving-to-us': 'Moving to United States',
+      'moving-to-us': 'Moving to Dubai',
       'just-browsing': 'Just browsing',
       'none': 'None'
     },

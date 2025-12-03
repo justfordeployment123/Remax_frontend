@@ -4,7 +4,7 @@ export const metadata = {
   keywords: "homes for sale, real estate, property listings, buy home, house for sale",
   openGraph: {
     title: "Homes for Sale | RE/MAX",
-    description: "Search thousands of homes for sale across the United States.",
+    description: "Search thousands of homes for sale across the Dubai.",
     type: "website",
   },
   robots: "index, follow",

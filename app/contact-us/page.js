@@ -12,17 +12,56 @@ export default function ContactUs() {
     subject: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const [charCount, setCharCount] = useState(0);
 
   const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+    
+    if (name === 'message') {
+      setCharCount(value.length);
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contacts/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to submit form');
+      }
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setCharCount(0);
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      setError(err.message);
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const socialLinks = [
@@ -91,13 +130,27 @@ export default function ContactUs() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Send us a message</h2>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-1">Send us a message</h2>
+              <p className="text-sm text-gray-600 mb-6">We'll get back to you within 24-48 hours.</p>
+
+              {submitted && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-sm text-green-800 font-medium">✓ Message sent successfully! We'll contact you soon.</p>
+                </div>
+              )}
+
+              {error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-sm text-red-800 font-medium">✗ {error}</p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
-                      Full Name
+                      Full Name *
                     </label>
                     <input
                       type="text"
@@ -106,13 +159,13 @@ export default function ContactUs() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
-                      Email
+                      Email *
                     </label>
                     <input
                       type="email"
@@ -121,7 +174,7 @@ export default function ContactUs() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -138,13 +191,13 @@ export default function ContactUs() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                       placeholder="+971 XX XXX XXXX"
                     />
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
-                      Subject
+                      Subject *
                     </label>
                     <select
                       id="subject"
@@ -152,7 +205,7 @@ export default function ContactUs() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                     >
                       <option value="">Select a subject</option>
                       <option value="Buy Property">Buy Property</option>
@@ -166,7 +219,7 @@ export default function ContactUs() {
 
                 <div>
                   <label htmlFor="message" className="block text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
-                    Message
+                    Message * <span className="text-gray-500 font-normal">({charCount}/2000)</span>
                   </label>
                   <textarea
                     id="message"
@@ -174,17 +227,19 @@ export default function ContactUs() {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
+                    maxLength={2000}
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors resize-none"
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#003366] transition-colors duration-200"
+                  disabled={loading}
+                  className="w-full bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#003366] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

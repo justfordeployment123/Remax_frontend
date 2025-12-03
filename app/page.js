@@ -89,7 +89,7 @@ export default function Home() {
           <div className="border border-gray-300 rounded-lg p-6 flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <img
-                src="https://static-images.remax.com/assets/web/homepage/bmta-red-2024.png"
+                src="https://static-images.remax.com/assets/web/homepage/bmta-red-2025.png"
                 alt="UAE Real Estate Excellence Award"
                 className="w-20 h-28 object-contain"
               />
@@ -100,7 +100,7 @@ export default function Home() {
               </h2>
               <p className="text-gray-600 leading-relaxed text-sm">
                 Honored for excellence and trust by UAE property buyers and investors, 
-                based on the GCC Real Estate Trust Index (2022–2024). Proudly serving 
+                based on the GCC Real Estate Trust Index (2022–2025). Proudly serving 
                 communities across Dubai, Abu Dhabi, Sharjah, and beyond.
               </p>
             </div>
@@ -175,7 +175,7 @@ export default function Home() {
               { 
                 title: 'New Listings', 
                 image: 'https://static-images.remax.com/assets/web/homepage/01_NewListings.jpg',
-                link: '/homes-for-sale?newListingOffset=7'
+                link: '/property?newListingOffset=7'
               },
               { 
                 title: 'Luxury Homes', 
@@ -185,17 +185,17 @@ export default function Home() {
               { 
                 title: 'Open Houses', 
                 image: 'https://static-images.remax.com/assets/web/homepage/03_OpenHouses.jpg',
-                link: '/homes-for-sale?openHouseOffset=0'
+                link: '/property?openHouseOffset=0'
               },
               { 
                 title: 'Price Reductions', 
                 image: 'https://static-images.remax.com/assets/web/homepage/04_PriceReductions.jpg',
-                link: '/homes-for-sale?priceReducedOffset=14'
+                link: '/property?priceReducedOffset=14'
               },
               { 
                 title: 'Virtual Tours', 
                 image: 'https://static-images.remax.com/assets/web/homepage/05_VirtualTours.jpg',
-                link: '/homes-for-sale?hasVirtualTour=1'
+                link: '/property?hasVirtualTour=1'
               }
             ].map((item, index) => (
               <div 
