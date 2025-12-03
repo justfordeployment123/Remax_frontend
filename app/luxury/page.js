@@ -1,11 +1,14 @@
 "use client";
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { ChevronLeft, ChevronRight, Search, Star, MapPin, Bed, Bath, Square } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 export default function Luxury() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [searchTerm, setSearchTerm] = useState('');
+    const router = useRouter();
 
     const luxuryProperties = [
         {
@@ -52,6 +55,15 @@ export default function Luxury() {
         const timer = setInterval(nextSlide, 5000);
         return () => clearInterval(timer);
     }, []);
+
+    const handleSearch = () => {
+        if (searchTerm.trim()) {
+            const params = new URLSearchParams();
+            params.append('address', searchTerm);
+            params.append('type', 'luxury');
+            router.push(`/property?${params.toString()}`);
+        }
+    };
 
     return (
         <main className="min-h-screen bg-white">
@@ -120,7 +132,7 @@ export default function Luxury() {
                                 </div>
 
                                 {}
-                                <button className="bg-white text-[#00458b] px-6 py-3 rounded-lg text-sm font-semibold border border-gray-200">
+                                <button className="bg-white text-[#1A3668] px-6 py-3 rounded-lg text-sm font-semibold border border-gray-200">
                                     VIEW PROPERTY
                                 </button>
                             </div>
@@ -144,9 +156,19 @@ export default function Luxury() {
                                 <input
                                     type="text"
                                     placeholder="Search luxury properties by location..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    onKeyPress={(e) => {
+                                        if (e.key === 'Enter') {
+                                            handleSearch();
+                                        }
+                                    }}
                                     className="flex-1 px-6 py-4 text-gray-900 placeholder-gray-500 focus:outline-none text-base"
                                 />
-                                <button className="bg-[#00458b] text-white px-6 py-4">
+                                <button 
+                                    onClick={handleSearch}
+                                    className="bg-[#1A3668] text-white px-6 py-4 hover:bg-[#003366] transition-colors"
+                                >
                                     <Search className="w-6 h-6" />
                                 </button>
                             </div>
@@ -182,84 +204,18 @@ export default function Luxury() {
                         </p>
                         <div className="grid md:grid-cols-3 gap-8 mt-12">
                             <div className="text-center">
-                                <div className="text-3xl font-semibold text-[#00458b] mb-1">110+</div>
+                                <div className="text-3xl font-semibold text-[#1A3668] mb-1">110+</div>
                                 <p className="text-sm text-gray-600">Countries & Territories</p>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl font-semibold text-[#00458b] mb-1">140K+</div>
+                                <div className="text-3xl font-semibold text-[#1A3668] mb-1">140K+</div>
                                 <p className="text-sm text-gray-600">Global Agents</p>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl font-semibold text-[#00458b] mb-1">#1</div>
+                                <div className="text-3xl font-semibold text-[#1A3668] mb-1">#1</div>
                                 <p className="text-sm text-gray-600">Luxury Real Estate Brand</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Featured Properties Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-semibold text-gray-900 mb-3">
-                            Featured Luxury Properties
-                        </h2>
-                        <p className="text-base text-gray-600 max-w-2xl mx-auto">
-                            Explore our curated selection of exceptional homes and estates
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {luxuryProperties.map((property) => (
-                            <div key={property.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                                <div className="relative">
-                                    <img
-                                        src={property.image}
-                                        alt={property.title}
-                                        className="w-full h-64 object-cover"
-                                    />
-                                    <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full">
-                                        <div className="flex items-center">
-                                            <Star className="w-4 h-4 text-yellow-500 fill-current mr-1" />
-                                            <span className="text-sm font-semibold">Luxury</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                                        {property.price}
-                                    </h3>
-                                    <h4 className="text-base font-medium text-gray-700 mb-3">
-                                        {property.title}
-                                    </h4>
-                                    <div className="flex items-center text-gray-600 mb-4">
-                                        <MapPin className="w-4 h-4 mr-2" />
-                                        {property.location}
-                                    </div>
-                                    <div className="flex items-center justify-between text-sm text-gray-600">
-                                        <div className="flex items-center">
-                                            <Bed className="w-4 h-4 mr-1" />
-                                            {property.beds} Beds
-                                        </div>
-                                        <div className="flex items-center">
-                                            <Bath className="w-4 h-4 mr-1" />
-                                            {property.baths} Baths
-                                        </div>
-                                        <div className="flex items-center">
-                                            <Square className="w-4 h-4 mr-1" />
-                                            {property.sqft} Sq Ft
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="text-center mt-12">
-                        <button className="bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold">
-                            VIEW ALL LUXURY PROPERTIES
-                        </button>
                     </div>
                 </div>
             </section>
@@ -278,7 +234,7 @@ export default function Luxury() {
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
                                     <div className="flex-shrink-0 w-10 h-10 bg-[#E8F0FB] rounded-lg flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-[#00458b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 text-[#1A3668]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
@@ -289,7 +245,7 @@ export default function Luxury() {
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <div className="flex-shrink-0 w-10 h-10 bg-[#E8F0FB] rounded-lg flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-[#00458b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 text-[#1A3668]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                         </svg>
                                     </div>
@@ -300,7 +256,7 @@ export default function Luxury() {
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <div className="flex-shrink-0 w-10 h-10 bg-[#E8F0FB] rounded-lg flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-[#00458b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 text-[#1A3668]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
@@ -332,11 +288,15 @@ export default function Luxury() {
                         Connect with RE/MAX Collection agents who specialize in luxury real estate and deliver thoughtful service at every price point.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
-                        <button className="bg-remax-blue text-white px-6 py-3 rounded-lg text-sm font-semibold">
+                        <button 
+                            onClick={() => {
+                                const params = new URLSearchParams();
+                                params.append('expertise', 'luxury');
+                                router.push(`/find-agent?${params.toString()}`);
+                            }}
+                            className="bg-[#1A3668] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#003366] transition-colors"
+                        >
                             FIND A LUXURY AGENT
-                        </button>
-                        <button className="bg-remax-blue text-white px-6 py-3 rounded-lg text-sm font-semibold">
-                            SCHEDULE A CONSULTATION
                         </button>
                     </div>
                 </div>
