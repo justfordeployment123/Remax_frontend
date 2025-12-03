@@ -68,10 +68,10 @@ export default function VirtualBuying() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
+      {}
       <section className="relative py-16 bg-white">
         <div className="relative max-w-7xl mx-auto px-6">
-          {/* Image on Top */}
+          {}
           <div className="mb-12">
             <div className="relative overflow-hidden">
               <img
@@ -93,7 +93,7 @@ export default function VirtualBuying() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className=" mb-8">

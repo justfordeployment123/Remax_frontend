@@ -20,7 +20,7 @@ export default function ArticlesAdvice() {
         <main className="min-h-screen bg-[#F4F4F4]">
             <Header />
             
-            {/* Simple Image Gallery */}
+            {}
             <section className="py-16">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-12">
@@ -32,7 +32,7 @@ export default function ArticlesAdvice() {
                         </p>
                     </div>
 
-                    {/* Image Grid */}
+                    {}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
                         {images.map((image) => (
                             <div key={image.id} className="group relative overflow-hidden rounded-lg border border-gray-200">
@@ -47,7 +47,7 @@ export default function ArticlesAdvice() {
                 </div>
             </section>
 
-            {/* Blogs Section */}
+            {}
             <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-12">
@@ -60,7 +60,7 @@ export default function ArticlesAdvice() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Blog 1 */}
+                        {}
                         <article className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
                             <img
                                 src="/assets/1.jpeg"
@@ -108,7 +108,7 @@ export default function ArticlesAdvice() {
                             </div>
                         </article>
 
-                        {/* Blog 3 */}
+                        {}
                         <article className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
                             <img
                                 src="/assets/3.jpeg"
@@ -132,7 +132,7 @@ export default function ArticlesAdvice() {
                             </div>
                         </article>
 
-                        {/* Blog 4 */}
+                        {}
                         <article className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
                             <img
                                 src="/assets/4.jpeg"
@@ -156,7 +156,7 @@ export default function ArticlesAdvice() {
                             </div>
                         </article>
 
-                        {/* Blog 5 */}
+                        {}
                         <article className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
                             <img
                                 src="/assets/5.jpeg"

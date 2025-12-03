@@ -156,7 +156,7 @@ export default function AccountSettings() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+      {}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
@@ -185,13 +185,13 @@ export default function AccountSettings() {
       </header>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Page Header */}
+        {}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Account Settings</h1>
           <p className="text-gray-600 mt-2">Manage your contact information and notification preferences</p>
         </div>
 
-        {/* Tabs */}
+        {}
         <div className="flex space-x-8 border-b border-gray-200 mb-8">
           <button
             onClick={() => setActiveTab('contact')}
@@ -217,7 +217,7 @@ export default function AccountSettings() {
           </button>
         </div>
 
-        {/* Contact Info Tab */}
+        {}
         {activeTab === 'contact' && (
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
@@ -228,9 +228,9 @@ export default function AccountSettings() {
             </div>
 
             <div className="p-6 space-y-6">
-              {/* Basic Info */}
+              {}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* First Name */}
+                {}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     First Name*
@@ -271,7 +271,7 @@ export default function AccountSettings() {
                   </div>
                 </div>
 
-                {/* Last Name */}
+                {}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Last Name*
@@ -313,7 +313,7 @@ export default function AccountSettings() {
                 </div>
               </div>
 
-              {/* Email */}
+              {}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Email Address*
@@ -329,7 +329,7 @@ export default function AccountSettings() {
                 </div>
               </div>
 
-              {/* Addresses */}
+              {}
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-medium text-gray-900">Addresses</h3>
@@ -415,7 +415,7 @@ export default function AccountSettings() {
                 )}
               </div>
 
-              {/* Phone Numbers */}
+              {}
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-medium text-gray-900">Phone Numbers</h3>
@@ -478,7 +478,7 @@ export default function AccountSettings() {
           </div>
         )}
 
-        {/* Notifications Tab */}
+        {}
         {activeTab === 'notifications' && (
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
@@ -496,7 +496,7 @@ export default function AccountSettings() {
               </div>
 
               <div className="space-y-6">
-                {/* REMAX Listing Alerts */}
+                {}
                 <div className="flex items-center justify-between py-4 border-b border-gray-200">
                   <div className="flex-1">
                     <h3 className="font-medium text-gray-900">REMAX Listing Alerts</h3>
@@ -517,7 +517,7 @@ export default function AccountSettings() {
                   </div>
                 </div>
 
-                {/* Favorites */}
+                {}
                 <div className="flex items-center justify-between py-4 border-b border-gray-200">
                   <div className="flex-1">
                     <h3 className="font-medium text-gray-900">Favorites</h3>
@@ -538,7 +538,7 @@ export default function AccountSettings() {
                   </div>
                 </div>
 
-                {/* REMAX Bring It Home Newsletter */}
+                {}
                 <div className="flex items-center justify-between py-4">
                   <div className="flex-1">
                     <h3 className="font-medium text-gray-900">REMAX Bring It Home Newsletter</h3>

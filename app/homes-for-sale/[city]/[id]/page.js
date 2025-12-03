@@ -75,7 +75,7 @@ export default function PropertyDetails() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Sticky Header */}
+      {}
       <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link href="/homes-for-sale" className="text-[#1A3668] hover:text-[#152d54] font-semibold flex items-center gap-2">
@@ -87,11 +87,11 @@ export default function PropertyDetails() {
         </div>
       </div>
 
-      {/* Hero Image Section */}
+      {}
       <div className="bg-white py-6 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Left: Main Image */}
+            {}
             <div className="lg:col-span-2 relative rounded-lg overflow-hidden bg-gray-800 h-96 md:h-[500px] group">
               <img
                 src={currentImage}
@@ -100,14 +100,14 @@ export default function PropertyDetails() {
                 onError={(e) => (e.target.src = "/assets/placeholder.png")}
               />
 
-              {/* Coming Soon Badge */}
+              {}
               {property.listingFinished === "finished" && (
                 <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded font-bold text-sm">
                   Finished
                 </div>
               )}
 
-              {/* Navigation Buttons */}
+              {}
               {property.photos && property.photos.length > 1 && (
                 <>
                   <button
@@ -131,7 +131,7 @@ export default function PropertyDetails() {
                 </>
               )}
 
-              {/* Like Button */}
+              {}
               <button
                 onClick={() => setIsLiked(!isLiked)}
                 className={`absolute top-4 right-4 p-2 rounded-full shadow-lg transition-all duration-200 z-10 ${
@@ -145,7 +145,7 @@ export default function PropertyDetails() {
                 </svg>
               </button>
 
-              {/* Image Counter */}
+              {}
               <div className="absolute bottom-3 left-3 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
@@ -154,9 +154,9 @@ export default function PropertyDetails() {
               </div>
             </div>
 
-            {/* Right: Thumbnails and Info */}
+            {}
             <div className="space-y-4">
-              {/* Thumbnail Gallery */}
+              {}
               {property.photos && property.photos.length > 1 && (
                 <div className="space-y-2 max-h-96 overflow-y-auto">
                   {property.photos.map((photo, idx) => (
@@ -180,7 +180,7 @@ export default function PropertyDetails() {
                 </div>
               )}
 
-              {/* Floor Plan / Additional Info */}
+              {}
               {property.photos && property.photos.length > 0 && (
                 <div className="bg-gray-100 rounded-lg p-3 text-center text-xs text-gray-600">
                   {property.photos.length} Photos Available
@@ -191,12 +191,12 @@ export default function PropertyDetails() {
         </div>
       </div>
 
-      {/* Main Content */}
+      {}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left: Main Content */}
+          {}
           <div className="lg:col-span-2 space-y-6">
-            {/* Title and Location Card */}
+            {}
             <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
               <h1 className="text-3xl font-bold text-gray-900 mb-3">{property.title}</h1>
               
@@ -214,7 +214,7 @@ export default function PropertyDetails() {
               </div>
             </div>
 
-            {/* Description Card */}
+            {}
             {property.description && (
               <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
                 <h2 className="text-xl font-bold text-gray-900 mb-4">About This Property</h2>
@@ -224,7 +224,7 @@ export default function PropertyDetails() {
               </div>
             )}
 
-            {/* Property Details Card */}
+            {}
             <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
               <h2 className="text-xl font-bold text-gray-900 mb-6">Property Details</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -259,7 +259,7 @@ export default function PropertyDetails() {
                 </div>
               </div>
 
-              {/* Additional Details */}
+              {}
               <div className="border-t border-gray-200 mt-6 pt-6 grid grid-cols-2 gap-4">
                 {property.propertyName && (
                   <div>
@@ -289,9 +289,9 @@ export default function PropertyDetails() {
             </div>
           </div>
 
-          {/* Right: Sidebar */}
+          {}
           <div className="space-y-6">
-            {/* Price Card */}
+            {}
             <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
               <p className="text-gray-600 text-sm font-semibold mb-2">
                 {property.offeringType === "RR" ? "ANNUAL RENT" : "PRICE"}
@@ -326,12 +326,12 @@ export default function PropertyDetails() {
               </button>
             </div>
 
-            {/* Agent Card */}
+            {}
             {property.agent && (
               <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
                 <p className="text-gray-600 text-xs font-semibold mb-4">LISTED BY</p>
 
-                {/* RE/MAX Logo */}
+                {}
                 <div className="mb-6 flex justify-center">
                   <div className="text-center">
                     <div className="text-4xl font-bold text-red-600 mb-2">RE/MAX</div>
@@ -339,15 +339,8 @@ export default function PropertyDetails() {
                   </div>
                 </div>
 
-                {/* Agent Photo - Commented for now */}
-                {/* {property.agent.photo && (
-                  <img
-                    src={property.agent.photo}
-                    alt={property.agent.name}
-                    className="w-20 h-20 object-cover rounded-full mb-4 mx-auto border-2 border-gray-200"
-                    onError={(e) => (e.target.style.display = "none")}
-                  />
-                )} */}
+                {}
+                {}
 
                 <h3 className="text-lg font-bold text-gray-900 text-center mb-1">{property.agent.name}</h3>
                 <p className="text-gray-600 text-sm text-center mb-4 font-semibold">RE/MAX Agent</p>

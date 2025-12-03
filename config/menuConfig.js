@@ -1,4 +1,4 @@
-// Menu configuration for navigation
+
 export const menuConfig = {
   buy: {
     title: "Buy",
@@ -91,7 +91,7 @@ export const menuConfig = {
   }
 };
 
-// Simple menu items (no dropdown)
+
 export const simpleMenuItems = [
   { title: "News", href: "/news" },
   { title: "About", href: "/about" },

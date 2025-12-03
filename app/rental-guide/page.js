@@ -1,18 +1,32 @@
 "use client";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+const ChevronLeftIcon = () => (
+  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+  </svg>
+);
+
+const ChevronRightIcon = () => (
+  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  </svg>
+);
+
 export default function RentalGuide() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     zipCode: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
     setFormData({
@@ -21,30 +35,49 @@ export default function RentalGuide() {
     });
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    alert("Request submitted successfully!");
-  };
-
-  const handleDownloadGuide = async () => {
-    try {
-      // Create a link to download the PDF file
-      const link = document.createElement('a');
-      link.href = '/assets/REMAX_Landlord_Leasing_Guide.pdf';
-      link.download = 'REMAX Landlord & Leasing Guide.pdf';
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error('Error downloading guide:', error);
-      alert('Error downloading the guide. Please try again.');
-    }
-  };
-
-  const handleFormSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    handleSubmit();
+    setError("");
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.zipCode) {
+      setError("Please fill in all fields");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/guides/submit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "rental",
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          zipCode: formData.zipCode,
+        }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          zipCode: "",
+        });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError(data.message || "Failed to submit form");
+      }
+    } catch (err) {
+      setError("Failed to submit form. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const slides = [
@@ -84,7 +117,7 @@ export default function RentalGuide() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
+      {}
       <section className="relative py-16 bg-white">
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="mb-12">
@@ -114,30 +147,61 @@ export default function RentalGuide() {
         </div>
       </section>
 
+      {}
       {/* Rental Guide Form Section */}
-      <section className="relative py-8" style={{ backgroundColor: "#f5f6f9" }}>
+      <section className="relative py-8" style={{ backgroundColor: '#f5f6f9' }}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="p-8" style={{ backgroundColor: "#f5f6f9" }}>
-            <h2 className="text-3xl font-bold text-gray-800 mb-3">Rental Guide</h2>
+          <div className="p-8" style={{ backgroundColor: '#f5f6f9' }}>
+            <h2 className="text-3xl font-bold text-[#1A3668] mb-3">
+              Rental Guide
+            </h2>
             <p className="text-gray-600 mb-4">
               Ready to maximize your rental returns? Get our comprehensive landlord and leasing guide.
             </p>
 
-            <form className="space-y-4" onSubmit={handleFormSubmit}>
+            {submitted && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-green-800 font-semibold">✓ Thank you for your submission! We will contact you shortly.</p>
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 font-semibold">{error}</p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Name <span className="text-red-600">*</span>
+                    First Name <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Last Name <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Email <span className="text-red-600">*</span>
@@ -148,46 +212,45 @@ export default function RentalGuide() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone
+                    Phone <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Zip Code <span className="text-red-600">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="zipCode"
-                    value={formData.zipCode}
-                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
               </div>
 
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Zip Code <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="zipCode"
+                  value={formData.zipCode}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                />
+              </div>
+
               <div className="text-xs text-gray-600 leading-relaxed">
                 By clicking "Submit Request" below, you are agreeing to the{" "}
-                <a href="#" className="text-[#00458b] hover:underline">
+                <a href="#" className="text-[#1A3668] hover:underline">
                   Terms of Use
                 </a>{" "}
                 and{" "}
-                <a href="#" className="text-[#00458b] hover:underline">
+                <a href="#" className="text-[#1A3668] hover:underline">
                   Privacy Policy
                 </a>{" "}
                 and are agreeing to receive marketing email messages from RE/MAX Hub Dubai and/or marketing emails, calls or texts placed by or on behalf of your local RE/MAX franchised office, to any phone number and/or email address that you provided, even if your number is on a federal, state, or our internal Do Not Call List. You further agree that call/texts may be sent with an automated system for selection or dialing of numbers and/or for artificial or prerecorded voice. Please note: Consent is not a condition of purchase. Standard data and messaging rate may apply. You may unsubscribe at any time.
@@ -196,9 +259,10 @@ export default function RentalGuide() {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="bg-[#1A3668] text-white px-6 py-3 font-semibold transition-all duration-300"
+                  disabled={loading}
+                  className="bg-[#1A3668] text-white px-8 py-3 font-semibold rounded-lg hover:bg-[#003a75] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Request
+                  {loading ? "Submitting..." : "Submit Request"}
                 </button>
               </div>
             </form>
@@ -206,7 +270,7 @@ export default function RentalGuide() {
         </div>
       </section>
 
-      {/* Step by Step Section */}
+      {}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-left mb-12">
@@ -264,13 +328,13 @@ export default function RentalGuide() {
                     onClick={prevSlide}
                     className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-transform duration-300"
                   >
-                    <ChevronLeft className="w-6 h-6 text-white" />
+                    <ChevronLeftIcon />
                   </button>
                   <button
                     onClick={nextSlide}
                     className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-transform duration-300"
                   >
-                    <ChevronRight className="w-6 h-6 text-white" />
+                    <ChevronRightIcon />
                   </button>
                 </div>
               </div>
@@ -279,17 +343,6 @@ export default function RentalGuide() {
         </div>
       </section>
 
-      <div className="flex flex-col text-center justify-center items-center sm:flex-row gap-4">
-        <button
-          onClick={handleDownloadGuide}
-          className="bg-[#1A3668] text-white px-6 py-4 rounded-md text-md font-semibold flex items-center gap-3"
-        >
-          <Download className="w-5 h-5" />
-          Download the Complete Guide
-        </button>
-      </div>
-
-      {/* Key Focus Areas */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-left mb-8">
@@ -412,14 +465,6 @@ export default function RentalGuide() {
             <p className="text-gray-700 mb-8 leading-relaxed">
               Our experts evaluate your property, recommend ideal rental pricing, and connect you with quality tenants quickly and efficiently.
             </p>
-            <div className="flex justify-center">
-              <button
-                onClick={handleDownloadGuide}
-                className="bg-[#1A3668] text-white px-8 py-3 rounded font-semibold hover:bg-[#003a75] transition-all duration-300 uppercase text-sm"
-              >
-                Download the Rental Guide
-              </button>
-            </div>
           </div>
         </div>
       </section>

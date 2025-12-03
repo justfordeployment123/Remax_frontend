@@ -112,7 +112,7 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image Block */}
+            {}
             <div className="flex">
               <img
                 src="https://static-images.remax.com/assets/web/homepage/Exteriors_Fuji_3520.jpg"
@@ -121,7 +121,7 @@ export default function Home() {
               />
             </div>
             
-            {/* Text Content */}
+            {}
             <div className="flex flex-col justify-center">
               <h2 className="font-bold text-gray-900 mb-6 text-2xl leading-tight">
                 Have confidence in any market with us.
@@ -143,7 +143,6 @@ export default function Home() {
                 <sup>1, 2</sup>As measured by residential transaction sides.
               </div>
 
-              {/* Buttons - Matching Official Style */}
               <div className="flex flex-col gap-4">
                 <Link href="/rental-agent" passHref>
                   <button className="bg-[#1A3668] text-white px-6 py-3 hover:bg-remax-dark-blue transition-all duration-300 font-semibold text-sm w-fit rounded-lg">
@@ -225,7 +224,7 @@ export default function Home() {
       </section>
 
 
-      {/* Worldwide Section */}
+      {}
       <section className="relative h-[410px] flex items-center justify-end text-right">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -255,7 +254,7 @@ export default function Home() {
       </section>
 
 
-      {/* Commercial Section */}
+      {}
       <section className="relative h-[410px] mt-0.5 flex items-center justify-start text-left">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -283,7 +282,7 @@ export default function Home() {
       </section>
 
 
-      {/* Luxury Section */}
+      {}
       <section className="relative h-[410px] mt-0.5 flex items-center justify-end text-right">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -310,7 +309,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners Section */}
+      {}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -320,7 +319,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Bayut */}
+            {}
             <div className="flex flex-col items-center text-center p-6 border border-gray-200 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow duration-300">
               <div className="mb-4 h-16 flex items-center justify-center">
                 <img
@@ -393,7 +392,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {}
       <Footer />
     </main>
   )

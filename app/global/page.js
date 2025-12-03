@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 export default function Global() {
     useEffect(() => {
-        // Redirect to RE/MAX Global website
+        
         window.location.href = 'https://global.remax.com/';
     }, []);
 

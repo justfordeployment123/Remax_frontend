@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 export default function DropdownMenu({ title, items, isOpen, onClick }) {
   return (
     <div className="relative">
-      {/* Main Menu Button */}
+      {}
       <button 
         onClick={onClick}
         className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200"
@@ -18,7 +18,7 @@ export default function DropdownMenu({ title, items, isOpen, onClick }) {
         )}
       </button>
 
-      {/* Dropdown Menu with Animation */}
+      {}
       {items && items.length > 0 && (
         <div 
           className={`absolute left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 origin-top ${
@@ -40,9 +40,7 @@ export default function DropdownMenu({ title, items, isOpen, onClick }) {
                     <div className="font-semibold text-gray-900 text-sm group-hover:text-blue-700 transition-colors mb-1">
                       {item.title}
                     </div>
-                    {/* <div className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors leading-relaxed">
-                      {item.description}
-                    </div> */}
+                    {}
                   </div>
                   <div className="text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

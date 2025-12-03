@@ -6,11 +6,11 @@ export default function RentalAgentRedirect() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to find-agent page with rental filter applied
+    
     router.replace('/find-agent?expertise=Rentals');
   }, [router]);
 
-  // Show loading state while redirecting
+  
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="text-center">

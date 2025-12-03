@@ -1,50 +1,82 @@
 "use client";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 export default function SellingGuide() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     zipCode: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const ChevronLeftIcon = () => (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+    </svg>
+  );
+
+  const ChevronRightIcon = () => (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  );
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.nameF]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    alert("Request submitted successfully!");
-  };
-
-  const handleDownloadGuide = async () => {
-    try {
-      // Create a link to download the PDF file
-      const link = document.createElement('a');
-      link.href = '/assets/REMAX_Property_Selling_Guide.pdf';
-      link.download = 'REMAX Property Selling Guide.pdf';
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error('Error downloading guide:', error);
-      alert('Error downloading the guide. Please try again.');
-    }
-  };
-
-  const handleFormSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    handleSubmit();
+    setError("");
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.zipCode) {
+      setError("Please fill in all fields");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/guides/submit`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "selling",
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          zipCode: formData.zipCode,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", zipCode: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError(data.message || "Failed to submit form");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Failed to submit form. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const slides = [
@@ -86,10 +118,10 @@ export default function SellingGuide() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
+      {}
       <section className="relative py-16 bg-white">
         <div className="relative max-w-7xl mx-auto px-6">
-          {/* Image on Top */}
+          {}
           <div className="mb-12">
             <div className="relative overflow-hidden">
               <img
@@ -100,9 +132,9 @@ export default function SellingGuide() {
             </div>
           </div>
 
-          {/* Text Content Below */}
+          {}
           <div className="max-w-6xl">
-            <h1 className="text-4xl font-semibold text-[#00458b] mb-6 leading-tight">
+            <h1 className="text-4xl font-semibold text-[#1A3668] mb-6 leading-tight">
               Welcome to the REMAX Home Seller's Guide!
             </h1>
             <p className="text-base text-gray-700 leading-relaxed">
@@ -112,33 +144,58 @@ export default function SellingGuide() {
         </div>
       </section>
 
-      {/* Seller's Guide Form Section */}
       <section className="relative py-8" style={{ backgroundColor: "#f5f6f9" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="p-8" style={{ backgroundColor: "#f5f6f9" }}>
-            {/* Heading */}
-            <h2 className="text-3xl font-bold text-remax-blue mb-3">Seller's Guide</h2>
+            {}
+            <h2 className="text-3xl font-bold text-[#1A3668] mb-3">Seller's Guide</h2>
             <p className="text-gray-600 mb-4">
               Is it time to sell? Get the best value for your home with our comprehensive guide and expert assistance.
             </p>
 
-            {/* Form */}
-            <form className="space-y-4" onSubmit={handleFormSubmit}>
-              {/* Name and Email Row */}
+            {submitted && (
+              <div className="mb-4 p-4 bg-green-100 text-green-700 rounded-lg font-semibold">
+                Successfully submitted your request! We'll be in touch soon.
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg font-semibold">
+                {error}
+              </div>
+            )}
+
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Name <span className="text-red-600">*</span>
+                    First Name <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Last Name <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Email <span className="text-red-600">*</span>
@@ -149,41 +206,38 @@ export default function SellingGuide() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
-              </div>
-
-              {/* Phone and Zip Code Row */}
-              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone
+                    Phone <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Zip Code <span className="text-red-600">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="zipCode"
-                    value={formData.zipCode}
-                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
               </div>
 
-              {/* Terms and Privacy Policy */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Zip Code <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="zipCode"
+                  value={formData.zipCode}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                />
+              </div>
+
               <div className="text-xs text-gray-600 leading-relaxed">
                 By clicking "Submit Request" below, you are agreeing to the{" "}
                 <a href="#" className="text-[#1A3668] hover:underline">
@@ -196,13 +250,13 @@ export default function SellingGuide() {
                 and are agreeing to receive marketing email messages from REMAX, LLC and/or marketing emails, calls or texts placed by or on behalf of a local REMAX franchised office, to any phone number and/or email address that you provided, even if your number is on a federal, state, or our internal Do Not Call List. You further agree that consent may be sent with an automated system for selection or dialing of numbers and/or with an artificial or prerecorded voice. Please note: Consent is not a condition of purchase. Standard data and messaging rate may apply. You may unsubscribe at any time.
               </div>
 
-              {/* Submit Button */}
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="bg-[#00458b] text-white px-6 py-3 font-semibold transition-all duration-300"
+                  disabled={loading}
+                  className="bg-[#1A3668] text-white px-6 py-3 font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Request
+                  {loading ? "Submitting..." : "Submit Request"}
                 </button>
               </div>
             </form>
@@ -210,16 +264,14 @@ export default function SellingGuide() {
         </div>
       </section>
 
-      {/* Selling Step by Step Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-left mb-12">
-            <h2 className="text-2xl font-semibold text-remax-blue">
+            <h2 className="text-2xl font-semibold text-[#1A3668]">
               Selling Your Home, Step by Step
             </h2>
           </div>
 
-          {/* Slider */}
           <div className="bg-[#1a3668] p-8 lg:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
@@ -266,16 +318,16 @@ export default function SellingGuide() {
 
                 <div className="flex gap-3 justify-center md:justify-end">
                   <button
-                    onClick={prevSlide}
+                    onClick={() => setCurrentSlide((currentSlide - 1 + slides.length) % slides.length)}
                     className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-transform duration-300"
                   >
-                    <ChevronLeft className="w-6 h-6 text-white" />
+                    <ChevronLeftIcon />
                   </button>
                   <button
-                    onClick={nextSlide}
+                    onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
                     className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-transform duration-300"
                   >
-                    <ChevronRight className="w-6 h-6 text-white" />
+                    <ChevronRightIcon />
                   </button>
                 </div>
               </div>
@@ -284,21 +336,10 @@ export default function SellingGuide() {
         </div>
       </section>
 
-      <div className="flex flex-col text-center justify-center items-center sm:flex-row gap-4">
-        <button
-          onClick={handleDownloadGuide}
-          className="bg-[#1A3668] text-white px-6 py-4 rounded-md text-md font-semibold flex items-center gap-3"
-        >
-          <Download className="w-5 h-5" />
-          Download the Complete Guide
-        </button>
-      </div>
-
-      {/* Top Tips Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-left mb-8">
-            <h2 className="text-2xl font-semibold text-remax-blue">
+            <h2 className="text-2xl font-semibold text-[#1A3668]">
               Top Tips for Working With Your Selling Agent
             </h2>
             <p className="text-sm text-gray-600 max-w-3xl mt-4">
@@ -307,7 +348,7 @@ export default function SellingGuide() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Tip 1 */}
+            {}
             <div className="group bg-white overflow-hidden">
               <div className="relative overflow-hidden">
                 <img
@@ -319,7 +360,7 @@ export default function SellingGuide() {
               </div>
               <div className="p-4">
                 <div className="flex gap-3 mb-4">
-                  <h3 className="font-semibold text-remax-blue" style={{ fontSize: "20px" }}>
+                  <h3 className="font-semibold text-[#1A3668]" style={{ fontSize: "20px" }}>
                     Be Patient
                   </h3>
                 </div>
@@ -341,7 +382,7 @@ export default function SellingGuide() {
               </div>
               <div className="p-4">
                 <div className="flex gap-3 mb-4">
-                  <h3 className="font-semibold text-remax-blue" style={{ fontSize: "20px" }}>
+                  <h3 className="font-semibold text-[#1A3668]" style={{ fontSize: "20px" }}>
                     Do Your Part
                   </h3>
                 </div>
@@ -351,7 +392,7 @@ export default function SellingGuide() {
               </div>
             </div>
 
-            {/* Tip 3 */}
+            {}
             <div className="group bg-white overflow-hidden">
               <div className="relative overflow-hidden">
                 <img
@@ -363,7 +404,7 @@ export default function SellingGuide() {
               </div>
               <div className="p-4">
                 <div className="flex gap-3 mb-4">
-                  <h3 className="font-semibold text-remax-blue" style={{ fontSize: "20px" }}>
+                  <h3 className="font-semibold text-[#1A3668]" style={{ fontSize: "20px" }}>
                     Be Ready
                   </h3>
                 </div>
@@ -376,22 +417,22 @@ export default function SellingGuide() {
         </div>
       </section>
 
-      {/* Tools Section */}
+      {}
       <section className="py-4 pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Main Heading */}
-          <h2 className="text-2xl font-semibold text-[#00458b] mb-6">
+          {}
+          <h2 className="text-2xl font-semibold text-[#1A3668] mb-6">
             Tools to Help You Sell Your Home
           </h2>
 
-          {/* Intro Paragraph */}
+          {}
           <p className="text-gray-700 mb-8 leading-relaxed">
             REMAX agents have access to advanced technology and marketing strategies, and have the knowledge and expertise to help sell your home quickly and confidently.
           </p>
 
-          {/* Tool Items */}
+          {}
           <div className="space-y-6 mb-12">
-            {/* Online Listing */}
+            {}
             <div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
                 Online Listing for Your Home
@@ -411,7 +452,7 @@ export default function SellingGuide() {
               </p>
             </div>
 
-            {/* REMAX Network */}
+            {}
             <div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
                 Leverage the REMAX Network
@@ -424,22 +465,12 @@ export default function SellingGuide() {
 
           {/* We're Here For You Section */}
           <div className="mt-16">
-            <h2 className="text-2xl font-semibold text-[#00458b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#1A3668] mb-6">
               We're Here For You.
             </h2>
             <p className="text-gray-700 mb-8 leading-relaxed">
               A <span className="font-semibold">REMAX agent</span> can help eliminate the guesswork of your real estate transaction. With this experienced professional on one hand, and our comprehensive Home Seller's Guide on the other, you'll be well prepared to navigate the market and sell your home quickly and confidently.
             </p>
-
-            {/* CTA Button */}
-            <div className="flex justify-center">
-              <button
-                onClick={handleDownloadGuide}
-                className="bg-[#1A3668] text-white px-8 py-3 rounded font-semibold hover:bg-[#003a75] transition-all duration-300 uppercase text-sm"
-              >
-                Download the Selling Guide
-              </button>
-            </div>
           </div>
         </div>
       </section>

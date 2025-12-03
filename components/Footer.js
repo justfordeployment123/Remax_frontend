@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1A3668] text-white">
       <div className="max-w-9xl mx-auto px-6 py-8">
-        {/* Main Footer Content */}
+        {}
         <div className="grid font-bold grid-cols-1 md:grid-cols-4 gap-8 mb-6">
           <div>
             <h3 className="font-bold text-sm mb-3">Worldwide Property Search</h3>
@@ -29,7 +29,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 - RE/MAX Holdings */}
+          {}
           <div>
             <h3 className="font-bold text-sm mb-3">RE/MAX Holdings</h3>
             <ul className="space-y-1.5 text-sm">
@@ -39,7 +39,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4 - Resources + Icon */}
+          {}
           <div>
             <h3 className="font-bold text-sm mb-3">NAHREP English-Spanish Glossary of Real Estate Industry Terms</h3>
             <ul className="space-y-1.5 text-sm mb-4">
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider with Our Family of Brands */}
+        {}
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-white/30"></div>
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Brand Logos */}
+        {}
         <div className="flex justify-center items-center gap-8 mb-8">
           <div className="bg-white px-4 py-1.5 rounded flex items-center gap-1">
             <div className="w-5 h-5 bg-gray-700 rounded-sm"></div>
@@ -74,9 +74,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section */}
+        {}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 text-xs">
-          {/* Left Side - Copyright */}
+          {}
           <div className="text-gray-300 space-y-0.5 max-w-2xl">
             <p>Each office independently owned and operated.</p>
             <p>RE/MAX, LLC is an Equal Opportunity Employer and supports the Fair Housing Act and equal opportunity housing.</p>
@@ -84,9 +84,9 @@ export default function Footer() {
             <p>© 2025 RE/MAX, LLC. All Rights Reserved.</p>
           </div>
 
-          {/* Right Side - Social Icons & Links */}
+          {}
           <div className="flex flex-col items-start md:items-end gap-3">
-            {/* Social Icons */}
+            {}
             <div className="flex gap-3">
               <a 
                 href="https://facebook.com/remaxhubdubai" 
@@ -134,7 +134,7 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Footer Links */}
+            {}
             <div className="flex gap-4 text-xs">
               <a href="#" className="hover:text-gray-300 transition-colors">Privacy Notice</a>
               <a href="#" className="hover:text-gray-300 transition-colors">Terms of Use</a>

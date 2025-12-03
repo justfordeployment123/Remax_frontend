@@ -40,7 +40,7 @@ export default function MyGoals() {
       
       if (data.success) {
         setGoals(data.data.goals);
-        // Safely set form data with fallbacks
+        
         setFormData({
           buying: {
             goal: data.data.goals?.buying?.goal || 'none',
@@ -138,7 +138,7 @@ export default function MyGoals() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+      {}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
@@ -178,7 +178,7 @@ export default function MyGoals() {
       </header>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Page Header */}
+        {}
         <div className="mb-8">
           <div className="flex items-center space-x-3 mb-4">
             <Target className="w-8 h-8 text-remax-blue" />
@@ -189,7 +189,7 @@ export default function MyGoals() {
           </p>
         </div>
 
-        {/* Success Message */}
+        {}
         {success && (
           <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-2">
             <CheckCircle className="w-5 h-5 text-green-600" />
@@ -198,7 +198,7 @@ export default function MyGoals() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Buying Goals */}
+          {}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center space-x-3 mb-2">
@@ -209,7 +209,7 @@ export default function MyGoals() {
             </div>
 
             <div className="p-6 space-y-6">
-              {/* Buying Goal */}
+              {}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-3">
                   My buying goal is:
@@ -237,7 +237,7 @@ export default function MyGoals() {
                 </div>
               </div>
 
-              {/* Buying Timeline */}
+              {}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-3">
                   My timeline to buy is:
@@ -266,7 +266,7 @@ export default function MyGoals() {
             </div>
           </div>
 
-          {/* Selling Goals */}
+          {}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center space-x-3 mb-2">
@@ -305,7 +305,7 @@ export default function MyGoals() {
             </div>
           </div>
 
-          {/* Educational Goals */}
+          {}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center space-x-3 mb-2">

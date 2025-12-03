@@ -51,7 +51,7 @@ export default function Commercial() {
         <main className="min-h-screen bg-white">
             <Header />
             
-            {/* Enhanced Hero Section */}
+            {}
             <section className="relative h-screen overflow-hidden">
                 <div
                     className="w-full h-full bg-cover bg-center bg-no-repeat"
@@ -62,7 +62,7 @@ export default function Commercial() {
                 <div className="absolute inset-0 flex items-center">
                     <div className="max-w-7xl mx-auto px-4 w-full">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            {/* Enhanced Left Content */}
+                            {}
                             <div className="text-white">
                                 <div className="inline-block bg-[#00458b] text-white px-4 py-2 rounded-full text-xs font-semibold mb-5 uppercase tracking-wide">
                                     🏢 Commercial Real Estate
@@ -80,7 +80,7 @@ export default function Commercial() {
                                 </button>
                             </div>
 
-                            {/* Enhanced Right Content - Property Card */}
+                            {}
                             <div className="bg-white border border-gray-200 rounded-2xl p-8 max-w-md mx-auto lg:mx-0">
                                 <div className="relative mb-6">
                                     <img
@@ -123,7 +123,7 @@ export default function Commercial() {
                 </div>
             </section>
 
-            {/* Featured Commercial Properties Section */}
+            {}
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
@@ -136,7 +136,7 @@ export default function Commercial() {
                             </h2>
                         </div>
 
-                        {/* Navigation Arrows */}
+                        {}
                         <div className="flex space-x-2">
                             <button
                                 onClick={prevProperty}
@@ -196,11 +196,11 @@ export default function Commercial() {
                 </div>
             </section>
 
-            {/* Professionals Section */}
+            {}
             <section className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* Left Content */}
+                        {}
                         <div>
                             <div className="text-red-600 text-xs font-semibold uppercase tracking-wide mb-2">
                                 Professionals
@@ -216,7 +216,7 @@ export default function Commercial() {
                             </button>
                         </div>
 
-                        {/* Right Image */}
+                        {}
                         <div className="relative">
                             <img
                                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
@@ -228,11 +228,11 @@ export default function Commercial() {
                 </div>
             </section>
 
-            {/* Offices Section */}
+            {}
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* Left Image */}
+                        {}
                         <div className="relative">
                             <img
                                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
@@ -241,7 +241,7 @@ export default function Commercial() {
                             />
                         </div>
 
-                        {/* Right Content */}
+                        {}
                         <div>
                             <div className="text-red-600 text-xs font-semibold uppercase tracking-wide mb-2">
                                 Offices

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 export default function AdminPage() {
   useEffect(() => {
-    // Redirect to admin dashboard
+    
     window.location.href = '/admin/dashboard';
   }, []);
 

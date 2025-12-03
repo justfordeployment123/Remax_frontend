@@ -92,7 +92,7 @@ export default function AgentTable({ agents, onEdit, onDelete, onImageUpload }) 
       const data = await response.json();
       
       if (data.success) {
-        // Invalidate cache for this agent's image and reload
+        
         const updatedAgent = agents.find(a => a._id === agentId);
         if (updatedAgent) {
           const newImageUrl = getImageUrl(data.profileImage || updatedAgent.agentProfile?.profileImage);
@@ -263,7 +263,7 @@ export default function AgentTable({ agents, onEdit, onDelete, onImageUpload }) 
         {showFilters && (
           <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {/* Status Filter */}
+              {}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
                 <select
@@ -554,7 +554,7 @@ export default function AgentTable({ agents, onEdit, onDelete, onImageUpload }) 
                 <ChevronLeft className="w-4 h-4" />
               </button>
               
-              {/* Page numbers */}
+              {}
               <div className="flex space-x-1">
                 {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                   let pageNum;

@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 export default function VerifyEmailPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [status, setStatus] = useState('verifying'); // verifying, success, error
+  const [status, setStatus] = useState('verifying'); 
   const [message, setMessage] = useState('Verifying your email...');
   const token = searchParams.get('token');
 
@@ -37,11 +37,11 @@ export default function VerifyEmailPage() {
         setStatus('success');
         setMessage('Email verified successfully!');
         
-        // Store token and user info
+        
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.data.user));
 
-        // Redirect to dashboard after 2 seconds
+        
         setTimeout(() => {
           router.push('/');
         }, 2000);

@@ -67,7 +67,7 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* RE/MAX Logo */}
+          {}
           <div className="flex items-center">
             <Link
               href="/"
@@ -82,7 +82,7 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {}
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -106,10 +106,10 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Desktop Navigation Menu */}
+          {}
           <div className="hidden lg:flex items-center space-x-1">
             
-            {/* Buy Menu */}
+            {}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("buy")}
@@ -140,20 +140,13 @@ export default function Header() {
                         Buying Guide
                       </Link>
                     </li>
-                    {/* <li>
-                      <Link
-                        href="/virtual-buying"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Virtual Home Buying
-                      </Link>
-                    </li> */}
+                    {}
                   </ul>
                 </div>
               )}
             </div>
 
-            {/* Sell Menu */}
+            {}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("sell")}
@@ -181,7 +174,7 @@ export default function Header() {
               )}
             </div>
 
-            {/* Rent Menu */}
+            {}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("rent")}
@@ -225,7 +218,7 @@ export default function Header() {
               )}
             </div>
 
-            {/* Agents Menu */}
+            {}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("agents")}
@@ -273,7 +266,7 @@ export default function Header() {
               )}
             </div>
 
-            {/* More Menu */}
+            {}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("more")}
@@ -341,7 +334,7 @@ export default function Header() {
               )}
             </div>
 
-            {/* User Profile or Login/Signup Buttons */}
+            {}
             <div className="flex items-center space-x-2 ml-4 border-l border-gray-200 pl-4">
               {user ? (
                 <div className="relative" ref={profileRef}>
@@ -364,7 +357,7 @@ export default function Header() {
 
                   {isProfileOpen && (
                     <div className="absolute right-0 top-full mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-200 py-2">
-                      {/* User Info */}
+                      {}
                       <div className="px-4 py-3 border-b border-gray-100">
                         <p className="text-sm font-medium text-gray-900">
                           Hello, {user.firstName}
@@ -374,7 +367,7 @@ export default function Header() {
                         </p>
                       </div>
 
-                      {/* Menu Items */}
+                      {}
                       <div className="py-2">
                         <Link
                           href="/account/settings"
@@ -421,7 +414,7 @@ export default function Header() {
                         </Link>
                       </div>
 
-                      {/* Logout */}
+                      {}
                       <div className="border-t border-gray-100 pt-2">
                         <button
                           onClick={handleLogout}
@@ -455,7 +448,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-200 py-4 space-y-4">
             {Object.entries(menuConfig).map(([key, section]) => (

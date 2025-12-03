@@ -25,7 +25,7 @@ export default function AboutUs() {
     <main className="min-h-screen bg-[#F4F4F4]">
       <Header />
 
-      {/* Enhanced Hero Section */}
+      {}
       <section className="relative h-[420px] md:h-[480px]">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -46,7 +46,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* About RE/MAX Hub Section */}
+      {}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -78,7 +78,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Our Story Timeline Section */}
+      {}
       <section className="py-16 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -87,11 +87,11 @@ export default function AboutUs() {
           </div>
 
           <div className="relative">
-            {/* Timeline line */}
+            {}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-[#D9E3F8]"></div>
 
             <div className="space-y-12">
-              {/* 1973 */}
+              {}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8 text-right">
                   <div className="bg-white border border-gray-200 p-6 rounded-xl">
@@ -103,7 +103,7 @@ export default function AboutUs() {
                 <div className="w-1/2 pl-8"></div>
               </div>
 
-              {/* 1995 */}
+              {}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8"></div>
                 <div className="w-6 h-6 bg-[#00458b] rounded-full border-4 border-white z-10"></div>
@@ -115,7 +115,7 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              {/* 2010 */}
+              {}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8 text-right">
                   <div className="bg-white border border-gray-200 p-6 rounded-xl">
@@ -127,7 +127,7 @@ export default function AboutUs() {
                 <div className="w-1/2 pl-8"></div>
               </div>
 
-              {/* 2020 */}
+              {}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8"></div>
                 <div className="w-6 h-6 bg-[#00458b] rounded-full border-4 border-white z-10"></div>
@@ -139,7 +139,7 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              {/* 2025 */}
+              {}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8 text-right">
                   <div className="bg-white border border-gray-200 p-6 rounded-xl">
@@ -155,7 +155,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Partners Section */}
+      {}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -188,7 +188,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Featured Properties Section */}
+      {}
       <section className="py-16 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">

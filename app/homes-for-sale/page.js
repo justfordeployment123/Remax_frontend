@@ -22,12 +22,12 @@ export default function HomesForSale() {
     baths: searchParams.get("baths") || "ANY",
   });
 
-  // Fetch properties on mount
+  
   useEffect(() => {
     fetchProperties();
   }, []);
 
-  // Reset to defaults on mount if no search params
+  
   useEffect(() => {
     if (!searchParams.toString()) {
       setSearchFilters({
@@ -41,7 +41,7 @@ export default function HomesForSale() {
     }
   }, []);
 
-  // Apply filters when query params or properties change
+  
   useEffect(() => {
     if (properties.length > 0) {
       applyFilters(properties);
@@ -362,7 +362,7 @@ export default function HomesForSale() {
                         href={`/homes-for-sale/${property.city.toLowerCase().replace(/\s+/g, "-")}/${property.id}`}
                     >
                         <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 cursor-pointer">
-                        {/* Image */}
+                        {}
                         <div className="relative h-56 bg-gray-200 overflow-hidden">
                             <img
                             src={property.photos && property.photos.length > 0 ? property.photos[0] : "/assets/placeholder.png"}
@@ -379,9 +379,9 @@ export default function HomesForSale() {
                             )}
                         </div>
 
-                        {/* Card Content */}
+                        {}
                         <div className="p-4">
-                            {/* Price */}
+                            {}
                             <h3 className="text-xl font-bold text-[#1A3668] mb-2">
                             ${property.price.toLocaleString()}
                             </h3>
@@ -411,7 +411,7 @@ export default function HomesForSale() {
                             </div>
                             </div>
 
-                            {/* Agent */}
+                            {}
                             {property.agent && (
                             <p className="text-xs text-gray-600">
                                 Listing by <span className="font-bold text-gray-800">{property.agent.name}</span>

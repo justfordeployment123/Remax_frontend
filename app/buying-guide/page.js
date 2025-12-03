@@ -1,17 +1,32 @@
 "use client";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 export default function BuyingGuide() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     zipCode: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const ChevronLeftIcon = () => (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+    </svg>
+  );
+
+  const ChevronRightIcon = () => (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  );
 
   const slides = [
     {
@@ -55,24 +70,47 @@ export default function BuyingGuide() {
     });
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    alert("Request submitted successfully!");
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
 
-  const handleDownloadGuide = async () => {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.zipCode) {
+      setError("Please fill in all fields");
+      return;
+    }
+
+    setLoading(true);
+
     try {
-      // Create a link to download the PDF file
-      const link = document.createElement("a");
-      link.href = "/assets/REMAX_Property_Buying_Guide.pdf";
-      link.download = "REMAX Property Buying Guide.pdf";
-      link.target = "_blank";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error("Error downloading guide:", error);
-      alert("Error downloading the guide. Please try again.");
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/guides/submit`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "buying",
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          zipCode: formData.zipCode,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", zipCode: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError(data.message || "Failed to submit form");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Failed to submit form. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -80,10 +118,10 @@ export default function BuyingGuide() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
+      {}
       <section className="relative py-16 bg-white">
         <div className="relative max-w-7xl mx-auto px-6">
-          {/* Image on Top */}
+          {}
           <div className="mb-12">
             <div className="relative  overflow-hidden">
               <img
@@ -94,9 +132,9 @@ export default function BuyingGuide() {
             </div>
           </div>
 
-          {/* Text Content Below */}
+          {}
           <div className=" max-w-6xl">
-            <h1 className="text-4xl font-semibold text-[#00458b] mb-6 leading-tight">
+            <h1 className="text-4xl font-semibold text-[#1A3668] mb-6 leading-tight">
               Welcome to the REMAX Homebuyer's Guide!
             </h1>
             <p className="text-base text-gray-700 leading-relaxed">
@@ -110,9 +148,8 @@ export default function BuyingGuide() {
 
       {/* Buyer's Guide Form Section */}
       <section className="relative py-8" style={{ backgroundColor: '#f5f6f9' }}>
-        <div className="max-w-7xl mx-auto px-6" >
+        <div className="max-w-7xl mx-auto px-6">
           <div className="p-8" style={{ backgroundColor: '#f5f6f9' }}>
-            {/* Heading */}
             <h2 className="text-3xl font-bold text-[#1A3668] mb-3">
               Buyer's Guide
             </h2>
@@ -120,75 +157,110 @@ export default function BuyingGuide() {
               Ready for your next move? Let's find your perfect neighborhood, home and price.
             </p>
 
-            {/* Form */}
-            <form className="space-y-4">
-              {/* Name and Email Row */}
+            {submitted && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-green-800 font-semibold">✓ Thank you for your submission! We will contact you shortly.</p>
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 font-semibold">{error}</p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Name <span className="text-red-600">*</span>
+                    First Name <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Last Name <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Email <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
-              </div>
-
-              {/* Phone and Zip Code Row */}
-              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone
+                    Phone <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Zip Code <span className="text-red-600">*</span>
-                  </label>
-                  <input
-                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
                   />
                 </div>
               </div>
 
-              {/* Terms and Privacy Policy */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Zip Code <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="zipCode"
+                  value={formData.zipCode}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent"
+                />
+              </div>
+
               <div className="text-xs text-gray-600 leading-relaxed">
                 By clicking "Submit Request" below, you are agreeing to the{" "}
-                <a href="#" className="text-[#00458b] hover:underline">
+                <a href="#" className="text-[#1A3668] hover:underline">
                   Terms of Use
                 </a>{" "}
                 and{" "}
-                <a href="#" className="text-[#00458b] hover:underline">
+                <a href="#" className="text-[#1A3668] hover:underline">
                   Privacy Policy
                 </a>{" "}
                 and are agreeing to receive marketing email messages from RE/MAX, LLC and/or marketing emails, calls or texts placed by or on behalf of a local RE/MAX franchised office, to any phone number and/or email address that you provided, even if your number is on a federal, state, or our internal Do Not Call List. You further agree that consent may be sent with an automated system for selection or dialing of numbers and/or with an artificial or prerecorded voice. Please note: Consent is not a condition of purchase. Standard data and messaging rate may apply. You may unsubscribe at any time.
               </div>
 
-              {/* Submit Button */}
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="bg-[#00458b] text-white px-6 py-3  font-semibold transition-all duration-300"
+                  disabled={loading}
+                  className="bg-[#1A3668] text-white px-6 py-3 font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#15294d]"
                 >
-                  Submit Request
+                  {loading ? "Submitting..." : "Submit Request"}
                 </button>
               </div>
             </form>
@@ -196,7 +268,7 @@ export default function BuyingGuide() {
         </div>
       </section>
 
-      {/* Buying Step by Step Section */}
+      {}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-left mb-16">
@@ -205,7 +277,7 @@ export default function BuyingGuide() {
             </h2>
           </div>
 
-          {/* Enhanced Slider */}
+          {}
           <div className="bg-[#1a3668] p-8 lg:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
@@ -237,7 +309,7 @@ export default function BuyingGuide() {
                 </div>
               </div>
 
-              {/* Enhanced Navigation */}
+              {}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mt-10">
                 <div className="flex gap-2 justify-center md:justify-start">
                   {slides.map((_, index) => (
@@ -255,13 +327,13 @@ export default function BuyingGuide() {
                     onClick={prevSlide}
                     className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-transform duration-300"
                   >
-                    <ChevronLeft className="w-6 h-6 text-white" />
+                    <ChevronLeftIcon />
                   </button>
                   <button
                     onClick={nextSlide}
                     className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-transform duration-300"
                   >
-                    <ChevronRight className="w-6 h-6 text-white" />
+                    <ChevronRightIcon />
                   </button>
                 </div>
               </div>
@@ -270,18 +342,10 @@ export default function BuyingGuide() {
         </div>
       </section>
 
-      <div className="flex flex-col text-center justify-center items-center sm:flex-row gap-4">
-        <button
-          onClick={handleDownloadGuide}
-          className="bg-[#1A3668] text-white px-6 py-4 rounded-md text-md font-semibold flex items-center gap-3"
-        >
-          <Download className="w-5 h-5" />
-          Download the Complete Guide
-        </button>
-
+      <div className="flex flex-col text-center justify-center items-center sm:flex-row gap-4 py-8">
       </div>
 
-      {/* Top Tips Section */}
+      {}
       <section className="py-20 ">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-left mb-8">
@@ -335,7 +399,7 @@ export default function BuyingGuide() {
               </div>
               <div className="p-4">
                 <div className="flex gap-3 mb-4">
-                  <h3 className="font-semibold text-remax-blue" style={{ fontSize: '20px' }}>
+                  <h3 className="font-semibold text-[#1A3668]" style={{ fontSize: '20px' }}>
                     Communicate
                   </h3>
                 </div>
@@ -360,7 +424,7 @@ export default function BuyingGuide() {
               </div>
               <div className="p-4">
                 <div className="flex gap-3 mb-4">
-                  <h3 className="font-semibold text-remax-blue" style={{ fontSize: '20px' }}>
+                  <h3 className="font-semibold text-[#1A3668]" style={{ fontSize: '20px' }}>
                     Trust the Process
                   </h3>
                 </div>
@@ -378,7 +442,7 @@ export default function BuyingGuide() {
       <section className="py-4 pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           {/* Main Heading */}
-          <h2 className="text-2xl font-semibold text-[#00458b] mb-6">
+          <h2 className="text-2xl font-semibold text-[#1A3668] mb-6">
             Tools to Help You Find Your Home
           </h2>
 
@@ -422,18 +486,18 @@ export default function BuyingGuide() {
 
           {/* We're Here For You Section */}
           <div className="mt-16">
-            <h2 className="text-2xl font-semibold text-[#00458b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#1A3668] mb-6">
               We're Here For You.
             </h2>
             <p className="text-gray-700 mb-8 leading-relaxed">
               Buying a home can seem like a lot – because it is. But you're not alone. With the right experience and tools, a{" "}
-              <a href="#" className="text-[#00458b] font-semibold hover:underline">
+              <a href="#" className="text-[#1A3668] font-semibold hover:underline">
                 REMAX agent
               </a>{" "}
               can help you find the home of your dreams.
             </p>
 
-            {/* CTA Button */}
+            {}
             <div className="flex justify-center">
               <button className="bg-[#1A3668] text-white px-8 py-3 rounded font-semibold hover:bg-[#003a75] transition-all duration-300 uppercase text-sm">
                 Browse Listings
@@ -443,148 +507,8 @@ export default function BuyingGuide() {
         </div>
       </section>
 
-      {/* Buyer's Guide Form */}
-      {/* <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-remax-blue/10 text-remax-blue px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Get Started Today
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Ready to Find Your Dream Home?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Let's find your perfect neighborhood, home and price. Get
-              personalized assistance from our expert team.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-            <div className="bg-gradient-to-r from-remax-blue to-remax-dark-blue p-8 text-white text-center">
-              <h3 className="text-2xl font-bold mb-2">
-                Get Your Free Buyer's Guide
-              </h3>
-              <p className="text-white/90">
-                Complete the form below to receive your comprehensive property
-                buying guide
-              </p>
-            </div>
-
-            <div className="p-8">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Full Name <span className="text-red-600">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-remax-blue focus:ring-2 focus:ring-remax-blue/20 transition-all duration-300"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Email Address <span className="text-red-600">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-remax-blue focus:ring-2 focus:ring-remax-blue/20 transition-all duration-300"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-remax-blue focus:ring-2 focus:ring-remax-blue/20 transition-all duration-300"
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Preferred Location <span className="text-red-600">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="zipCode"
-                    value={formData.zipCode}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-remax-blue focus:ring-2 focus:ring-remax-blue/20 transition-all duration-300"
-                    placeholder="e.g., Dubai Marina, Downtown Dubai"
-                  />
-                </div>
-              </div>
-
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">
-                      What happens next?
-                    </h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>
-                        • Receive your comprehensive buyer's guide via email
-                      </li>
-                      <li>• Get connected with a local RE/MAX agent</li>
-                      <li>
-                        • Access exclusive property listings and market insights
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <p className="text-xs text-gray-500 mb-8 leading-relaxed">
-                By clicking "Get My Guide" below, you are agreeing to the{" "}
-                <a
-                  href="#"
-                  className="text-remax-blue underline hover:text-remax-dark-blue"
-                >
-                  Terms of Use
-                </a>{" "}
-                and{" "}
-                <a
-                  href="#"
-                  className="text-remax-blue underline hover:text-remax-dark-blue"
-                >
-                  Privacy Policy
-                </a>{" "}
-                and are agreeing to receive marketing email messages from
-                RE/MAX, LLC and/or marketing emails, calls or texts.
-              </p>
-
-              <div className="text-center">
-                <button
-                  onClick={handleSubmit}
-                  className="bg-gradient-to-r from-remax-blue to-remax-dark-blue text-white px-12 py-4 rounded-xl font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg"
-                >
-                  Get My Free Buyer's Guide
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      {}
+      {}
       <Footer />
     </main>
   );

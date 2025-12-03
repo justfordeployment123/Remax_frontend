@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { FiMenu, FiX, FiChevronLeft, FiChevronRight, FiLogOut, FiBarChart2, FiUsers, FiCheckSquare, FiHome, FiSettings, FiFileText } from 'react-icons/fi';
 
 export default function AdminLayout({ children }) {
   const [user, setUser] = useState(null);
@@ -10,74 +11,6 @@ export default function AdminLayout({ children }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-
-  // SVG Icons
-  const MenuIcon = () => (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  );
-
-  const XIcon = () => (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  );
-
-  const ChevronLeftIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-    </svg>
-  );
-
-  const ChevronRightIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-    </svg>
-  );
-
-  const LogOutIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-    </svg>
-  );
-
-  const DashboardIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-3m2 3l2-3m2 3l2-3m2 3l2-3m2 3l2-3M3 20l2-3m2 3l2-3m2 3l2-3m2 3l2-3m2 3l2-3" />
-    </svg>
-  );
-
-  const UsersIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 12H9m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  );
-
-  const UserCheckIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2m0 0l4-4m-4 4l-4-4m4 4v6m0 0H3m0 0V6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3z" />
-    </svg>
-  );
-
-  const HomeIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-3m2 3l2-3m2 3l2-3m2 3l2-3m2 3l2-3M3 20l2-3m2 3l2-3m2 3l2-3m2 3l2-3m2 3l2-3" />
-    </svg>
-  );
-
-  const AnalyticsIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-    </svg>
-  );
-
-  const SettingsIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-  );
 
   useEffect(() => {
     checkAdminAccess();
@@ -95,7 +28,7 @@ export default function AdminLayout({ children }) {
 
       const userObj = JSON.parse(userData);
       
-      // Verify token and role with backend
+      
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/me`, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -124,12 +57,13 @@ export default function AdminLayout({ children }) {
   };
 
   const navigation = [
-    { name: 'Dashboard', href: '/admin/dashboard', icon: DashboardIcon },
-    { name: 'Users', href: '/admin/users', icon: UsersIcon },
-    { name: 'Agents', href: '/admin/agents', icon: UserCheckIcon },
-    { name: 'Properties', href: '/admin/properties', icon: HomeIcon },
-    { name: 'Analytics', href: '/admin/analytics', icon: AnalyticsIcon },
-    { name: 'Settings', href: '/admin/settings', icon: SettingsIcon },
+    { name: 'Dashboard', href: '/admin/dashboard', icon: FiBarChart2 },
+    { name: 'Users', href: '/admin/users', icon: FiUsers },
+    { name: 'Agents', href: '/admin/agents', icon: FiCheckSquare },
+    { name: 'Properties', href: '/admin/properties', icon: FiHome },
+    { name: 'Guide Submissions', href: '/admin/guide-submissions', icon: FiFileText },
+    // { name: 'Analytics', href: '/admin/analytics', icon: FiBarChart2 },
+    { name: 'Settings', href: '/admin/settings', icon: FiSettings },
   ];
 
   if (loading) {
@@ -147,12 +81,12 @@ export default function AdminLayout({ children }) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Mobile Sidebar */}
+      {}
       {sidebarOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <div className="fixed inset-0 bg-gray-600 bg-opacity-75" onClick={() => setSidebarOpen(false)} />
           <div className="fixed inset-y-0 left-0 flex flex-col w-64 bg-white shadow-xl">
-            {/* Mobile Header */}
+            {}
             <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
               <div className="flex items-center">
                 <span className="text-sm align-top text-blue-600">®</span>
@@ -163,11 +97,11 @@ export default function AdminLayout({ children }) {
                 <span className="ml-2 text-sm text-gray-500">Admin</span>
               </div>
               <button onClick={() => setSidebarOpen(false)} className="p-2 rounded-md text-gray-400">
-                <XIcon />
+                <FiX size={20} />
               </button>
             </div>
 
-            {/* Mobile Nav */}
+            {}
             <nav className="flex-1 px-4 py-4 space-y-1">
               {navigation.map((item) => {
                 const Icon = item.icon;
@@ -182,14 +116,14 @@ export default function AdminLayout({ children }) {
                     }`}
                     onClick={() => setSidebarOpen(false)}
                   >
-                    <Icon />
+                    <Icon size={18} />
                     <span className="ml-3">{item.name}</span>
                   </Link>
                 );
               })}
             </nav>
 
-            {/* Mobile User Profile */}
+            {}
             <div className="flex-shrink-0 border-t border-gray-200 p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
@@ -204,7 +138,7 @@ export default function AdminLayout({ children }) {
                   </div>
                 </div>
                 <button onClick={handleLogout} className="p-2 text-gray-400 hover:text-gray-500">
-                  <LogOutIcon />
+                  <FiLogOut size={18} />
                 </button>
               </div>
             </div>
@@ -212,9 +146,9 @@ export default function AdminLayout({ children }) {
         </div>
       )}
 
-      {/* Desktop Sidebar - Collapsible */}
+      {}
       <div className={`hidden lg:fixed lg:inset-y-0 lg:flex lg:flex-col lg:bg-white lg:border-r lg:border-gray-200 transition-all duration-300 ${sidebarCollapsed ? 'lg:w-20' : 'lg:w-64'}`}>
-        {/* Desktop Header */}
+        {}
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200 flex-shrink-0">
           {!sidebarCollapsed && (
             <div className="flex items-center">
@@ -231,11 +165,11 @@ export default function AdminLayout({ children }) {
             className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-100"
             title={sidebarCollapsed ? "Expand" : "Collapse"}
           >
-            {sidebarCollapsed ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            {sidebarCollapsed ? <FiChevronRight size={18} /> : <FiChevronLeft size={18} />}
           </button>
         </div>
 
-        {/* Desktop Nav */}
+        {}
         <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
           {navigation.map((item) => {
             const Icon = item.icon;
@@ -250,14 +184,14 @@ export default function AdminLayout({ children }) {
                 }`}
                 title={sidebarCollapsed ? item.name : ''}
               >
-                <Icon />
+                <Icon size={18} />
                 {!sidebarCollapsed && <span className="ml-3">{item.name}</span>}
               </Link>
             );
           })}
         </nav>
 
-        {/* Desktop User Profile */}
+        {}
         <div className="flex-shrink-0 border-t border-gray-200 p-3">
           <div className={`flex items-center ${sidebarCollapsed ? 'justify-center' : 'justify-between'}`}>
             {!sidebarCollapsed && (
@@ -278,19 +212,19 @@ export default function AdminLayout({ children }) {
               className="p-1.5 text-gray-400 hover:text-gray-600 flex-shrink-0"
               title="Logout"
             >
-              <LogOutIcon />
+              <FiLogOut size={18} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
+      {}
       <div className={`transition-all duration-300 ${sidebarCollapsed ? 'lg:ml-20' : 'lg:ml-64'}`}>
-        {/* Mobile Header */}
+        {}
         <div className="sticky top-0 z-10 lg:hidden bg-white shadow-sm">
           <div className="flex items-center justify-between h-16 px-4">
             <button onClick={() => setSidebarOpen(true)} className="p-2 rounded-md text-gray-400">
-              <MenuIcon />
+              <FiMenu size={20} />
             </button>
             <div className="flex items-center">
               <span className="text-sm align-top text-blue-600">®</span>

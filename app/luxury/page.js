@@ -57,9 +57,9 @@ export default function Luxury() {
         <main className="min-h-screen bg-white">
             <Header />
             
-            {/* Hero Section with Image Slider */}
+            {}
             <section className="relative h-screen overflow-hidden">
-                {/* Background Images */}
+                {}
                 {luxuryProperties.map((property, index) => (
                     <div
                         key={property.id}
@@ -75,7 +75,7 @@ export default function Luxury() {
                     </div>
                 ))}
 
-                {/* Navigation Arrows */}
+                {}
                 <button
                     onClick={prevSlide}
                     className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-3 rounded-full"
@@ -89,12 +89,12 @@ export default function Luxury() {
                     <ChevronRight className="w-6 h-6" />
                 </button>
 
-                {/* Content Overlay */}
+                {}
                 <div className="absolute inset-0 flex items-end">
                     <div className="w-full bg-gradient-to-t from-black via-black/70 to-transparent p-8">
                         <div className="max-w-7xl mx-auto">
                             <div className="flex justify-between items-end">
-                                {/* Property Details */}
+                                {}
                                 <div className="text-white">
                                     <div className="text-5xl font-bold mb-2">
                                         {luxuryProperties[currentSlide].price}
@@ -119,7 +119,7 @@ export default function Luxury() {
                                     </div>
                                 </div>
 
-                                {/* CTA Button */}
+                                {}
                                 <button className="bg-white text-[#00458b] px-6 py-3 rounded-lg text-sm font-semibold border border-gray-200">
                                     VIEW PROPERTY
                                 </button>
@@ -128,7 +128,7 @@ export default function Luxury() {
                     </div>
                 </div>
 
-                {/* Main Content */}
+                {}
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white z-10 px-4">
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
@@ -138,7 +138,7 @@ export default function Luxury() {
                             Fine Homes & Luxury Properties
                         </p>
                         
-                        {/* Search Bar */}
+                        {}
                         <div className="flex justify-center mb-6">
                             <div className="flex bg-white rounded-lg overflow-hidden border border-gray-200 max-w-2xl w-full">
                                 <input
@@ -154,7 +154,7 @@ export default function Luxury() {
                     </div>
                 </div>
 
-                {/* Slide Indicators */}
+                {}
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
                     {luxuryProperties.map((_, index) => (
                         <button
@@ -170,7 +170,7 @@ export default function Luxury() {
                 </div>
             </section>
 
-            {/* Introduction Section */}
+            {}
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center max-w-4xl mx-auto">

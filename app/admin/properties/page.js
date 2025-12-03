@@ -53,23 +53,23 @@ export default function AdminProperties() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
+        {}
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Properties Management</h1>
           <p className="text-gray-600 mt-2">View all property listings from the XML feed (Read-Only)</p>
         </div>
 
-        {/* Error Message */}
+        {}
         {error && (
           <div className="mt-6 mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded">
             <p className="text-red-700 font-semibold">{error}</p>
           </div>
         )}
 
-        {/* Filters */}
+        {}
         <div className="mt-8 bg-white rounded-lg shadow p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Search */}
+            {}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">Search</label>
               <input
@@ -81,7 +81,7 @@ export default function AdminProperties() {
               />
             </div>
 
-            {/* Filter by Type */}
+            {}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">Type</label>
               <select
@@ -95,7 +95,7 @@ export default function AdminProperties() {
               </select>
             </div>
 
-            {/* Results Count */}
+            {}
             <div className="flex items-end">
               <div className="text-sm text-gray-600">
                 Found <span className="font-bold text-blue-600">{filteredProperties.length}</span> properties
@@ -104,7 +104,7 @@ export default function AdminProperties() {
           </div>
         </div>
 
-        {/* Loading State */}
+        {}
         {loading && (
           <div className="flex flex-col items-center justify-center py-16">
             <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-blue-600 mb-4"></div>
@@ -112,7 +112,7 @@ export default function AdminProperties() {
           </div>
         )}
 
-        {/* No Results */}
+        {}
         {!loading && filteredProperties.length === 0 && (
           <div className="text-center py-16 bg-white rounded-lg shadow">
             <p className="text-gray-600 text-lg">No properties found</p>
@@ -120,7 +120,7 @@ export default function AdminProperties() {
           </div>
         )}
 
-        {/* Properties Table */}
+        {}
         {!loading && filteredProperties.length > 0 && (
           <div className="bg-white rounded-lg shadow overflow-hidden">
             <div className="overflow-x-auto">

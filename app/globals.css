@@ -32,3 +32,15 @@ body {
     text-wrap: balance;
   }
 }
+
+button{
+  color: white ;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Tailwind's blue-500 with opacity */
+}

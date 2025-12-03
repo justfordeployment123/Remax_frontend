@@ -17,7 +17,7 @@ export default function SignUpPage() {
   const [showVerificationMessage, setShowVerificationMessage] = useState(false);
   const [verificationEmail, setVerificationEmail] = useState('');
 
-  // SVG Icons
+  
   const UserIcon = () => (
     <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -70,7 +70,7 @@ export default function SignUpPage() {
       return;
     }
 
-    // Email validation
+    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       alert('Please enter a valid email address');
@@ -106,7 +106,7 @@ export default function SignUpPage() {
 
   const handleGoogleSignUp = async () => {
     try {
-      // Google OAuth implementation
+      
       window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/google`;
     } catch (error) {
       console.error('Google signup error:', error);
@@ -116,7 +116,7 @@ export default function SignUpPage() {
 
   const handleAppleSignUp = async () => {
     try {
-      // Apple OAuth implementation
+      
       window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/apple`;
     } catch (error) {
       console.error('Apple signup error:', error);
