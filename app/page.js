@@ -89,7 +89,7 @@ export default function Home() {
           <div className="border border-gray-300 rounded-lg p-6 flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <img
-                src="https://static-images.remax.com/assets/web/homepage/bmta-red-2025.png"
+                src="https://static-images.remax.com/assets/web/homepage/bmta-red-2024.png?width=57&height=80&format=auto"
                 alt="UAE Real Estate Excellence Award"
                 className="w-20 h-28 object-contain"
               />
