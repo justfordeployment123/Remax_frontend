@@ -36,6 +36,7 @@ export default function HomesForSale() {
 
   const handleSearch = () => {
     const params = new URLSearchParams();
+    params.append("type", "sale");
     if (searchFilters.address) params.append("address", searchFilters.address);
     if (searchFilters.minPrice) params.append("minPrice", searchFilters.minPrice);
     if (searchFilters.maxPrice) params.append("maxPrice", searchFilters.maxPrice);

@@ -20,6 +20,7 @@ export default function HomesForSale() {
     minBeds: searchParams.get("minBeds") || "NO MIN",
     maxBeds: searchParams.get("maxBeds") || "NO MAX",
     baths: searchParams.get("baths") || "ANY",
+    type: searchParams.get("type") || "",
   });
 
   
@@ -37,6 +38,7 @@ export default function HomesForSale() {
         minBeds: "NO MIN",
         maxBeds: "NO MAX",
         baths: "ANY",
+        type: "",
       });
     }
   }, []);
@@ -101,13 +103,20 @@ export default function HomesForSale() {
         searchFilters.baths === "ANY" ||
         prop.bathroom >= parseInt(searchFilters.baths);
 
+      // Filter by offering type: RR for rental, RS for sale
+      const typeMatch =
+        !searchFilters.type ||
+        (searchFilters.type === "rental" && prop.offeringType === "RR") ||
+        (searchFilters.type === "sale" && prop.offeringType === "RS");
+
       return (
         addressMatch &&
         minPriceMatch &&
         maxPriceMatch &&
         minBedsMatch &&
         maxBedsMatch &&
-        bathsMatch
+        bathsMatch &&
+        typeMatch
       );
     });
 
@@ -120,6 +129,13 @@ export default function HomesForSale() {
 
       <section className="py-12 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {searchFilters.type && (
+              <div className="mb-6">
+                <h1 className="text-3xl font-bold text-[#1A3668]">
+                  {searchFilters.type === "rental" ? "Rental Properties" : "Properties for Sale"}
+                </h1>
+              </div>
+            )}
             {loading && (
                 <div className="flex flex-col items-center justify-center py-16">
                 <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-[#1A3668] mb-4"></div>
