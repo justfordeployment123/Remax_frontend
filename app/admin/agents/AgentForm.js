@@ -207,7 +207,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
             value={formData.firstName}
             onChange={handleInputChange}
             required
-            className={`mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
+            className={`mt-1 block w-full border rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
               errors.firstName ? 'border-red-300' : 'border-gray-300'
             }`}
           />
@@ -221,7 +221,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
             value={formData.lastName}
             onChange={handleInputChange}
             required
-            className={`mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
+            className={`mt-1 block w-full border rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
               errors.lastName ? 'border-red-300' : 'border-gray-300'
             }`}
           />
@@ -238,7 +238,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
             value={formData.email}
             onChange={handleInputChange}
             required
-            className={`mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
+            className={`mt-1 block w-full border rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
               errors.email ? 'border-red-300' : 'border-gray-300'
             }`}
           />
@@ -253,7 +253,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               value={formData.password}
               onChange={handleInputChange}
               required
-              className={`mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
+              className={`mt-1 block w-full border rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
                 errors.password ? 'border-red-300' : 'border-gray-300'
               }`}
             />
@@ -315,7 +315,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
             name="licenseNumber"
             value={formData.licenseNumber}
             onChange={handleInputChange}
-            className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+            className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
           />
         </div>
         <div>
@@ -327,7 +327,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
             onChange={handleInputChange}
             min="0"
             max="50"
-            className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+            className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
           />
         </div>
       </div>
@@ -355,7 +355,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
           name="expertise"
           value={formData.expertise}
           onChange={handleInputChange}
-          className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+          className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
         >
           <option value="Commercial">Commercial</option>
           <option value="Commercial / Residential">Commercial / Residential</option>
@@ -371,7 +371,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
           placeholder="Enter languages separated by commas (e.g., English, Spanish, French)"
           value={languageInput}
           onChange={handleLanguageChange}
-          className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+          className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
         />
         <p className="mt-1 text-sm text-gray-700">
           Current languages: {formData.languages.join(', ') || 'None'}
@@ -405,7 +405,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               name="office.name"
               value={formData.office.name}
               onChange={handleInputChange}
-              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
             />
           </div>
           <div>
@@ -415,7 +415,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               name="office.phone"
               value={formData.office.phone}
               onChange={handleInputChange}
-              className={`mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
+              className={`mt-1 block w-full border rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
                 errors.officePhone ? 'border-red-300' : 'border-gray-300'
               }`}
             />
@@ -430,7 +430,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               name="office.address.street"
               value={formData.office.address.street}
               onChange={handleInputChange}
-              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
             />
           </div>
           <div>
@@ -440,7 +440,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               name="office.address.city"
               value={formData.office.address.city}
               onChange={handleInputChange}
-              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
             />
           </div>
         </div>
@@ -452,7 +452,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               name="office.address.state"
               value={formData.office.address.state}
               onChange={handleInputChange}
-              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
             />
           </div>
           <div>
@@ -462,7 +462,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               name="office.address.zipCode"
               value={formData.office.address.zipCode}
               onChange={handleInputChange}
-              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
             />
           </div>
         </div>
@@ -478,7 +478,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               name="contact.officePhone"
               value={formData.contact.officePhone}
               onChange={handleInputChange}
-              className={`mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
+              className={`mt-1 block w-full border rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
                 errors.officePhone ? 'border-red-300' : 'border-gray-300'
               }`}
             />
@@ -491,7 +491,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
               name="contact.mobilePhone"
               value={formData.contact.mobilePhone}
               onChange={handleInputChange}
-              className={`mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
+              className={`mt-1 block w-full border rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
                 errors.mobilePhone ? 'border-red-300' : 'border-gray-300'
               }`}
             />
@@ -505,7 +505,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
             name="contact.website"
             value={formData.contact.website}
             onChange={handleInputChange}
-            className={`mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
+            className={`mt-1 block w-full border rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue ${
               errors.website ? 'border-red-300' : 'border-gray-300'
             }`}
           />
@@ -520,7 +520,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
           value={formData.bio}
           onChange={handleInputChange}
           rows="4"
-          className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
+          className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"
         />
       </div>
 
