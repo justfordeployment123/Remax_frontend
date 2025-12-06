@@ -451,7 +451,7 @@ export default function Header() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="px-3 py-2 text-sm text-gray-600 font-medium transition-all duration-200 rounded-lg hover:bg-gray-50 hover:text-gray-900"
               >
                 Contact
@@ -755,7 +755,7 @@ export default function Header() {
             </Link>
 
             {}
-            <Link href="/contact" onClick={handleMobileLinkClick} className="block text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors">
+            <Link href="/contact-us" onClick={handleMobileLinkClick} className="block text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors">
               Contact
             </Link>
 
