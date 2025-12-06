@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { menuConfig } from "../config/menuConfig";
 
 
 export default function Header() {
@@ -66,7 +65,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14">
           {}
           <div className="flex items-center">
             <Link
@@ -77,7 +76,7 @@ export default function Header() {
               <img
                 src="/assets/Remax_logo.jpeg"
                 alt="RE/MAX"
-                className="h-12 w-auto"
+                className="h-10 w-auto"
               />
             </Link>
           </div>
@@ -107,250 +106,381 @@ export default function Header() {
           </div>
 
           {}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center justify-between flex-1">
             
             {}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("buy")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className="px-4 py-2 text-gray-700 font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
-                aria-expanded={openMenu === "buy"}
+            <div className="flex items-center space-x-1">
+              {}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("buy")}
+                onMouseLeave={handleMouseLeave}
               >
-                Buy
-              </button>
+                <Link
+                  href="/buy-residential-dubai"
+                  className="px-3 py-2 text-sm text-gray-700 font-medium transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
+                >
+                  Buy
+                </Link>
               {openMenu === "buy" && (
-                <div className="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-lg border border-gray-400">
-                  <ul className="py-2">
-                    <li>
-                      <Link
-                        href="/homes-for-sale"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Property Search
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/buying-guide"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Buying Guide
-                      </Link>
-                    </li>
-                    {}
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            {}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("sell")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className="px-4 py-2 text-gray-700 font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
-                aria-expanded={openMenu === "sell"}
-              >
-                Sell
-              </button>
-              {openMenu === "sell" && (
-                <div className="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-lg border border-gray-400">
-                  <ul className="py-2">
-                    <li>
-                      <Link
-                        href="/selling-guide"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Selling Guide
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            {}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("rent")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className="px-4 py-2 text-gray-700 font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
-                aria-expanded={openMenu === "rent"}
-              >
-                Rent
-              </button>
-              {openMenu === "rent" && (
-                <div className="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-lg border border-gray-400">
-                  <ul className="py-2">
-                    <li>
-                      <Link
-                        href="/rental-search"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Rental Search
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/rental-agent"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Find a Rental Agent
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/rental-guide"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Rental Guide
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            {}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("agents")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className="px-4 py-2 text-gray-700 font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
-                aria-expanded={openMenu === "agents"}
-              >
-                Agents
-              </button>
-              {openMenu === "agents" && (
-                <div className="absolute left-0 top-full mt-3 w-64 bg-white shadow-xl rounded-lg border border-gray-400">
-                  <ul className="py-2">
-                    <li>
-                      <Link
-                        href="/find-agent"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Agent Search
-                      </Link>
-                    </li>
-                  </ul>
-                  <hr className="my-2 border-gray-200" />
-                  <div className="px-6 py-4 bg-gray-50 rounded-b-lg">
-                    <p className="text-sm text-gray-700 mb-3">
-                      We have the tools and the experience to lead you to
-                      success!
-                    </p>
-                    <Link
-                      href="/join-remax"
-                      className="inline-flex items-center text-remax-blue hover:text-remax-dark-blue font-semibold text-sm transition-colors"
-                    >
-                      Join RE/MAX
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("more")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className="px-4 py-2 text-gray-700 font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
-                aria-expanded={openMenu === "more"}
-              >
-                More
-              </button>
-              {openMenu === "more" && (
                 <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-xl rounded-lg border border-gray-200">
-                  <ul className="py-2">
+                  <ul className="py-1.5">
                     <li>
                       <Link
-                        href="/luxury"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
+                        href="/buy-residential-dubai"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
-                        Luxury
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Buy a Home in Dubai</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Process, communities, costs.</div>
                       </Link>
                     </li>
                     <li>
                       <Link
-                        href="/global"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
+                        href="/properties?segment=buy"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
-                        Global
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Browse Our Listings</div>
+                        <div className="text-xs text-gray-500 mt-0.5">View residential listings.</div>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+              </div>
+
+              {}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("invest")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link
+                  href="/investors"
+                  className="px-3 py-2 text-sm text-gray-700 font-medium transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
+                >
+                  Invest
+                </Link>
+                {openMenu === "invest" && (
+                  <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-xl rounded-lg border border-gray-200">
+                    <ul className="py-1.5">
+                      <li>
+                        <Link
+                          href="/investors"
+                          className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                        >
+                          <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Investor Hub</div>
+                          <div className="text-xs text-gray-500 mt-0.5">Strategies and support.</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/playbook-2026-2035"
+                          className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                        >
+                          <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Market Playbook</div>
+                          <div className="text-xs text-gray-500 mt-0.5">Dubai 2026–2035 view.</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/guides/investment"
+                          className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                        >
+                          <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Data & Insights</div>
+                          <div className="text-xs text-gray-500 mt-0.5">Investor articles.</div>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+            {}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("offplan")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href="/off-plan-dubai"
+                className="px-3 py-2 text-sm text-gray-700 font-medium transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
+              >
+                Off-Plan
+              </Link>
+              {openMenu === "offplan" && (
+                <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-xl rounded-lg border border-gray-200">
+                  <ul className="py-1.5">
+                    <li>
+                      <Link
+                        href="/off-plan-dubai"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Off-Plan Guide</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Compare vs ready.</div>
                       </Link>
                     </li>
                     <li>
                       <Link
-                        href="/commercial"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
+                        href="/off-plan/projects"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
-                        Commercial
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/articles-advice"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        Articles and Advice
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/about-us"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
-                      >
-                        About Us
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Featured Projects</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Curated projects.</div>
                       </Link>
                     </li>
                     <li>
                       <Link
                         href="/contact-us"
-                        className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-remax-blue transition-colors"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
-                        Contact Us
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Submit Enquiry</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Share requirements.</div>
                       </Link>
                     </li>
                   </ul>
                 </div>
               )}
+              </div>
+
+              {}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("commercial")}
+                onMouseLeave={handleMouseLeave}
+              >
+              <Link
+                href="/commercial-real-estate-dubai"
+                className="px-3 py-2 text-sm text-gray-700 font-medium transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
+              >
+                Commercial
+              </Link>
+              {openMenu === "commercial" && (
+                <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-xl rounded-lg border border-gray-200">
+                  <ul className="py-1.5">
+                    <li>
+                      <Link
+                        href="/commercial-real-estate-dubai"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Commercial Real Estate</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Offices, retail, industrial.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/properties?segment=commercial"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Commercial Listings</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Browse stock.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/commercial/fit-out"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Fit-Out Support</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Design and approvals.</div>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+              </div>
+
+              {}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("rent")}
+                onMouseLeave={handleMouseLeave}
+              >
+              <Link
+                href="/rent-dubai"
+                className="px-3 py-2 text-sm text-gray-700 font-medium transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
+              >
+                Rent
+              </Link>
+              {openMenu === "rent" && (
+                <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-xl rounded-lg border border-gray-200">
+                  <ul className="py-1.5">
+                    <li>
+                      <Link
+                        href="/rent-dubai"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Rent a Home</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Process and FAQs.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/landlords"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Lease Out Property</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Landlord support.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/properties?segment=rent"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Rental Listings</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Browse rentals.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/guides/renting"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Rental Guide</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Tenant info.</div>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+              </div>
+
+              {}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("sell")}
+                onMouseLeave={handleMouseLeave}
+              >
+              <Link
+                href="/sell"
+                className="px-3 py-2 text-sm text-gray-700 font-medium transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
+              >
+                Sell
+              </Link>
+              {openMenu === "sell" && (
+                <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-xl rounded-lg border border-gray-200">
+                  <ul className="py-1.5">
+                    <li>
+                      <Link
+                        href="/sell"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Sell Your Property</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Valuation and marketing.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/guides/selling"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Selling Guide</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Step-by-step guide.</div>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+              </div>
+
+              {}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("guides")}
+                onMouseLeave={handleMouseLeave}
+              >
+              <Link
+                href="/guides"
+                className="px-3 py-2 text-sm text-gray-700 font-medium transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
+              >
+                Guides
+              </Link>
+              {openMenu === "guides" && (
+                <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-xl rounded-lg border border-gray-200">
+                  <ul className="py-1.5">
+                    <li>
+                      <Link
+                        href="/guides"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">All Guides</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Market insights.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/guides/buying"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">For Buyers</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Essential guides.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/guides/investment"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">For Investors</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Investment strategies.</div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/guides/selling-landlords"
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
+                      >
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">For Landlords</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Property owner resources.</div>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+              </div>
+
             </div>
 
             {}
-            <div className="flex items-center space-x-2 ml-4 border-l border-gray-200 pl-4">
+            <div className="flex items-center space-x-1">
+              <Link
+                href="/about"
+                className="px-3 py-2 text-sm text-gray-600 font-medium transition-all duration-200 rounded-lg hover:bg-gray-50 hover:text-gray-900"
+              >
+                About
+              </Link>
+
+              <Link
+                href="/contact"
+                className="px-3 py-2 text-sm text-gray-600 font-medium transition-all duration-200 rounded-lg hover:bg-gray-50 hover:text-gray-900"
+              >
+                Contact
+              </Link>
+
+              <Link
+                href="/join"
+                className="px-3 py-2 text-sm text-[#00458b] font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 ml-2"
+              >
+                Join RE/MAX HUB
+              </Link>
+
+              {}
+              <div className="flex items-center space-x-2 ml-3 pl-3 border-l border-gray-200">
               {user ? (
                 <div className="relative" ref={profileRef}>
                   <button
                     onClick={toggleProfileMenu}
-                    className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-50 transition-all"
+                    className="flex items-center space-x-1.5 px-2 py-1.5 rounded-lg hover:bg-gray-50 transition-all"
                   >
-                    <div className="w-8 h-8 bg-remax-blue rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-7 h-7 bg-remax-blue rounded-full flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="text-sm font-medium text-gray-700">
                       {user.firstName}
                     </span>
-                    <svg className={`w-4 h-4 text-gray-500 transition-transform ${isProfileOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
+                    <svg className={`w-3.5 h-3.5 text-gray-500 transition-transform ${isProfileOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   </button>
@@ -432,56 +562,207 @@ export default function Header() {
               ) : (
                 <>
                   <Link href="/login">
-                    <button className="text-remax-blue hover:text-remax-dark-blue font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 transition-all text-sm">
+                    <button className="text-[#00458b] hover:text-remax-dark-blue font-medium px-3 py-1.5 rounded-lg hover:bg-blue-50 transition-all text-sm">
                       Log In
                     </button>
                   </Link>
                   <Link href="/sign-up">
-                    <button className="bg-remax-blue text-white px-5 py-2 rounded-lg hover:bg-remax-dark-blue font-semibold shadow-sm hover:shadow transition-all text-sm">
+                    <button className="bg-[#00458b] text-white px-4 py-1.5 rounded-lg hover:bg-remax-dark-blue font-medium shadow-sm hover:shadow transition-all text-sm">
                       Sign Up
                     </button>
                   </Link>
                 </>
               )}
             </div>
-            
+            </div>
           </div>
         </div>
 
         {}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-200 py-4 space-y-4">
-            {Object.entries(menuConfig).map(([key, section]) => (
-              <div key={key}>
-                <button
-                  onClick={() => toggleMobileSubmenu(key)}
-                  className="w-full flex items-center justify-between text-left text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors"
-                >
-                  <span>{section.title}</span>
-                  <span
-                    className={`transform transition-transform ${
-                      mobileSubmenu === key ? "rotate-90" : ""
-                    }`}
-                  >
-                    ▸
-                  </span>
-                </button>
-                {mobileSubmenu === key && (
-                  <div className="space-y-3 pl-4">
-                    {section.items.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={handleMobileLinkClick}
-                        className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors"
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+            {}
+            <div>
+              <button
+                onClick={() => toggleMobileSubmenu("buy")}
+                className="w-full flex items-center justify-between text-left text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors"
+              >
+                <span>Buy</span>
+                <span className={`transform transition-transform ${mobileSubmenu === "buy" ? "rotate-90" : ""}`}>▸</span>
+              </button>
+              {mobileSubmenu === "buy" && (
+                <div className="space-y-3 pl-4">
+                  <Link href="/buy-residential-dubai" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Buy a Home in Dubai
+                  </Link>
+                  <Link href="/properties?segment=buy" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Browse Our Listings
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {}
+            <div>
+              <button
+                onClick={() => toggleMobileSubmenu("invest")}
+                className="w-full flex items-center justify-between text-left text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors"
+              >
+                <span>Invest</span>
+                <span className={`transform transition-transform ${mobileSubmenu === "invest" ? "rotate-90" : ""}`}>▸</span>
+              </button>
+              {mobileSubmenu === "invest" && (
+                <div className="space-y-3 pl-4">
+                  <Link href="/investors" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Investor Hub
+                  </Link>
+                  <Link href="/playbook-2026-2035" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    2026–2035 Market Playbook
+                  </Link>
+                  <Link href="/guides/investment" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Data & Insights (Investor)
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {}
+            <div>
+              <button
+                onClick={() => toggleMobileSubmenu("offplan")}
+                className="w-full flex items-center justify-between text-left text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors"
+              >
+                <span>Off-Plan</span>
+                <span className={`transform transition-transform ${mobileSubmenu === "offplan" ? "rotate-90" : ""}`}>▸</span>
+              </button>
+              {mobileSubmenu === "offplan" && (
+                <div className="space-y-3 pl-4">
+                  <Link href="/off-plan-dubai" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Off-Plan Guide
+                  </Link>
+                  <Link href="/off-plan/projects" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Featured Projects
+                  </Link>
+                  <Link href="/contact-us" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Submit an Off-Plan Enquiry
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {}
+            <div>
+              <button
+                onClick={() => toggleMobileSubmenu("commercial")}
+                className="w-full flex items-center justify-between text-left text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors"
+              >
+                <span>Commercial</span>
+                <span className={`transform transition-transform ${mobileSubmenu === "commercial" ? "rotate-90" : ""}`}>▸</span>
+              </button>
+              {mobileSubmenu === "commercial" && (
+                <div className="space-y-3 pl-4">
+                  <Link href="/commercial-real-estate-dubai" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Commercial Real Estate in Dubai
+                  </Link>
+                  <Link href="/properties?segment=commercial" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Commercial Listings
+                  </Link>
+                  <Link href="/commercial/fit-out" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Workspace & Fit-Out Support
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {}
+            <div>
+              <button
+                onClick={() => toggleMobileSubmenu("rent")}
+                className="w-full flex items-center justify-between text-left text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors"
+              >
+                <span>Rent</span>
+                <span className={`transform transition-transform ${mobileSubmenu === "rent" ? "rotate-90" : ""}`}>▸</span>
+              </button>
+              {mobileSubmenu === "rent" && (
+                <div className="space-y-3 pl-4">
+                  <Link href="/rent-dubai" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Rent a Home in Dubai
+                  </Link>
+                  <Link href="/landlords" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Lease Out Your Property
+                  </Link>
+                  <Link href="/properties?segment=rent" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Browse Rental Listings
+                  </Link>
+                  <Link href="/guides/renting" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Rental Guide
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {}
+            <div>
+              <button
+                onClick={() => toggleMobileSubmenu("sell")}
+                className="w-full flex items-center justify-between text-left text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors"
+              >
+                <span>Sell</span>
+                <span className={`transform transition-transform ${mobileSubmenu === "sell" ? "rotate-90" : ""}`}>▸</span>
+              </button>
+              {mobileSubmenu === "sell" && (
+                <div className="space-y-3 pl-4">
+                  <Link href="/sell" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Sell Your Property
+                  </Link>
+                  <Link href="/guides/selling" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Selling Guide
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {}
+            <div>
+              <button
+                onClick={() => toggleMobileSubmenu("guides")}
+                className="w-full flex items-center justify-between text-left text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors"
+              >
+                <span>Guides</span>
+                <span className={`transform transition-transform ${mobileSubmenu === "guides" ? "rotate-90" : ""}`}>▸</span>
+              </button>
+              {mobileSubmenu === "guides" && (
+                <div className="space-y-3 pl-4">
+                  <Link href="/guides" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    All Guides & Articles
+                  </Link>
+                  <Link href="/guides/buying" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    For Buyers & End-Users
+                  </Link>
+                  <Link href="/guides/investment" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    For Investors
+                  </Link>
+                  <Link href="/guides/selling-landlords" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    For Landlords & Sellers
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {}
+            <Link href="/about" onClick={handleMobileLinkClick} className="block text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors">
+              About
+            </Link>
+
+            {}
+            <Link href="/contact" onClick={handleMobileLinkClick} className="block text-gray-900 font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors">
+              Contact
+            </Link>
+
+            {}
+            <Link href="/join" onClick={handleMobileLinkClick} className="block text-[#00458b] font-semibold py-3 hover:bg-blue-50 rounded-lg px-2 transition-colors">
+              Join RE/MAX HUB
+            </Link>
 
             <div className="pt-4 border-t border-gray-200 space-y-3">
               {user ? (
