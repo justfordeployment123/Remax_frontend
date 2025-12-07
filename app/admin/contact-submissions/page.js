@@ -358,6 +358,16 @@ export default function ContactSubmissions() {
                       <p className="text-sm text-gray-600 font-medium">Subject</p>
                       <p className="text-gray-900 font-medium">{viewSubmission.subject}</p>
                     </div>
+                    {viewSubmission.hearAboutUs && (
+                      <div>
+                        <p className="text-sm text-gray-600 font-medium">How They Found Us</p>
+                        <p className="text-gray-900">{viewSubmission.hearAboutUs}</p>
+                      </div>
+                    )}
+                    <div>
+                      <p className="text-sm text-gray-600 font-medium">Consent Given</p>
+                      <p className="text-gray-900">{viewSubmission.consent ? "Yes" : "No"}</p>
+                    </div>
                   </div>
                 </div>
 
