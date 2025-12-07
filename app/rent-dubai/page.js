@@ -181,7 +181,6 @@ export default function RentDubai() {
         </div>
       </section>
 
-      {/* Why Rent Through RE/MAX HUB */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center">
@@ -192,7 +191,17 @@ export default function RentDubai() {
             Portals are useful for browsing, but they don't tell you what's actually realistic for your budget, visa situation and timeline. We help you cut through the noise and focus on homes that make sense for your life.
           </p>
 
-          {/* Three Benefit Blocks */}
+          <div className="max-w-7xl mx-auto px-4 mb-12">
+            <div className="relative h-[300px] rounded-2xl overflow-hidden">
+              <Image
+                src="/rent-dubai/IMAGE-RENT-WHY-1.png"
+                alt="Why Rent Through RE/MAX HUB"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
               <div className="w-14 h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-6">
@@ -242,21 +251,8 @@ export default function RentDubai() {
             </button>
           </div>
         </div>
-
-        {/* Visual */}
-        <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="relative h-[300px] rounded-2xl overflow-hidden">
-            <Image
-              src="/rent-dubai/IMAGE-RENT-WHY-1.png"
-              alt="Why Rent Through RE/MAX HUB"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
       </section>
 
-      {/* How the Rental Process Works */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
@@ -267,9 +263,19 @@ export default function RentDubai() {
             A quick overview so you know what to expect before you start viewing apartments.
           </p>
 
-          {/* 4-Step Timeline */}
+          <div className="max-w-7xl mx-auto px-4 mb-12">
+            <div className="relative h-[300px] rounded-2xl overflow-hidden">
+              <Image
+                src="/rent-dubai/IMAGE-RENT-PROCESS-1.png"
+                alt="Rental Process in Dubai"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-4 gap-8 mb-10">
-            {/* Step 1 */}
+            
             <div className="relative">
               <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
                 <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
@@ -284,7 +290,6 @@ export default function RentDubai() {
               </div>
             </div>
 
-            {/* Step 2 */}
             <div className="relative">
               <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
                 <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
@@ -299,7 +304,6 @@ export default function RentDubai() {
               </div>
             </div>
 
-            {/* Step 3 */}
             <div className="relative">
               <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
                 <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
@@ -314,7 +318,6 @@ export default function RentDubai() {
               </div>
             </div>
 
-            {/* Step 4 */}
             <div className="relative">
               <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
                 <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
@@ -330,7 +333,6 @@ export default function RentDubai() {
             </div>
           </div>
 
-          {/* Inline CTA Button */}
           <div className="text-center">
             <button
               onClick={() => openConsultation('Renting / Relocation')}
@@ -340,25 +342,12 @@ export default function RentDubai() {
             </button>
           </div>
         </div>
-
-        {/* Visual */}
-        <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="relative h-[300px] rounded-2xl overflow-hidden">
-            <Image
-              src="/rent-dubai/IMAGE-RENT-PROCESS-1.png"
-              alt="Rental Process in Dubai"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
       </section>
 
-      {/* What You Should Prepare */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column - Content */}
+            
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 What You Should Prepare Before You Start
@@ -368,7 +357,6 @@ export default function RentDubai() {
                 A bit of preparation makes everything smoother. Here's what most landlords and agents will expect from you.
               </p>
 
-              {/* Documents */}
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Documents</h3>
                 <ul className="space-y-3">

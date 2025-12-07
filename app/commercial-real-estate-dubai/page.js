@@ -228,11 +228,10 @@ export default function CommercialRealEstate() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
       <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Content */}
+            
             <div>
               <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
                 Commercial Real Estate in Dubai
@@ -246,7 +245,7 @@ export default function CommercialRealEstate() {
                 Whether you're opening your first office, relocating a team or acquiring an income-generating asset, RE/MAX HUB helps you find and negotiate the right commercial property – not just whatever is on the portals this week.
               </p>
 
-              {/* CTAs */}
+              
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <button
                   onClick={openRequirementsForm}
@@ -268,7 +267,6 @@ export default function CommercialRealEstate() {
               </p>
             </div>
 
-            {/* Right Column - Image */}
             <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/commercial/image-com-hero-1.png"
@@ -282,38 +280,37 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      {/* Credibility Strip */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Why Businesses Work With RE/MAX HUB
-          </h2>
+      <section className="relative py-16 bg-gray-50 overflow-hidden">
+        <div className="absolute inset-0">
+            <Image
+            src="/commercial/image-com-strip-1.png"
+            alt="Commercial Pattern"
+            fill
+            className="object-cover"
+            />
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="relative max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Why Businesses Work With RE/MAX HUB
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {credibilityPoints.map((point, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-bold text-gray-900 mb-3">
-                  {point.title}
+                    {point.title}
                 </h3>
                 <p className="text-gray-600">
-                  {point.description}
+                    {point.description}
                 </p>
-              </div>
+                </div>
             ))}
-          </div>
-
-          <div className="relative h-[250px] rounded-2xl overflow-hidden mt-12">
-            <Image
-              src="/commercial/image-com-strip-1.png"
-              alt="Commercial Pattern"
-              fill
-              className="object-cover"
-            />
-          </div>
+            </div>
         </div>
       </section>
 
-      {/* Who We Help */}
+
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
@@ -390,7 +387,6 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      {/* How We Work */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-3 text-center">
@@ -400,8 +396,17 @@ export default function CommercialRealEstate() {
             From brief to fit-out, not just a list of listings.
           </p>
 
+          <div className="relative h-[300px] rounded-2xl overflow-hidden">
+            <Image
+              src="/commercial/image-com-process-1.png"
+              alt="Commercial Journey"
+              fill
+              className="object-cover"
+            />
+          </div>
+
           <div className="grid md:grid-cols-4 gap-6 mb-12">
-            {/* Step 1 */}
+            
             <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
               <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
                 1
@@ -414,7 +419,6 @@ export default function CommercialRealEstate() {
               </p>
             </div>
 
-            {/* Step 2 */}
             <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
               <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
                 2
@@ -427,7 +431,6 @@ export default function CommercialRealEstate() {
               </p>
             </div>
 
-            {/* Step 3 */}
             <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
               <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
                 3
@@ -454,15 +457,6 @@ export default function CommercialRealEstate() {
             </div>
           </div>
 
-          <div className="relative h-[300px] rounded-2xl overflow-hidden">
-            <Image
-              src="/commercial/image-com-process-1.png"
-              alt="Commercial Journey"
-              fill
-              className="object-cover"
-            />
-          </div>
-
           <div className="text-center mt-12">
             <button
               onClick={() => openConsultation('Commercial Process')}
@@ -475,12 +469,20 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      {/* Asset Types */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
             What Kind of Commercial Space Are You Looking For?
           </h2>
+
+          <div className="relative h-[350px] rounded-2xl overflow-hidden mb-6">
+            <Image
+              src="/commercial/image-com-types-1.png"
+              alt="Icon Grid"
+              fill
+              className="object-cover"
+            />
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {assetTypes.map((asset, index) => (
@@ -494,24 +496,23 @@ export default function CommercialRealEstate() {
               </div>
             ))}
           </div>
-
-          <div className="relative h-[300px] rounded-2xl overflow-hidden">
-            <Image
-              src="/commercial/image-com-types-1.png"
-              alt="Icon Grid"
-              fill
-              className="object-cover"
-            />
-          </div>
         </div>
       </section>
 
-      {/* Key Considerations */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
             What You Need to Get Right with Commercial Property
           </h2>
+
+          <div className="relative h-[500px] rounded-2xl overflow-hidden mb-12">
+            <Image
+              src="/commercial/image-com-guide-1.png"
+              alt="Desk with Plans & Laptop"
+              fill
+              className="object-cover"
+            />
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {considerations.map((block, index) => (
@@ -531,14 +532,7 @@ export default function CommercialRealEstate() {
             ))}
           </div>
 
-          <div className="relative h-[300px] rounded-2xl overflow-hidden mb-12">
-            <Image
-              src="/commercial/image-com-guide-1.png"
-              alt="Desk with Plans & Laptop"
-              fill
-              className="object-cover"
-            />
-          </div>
+          
 
           <div className="bg-blue-50 p-8 rounded-xl border-l-4 border-[#00458b]">
             <p className="text-gray-700 mb-4">
@@ -555,7 +549,6 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      {/* Business Districts */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
@@ -587,7 +580,6 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      {/* Fit-Out Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -641,12 +633,20 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      {/* Why Us */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
             Why Work With RE/MAX HUB for Commercial, Not Just Residential?
           </h2>
+
+          <div className="relative h-[550px] rounded-2xl overflow-hidden mb-12">
+            <Image
+              src="/commercial/image-com-whyus-1.png"
+              alt="Team / Boardroom"
+              fill
+              className="object-cover"
+            />
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {benefits.map((benefit, index) => (
@@ -659,15 +659,6 @@ export default function CommercialRealEstate() {
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="relative h-[550px] rounded-2xl overflow-hidden mb-12">
-            <Image
-              src="/commercial/image-com-whyus-1.png"
-              alt="Team / Boardroom"
-              fill
-              className="object-cover"
-            />
           </div>
 
           <div className="text-center">

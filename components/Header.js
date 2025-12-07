@@ -277,7 +277,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/commercial/fit-out"
+                        href="/commercial-real-estate-dubai/fit-out"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Fit-Out Support</div>
@@ -667,7 +667,7 @@ export default function Header() {
                   <Link href="/properties?segment=commercial" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Commercial Listings
                   </Link>
-                  <Link href="/commercial/fit-out" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                  <Link href="/commercial-real-estate-dubai/fit-out" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Workspace & Fit-Out Support
                   </Link>
                 </div>
