@@ -12,7 +12,7 @@ export default function TermsOfUsePage() {
         <div className="bg-gradient-to-r from-[#00458b] to-[#0B2340] text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl align-middle text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">Terms of Use</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-4 text-center">Terms of Use</h1>
               <p className="text-xl md:text-2xl text-blue-100 text-center">Last updated: 05 December 2025</p>
             </div>
           </div>

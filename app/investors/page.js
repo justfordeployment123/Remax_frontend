@@ -34,7 +34,7 @@ export default function InvestorsPage() {
               <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
                 Property Investment in Dubai
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Invest in Dubai Property With a Clear, Data-Backed Strategy
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">

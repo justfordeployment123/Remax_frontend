@@ -85,7 +85,7 @@ export default function ContactUs() {
               <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
                 Contact RE/MAX HUB
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Talk to the RE/MAX HUB Team
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">

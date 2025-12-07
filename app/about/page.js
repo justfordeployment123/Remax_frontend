@@ -19,7 +19,7 @@ export default function AboutPage() {
                 <p className="text-[#00458b] font-semibold text-sm uppercase tracking-wide mb-4">
                   About RE/MAX HUB
                 </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6">
                   A Dubai-Focused Brokerage Backed by a Global Brand
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">

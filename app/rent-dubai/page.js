@@ -137,7 +137,7 @@ export default function RentDubai() {
                 Rent a Home in Dubai
               </span>
               
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Find a Rental That Actually Fits Your Life
               </h1>
               
@@ -611,7 +611,7 @@ export default function RentDubai() {
           </div>
         </div>
       </section>
-      
+
       <section className="relative py-20 bg-gradient-to-br from-[#0B2340] to-[#00458b]">
         <div className="absolute inset-0 opacity-10">
           <Image
