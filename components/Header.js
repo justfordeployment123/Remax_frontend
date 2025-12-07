@@ -202,7 +202,7 @@ export default function Header() {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                href="/off-plan-dubai"
+                href="/off-plan"
                 className="px-3 py-2 text-sm text-gray-700 font-medium transition-all duration-200 rounded-lg hover:bg-blue-50 hover:text-gray-900"
               >
                 Off-Plan
@@ -212,7 +212,7 @@ export default function Header() {
                   <ul className="py-1.5">
                     <li>
                       <Link
-                        href="/off-plan-dubai"
+                        href="/off-plan"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Off-Plan Guide</div>
@@ -637,7 +637,7 @@ export default function Header() {
               </button>
               {mobileSubmenu === "offplan" && (
                 <div className="space-y-3 pl-4">
-                  <Link href="/off-plan-dubai" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                  <Link href="/off-plan" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Off-Plan Guide
                   </Link>
                   <Link href="/off-plan/projects" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">

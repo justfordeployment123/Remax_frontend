@@ -296,7 +296,7 @@ export default function InvestorsPage() {
               </p>
             </Link>
 
-            <Link href="/off-plan-dubai" className="bg-white p-8 rounded-xl border border-gray-200 hover:border-[#00458b] hover:shadow-lg transition-all duration-200 group">
+            <Link href="/off-plan" className="bg-white p-8 rounded-xl border border-gray-200 hover:border-[#00458b] hover:shadow-lg transition-all duration-200 group">
               <div className="w-12 h-12 bg-[#00458b]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#00458b] transition-colors">
                 <svg className="w-6 h-6 text-[#00458b] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />

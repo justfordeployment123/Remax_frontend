@@ -61,6 +61,7 @@ export default function AdminLayout({ children }) {
     { name: 'Users', href: '/admin/users', icon: FiUsers },
     { name: 'Agents', href: '/admin/agents', icon: FiCheckSquare },
     { name: 'Properties', href: '/admin/properties', icon: FiHome },
+    { name: 'Off-Plan Projects', href: '/admin/off-plan-projects', icon: FiHome },
     { name: 'Guide Submissions', href: '/admin/guide-submissions', icon: FiFileText },
     { name: 'Agent Applications', href: '/admin/agent-applications', icon: FiFileText },
     { name: 'Contact Submissions', href: '/admin/contact-submissions', icon: FiFileText },

@@ -107,7 +107,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/off-plan-dubai" className="text-gray-400 hover:text-white hover:underline transition-colors">
+                <Link href="/off-plan" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Off-Plan Guide
                 </Link>
               </li>
