@@ -212,7 +212,7 @@ export default function Landlords() {
 
         {/* Supporting Image */}
         <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="relative h-[300px] rounded-2xl overflow-hidden">
+          <div className="relative h-[550px] rounded-2xl overflow-hidden">
             <Image
               src="/landlords/image-sell-fit-1.png"
               alt="Is This Right For You"
