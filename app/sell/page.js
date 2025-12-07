@@ -245,9 +245,19 @@ export default function Sell() {
             How We Work With Sellers and Landlords
           </h2>
 
-          {/* 4-Step Process */}
+          <div className="max-w-7xl mx-auto px-4 mb-12">
+            <div className="relative h-[300px] rounded-2xl overflow-hidden">
+              <Image
+                src="/sell/IMAGE-SELL-PROCESS-1.png"
+                alt="Selling Process"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-4 gap-8 mb-10">
-            {/* Step 1 */}
+            
             <div className="relative">
               <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
                 <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
@@ -262,7 +272,6 @@ export default function Sell() {
               </div>
             </div>
 
-            {/* Step 2 */}
             <div className="relative">
               <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
                 <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
@@ -277,7 +286,6 @@ export default function Sell() {
               </div>
             </div>
 
-            {/* Step 3 */}
             <div className="relative">
               <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
                 <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
@@ -292,7 +300,6 @@ export default function Sell() {
               </div>
             </div>
 
-            {/* Step 4 */}
             <div className="relative">
               <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
                 <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
@@ -308,21 +315,8 @@ export default function Sell() {
             </div>
           </div>
         </div>
-
-        {/* Process Illustration */}
-        <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="relative h-[300px] rounded-2xl overflow-hidden">
-            <Image
-              src="/sell/IMAGE-SELL-PROCESS-1.png"
-              alt="Selling Process"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
       </section>
 
-      {/* Valuation & Pricing Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -377,80 +371,71 @@ export default function Sell() {
         </div>
       </section>
 
-      {/* Marketing & Exposure */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
             How We Market Your Property
           </h2>
           
-          <p className="text-xl text-gray-600 mb-12 max-w-4xl mx-auto text-center leading-relaxed">
+          <p className="text-base text-gray-600 mb-6 max-w-4xl mx-auto text-center leading-relaxed">
             Good marketing doesn't mean spamming every channel. It means showing the right buyers or tenants why your property is worth their time.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <div className="w-12 h-12 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="w-6 h-6 text-[#00458b]" />
-              </div>
-              <p className="text-gray-700">Professional photography and accurate listing copy.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <div className="w-12 h-12 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4">
-                <Globe className="w-6 h-6 text-[#00458b]" />
-              </div>
-              <p className="text-gray-700">Exposure on key portals like Bayut and Property Finder.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <div className="w-12 h-12 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4">
-                <Globe className="w-6 h-6 text-[#00458b]" />
-              </div>
-              <p className="text-gray-700">Use of the RE/MAX global network where relevant.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <div className="w-12 h-12 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-[#00458b]" />
-              </div>
-              <p className="text-gray-700">Direct outreach to active leads and matching requirements in our CRM.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <div className="w-12 h-12 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4">
-                <CheckCircle className="w-6 h-6 text-[#00458b]" />
-              </div>
-              <p className="text-gray-700">Clear feedback after viewings so we can adjust quickly.</p>
-            </div>
-          </div>
-
-          <div className="relative h-[650px] rounded-2xl overflow-hidden">
-            <Image
-              src="/sell/IMAGE-SELL-MARKETING-1.png"
-              alt="Marketing and Exposure"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Landlords Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Image */}
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="grid md:grid-cols-2 gap-6 items-start mb-6">
+            <div className="relative h-[400px] rounded-xl overflow-hidden">
               <Image
-                src="/sell/IMAGE-LANDLORD-1.png"
-                alt="Lease Your Property"
+                src="/sell/IMAGE-SELL-MARKETING-1.png"
+                alt="Marketing and Exposure"
                 fill
                 className="object-cover"
               />
             </div>
 
-            {/* Right Column - Content */}
+            <div className="grid gap-3">
+              <div className="bg-white p-3 rounded-lg border border-gray-200">
+                <div className="w-9 h-9 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-2">
+                  <FileText className="w-4 h-4 text-[#00458b]" />
+                </div>
+                <p className="text-gray-700 text-sm">Professional photography and accurate listing copy.</p>
+              </div>
+
+              <div className="bg-white p-3 rounded-lg border border-gray-200">
+                <div className="w-9 h-9 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-2">
+                  <Globe className="w-4 h-4 text-[#00458b]" />
+                </div>
+                <p className="text-gray-700 text-sm">Exposure on key portals like Bayut and Property Finder.</p>
+              </div>
+
+              <div className="bg-white p-3 rounded-lg border border-gray-200">
+                <div className="w-9 h-9 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-2">
+                  <Globe className="w-4 h-4 text-[#00458b]" />
+                </div>
+                <p className="text-gray-700 text-sm">Use of the RE/MAX global network where relevant.</p>
+              </div>
+
+              <div className="bg-white p-3 rounded-lg border border-gray-200">
+                <div className="w-9 h-9 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-2">
+                  <Users className="w-4 h-4 text-[#00458b]" />
+                </div>
+                <p className="text-gray-700 text-sm">Direct outreach to active leads and matching requirements in our CRM.</p>
+              </div>
+
+              <div className="bg-white p-3 rounded-lg border border-gray-200">
+                <div className="w-9 h-9 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-2">
+                  <CheckCircle className="w-4 h-4 text-[#00458b]" />
+                </div>
+                <p className="text-gray-700 text-sm">Clear feedback after viewings so we can adjust quickly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Not Ready to Sell? Lease Out Your Property Instead
@@ -486,6 +471,16 @@ export default function Sell() {
                 Talk About Leasing My Property
               </button>
             </div>
+
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/sell/IMAGE-LANDLORD-1.png"
+                alt="Lease Your Property"
+                fill
+                className="object-cover"
+              />
+            </div>
+            
           </div>
         </div>
       </section>
