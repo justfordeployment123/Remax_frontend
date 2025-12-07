@@ -28,7 +28,7 @@ export default function BuyResidentialDubai() {
       // if (data.success) {
       //   setProperties(data.data);
       // }
-      setProperties([]); // Empty for now
+      setProperties([]);
     } catch (error) {
       console.error('Error fetching properties:', error);
     } finally {

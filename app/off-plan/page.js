@@ -116,7 +116,6 @@ export default function OffPlanDubai() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -470,12 +469,12 @@ export default function OffPlanDubai() {
             </div>
           </div>
 
-          <div className="relative h-[400px] rounded-xl overflow-hidden mb-8">
+          <div className="relative h-[550px] rounded-xl overflow-hidden mb-8">
             <Image
               src="/off-plan/payment-plan-milestones.png"
               alt="Payment plan milestones example"
               fill
-              className="object-contain bg-gray-50"
+              className="object-cover"
             />
           </div>
 
