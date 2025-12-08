@@ -135,13 +135,13 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/hero.jpg')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1682410601760-6372fd33ad2b?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
             width: '100%',
             height: '100%'
           }}
         />
         
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"></div>
 
         <div className="relative z-10 h-full flex flex-col justify-center items-start px-6 sm:px-8 lg:px-16 py-16 lg:py-20">
           <div className="max-w-2xl">
@@ -154,7 +154,7 @@ export default function Home() {
             </h1>
 
             <p className="text-white text-base lg:text-lg mb-8 leading-relaxed max-w-xl opacity-90">
-              Luxury villas, modern apartments, off-plan projects, and commercial spaces across Dubai — guided by experienced, RERA-licensed RE/MAX agents who put your interests first.
+              Luxury villas, modern apartments, off-plan projects, and commercial spaces across Dubai - guided by experienced, RERA-licensed RE/MAX agents who put your interests first.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -190,22 +190,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 lg:py-10 bg-white border-b border-gray-100">
-        <div className="max-w-5xl max-h-3xl mx-auto px-4">
-          <div className="h-40 rounded-lg p-5 lg:p-6 flex flex-col lg:flex-row items-center gap-6 border border-gray-200 shadow-sm bg-gray-50">
-            <div className="flex-shrink-0">
+      <section className="py-16 lg:py-24 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="h-[280px] rounded-2xl p-10 lg:p-16 flex flex-col lg:flex-row items-center gap-12 border border-gray-200 shadow-md bg-gray-50">
+            <div className="flex-shrink-0 flex items-center justify-center">
               <img
                 src="https://images.squarespace-cdn.com/content/v1/5a9f1b211aef1d822edb9d0b/1757003785913-NCI1YZTL145L8OU5LVIR/BMTA+USA+2025+Square+NW.png?format=300w"
                 alt="Brand Spark Most Trusted Awards 2025"
-                className="w-16 h-20 object-contain"
+                className="w-32 h-68 object-contain drop-shadow-lg"
               />
             </div>
-            <div className="flex-1">
-              <h3 className="font-bold text-gray-900 mb-2 text-base lg:text-lg">
-                Most Trusted Real Estate Agents in North America - Now in the U.A.E.
+            <div className="flex-1 flex flex-col justify-center">
+              <h3 className="font-extrabold text-gray-900 mb-4 text-xl lg:text-2xl">
+                Most Trusted Real Estate Agents in North America – Now in the U.A.E.
               </h3>
-              <p className="text-gray-600 leading-relaxed text-xs lg:text-sm">
-                RE/MAX has been voted the brand with the #1 Most Trusted Real Estate Agents in the U.S. and Canada by consumers in the BrandSpark Most Trusted Awards, in partnership with Newsweek.
+              <p className="text-gray-700 leading-relaxed text-base lg:text-lg max-w-2xl">
+                RE/MAX has been voted the brand with the #1 Most Trusted Real Estate Agents in the U.S. and Canada by consumers in the BrandSpark Most Trusted Awards, in partnership with Newsweek.<br className="hidden lg:block" />
+                This recognition reinforces our reputation for professionalism and integrity worldwide.
               </p>
             </div>
           </div>
@@ -215,19 +216,10 @@ export default function Home() {
       <section className="py-12 lg:py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-            
-            <div className="relative h-[450px] rounded-lg overflow-hidden">
-              <Image
-                src="/playbook/iamge-playbook-cover-1.png"
-                alt="UAE Real Estate Playbook 2026-2035"
-                fill
-                className="object-cover"
-              />
-            </div>
 
             <div>
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-                Get the 2026–2035 UAE Real Estate Playbook
+                Get the 2026-2035 UAE Real Estate Playbook
               </h2>
               
               <p className="text-base lg:text-lg text-gray-600 mb-4 font-semibold">
@@ -242,7 +234,6 @@ export default function Home() {
                 Whether you're building a portfolio or buying a family home, this is the framework we use to advise our own clients.
               </p>
 
-              {/* 3-Column Strip */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 mb-6 bg-white rounded border border-gray-200 overflow-hidden divide-x divide-gray-200">
                 <div className="text-center py-3 px-3">
                   <p className="font-semibold text-gray-900 text-xs lg:text-sm">Market outlook for 2026 and beyond</p>
@@ -255,7 +246,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={() => openRequirementsForm('Playbook')}
@@ -271,6 +261,16 @@ export default function Home() {
                 </button>
               </div>
             </div>
+
+            <div className="relative h-[450px] rounded-lg overflow-hidden">
+              <Image
+                src="/playbook/iamge-playbook-cover-1.png"
+                alt="UAE Real Estate Playbook 2026-2035"
+                fill
+                className="object-cover"
+              />
+            </div>
+            
           </div>
         </div>
       </section>
