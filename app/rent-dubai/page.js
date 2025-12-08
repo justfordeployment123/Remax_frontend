@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ConsultationModal from '../../components/ConsultationModal';
+import RequirementsModal from '../../components/RequirementsModal';
 import { 
   Home, CheckCircle, FileText, Calendar, Users, 
   TrendingUp, MapPin, Bed, Bath, Maximize, ChevronDown, ChevronUp 
@@ -11,7 +13,8 @@ import {
 
 export default function RentDubai() {
   const [openFaq, setOpenFaq] = useState(null);
-  const [showRequirementsModal, setShowRequirementsModal] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
   const [rentals, setRentals] = useState([]);
   const [loadingRentals, setLoadingRentals] = useState(true);
 
@@ -41,12 +44,11 @@ export default function RentDubai() {
   };
 
   const openShareRequirements = () => {
-    setShowRequirementsModal(true);
-    window.location.href = '/contact-us?topic=Rent&prefill=true';
+    setIsRequirementsModalOpen(true);
   };
 
   const openConsultation = (topic = 'Renting / Relocation') => {
-    window.location.href = `/contact-us?topic=${encodeURIComponent(topic)}`;
+    setIsConsultationModalOpen(true);
   };
 
   const formatPrice = (price) => {
@@ -417,7 +419,6 @@ export default function RentDubai() {
                 </ul>
               </div>
 
-              {/* Inline CTA */}
               <button
                 onClick={openShareRequirements}
                 className="text-[#00458b] hover:text-[#003366] font-medium inline-flex items-center gap-2 group"
@@ -427,7 +428,6 @@ export default function RentDubai() {
               </button>
             </div>
 
-            {/* Right Column - Image */}
             <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/rent-dubai/IMAGE-RENT-CHECKLIST-1.png"
@@ -636,6 +636,18 @@ export default function RentDubai() {
           </div>
         </div>
       </section>
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic="Renting/Leasing"
+      />
+
+      <RequirementsModal
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="rent_dubai"
+      />
 
       <Footer />
     </main>

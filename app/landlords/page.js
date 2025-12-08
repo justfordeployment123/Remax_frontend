@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ConsultationModal from '../../components/ConsultationModal';
+import RequirementsModal from '../../components/RequirementsModal';
 import { 
   Home, CheckCircle, XCircle, FileText, Calendar, 
   Shield, Users, TrendingUp, Search, ChevronDown, ChevronUp 
@@ -11,19 +13,19 @@ import {
 
 export default function Landlords() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
   const openPropertyForm = () => {
-    // TODO: Integrate with global Sell/Lease form with prefill: Purpose = Lease
-    window.location.href = '/contact-us?topic=Lease&purpose=Lease';
+    setIsRequirementsModalOpen(true);
   };
 
   const openConsultation = (topic = 'Landlord / Leasing') => {
-    // TODO: Integrate with Book Consultation with preselected topic
-    window.location.href = `/contact-us?topic=${encodeURIComponent(topic)}`;
+    setIsConsultationModalOpen(true);
   };
 
   const faqs = [
@@ -490,6 +492,18 @@ export default function Landlords() {
       </section>
 
       <Footer />
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic="Landlord / Leasing"
+      />
+      
+      <RequirementsModal
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="landlords"
+      />
     </main>
   );
 }

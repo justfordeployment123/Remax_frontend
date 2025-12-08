@@ -1,12 +1,15 @@
 'use client'
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import RequirementsModal from '../components/RequirementsModal';
 import { ArrowRight, Home, Search } from 'lucide-react';
 
 export default function NotFound() {
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
@@ -20,13 +23,9 @@ export default function NotFound() {
     }
   }, []);
 
-  const openRequirementsForm = (topic = '') => {
-    if (typeof window !== 'undefined') {
-      // Track CTA click
-      console.log('404_cta_share_requirements_click');
-      const url = topic ? `/contact-us?topic=${encodeURIComponent(topic)}&source=404_page` : `/contact-us?source=404_page`;
-      window.location.href = url;
-    }
+  const openRequirementsForm = () => {
+    console.log('404_cta_share_requirements_click');
+    setIsRequirementsModalOpen(true);
   };
 
   const goHome = () => {
@@ -75,17 +74,14 @@ export default function NotFound() {
               </div>
             </div>
 
-            {/* Main Heading */}
             <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-4">
               Page Not Found
             </h1>
 
-            {/* Subtext */}
             <p className="text-center text-gray-600 text-base lg:text-lg mb-12 max-w-xl mx-auto">
               We couldn't find the page you were looking for. It may have moved, been renamed or never existed.
             </p>
 
-            {/* Quick Links Section */}
             <div className="mb-12">
               <h2 className="text-lg font-semibold text-gray-900 text-center mb-6">
                 Start again from one of these:
@@ -108,7 +104,6 @@ export default function NotFound() {
               </div>
             </div>
 
-            {/* Primary CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <button
                 onClick={goHome}
@@ -118,7 +113,7 @@ export default function NotFound() {
                 Go to Home
               </button>
               <button
-                onClick={() => openRequirementsForm()}
+                onClick={openRequirementsForm}
                 className="flex-1 border-2 border-[#00458b] text-[#00458b] px-8 py-4 rounded-lg font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <Search className="w-5 h-5" />
@@ -126,7 +121,6 @@ export default function NotFound() {
               </button>
             </div>
 
-            {/* Helper Text */}
             <p className="text-center text-xs lg:text-sm text-gray-500 max-w-xl mx-auto">
               If you were following a link from an email or another website and keep seeing this page, feel free to let us know via the{' '}
               <Link href="/contact-us" className="text-[#00458b] hover:underline font-medium">
@@ -137,6 +131,12 @@ export default function NotFound() {
           </div>
         </div>
       </div>
+
+      <RequirementsModal 
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="404_page"
+      />
 
       <Footer />
     </main>

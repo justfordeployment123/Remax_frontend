@@ -3,9 +3,13 @@ import { useState } from "react";
 import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import ConsultationModal from "../../components/ConsultationModal";
+import RequirementsModal from "../../components/RequirementsModal";
 
 export default function BuyingGuide() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -513,6 +517,18 @@ export default function BuyingGuide() {
       {}
       {}
       <Footer />
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic="Buying a Property"
+      />
+      
+      <RequirementsModal
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="buying_guide"
+      />
     </main>
   );
 }

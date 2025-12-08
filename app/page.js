@@ -5,17 +5,16 @@ import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ConsultationModal from '../components/ConsultationModal';
+import RequirementsModal from '../components/RequirementsModal';
 import { ArrowRight, Check } from 'lucide-react';
 
 export default function Home() {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [consultationTopic, setConsultationTopic] = useState('');
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
 
-  const openRequirementsForm = (topic = '') => {
-    if (typeof window !== 'undefined') {
-      const url = topic ? `/contact-us?topic=${encodeURIComponent(topic)}` : '/contact-us';
-      window.location.href = url;
-    }
+  const openRequirementsForm = () => {
+    setIsRequirementsModalOpen(true);
   };
 
   const openConsultation = (topic = '') => {
@@ -251,7 +250,7 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
-                  onClick={() => openRequirementsForm('Playbook')}
+                  onClick={() => openRequirementsForm()}
                   className="bg-[#00458b] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#003366] transition-colors duration-200"
                 >
                   Download Playbook
@@ -293,7 +292,7 @@ export default function Home() {
             
             <div 
               className="group rounded-lg overflow-hidden border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-full bg-white"
-              onClick={() => openRequirementsForm('Buy')}
+              onClick={() => openRequirementsForm()}
             >
               <div className="relative h-44 overflow-hidden bg-gray-200">
                 <img
@@ -343,7 +342,7 @@ export default function Home() {
 
             <div 
               className="group rounded-lg overflow-hidden border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-full bg-white"
-              onClick={() => openRequirementsForm('Rent')}
+              onClick={() => openRequirementsForm()}
             >
               <div className="relative h-44 overflow-hidden bg-gray-200">
                 <img
@@ -366,7 +365,7 @@ export default function Home() {
 
             <div 
               className="group rounded-lg overflow-hidden border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-full bg-white"
-              onClick={() => openRequirementsForm('Sell')}
+              onClick={() => openRequirementsForm()}
             >
               <div className="relative h-44 overflow-hidden bg-gray-200">
                 <img
@@ -543,6 +542,12 @@ export default function Home() {
         isOpen={isConsultationModalOpen}
         onClose={() => setIsConsultationModalOpen(false)}
         preselectedTopic={consultationTopic}
+      />
+
+      <RequirementsModal
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="home"
       />
 
       <Footer />

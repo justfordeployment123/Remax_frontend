@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ConsultationModal from '../../components/ConsultationModal';
+import RequirementsModal from '../../components/RequirementsModal';
 import { 
   Home, CheckCircle, XCircle, Globe, BarChart3, Users, 
   TrendingUp, Building2, MapPin, Bed, Bath, Maximize, 
@@ -14,6 +16,8 @@ export default function BuyResidentialDubai() {
   const [openFaq, setOpenFaq] = useState(null);
   const [properties, setProperties] = useState([]);
   const [loadingProperties, setLoadingProperties] = useState(true);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
 
   useEffect(() => {
     fetchProperties();
@@ -41,13 +45,11 @@ export default function BuyResidentialDubai() {
   };
 
   const openRequirementsForm = () => {
-    // TODO: Integrate with Share Requirements modal with prefill: I want to = Buy
-    window.location.href = '/contact-us?topic=Buy&prefill=buy';
+    setIsRequirementsModalOpen(true);
   };
 
   const openConsultation = (topic = 'Buying a Property') => {
-    // TODO: Integrate with Book Consultation with preselected topic
-    window.location.href = `/contact-us?topic=${encodeURIComponent(topic)}`;
+    setIsConsultationModalOpen(true);
   };
 
   const formatPrice = (price) => {
@@ -168,7 +170,7 @@ export default function BuyResidentialDubai() {
                 Buying a Home in Dubai
               </span>
               
-              <h1 className="text-5xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Buy Your Next Home in Dubai With a Clear Plan
               </h1>
               
@@ -984,6 +986,18 @@ export default function BuyResidentialDubai() {
           </p>
         </div>
       </section>
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic="Buying a Property"
+      />
+
+      <RequirementsModal
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="buy_residential_dubai"
+      />
 
       <Footer />
     </main>

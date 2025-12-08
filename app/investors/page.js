@@ -4,9 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ConsultationModal from '../../components/ConsultationModal';
+import RequirementsModal from '../../components/RequirementsModal';
 
 export default function InvestorsPage() {
   const [faqOpen, setFaqOpen] = useState({});
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
 
   const toggleFaq = (index) => {
     setFaqOpen(prev => ({
@@ -16,11 +20,11 @@ export default function InvestorsPage() {
   };
 
   const scrollToForm = () => {
-    window.location.href = '/contact-us?topic=Invest';
+    setIsRequirementsModalOpen(true);
   };
 
   const bookConsultation = () => {
-    window.location.href = '/contact-us?topic=Invest';
+    setIsConsultationModalOpen(true);
   };
 
   return (
@@ -750,6 +754,18 @@ export default function InvestorsPage() {
       </section>
 
       <Footer />
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic="Investment / Investor"
+      />
+      
+      <RequirementsModal
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="investors"
+      />
     </main>
   );
 }

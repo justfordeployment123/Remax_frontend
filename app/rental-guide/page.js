@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import ConsultationModal from "../../components/ConsultationModal";
+import RequirementsModal from "../../components/RequirementsModal";
 
 const ChevronLeftIcon = () => (
   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -17,6 +19,8 @@ const ChevronRightIcon = () => (
 
 export default function RentalGuide() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -470,6 +474,18 @@ export default function RentalGuide() {
       </section>
 
       <Footer />
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic="Renting/Leasing"
+      />
+      
+      <RequirementsModal
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="rental_guide"
+      />
     </main>
   );
 }

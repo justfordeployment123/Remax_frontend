@@ -68,6 +68,7 @@ export default function AdminLayout({ children }) {
     { name: 'Fit-Out Submissions', href: '/admin/fit-out-submissions', icon: FiFileText },
     { name: 'Playbook Submissions', href: '/admin/playbook-submissions', icon: FiFileText },
     { name: 'Consultations', href: '/admin/consultations', icon: FiFileText },
+    { name: 'Requirements', href: '/admin/requirements', icon: FiFileText },
     { name: 'Settings', href: '/admin/settings', icon: FiSettings },
   ];
 
