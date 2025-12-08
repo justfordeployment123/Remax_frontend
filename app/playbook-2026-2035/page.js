@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ConsultationModal from '../../components/ConsultationModal';
 
 export default function Playbook20262035() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ export default function Playbook20262035() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
   const [faqOpen, setFaqOpen] = useState({});
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -35,7 +37,7 @@ export default function Playbook20262035() {
   };
 
   const bookConsultation = () => {
-    window.location.href = '/contact-us?topic=Invest';
+    setIsConsultationModalOpen(true);
   };
 
   const handleSubmit = async (e) => {
@@ -211,15 +213,6 @@ export default function Playbook20262035() {
             </div>
           </div>
 
-          <div className="relative h-[400px] rounded-xl overflow-hidden mb-8">
-            <Image
-              src="/playbook/IMAGE-PLAYBOOK-AUDIENCE-1.png"
-              alt="Playbook audience"
-              fill
-              className="object-cover"
-            />
-          </div>
-
           <div className="text-center">
             <button
               onClick={scrollToForm}
@@ -291,7 +284,7 @@ export default function Playbook20262035() {
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">
               Want to discuss a specific community or strategy?{' '}
-              <button onClick={bookConsultation} className="text-[#00458b] font-semibold hover:underline">
+              <button onClick={bookConsultation} className="bg-[#00458b] p-2 text-white font-semibold hover:underline">
                 Book a consultation →
               </button>
             </p>
@@ -666,6 +659,12 @@ export default function Playbook20262035() {
           </div>
         </div>
       </section>
+
+      <ConsultationModal 
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic="Investing in Dubai"
+      />
 
       <Footer />
     </main>
