@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -98,10 +99,15 @@ export default function ContactUs() {
                 Send Us a Message
               </button>
             </div>
-            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden bg-gray-200">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                Office Image Placeholder
-              </div>
+            
+            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
+              <Image
+                src="/off-plan/image-offplan-index-hero-1.png"
+                alt="Featured off-plan projects in Dubai"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ConsultationModal from '../../components/ConsultationModal';
 import { 
   Building2, MapPin, DollarSign, CheckCircle, Users, 
   TrendingUp, Briefcase, FileText, ChevronDown, ChevronUp,
@@ -12,6 +13,8 @@ import {
 
 export default function CommercialRealEstate() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [consultationTopic, setConsultationTopic] = useState('Commercial');
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -24,9 +27,8 @@ export default function CommercialRealEstate() {
   };
 
   const openConsultation = (topic = 'Commercial') => {
-    if (typeof window !== 'undefined') {
-      window.location.href = `/contact-us?topic=${encodeURIComponent(topic)}`;
-    }
+    setConsultationTopic(topic);
+    setIsConsultationModalOpen(true);
   };
 
   const credibilityPoints = [
@@ -267,7 +269,7 @@ export default function CommercialRealEstate() {
               </p>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="/commercial/image-com-hero-1.png"
                 alt="Find the Right Office, Retail or Warehouse Space in Dubai"
@@ -803,6 +805,12 @@ export default function CommercialRealEstate() {
       </section>
 
       <Footer />
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic={consultationTopic}
+      />
     </main>
   );
 }

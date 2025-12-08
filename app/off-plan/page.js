@@ -153,7 +153,7 @@ export default function OffPlanDubai() {
               </p>
             </div>
 
-            <div className="relative h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative h-[500px] lg:h-[600px] rounded-xl overflow-hidden">
               <Image
                 src="/off-plan/buy-off-plan-hero.png"
                 alt="Dubai off-plan lifestyle and construction"

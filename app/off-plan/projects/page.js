@@ -166,7 +166,7 @@ export default function OffPlanProjects() {
 
             <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
               <Image
-                src="/off-plan/IMAGE-OFFPLAN-INDEX-HERO-1.png"
+                src="/off-plan/image-offplan-index-hero-1.png"
                 alt="Featured off-plan projects in Dubai"
                 fill
                 className="object-cover"

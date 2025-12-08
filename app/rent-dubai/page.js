@@ -169,8 +169,7 @@ export default function RentDubai() {
               </p>
             </div>
 
-            {/* Right Column - Image */}
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="/rent-dubai/image-rent-hero-1.png"
                 alt="Rent a Home in Dubai"
@@ -430,7 +429,7 @@ export default function RentDubai() {
 
             <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/rent-dubai/IMAGE-RENT-CHECKLIST-1.png"
+                src="/rent-dubai/Image-rent-checklist-1.png"
                 alt="Rental Checklist"
                 fill
                 className="object-cover"

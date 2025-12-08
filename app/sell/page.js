@@ -97,11 +97,10 @@ export default function Sell() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
       <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Content */}
+            
             <div>
               <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
                 Sell or Lease Your Property in Dubai
@@ -115,7 +114,6 @@ export default function Sell() {
                 We help owners and landlords price correctly, position their property and manage the full process from listing to transfer or tenancy – without guesswork or panic discounts.
               </p>
 
-              {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <button
                   onClick={openValuationForm}
@@ -133,10 +131,9 @@ export default function Sell() {
               </div>
             </div>
 
-            {/* Right Column - Image */}
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="/sell/IMAGE-SELL-HERO-1.png"
+                src="/sell/image-sell-hero-1.png"
                 alt="Sell or Lease Your Property in Dubai"
                 fill
                 className="object-cover"
@@ -226,11 +223,10 @@ export default function Sell() {
           </div>
         </div>
 
-        {/* Optional Image */}
         <div className="max-w-7xl mx-auto px-4 mt-12">
           <div className="relative h-[550px] rounded-2xl overflow-hidden">
             <Image
-              src="/sell/IMAGE-SELL-FIT-1.png"
+              src="/sell/image-sell-fit-1.png"
               alt="Is This Right For You"
               fill
               className="object-cover"
@@ -239,7 +235,6 @@ export default function Sell() {
         </div>
       </section>
 
-      {/* How We Sell/Lease Your Property */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
@@ -249,7 +244,7 @@ export default function Sell() {
           <div className="max-w-7xl mx-auto px-4 mb-12">
             <div className="relative h-[300px] rounded-2xl overflow-hidden">
               <Image
-                src="/sell/IMAGE-SELL-PROCESS-1.png"
+                src="/sell/image-sell-process-1.png"
                 alt="Selling Process"
                 fill
                 className="object-cover"
@@ -359,10 +354,9 @@ export default function Sell() {
               </button>
             </div>
 
-            {/* Right Column - Image */}
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/sell/IMAGE-SELL-DATA-1.png"
+                src="/sell/image-sell-data-1.png"
                 alt="Valuation and Pricing"
                 fill
                 className="object-cover"
@@ -385,7 +379,7 @@ export default function Sell() {
           <div className="grid md:grid-cols-2 gap-6 items-start mb-6">
             <div className="relative h-[400px] rounded-xl overflow-hidden">
               <Image
-                src="/sell/IMAGE-SELL-MARKETING-1.png"
+                src="/sell/image-sell-marketing-1.png"
                 alt="Marketing and Exposure"
                 fill
                 className="object-cover"
@@ -475,7 +469,7 @@ export default function Sell() {
 
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/sell/IMAGE-LANDLORD-1.png"
+                src="/sell/image-landlord-1.png"
                 alt="Lease Your Property"
                 fill
                 className="object-cover"

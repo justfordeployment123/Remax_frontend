@@ -223,7 +223,7 @@ export default function CommercialFitOut() {
             </div>
 
             {/* Right Column - Image */}
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="/commercial-fitout/image-fitout-hero-1.png"
                 alt="Plan and Build a Workspace That Actually Works"
@@ -246,14 +246,14 @@ export default function CommercialFitOut() {
             You don't just need a contractor. You need someone who understands lease clauses, building rules and business requirements, and can connect that to a practical fit-out plan. That's where we and partners like TrueBuild come in.
           </p>
 
-          <div className="relative h-[500px] rounded-2xl overflow-hidden mb-12">
+          {/* <div className="relative h-[500px] rounded-2xl overflow-hidden mb-12">
             <Image
               src="/commercial-fitout/image-fitout-roles-1.png"
               alt="RE/MAX HUB and TrueBuild Partnership"
               fill
               className="object-cover"
             />
-          </div>
+          </div> */}
 
           <div className="grid lg:grid-cols-2 gap-12 mb-12">
             
