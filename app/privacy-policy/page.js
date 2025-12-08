@@ -1,9 +1,27 @@
-import React from 'react';
+'use client'
+
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-export default function PrivacyPolicyPage() {
+export default function PrivacyPolicy() {
+  const sections = [
+    'who-we-are',
+    'what-this-policy-covers',
+    'data-we-collect',
+    'how-we-use-your-data',
+    'legal-bases',
+    'how-we-share-your-data',
+    'international-transfers',
+    'data-retention',
+    'your-rights',
+    'cookies-and-tracking',
+    'third-party-links',
+    'security',
+    'updates-to-this-policy',
+    'how-to-contact-us'
+  ];
+
   return (
     <>
       <Header />
