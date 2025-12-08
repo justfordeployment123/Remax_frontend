@@ -135,7 +135,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://static-images.remax.com/assets/web/homepage/homepage-hero-4-2025.jpg')`,
+            backgroundImage: `url('/hero.jpg')`,
             width: '100%',
             height: '100%'
           }}
