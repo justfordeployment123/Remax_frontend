@@ -1,11 +1,16 @@
 'use client'
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ConsultationModal from '../components/ConsultationModal';
 import { ArrowRight, Check } from 'lucide-react';
 
 export default function Home() {
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [consultationTopic, setConsultationTopic] = useState('');
+
   const openRequirementsForm = (topic = '') => {
     if (typeof window !== 'undefined') {
       const url = topic ? `/contact-us?topic=${encodeURIComponent(topic)}` : '/contact-us';
@@ -14,10 +19,8 @@ export default function Home() {
   };
 
   const openConsultation = (topic = '') => {
-    if (typeof window !== 'undefined') {
-      const url = topic ? `/contact-us?topic=${encodeURIComponent(topic)}` : '/contact-us';
-      window.location.href = url;
-    }
+    setConsultationTopic(topic);
+    setIsConsultationModalOpen(true);
   };
 
   const partnerGroups = [
@@ -535,6 +538,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic={consultationTopic}
+      />
 
       <Footer />
     </main>

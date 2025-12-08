@@ -67,7 +67,7 @@ export default function AdminLayout({ children }) {
     { name: 'Contact Submissions', href: '/admin/contact-submissions', icon: FiFileText },
     { name: 'Fit-Out Submissions', href: '/admin/fit-out-submissions', icon: FiFileText },
     { name: 'Playbook Submissions', href: '/admin/playbook-submissions', icon: FiFileText },
-    // { name: 'Analytics', href: '/admin/analytics', icon: FiBarChart2 },
+    { name: 'Consultations', href: '/admin/consultations', icon: FiFileText },
     { name: 'Settings', href: '/admin/settings', icon: FiSettings },
   ];
 
