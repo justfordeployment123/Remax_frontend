@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { FiBarChart2, FiHome, FiTrendingUp, FiDollarSign, FiEye, FiShoppingCart } from 'react-icons/fi';
+import { FiBarChart2, FiHome, FiTrendingUp, FiDollarSign, FiEye, FiShoppingCart, FiActivity as FiActivityIcon, FiTrendingUp as FiAnalyticsIcon } from 'react-icons/fi';
+import Link from 'next/link';
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState({
@@ -136,7 +137,6 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
             <div className="flex items-center gap-2">
