@@ -153,7 +153,7 @@ export default function BuyResidentialDubai() {
     {
       name: "Dubai South",
       description: "Emerging district near Al Maktoum Airport & Expo City",
-      image: "https://mediaoffice.ae/-/media/2025/june/30-06/01/hayat-by-dubai-south.jpg?h=1182&w=2100&hash=B7D10965A9DAEA4A9ADF2D6CB3EBAF9E"
+      image: "/buy-residential-dubai/dubai-south.avif"
     }
   ];
 
