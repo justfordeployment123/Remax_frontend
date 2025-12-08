@@ -137,7 +137,7 @@ export default function Playbook20262035() {
 
             <div className="relative h-[420px] lg:h-[550px] rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="/playbook/IAMGE-PLAYBOOK-COVER-1.png"
+                src="/playbook/iamge-playbook-cover-1.png"
                 alt="RE/MAX HUB 2026-2035 Playbook Cover"
                 fill
                 className="object-cover"
@@ -236,7 +236,7 @@ export default function Playbook20262035() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[750px] rounded-xl overflow-hidden bg-white p-3">
               <Image
-                src="/playbook/IMAGE-PLAYBOOK-CONTENCT-1.png"
+                src="/playbook/image-playbook-contenct-1.png"
                 alt="Playbook content overview"
                 fill
                 className="object-contain bg-white z-1000"
@@ -303,7 +303,7 @@ export default function Playbook20262035() {
 
           <div className="relative h-[400px] rounded-xl overflow-hidden mb-12">
             <Image
-              src="/playbook/IMAGE-PLAYBOOK-DASHBOARD-1.png"
+              src="/playbook/image-playbook-dashboard-1.png"
               alt="Playbook analytics dashboard"
               fill
               className="object-contain bg-white"
