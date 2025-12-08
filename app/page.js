@@ -249,12 +249,13 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={() => openRequirementsForm()}
-                  className="bg-[#00458b] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#003366] transition-colors duration-200"
-                >
-                  Download Playbook
-                </button>
+                <Link href="/playbook-2026-2035">
+                  <button
+                    className="bg-[#00458b] text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#003366] transition-colors duration-200"
+                  >
+                    Download Playbook
+                  </button>
+                </Link>
                 <button
                   onClick={() => openConsultation('Strategy Call')}
                   className="border-2 border-[#00458b] text-[#00458b] px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200"

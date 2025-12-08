@@ -3,22 +3,25 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ConsultationModal from '../../components/ConsultationModal';
+import RequirementsModal from '../../components/RequirementsModal';
 import { Building2, CheckCircle, Shield, TrendingUp, FileText, Users } from 'lucide-react';
 
 export default function OffPlanDubai() {
   const [faqOpen, setFaqOpen] = useState({});
-  const [showRequirementsModal, setShowRequirementsModal] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
 
   const toggleFaq = (index) => {
     setFaqOpen(prev => ({ ...prev, [index]: !prev[index] }));
   };
 
   const shareRequirements = () => {
-    window.location.href = '/contact-us?topic=Off-Plan';
+    setIsRequirementsModalOpen(true);
   };
 
   const bookConsultation = () => {
-    window.location.href = '/contact-us?topic=Off-Plan';
+    setIsConsultationModalOpen(true);
   };
 
   const downloadPlaybook = () => {
@@ -884,6 +887,18 @@ export default function OffPlanDubai() {
 
 
       <Footer />
+
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+        preselectedTopic="Off-Plan"
+      />
+      
+      <RequirementsModal
+        isOpen={isRequirementsModalOpen}
+        onClose={() => setIsRequirementsModalOpen(false)}
+        pageSource="off_plan"
+      />
     </main>
   );
 }

@@ -199,7 +199,7 @@ export default function BuyResidentialDubai() {
               </p>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="/buy-residential-dubai/buy-residential-dubai-hero.png"
                 alt="Buy Your Next Home in Dubai"
