@@ -136,7 +136,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/properties?segment=buy"
+                        href="/properties?type=sale"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Browse Our Listings</div>
@@ -324,7 +324,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/properties?segment=rent"
+                        href="/properties?type=rent"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Rental Listings</div>
@@ -595,7 +595,7 @@ export default function Header() {
                   <Link href="/buy-residential-dubai" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Buy a Home in Dubai
                   </Link>
-                  <Link href="/properties?segment=buy" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                  <Link href="/properties?type=sale" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Browse Our Listings
                   </Link>
                 </div>
@@ -691,7 +691,7 @@ export default function Header() {
                   <Link href="/landlords" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Lease Out Your Property
                   </Link>
-                  <Link href="/properties?segment=rent" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                  <Link href="/properties?type=rent" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Browse Rental Listings
                   </Link>
                   <Link href="/guides/renting" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">

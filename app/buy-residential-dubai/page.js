@@ -27,7 +27,7 @@ export default function BuyResidentialDubai() {
     try {
       setLoadingProperties(true);
       // TODO: will Replace with actual API call when listings endpoint is ready
-      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties?segment=buy&limit=6`);
+      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties?type=sale&limit=6`);
       // const data = await response.json();
       // if (data.success) {
       //   setProperties(data.data);
@@ -478,7 +478,7 @@ export default function BuyResidentialDubai() {
 
               <div className="text-center">
                 <Link
-                  href="/properties?segment=buy"
+                  href="/properties?type=sale"
                   className="inline-block bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
                 >
                   View All RE/MAX HUB Listings

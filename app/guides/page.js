@@ -145,21 +145,20 @@ export default function GuidesPage() {
       <Header />
       
       <main className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
+        
         <div className="relative py-20 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
                 Expert Insights
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
                 Dubai Real Estate Guides & Insights
               </h1>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
                 Expert advice and comprehensive guides to help you navigate Dubai's real estate market with confidence
               </p>
               
-              {/* Search Bar */}
               <div className="relative max-w-2xl mx-auto">
                 <FiSearch className="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
@@ -174,7 +173,6 @@ export default function GuidesPage() {
           </div>
         </div>
 
-        {/* Category Filter Tabs */}
         <div className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center gap-3 overflow-x-auto py-5">
@@ -203,7 +201,6 @@ export default function GuidesPage() {
             </div>
           ) : (
             <>
-              {/* Featured Articles */}
               {featuredArticles.length > 0 && !searchTerm && (
                 <div className="mb-16">
                   <div className="flex items-center gap-3 mb-8">
@@ -218,7 +215,6 @@ export default function GuidesPage() {
                 </div>
               )}
 
-              {/* All Articles */}
               <div>
                 <div className="flex justify-between items-center mb-8">
                   <div className="flex items-center gap-3">
@@ -260,13 +256,12 @@ export default function GuidesPage() {
           )}
         </div>
 
-        {/* CTA Section */}
         <div className="bg-gradient-to-br from-gray-50 to-white border-t border-gray-200 py-20">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
               Get Expert Help
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
               Need Personalized Guidance?
             </h2>
             <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">

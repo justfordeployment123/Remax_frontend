@@ -112,12 +112,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/properties?segment=buy" className="text-gray-400 hover:text-white hover:underline transition-colors">
+                <Link href="/properties?type=sale" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Browse Residential Listings
                 </Link>
               </li>
               <li>
-                <Link href="/properties?segment=rent" className="text-gray-400 hover:text-white hover:underline transition-colors">
+                <Link href="/properties?type=rent" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Browse Rental Listings
                 </Link>
               </li>

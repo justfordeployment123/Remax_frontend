@@ -26,7 +26,7 @@ export default function RentDubai() {
     try {
       setLoadingRentals(true);
       // TODO: Replace with actual API call when rental listings endpoint is ready
-      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties?segment=rent&limit=6`);
+      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties?type=rent&limit=6`);
       // const data = await response.json();
       // if (data.success) {
       //   setRentals(data.data);
@@ -157,7 +157,7 @@ export default function RentDubai() {
                 </button>
                 
                 <Link
-                  href="/properties?segment=rent"
+                  href="/properties?type=rent"
                   className="border-2 border-[#00458b] text-[#00458b] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200 text-center"
                 >
                   Browse Our Rental Listings
@@ -495,7 +495,7 @@ export default function RentDubai() {
 
               <div className="text-center">
                 <Link
-                  href="/properties?segment=rent"
+                  href="/properties?type=rent"
                   className="inline-block bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
                 >
                   View All Rentals
@@ -627,7 +627,7 @@ export default function RentDubai() {
             </button>
             
             <Link
-              href="/properties?segment=rent"
+              href="/properties?type=rent"
               className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#00458b] transition-colors duration-200"
             >
               Browse Our Rental Listings
