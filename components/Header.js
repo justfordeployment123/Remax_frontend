@@ -136,7 +136,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/properties?type=sale"
+                        href="/homes-for-sale"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Browse Our Listings</div>
@@ -268,7 +268,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/properties?segment=commercial"
+                        href="/properties?property_type=commercial"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Commercial Listings</div>
@@ -324,7 +324,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/properties?type=rent"
+                        href="/rental-search"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Rental Listings</div>
@@ -595,7 +595,7 @@ export default function Header() {
                   <Link href="/buy-residential-dubai" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Buy a Home in Dubai
                   </Link>
-                  <Link href="/properties?type=sale" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                  <Link href="/homes-for-sale" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Browse Our Listings
                   </Link>
                 </div>
@@ -664,7 +664,7 @@ export default function Header() {
                   <Link href="/commercial-real-estate-dubai" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Commercial Real Estate in Dubai
                   </Link>
-                  <Link href="/properties?segment=commercial" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                  <Link href="/properties?property_type=commercial" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Commercial Listings
                   </Link>
                   <Link href="/commercial-real-estate-dubai/fit-out" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
@@ -691,7 +691,7 @@ export default function Header() {
                   <Link href="/landlords" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Lease Out Your Property
                   </Link>
-                  <Link href="/properties?type=rent" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                  <Link href="/rental-search" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Browse Rental Listings
                   </Link>
                   <Link href="/guides/renting" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">

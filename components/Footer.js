@@ -117,7 +117,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/properties?type=rent" className="text-gray-400 hover:text-white hover:underline transition-colors">
+                <Link href="/rental-search" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Browse Rental Listings
                 </Link>
               </li>
@@ -143,7 +143,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/properties?segment=commercial" className="text-gray-400 hover:text-white hover:underline transition-colors">
+                <Link href="/properties?property_type=commercial" className="text-gray-400 hover:text-white hover:underline transition-colors">
                   Commercial Listings
                 </Link>
               </li>

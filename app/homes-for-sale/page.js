@@ -44,7 +44,7 @@ export default function HomesForSale() {
     if (searchFilters.maxBeds !== "NO MAX") params.append("maxBeds", searchFilters.maxBeds);
     if (searchFilters.baths !== "ANY") params.append("baths", searchFilters.baths);
 
-    router.push(`/property?${params.toString()}`);
+    router.push(`/properties?${params.toString()}`);
   };
 
   return (

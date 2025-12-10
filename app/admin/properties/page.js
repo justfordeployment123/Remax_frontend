@@ -135,6 +135,8 @@ export default function AdminProperties() {
                     <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase">Beds</th>
                     <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase">Baths</th>
                     <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase">Sqft</th>
+                    <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase">Parking</th>
+                    <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase">Cheques</th>
                     <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase">Agent</th>
                   </tr>
                 </thead>
@@ -171,6 +173,12 @@ export default function AdminProperties() {
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-600">
                         {property.size?.toLocaleString()}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-600">
+                        {property.parking || "-"}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-600">
+                        {property.cheques || "-"}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-600">
                         {property.agent?.name || "-"}

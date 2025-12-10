@@ -1,19 +1,20 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { FaBed, FaBath, FaRulerCombined, FaMapMarkerAlt, FaSearch, FaFilter } from "react-icons/fa";
 
 export default function RentalSearch() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [searchFilters, setSearchFilters] = useState({
-    address: "",
-    minPrice: "",
-    maxPrice: "",
-    minBeds: "NO MIN",
-    maxBeds: "NO MAX",
-    baths: "ANY",
+    address: searchParams.get("address") || "",
+    minPrice: searchParams.get("minPrice") || "",
+    maxPrice: searchParams.get("maxPrice") || "",
+    minBeds: searchParams.get("minBeds") || "NO MIN",
+    maxBeds: searchParams.get("maxBeds") || "NO MAX",
+    baths: searchParams.get("baths") || "ANY",
   });
 
   const handleFilterChange = (filter, value) => {
@@ -44,7 +45,7 @@ export default function RentalSearch() {
     if (searchFilters.maxBeds !== "NO MAX") params.append("maxBeds", searchFilters.maxBeds);
     if (searchFilters.baths !== "ANY") params.append("baths", searchFilters.baths);
 
-    router.push(`/property?${params.toString()}`);
+    router.push(`/properties?${params.toString()}`);
   };
 
   return (

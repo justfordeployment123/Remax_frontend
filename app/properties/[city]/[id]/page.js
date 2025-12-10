@@ -348,10 +348,40 @@ export default function PropertyDetails() {
                     <p className="text-gray-900 font-semibold">{new Date(property.availabilityDate).toLocaleDateString()}</p>
                   </div>
                 )}
+                {property.parking > 0 && (
+                  <div>
+                    <p className="text-gray-600 text-xs font-bold uppercase tracking-wide mb-2">Parking Spaces</p>
+                    <p className="text-gray-900 font-semibold">{property.parking}</p>
+                  </div>
+                )}
+                {property.cheques > 0 && (
+                  <div>
+                    <p className="text-gray-600 text-xs font-bold uppercase tracking-wide mb-2">Payment Cheques</p>
+                    <p className="text-gray-900 font-semibold">{property.cheques}</p>
+                  </div>
+                )}
+                {property.amenities && (
+                  <div>
+                    <p className="text-gray-600 text-xs font-bold uppercase tracking-wide mb-2">Amenities Code</p>
+                    <p className="text-gray-900 font-semibold">{property.amenities}</p>
+                  </div>
+                )}
                 {property.paymentMethod && (
                   <div>
                     <p className="text-gray-600 text-xs font-bold uppercase tracking-wide mb-2">Payment Method</p>
                     <p className="text-gray-900 font-semibold capitalize">{property.paymentMethod}</p>
+                  </div>
+                )}
+                {property.subCommunity && (
+                  <div>
+                    <p className="text-gray-600 text-xs font-bold uppercase tracking-wide mb-2">Sub Community</p>
+                    <p className="text-gray-900 font-semibold">{property.subCommunity}</p>
+                  </div>
+                )}
+                {property.geopoints && (
+                  <div>
+                    <p className="text-gray-600 text-xs font-bold uppercase tracking-wide mb-2">Coordinates</p>
+                    <p className="text-gray-900 font-semibold text-sm">{property.geopoints}</p>
                   </div>
                 )}
               </div>
