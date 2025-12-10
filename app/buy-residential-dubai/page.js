@@ -26,13 +26,19 @@ export default function BuyResidentialDubai() {
   const fetchProperties = async () => {
     try {
       setLoadingProperties(true);
-      // TODO: will Replace with actual API call when listings endpoint is ready
-      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties?type=sale&limit=6`);
-      // const data = await response.json();
-      // if (data.success) {
-      //   setProperties(data.data);
-      // }
-      setProperties([]);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+      const response = await fetch(`${apiUrl}/listings`);
+      
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success && data.data) {
+          // Filter for sale properties (offeringType = RS) and limit to 6
+          const saleProperties = data.data
+            .filter(prop => prop.offeringType === "RS")
+            .slice(0, 6);
+          setProperties(saleProperties);
+        }
+      }
     } catch (error) {
       console.error('Error fetching properties:', error);
     } finally {
@@ -442,32 +448,38 @@ export default function BuyResidentialDubai() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {properties.map((property) => (
                   <Link
-                    key={property._id}
-                    href={`/properties/${property._id}`}
+                    key={property.id}
+                    href={`/properties/${property.city.toLowerCase().replace(/\s+/g, "-")}/${property.id}`}
                     className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-[#00458b] hover:shadow-lg transition-all duration-200"
                   >
                     <div className="relative h-48 bg-gray-200">
-                      <Image
-                        src={property.image || '/placeholder-property.jpg'}
-                        alt={property.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+                      {property.photos && property.photos.length > 0 ? (
+                        <Image
+                          src={property.photos[0]}
+                          alt={property.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+                          <span className="text-gray-400">No Image</span>
+                        </div>
+                      )}
                     </div>
                     <div className="p-4">
                       <p className="text-xl font-bold text-[#00458b] mb-2">
                         AED {formatPrice(property.price)}
                       </p>
-                      <p className="text-sm text-gray-600 mb-3">{property.community}, Dubai</p>
+                      <p className="text-sm text-gray-600 mb-3">{property.community}, {property.city}</p>
                       <div className="flex items-center gap-4 text-sm text-gray-600 mb-2">
                         <span className="flex items-center gap-1">
-                          <Bed className="w-4 h-4" /> {property.beds} Beds
+                          <Bed className="w-4 h-4" /> {property.bedroom} Beds
                         </span>
                         <span className="flex items-center gap-1">
-                          <Bath className="w-4 h-4" /> {property.baths} Baths
+                          <Bath className="w-4 h-4" /> {property.bathroom} Baths
                         </span>
                         <span className="flex items-center gap-1">
-                          <Maximize className="w-4 h-4" /> {property.size} sqft
+                          <Maximize className="w-4 h-4" /> {(property.size / 1000).toFixed(1)}K sqft
                         </span>
                       </div>
                       <p className="text-xs text-gray-500">Listing by RE/MAX HUB</p>

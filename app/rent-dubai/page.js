@@ -25,13 +25,19 @@ export default function RentDubai() {
   const fetchRentals = async () => {
     try {
       setLoadingRentals(true);
-      // TODO: Replace with actual API call when rental listings endpoint is ready
-      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties?type=rent&limit=6`);
-      // const data = await response.json();
-      // if (data.success) {
-      //   setRentals(data.data);
-      // }
-      setRentals([]); // Empty for now
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+      const response = await fetch(`${apiUrl}/listings`);
+      
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success && data.data) {
+          // Filter for rental properties (offeringType = RR) and limit to 6
+          const rentalProperties = data.data
+            .filter(prop => prop.offeringType === "RR")
+            .slice(0, 6);
+          setRentals(rentalProperties);
+        }
+      }
     } catch (error) {
       console.error('Error fetching rentals:', error);
     } finally {
@@ -459,32 +465,38 @@ export default function RentDubai() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {rentals.map((rental) => (
                   <Link
-                    key={rental._id}
-                    href={`/properties/${rental._id}`}
+                    key={rental.id}
+                    href={`/properties/${rental.city.toLowerCase().replace(/\s+/g, "-")}/${rental.id}`}
                     className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-[#00458b] hover:shadow-lg transition-all duration-200"
                   >
                     <div className="relative h-48 bg-gray-200">
-                      <Image
-                        src={rental.image || '/placeholder-property.jpg'}
-                        alt={rental.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+                      {rental.photos && rental.photos.length > 0 ? (
+                        <Image
+                          src={rental.photos[0]}
+                          alt={rental.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+                          <span className="text-gray-400">No Image</span>
+                        </div>
+                      )}
                     </div>
                     <div className="p-4">
                       <p className="text-xl font-bold text-[#00458b] mb-2">
                         AED {formatPrice(rental.price)}/year
                       </p>
-                      <p className="text-sm text-gray-600 mb-3">{rental.community}, Dubai</p>
+                      <p className="text-sm text-gray-600 mb-3">{rental.community}, {rental.city}</p>
                       <div className="flex items-center gap-4 text-sm text-gray-600 mb-2">
                         <span className="flex items-center gap-1">
-                          <Bed className="w-4 h-4" /> {rental.beds} Beds
+                          <Bed className="w-4 h-4" /> {rental.bedroom} Beds
                         </span>
                         <span className="flex items-center gap-1">
-                          <Bath className="w-4 h-4" /> {rental.baths} Baths
+                          <Bath className="w-4 h-4" /> {rental.bathroom} Baths
                         </span>
                         <span className="flex items-center gap-1">
-                          <Maximize className="w-4 h-4" /> {rental.size} sqft
+                          <Maximize className="w-4 h-4" /> {(rental.size / 1000).toFixed(1)}K sqft
                         </span>
                       </div>
                       <p className="text-xs text-gray-500">Listing by RE/MAX HUB</p>

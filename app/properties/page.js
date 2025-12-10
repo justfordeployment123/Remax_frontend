@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import Image from "next/image";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from "next/link";
@@ -64,6 +65,14 @@ export default function HomesForSale() {
       const data = await response.json();
       
       if (data.success && data.data) {
+        if (data.data.length > 0) {
+          console.log("First property:", {
+            id: data.data[0].id,
+            title: data.data[0].title,
+            photosCount: data.data[0].photos?.length || 0,
+            firstPhoto: data.data[0].photos?.[0] || "NO PHOTOS"
+          });
+        }
         setProperties(data.data);
         setError("");
       } else {
@@ -138,7 +147,7 @@ export default function HomesForSale() {
             </div>
             <Link
               href="/homes-for-sale"
-              className="hidden md:block bg-white text-[#1A3668] hover:bg-blue-50 px-6 py-3 rounded-lg font-bold transition-colors"
+              className="hidden md:block bg-white text-[#1A3668] hover:bg-blue-50 px-6 py-3 rounded-sm font-bold transition-colors"
             >
               ← Modify Search
             </Link>
@@ -208,30 +217,42 @@ export default function HomesForSale() {
                     key={property.id}
                     href={`/properties/${property.city.toLowerCase().replace(/\s+/g, "-")}/${property.id}`}
                   >
-                    <div className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 cursor-pointer">
+                    <div className="group bg-white rounded-sm shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 cursor-pointer">
                       
                       <div className="relative h-64 bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
-                        <img
-                          src={property.photos && property.photos.length > 0 ? property.photos[0] : "/assets/placeholder.png"}
-                          alt={property.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                          onError={(e) => {
-                            e.target.src = "/assets/placeholder.png";
-                          }}
-                        />
+                        {property.photos && property.photos.length > 0 ? (
+                          <Image
+                            src={property.photos[0]}
+                            alt={property.title}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-300"
+                            onError={() => {
+                              console.error("Image failed to load:", property.photos[0]);
+                            }}
+                            onLoad={() => {
+                              console.log("Image loaded successfully:", property.photos[0]);
+                            }}
+                          />
+                        ) : (
+                          <img
+                            src="/assets/placeholder.png"
+                            alt={property.title}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                         
                         {/* Badge Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         
                         {/* Status Badge */}
                         {property.listingFinished === "finished" && (
-                          <div className="absolute top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                          <div className="absolute top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-sm text-xs font-bold shadow-lg flex items-center gap-1">
                             <span>✓</span>
                             <span>Finished</span>
                           </div>
                         )}
                         {property.listingFinished === "Yes" && (
-                          <div className="absolute top-3 left-3 bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                          <div className="absolute top-3 left-3 bg-amber-400 text-white px-3 py-1 rounded-sm text-xs font-bold shadow-lg flex items-center gap-1">
                             <span>⏱</span>
                             <span>Coming Soon</span>
                           </div>
@@ -248,12 +269,12 @@ export default function HomesForSale() {
                         {/* Type Badge */}
                         <div className="absolute top-3 right-3">
                           {property.offeringType === "RR" && (
-                            <span className="inline-block bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            <span className="inline-block bg-purple-400 text-white px-3 py-1 rounded-sm text-xs font-bold shadow-lg">
                               Rental
                             </span>
                           )}
                           {property.offeringType === "RS" && (
-                            <span className="inline-block bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            <span className="inline-block bg-orange-400 text-white px-3 py-1 rounded-sm text-xs font-bold shadow-lg">
                               For Sale
                             </span>
                           )}

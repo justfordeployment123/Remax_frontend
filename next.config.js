@@ -12,6 +12,10 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
       },
       {
+        protocol: 'https',
+        hostname: 'd3juk9vapto0h.cloudfront.net',
+      },
+      {
         protocol: 'http',
         hostname: 'localhost',
       },
