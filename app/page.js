@@ -133,23 +133,22 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      <section className="relative w-full overflow-hidden" style={{ height: '550px' }}>
+      <section className="relative w-full overflow-hidden min-h-[500px] sm:min-h-[550px]" style={{ height: 'auto' }}>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1682410601760-6372fd33ad2b?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
             width: '100%',
-            height: '100%'
+            minHeight: '500px'
           }}
         />
         
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/20"></div>
 
-        <div className="relative z-10 h-full flex flex-col justify-center items-start px-6 sm:px-8 lg:px-16 py-16 lg:py-20">
-          <div className="max-w-2xl">
-            <h1 className="text-white font-bold mb-4 leading-tight" 
+        <div className="relative z-10 min-h-[500px] sm:min-h-[550px] flex flex-col justify-center items-start px-4 sm:px-8 lg:px-16 py-20 sm:py-16 lg:py-20">
+          <div className="max-w-2xl pt-16 sm:pt-0">
+            <h1 className="text-white font-bold mb-4 leading-tight text-3xl sm:text-4xl lg:text-5xl" 
                 style={{ 
-                  fontSize: '2.5rem',
                   lineHeight: '1.2'
                 }}>
               Dubai Property Experts for Serious Buyers & Investors
@@ -192,23 +191,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-24 bg-white border-b border-gray-100">
+      <section className="py-12 lg:py-24 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="h-[280px] rounded-2xl p-10 lg:p-16 flex flex-col lg:flex-row items-center gap-12 border border-gray-200 shadow-md bg-gray-50">
+          <div className="min-h-[200px] lg:h-[280px] rounded-2xl p-6 sm:p-8 lg:p-16 flex flex-col lg:flex-row items-center gap-6 lg:gap-12 border border-gray-200 shadow-md bg-gray-50">
             <div className="flex-shrink-0 flex items-center justify-center">
               <img
                 src="https://images.squarespace-cdn.com/content/v1/5a9f1b211aef1d822edb9d0b/1757003785913-NCI1YZTL145L8OU5LVIR/BMTA+USA+2025+Square+NW.png?format=300w"
                 alt="Brand Spark Most Trusted Awards 2025"
-                className="w-32 h-68 object-contain drop-shadow-lg"
+                className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain drop-shadow-lg"
               />
             </div>
-            <div className="flex-1 flex flex-col justify-center">
-              <h3 className="font-extrabold text-gray-900 mb-4 text-xl lg:text-2xl">
+            <div className="flex-1 flex flex-col justify-center text-center lg:text-left">
+              <h3 className="font-extrabold text-gray-900 mb-3 lg:mb-4 text-lg sm:text-xl lg:text-2xl leading-tight">
                 Most Trusted Real Estate Agents in North America – Now in the U.A.E.
               </h3>
-              <p className="text-gray-700 leading-relaxed text-base lg:text-lg max-w-2xl">
-                RE/MAX has been voted the brand with the #1 Most Trusted Real Estate Agents in the U.S. and Canada by consumers in the BrandSpark Most Trusted Awards, in partnership with Newsweek.<br className="hidden lg:block" />
-                This recognition reinforces our reputation for professionalism and integrity worldwide.
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0">
+                RE/MAX has been voted the brand with the #1 Most Trusted Real Estate Agents in the U.S. and Canada by consumers in the BrandSpark Most Trusted Awards, in partnership with Newsweek.
+                <span className="hidden sm:inline"> This recognition reinforces our reputation for professionalism and integrity worldwide.</span>
               </p>
             </div>
           </div>
@@ -467,7 +466,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partner Network */}
       <section id="partners" className="py-12 lg:py-16 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
