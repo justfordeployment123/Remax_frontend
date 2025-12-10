@@ -7,19 +7,15 @@ import Footer from '../../components/Footer';
 import ConsultationModal from '../../components/ConsultationModal';
 import RequirementsModal from '../../components/RequirementsModal';
 import BuyResidentialTestimonials from '../../components/BuyResidentialTestimonials';
+import FAQAccordion from '../../components/FAQAccordion';
 import { 
   Home, CheckCircle, XCircle, FileText, TrendingUp, 
   BarChart3, Globe, Target, Users, ChevronDown, ChevronUp 
 } from 'lucide-react';
 
 export default function Sell() {
-  const [openFaq, setOpenFaq] = useState(null);
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
-
-  const toggleFaq = (index) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   const openValuationForm = () => {
     setIsRequirementsModalOpen(true);
@@ -32,49 +28,6 @@ export default function Sell() {
   const openConsultation = (topic = 'Selling / Landlord') => {
     setIsConsultationModalOpen(true);
   };
-
-  const faqs = [
-    {
-      question: "How do you determine the asking price for my property?",
-      answer: "We combine recent transactions, current competing listings, property condition, rent potential and your timeline. We'll usually show you a realistic value range and agree on a pricing strategy together."
-    },
-    {
-      question: "What are your fees for selling or leasing my property?",
-      answer: "Fees vary by property type and value, but are typically a percentage of the sale price or annual rent. We'll confirm the fee structure upfront in writing before we start."
-    },
-    {
-      question: "How long will it take to sell my property?",
-      answer: "It depends on price, quality, area and market conditions. We'll give you a realistic estimate once we've seen the property and data. Overpriced properties take longer or don't sell at all."
-    },
-    {
-      question: "What documents do I need to provide to list my property?",
-      answer: "Typically: title deed, passport/ID copy, proof of ownership, basic contact details and any existing tenancy contract if the property is rented. For mortgaged properties, bank details are also needed."
-    },
-    {
-      question: "Can I sell if my property is currently rented?",
-      answer: "Yes. You can sell with the tenant in place, or plan a sale around the lease expiry. We'll advise on your options based on your lease terms and buyer profile."
-    },
-    {
-      question: "Do I need to be in Dubai to sell?",
-      answer: "Not always. With proper power of attorney and documentation, parts of the process can be handled while you're abroad. We'll explain what's possible based on your situation."
-    },
-    {
-      question: "What happens if we get offers below my expectations?",
-      answer: "We present all serious offers with context on the market and buyer profile. You decide whether to accept, negotiate or wait. Our job is to give you clear information, not pressure you."
-    },
-    {
-      question: "How many brokers should I list with?",
-      answer: "In many cases, working with one committed broker on proper exclusivity yields better results than a scattered multi-broker approach with poor accountability. We'll explain pros and cons for your property."
-    },
-    {
-      question: "Can you help me decide between selling and renting?",
-      answer: "Yes. We can model both scenarios: expected sale value vs potential rent, costs and timelines, so you can decide which route fits your goals."
-    },
-    {
-      question: "What do you do differently from other agencies?",
-      answer: "We focus on honest pricing, structured marketing and consistent communication. You won't be promised the moon just to get your listing – we'd rather be straight with you and build a long-term relationship."
-    }
-  ];
 
   const testimonials = [
     {
@@ -568,36 +521,7 @@ export default function Sell() {
             Seller FAQs
           </h2>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg border border-gray-200 overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                >
-                  <span className="text-lg font-semibold text-gray-900 pr-4">
-                    {faq.question}
-                  </span>
-                  {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 text-[#00458b] flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-[#00458b] flex-shrink-0" />
-                  )}
-                </button>
-                
-                {openFaq === index && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <FAQAccordion category="sell" />
         </div>
       </section>
 

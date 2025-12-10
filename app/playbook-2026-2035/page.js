@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import FAQAccordion from '../../components/FAQAccordion';
 import ConsultationModal from '../../components/ConsultationModal';
 
 export default function Playbook20262035() {
@@ -564,53 +565,8 @@ export default function Playbook20262035() {
             Playbook FAQs
           </h2>
 
-          <div className="space-y-4 mb-12">
-            {[
-              {
-                q: "Is this Playbook free?",
-                a: "Yes. It's a free PDF download. We built this because we wanted a resource that reflects how we actually think about the market, not a marketing brochure disguised as analysis. If you find it useful and want to work with us, great. If not, you've still got value from it."
-              },
-              {
-                q: "How long is the Playbook?",
-                a: "Around 40–60 pages, depending on final layout. It's structured so you can read it cover-to-cover or jump to the chapters that matter most to you. We've tried to keep it readable without dumbing down the content."
-              },
-              {
-                q: "Will I be added to a mailing list?",
-                a: "You'll receive the Playbook by email, and we may send occasional updates if we publish a major revision or relevant market note. You can unsubscribe at any time. We don't sell or share your details, and we won't spam you with property listings."
-              },
-              {
-                q: "Can I share this with my business partner / family / advisor?",
-                a: "Yes. We'd prefer you didn't post it publicly or distribute it widely online, but sharing with your immediate decision-making circle is fine. If someone wants their own copy, they can download it from this page."
-              },
-              {
-                q: "Is this going to tell me which property to buy?",
-                a: "No. The Playbook is a strategic framework and market outlook, not a 'buy this unit in this building' guide. If you want specific property advice, that's what a consultation is for. The Playbook gives you the context; we help you apply it to your situation."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
-                >
-                  <span className="text-lg font-semibold text-gray-900 pr-4">
-                    {faq.q}
-                  </span>
-                  <svg
-                    className={`w-5 h-5 text-[#00458b] flex-shrink-0 transition-transform ${faqOpen[index] ? 'transform rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {faqOpen[index] && (
-                  <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="mb-12">
+            <FAQAccordion category="playbook-2026-2035" />
           </div>
 
           <div className="text-center">

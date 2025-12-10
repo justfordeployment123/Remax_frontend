@@ -7,13 +7,13 @@ import Footer from '../../components/Footer';
 import ConsultationModal from '../../components/ConsultationModal';
 import RequirementsModal from '../../components/RequirementsModal';
 import BuyResidentialTestimonials from '../../components/BuyResidentialTestimonials';
+import FAQAccordion from '../../components/FAQAccordion';
 import { 
   Home, CheckCircle, FileText, Calendar, Users, 
   TrendingUp, MapPin, Bed, Bath, Maximize, ChevronDown, ChevronUp 
 } from 'lucide-react';
 
 export default function RentDubai() {
-  const [openFaq, setOpenFaq] = useState(null);
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [isRequirementsModalOpen, setIsRequirementsModalOpen] = useState(false);
   const [rentals, setRentals] = useState([]);
@@ -46,10 +46,6 @@ export default function RentDubai() {
     }
   };
 
-  const toggleFaq = (index) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
-
   const openShareRequirements = () => {
     setIsRequirementsModalOpen(true);
   };
@@ -67,49 +63,6 @@ export default function RentDubai() {
     }
     return price.toLocaleString();
   };
-
-  const faqs = [
-    {
-      question: "Do I have to pay any fees to RE/MAX HUB as a tenant?",
-      answer: "In most cases, yes – tenants pay an agency fee, usually a percentage of the annual rent or a fixed amount agreed upfront. We'll always confirm the fee clearly before you proceed with any lease."
-    },
-    {
-      question: "How many cheques do landlords usually accept?",
-      answer: "It depends on the landlord, property and market conditions. Some still prefer 1–2 cheques, especially for premium areas, while others accept 4–6 cheques. We'll tell you what's realistic for each property and try to balance your needs with the landlord's expectations."
-    },
-    {
-      question: "How much should I budget for upfront costs?",
-      answer: "Typically you should expect: Security deposit (usually 5% of annual rent for unfurnished, 10% for furnished), Agency fee, First rent cheque, Possible Ejari and moving fees (building-dependent). We'll help you estimate your total before you commit."
-    },
-    {
-      question: "Can I negotiate the rent or number of cheques?",
-      answer: "Sometimes, yes. It depends on demand, how long the property has been on the market and the landlord's situation. We'll give you a realistic read and suggest an offer structure that has a genuine chance of being accepted."
-    },
-    {
-      question: "What documents do I need as a tenant?",
-      answer: "Normally: passport/Emirates ID copy, visa copy (or proof in progress), proof of income/employment, and basic contact details. For company leases, trade license and signatory documents may be required."
-    },
-    {
-      question: "How long is a typical tenancy contract in Dubai?",
-      answer: "Most standard tenancies are for 12 months, renewed annually. Shorter terms are possible but less common and may come at a premium."
-    },
-    {
-      question: "Who pays for Ejari and utility connections?",
-      answer: "It varies, but in many cases tenants handle Ejari, DEWA and telecom connections. We'll clarify who is responsible for what before you sign so there are no surprises."
-    },
-    {
-      question: "What happens if I need to leave before my contract ends?",
-      answer: "Early termination is subject to the terms in your tenancy contract and Dubai tenancy law. Many contracts include a penalty or require a notice period. We'll highlight these clauses before you sign and, if needed later, explain your options."
-    },
-    {
-      question: "Can I have pets in the property?",
-      answer: "Pet policies depend on both the building/community rules and the landlord. Some are strict, others are flexible. Tell us upfront if you have pets so we only show you properties where they're genuinely allowed."
-    },
-    {
-      question: "How involved will you be after I move in?",
-      answer: "We're mainly focused on helping you secure the right property and getting the contract set up correctly. For ongoing maintenance or building issues, you'll typically deal with the landlord or their management company, but we're happy to clarify any questions you have about your rights and obligations."
-    }
-  ];
 
   const testimonials = [
     {
@@ -549,35 +502,8 @@ export default function RentDubai() {
             Tenant FAQs for Renting in Dubai
           </h2>
 
-          <div className="space-y-4 mb-12">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg border border-gray-200 overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                >
-                  <span className="text-lg font-semibold text-gray-900 pr-4">
-                    {faq.question}
-                  </span>
-                  {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 text-[#00458b] flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-[#00458b] flex-shrink-0" />
-                  )}
-                </button>
-                
-                {openFaq === index && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="mb-12">
+            <FAQAccordion category="rent-dubai" />
           </div>
 
           <div className="text-center">

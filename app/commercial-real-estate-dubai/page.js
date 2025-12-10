@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ConsultationModal from '../../components/ConsultationModal';
 import BuyResidentialTestimonials from '../../components/BuyResidentialTestimonials';
+import FAQAccordion from '../../components/FAQAccordion';
 import { 
   Building2, MapPin, DollarSign, CheckCircle, Users, 
   TrendingUp, Briefcase, FileText, ChevronDown, ChevronUp,
@@ -700,31 +701,8 @@ export default function CommercialRealEstate() {
             Commercial Real Estate FAQs in Dubai
             </h2>
 
-            <div className="space-y-4 mb-12">
-            {faqs.map((faq, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-                <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors text-left"
-                >
-                    <span className="font-semibold text-gray-900 pr-8">
-                    {faq.question}
-                    </span>
-                    {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 text-[#00458b] flex-shrink-0" />
-                    ) : (
-                    <ChevronDown className="w-5 h-5 text-[#00458b] flex-shrink-0" />
-                    )}
-                </button>
-                {openFaq === index && (
-                    <div className="px-6 py-4 bg-white border-t border-gray-200">
-                    <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-                        {faq.answer}
-                    </p>
-                    </div>
-                )}
-                </div>
-            ))}
+            <div className="mb-12">
+            <FAQAccordion category="commercial-real-estate-dubai" />
             </div>
 
             <div className="bg-blue-50 p-8 rounded-xl border-l-4 border-[#00458b] text-center">

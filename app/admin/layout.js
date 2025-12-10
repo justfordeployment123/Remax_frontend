@@ -71,6 +71,7 @@ export default function AdminLayout({ children }) {
     { name: 'Consultations', href: '/admin/consultations', icon: FiFileText },
     { name: 'Requirements', href: '/admin/requirements', icon: FiFileText },
     { name: 'Testimonials', href: '/admin/testimonials', icon: FiFileText },
+    { name: 'FAQs', href: '/admin/faqs', icon: FiFileText },
     { name: 'Settings', href: '/admin/settings', icon: FiSettings },
   ];
 

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export default function ContactUs() {
   const searchParams = useSearchParams();
@@ -20,7 +21,6 @@ export default function ContactUs() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
-  const [faqOpen, setFaqOpen] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -66,13 +66,6 @@ export default function ContactUs() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const toggleFaq = (index) => {
-    setFaqOpen(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
   };
 
   return (
@@ -417,103 +410,7 @@ export default function ContactUs() {
             </p>
           </div>
 
-          <div className="space-y-4">
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-              <button
-                onClick={() => toggleFaq(0)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <span className="text-lg font-semibold text-gray-900">
-                  What happens after I submit this form?
-                </span>
-                <svg
-                  className={`w-5 h-5 text-[#00458b] transition-transform ${faqOpen[0] ? 'transform rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {faqOpen[0] && (
-                <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                  You'll receive an automated confirmation email immediately. Within 1 business day, a specialist from our team will reach out to you via email or phone (based on your preference) to discuss your needs and next steps.
-                </div>
-              )}
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-              <button
-                onClick={() => toggleFaq(1)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <span className="text-lg font-semibold text-gray-900">
-                  Is this form only for new clients?
-                </span>
-                <svg
-                  className={`w-5 h-5 text-[#00458b] transition-transform ${faqOpen[1] ? 'transform rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {faqOpen[1] && (
-                <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                  Not at all. This form is for anyone—whether you're a prospective client, an existing client with a new inquiry, or even someone interested in joining RE/MAX HUB as an agent. We're here to help with any real estate-related question.
-                </div>
-              )}
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-              <button
-                onClick={() => toggleFaq(2)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <span className="text-lg font-semibold text-gray-900">
-                  Will I get spam or marketing emails?
-                </span>
-                <svg
-                  className={`w-5 h-5 text-[#00458b] transition-transform ${faqOpen[2] ? 'transform rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {faqOpen[2] && (
-                <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                  No. We respect your inbox. You'll only receive communication directly related to your inquiry. We don't sell or share your contact information, and we won't add you to any marketing lists unless you explicitly opt in elsewhere on our site.
-                </div>
-              )}
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-              <button
-                onClick={() => toggleFaq(3)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <span className="text-lg font-semibold text-gray-900">
-                  Can I just call instead?
-                </span>
-                <svg
-                  className={`w-5 h-5 text-[#00458b] transition-transform ${faqOpen[3] ? 'transform rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {faqOpen[3] && (
-                <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                  Absolutely. Feel free to call us at +971 4 398 3527 or message us on WhatsApp at the same number. We're available Monday to Friday, 9 AM to 6 PM, and Saturday 10 AM to 4 PM. The form is just here to make it easier if you prefer to reach out outside office hours.
-                </div>
-              )}
-            </div>
-          </div>
+          <FAQAccordion category="contact-us" />
 
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-6">Still have questions?</p>

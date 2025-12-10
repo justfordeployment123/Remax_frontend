@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import FAQAccordion from '../../components/FAQAccordion';
 import ConsultationModal from '../../components/ConsultationModal';
 import RequirementsModal from '../../components/RequirementsModal';
 import { 
@@ -407,35 +408,8 @@ export default function Landlords() {
             Frequently Asked Questions (FAQs)
           </h2>
 
-          <div className="space-y-4 mb-12">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg border border-gray-200 overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                >
-                  <span className="text-lg font-semibold text-gray-900 pr-4">
-                    {faq.question}
-                  </span>
-                  {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 text-[#00458b] flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-[#00458b] flex-shrink-0" />
-                  )}
-                </button>
-                
-                {openFaq === index && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="mb-12">
+            <FAQAccordion category="landlords" />
           </div>
 
           {/* CTA under FAQs */}

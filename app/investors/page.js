@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 import ConsultationModal from '../../components/ConsultationModal';
 import RequirementsModal from '../../components/RequirementsModal';
 import BuyResidentialTestimonials from '../../components/BuyResidentialTestimonials';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export default function InvestorsPage() {
   const [faqOpen, setFaqOpen] = useState({});
@@ -586,73 +587,8 @@ export default function InvestorsPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative space-y-4">
-              {[
-                {
-                  q: "Is now a good time to invest in Dubai property?",
-                  a: "There is no universal \"good time\" – it depends on what you're buying, why you're buying it and how long you plan to hold. Dubai has cycles like any market. If you're chasing a short-term flip in a hot project, timing is everything and risk is high. If you're building a medium- to long-term portfolio with realistic yield assumptions, the question shifts from \"is now perfect?\" to \"does this specific deal at this price make sense for me?\"."
-                },
-                {
-                  q: "What kind of returns can I expect in Dubai?",
-                  a: "You'll see all sorts of promises, but reality is more boring: Ready residential yields often in the mid-single to high-single digits depending on area, building and price you pay. Off-plan return is heavily linked to your entry price, payment plan and where the market is at handover and beyond. Commercial yields can be higher but come with more vacancy and tenant risk. Any projection should include service charges, realistic rents, void periods and transaction costs. If someone shows you double-digit returns with no risk and no detail, that's marketing, not analysis."
-                },
-                {
-                  q: "Should I buy ready, off-plan or commercial as my first Dubai investment?",
-                  a: "It depends on your time horizon, risk tolerance, and need for income vs growth. As a rough guide: If you want immediate income and visibility, start with ready residential. If you have a longer horizon and want to stage payments, consider off-plan (with eyes open on risk). If you're comfortable with more complexity and vacancy risk, commercial can make sense. We usually walk through all three with actual examples before recommending what fits you."
-                },
-                {
-                  q: "How much capital do I need to start?",
-                  a: "You can enter the market with anything from the low millions of AED for a smaller apartment, up to much larger budgets for villas and commercial assets. The real question is what percentage of your net worth you should allocate, and how leveraged you want to be. You don't want your first Dubai property to be so large that a void or price move keeps you up at night."
-                },
-                {
-                  q: "Can I invest if I don't live in Dubai?",
-                  a: "Yes. Many of our clients are overseas investors. You don't need to be a resident to buy in freehold areas. You do, however, need to get comfortable with: Remote process (video calls, POA where needed), who is representing you on the ground (agent, lawyer, property manager), and currency and banking logistics (moving money, mortgage eligibility if any). We structure the process so you don't need to fly in for every step."
-                },
-                {
-                  q: "How risky is off-plan compared to buying ready?",
-                  a: "Off-plan carries extra risks: Construction delays or changes, market shifts between launch and handover, and over-supply in a specific cluster. You get potential benefits like payment plans and early pricing, but you trade off certainty and visibility. Ready property gives you more clarity on the actual building, community and rent today. We treat off-plan as one tool, not the default answer for every investor."
-                },
-                {
-                  q: "How do you help me avoid overpaying?",
-                  a: "We look at: Recent transaction data in that building/area, current asking prices and where the deal sits in that range, realistic rent today (not brochure rent), and comparable options you could buy instead with the same money. If the numbers don't stack up, we say so. Sometimes the best move is not to buy the thing you came asking about."
-                },
-                {
-                  q: "Who handles leasing and management after I buy?",
-                  a: "You have options: We can help you lease the property through our brokerage and partner network. For ongoing management, you can choose a third-party property manager or handle it yourself if you're local and have the time. For commercial assets, we help you understand tenant quality and lease terms, then you decide how hands-on you want to be. We don't force you into a bundled management product, but we do help you understand what needs to be handled."
-                },
-                {
-                  q: "What are the main costs and taxes I need to be aware of as an investor?",
-                  a: "Key items to factor in: Dubai Land Department fees on purchase, agency fees, service charges and maintenance, utilities/chiller (where applicable), any mortgage-related costs (valuation, processing, interest), and any tax obligations in your home country related to foreign property income or gains. Dubai itself doesn't have a recurring property tax like some countries, but that doesn't mean your home jurisdiction ignores the asset. You should speak to a tax advisor on your side for that piece."
-                },
-                {
-                  q: "What's your role – are you just another broker?",
-                  a: "We earn fees like any brokerage, but we don't pretend we have no conflicts. The difference is: We're happy to say \"this deal doesn't make sense\" and walk away. We look across ready, off-plan and commercial, not just whichever stock we're holding. We encourage you to think in terms of portfolio and risk, not just \"nice unit\". If you want someone to rubber-stamp whatever you've already decided to buy, you don't need us. If you want pushback and structure, that's where we're useful."
-                }
-              ].map((faq, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                  >
-                    <span className="text-lg font-semibold text-gray-900 pr-4">
-                      {faq.q}
-                    </span>
-                    <svg
-                      className={`w-5 h-5 text-[#00458b] flex-shrink-0 transition-transform ${faqOpen[index] ? 'transform rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {faqOpen[index] && (
-                    <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              ))}
+            <div className="relative">
+              <FAQAccordion category="investors" />
             </div>
           </div>
         </div>
