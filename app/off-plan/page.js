@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ConsultationModal from '../../components/ConsultationModal';
 import RequirementsModal from '../../components/RequirementsModal';
+import BuyResidentialTestimonials from '../../components/BuyResidentialTestimonials';
 import { Building2, CheckCircle, Shield, TrendingUp, FileText, Users } from 'lucide-react';
 
 export default function OffPlanDubai() {
@@ -730,61 +731,7 @@ export default function OffPlanDubai() {
             What Our Off-Plan Buyers Say
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 leading-relaxed mb-6 italic">
-                "I wanted to buy into a project early but was worried about taking on unnecessary risk. RE/MAX HUB walked me through the developer's history, the escrow setup and the payment plan in plain language. I ended up buying a 2-bed unit in Business Bay and every milestone so far has matched exactly what they prepared me for."
-              </p>
-              <div>
-                <p className="font-semibold text-gray-900">Yousef R.</p>
-                <p className="text-sm text-gray-600">Investor from Kuwait</p>
-                <p className="text-xs text-[#00458b] mt-1">Off-plan apartment in Business Bay</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 leading-relaxed mb-6 italic">
-                "Different agents kept pushing us into the latest 'hot' launches. The team at RE/MAX HUB slowed things down, compared three projects side by side and showed us what was real value versus pure hype. We finally booked a townhouse in a quieter community with a better layout and handover timeline for our kids, not just the loudest project on social media."
-              </p>
-              <div>
-                <p className="font-semibold text-gray-900">Imran & Nadia</p>
-                <p className="text-sm text-gray-600">Family living in Dubai</p>
-                <p className="text-xs text-[#00458b] mt-1">Off-plan townhouse in Dubai Hills Estate</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 leading-relaxed mb-6 italic">
-                "Buying off plan in Dubai while living in Italy felt risky at the start. Having Leonardo, an Italian-speaking agent at RE/MAX HUB, made it much easier. He explained every part of the contract in Italian, double-checked the payment schedule with the developer and handled the bank and POA for me. Even from thousands of kilometres away, I always knew what was happening and never felt lost."
-              </p>
-              <div>
-                <p className="font-semibold text-gray-900">Marco B.</p>
-                <p className="text-sm text-gray-600">Buyer from Italy</p>
-                <p className="text-xs text-[#00458b] mt-1">Off-plan apartment near Dubai Creek</p>
-              </div>
-            </div>
-          </div>
+          <BuyResidentialTestimonials category="off-plan" />
         </div>
       </section>
 

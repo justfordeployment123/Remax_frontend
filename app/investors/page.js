@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ConsultationModal from '../../components/ConsultationModal';
 import RequirementsModal from '../../components/RequirementsModal';
+import BuyResidentialTestimonials from '../../components/BuyResidentialTestimonials';
 
 export default function InvestorsPage() {
   const [faqOpen, setFaqOpen] = useState({});
@@ -561,67 +562,7 @@ export default function InvestorsPage() {
             What Our Investor Clients Say
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
-              <div className="mb-4">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 italic leading-relaxed mb-4">
-                  "I already owned property in Saudi and London but didn't know where to start in Dubai. RE/MAX HUB helped me avoid a couple of overhyped launches and instead buy two rented apartments in established communities. The numbers they showed me on rent and service charges were very close to what I'm actually seeing now."
-                </p>
-              </div>
-              <div className="border-t border-gray-200 pt-4">
-                <p className="font-bold text-gray-900">Hassan A.</p>
-                <p className="text-sm text-gray-600">Investor from Saudi Arabia</p>
-                <p className="text-xs text-[#00458b] mt-2">Focus: Buy-to-let residential in established communities</p>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
-              <div className="mb-4">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 italic leading-relaxed mb-4">
-                  "Every developer presentation I saw made it sound like I had to 'book now or miss out'. RE/MAX HUB took the emotion out of it and compared three projects side by side: payment plans, handover risk, expected rents and possible exits. I booked one unit where the logic was clear, not because of the loudest marketing campaign."
-                </p>
-              </div>
-              <div className="border-t border-gray-200 pt-4">
-                <p className="font-bold text-gray-900">Anna K.</p>
-                <p className="text-sm text-gray-600">Investor from U.K.</p>
-                <p className="text-xs text-[#00458b] mt-2">Focus: Off-plan waterfront apartment</p>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
-              <div className="mb-4">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 italic leading-relaxed mb-4">
-                  "Most of my money was tied up in my own business and one villa. I wanted more income but didn't want to become a full-time landlord. The team helped me buy a small leased commercial unit and one apartment that they then helped rent out. I now have two extra income streams without taking my eye off the business."
-                </p>
-              </div>
-              <div className="border-t border-gray-200 pt-4">
-                <p className="font-bold text-gray-900">Farid M.</p>
-                <p className="text-sm text-gray-600">Business owner in Dubai</p>
-                <p className="text-xs text-[#00458b] mt-2">Focus: Mixed small portfolio (commercial + residential)</p>
-              </div>
-            </div>
-          </div>
+          <BuyResidentialTestimonials category="investors" />
         </div>
       </section>
 

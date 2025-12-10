@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ConsultationModal from '../../components/ConsultationModal';
 import RequirementsModal from '../../components/RequirementsModal';
+import BuyResidentialTestimonials from '../../components/BuyResidentialTestimonials';
 import { 
   Home, CheckCircle, FileText, Calendar, Users, 
   TrendingUp, MapPin, Bed, Bath, Maximize, ChevronDown, ChevronUp 
@@ -538,25 +539,7 @@ export default function RentDubai() {
             What Our Tenants Say
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 p-8 rounded-xl border border-gray-200"
-              >
-                <div className="mb-6">
-                  <p className="text-lg font-bold text-gray-900 mb-1">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-gray-600 mb-1">{testimonial.profile}</p>
-                  <p className="text-sm text-[#00458b] font-medium">{testimonial.community}</p>
-                </div>
-                <p className="text-gray-700 leading-relaxed italic">
-                  "{testimonial.quote}"
-                </p>
-              </div>
-            ))}
-          </div>
+          <BuyResidentialTestimonials category="rent" />
         </div>
       </section>
 

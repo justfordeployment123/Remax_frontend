@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ConsultationModal from '../../components/ConsultationModal';
+import BuyResidentialTestimonials from '../../components/BuyResidentialTestimonials';
 import { 
   Building2, MapPin, DollarSign, CheckCircle, Users, 
   TrendingUp, Briefcase, FileText, ChevronDown, ChevronUp,
@@ -680,26 +681,7 @@ export default function CommercialRealEstate() {
             How We've Helped Commercial Clients in Dubai
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
-                <div className="mb-6">
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-sm text-[#00458b] font-semibold mb-1">
-                    {testimonial.profile}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {testimonial.area}
-                  </p>
-                </div>
-                <p className="text-gray-700 italic leading-relaxed">
-                  "{testimonial.quote}"
-                </p>
-              </div>
-            ))}
-          </div>
+          <BuyResidentialTestimonials category="commercial" />
         </div>
       </section>
 
