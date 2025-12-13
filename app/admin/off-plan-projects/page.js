@@ -720,7 +720,7 @@ export default function OffPlanProjectsAdmin() {
                       value={formData.name}
                       onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30"
-                      placeholder="e.g., Harbour Residences"
+                      placeholder="Harbour Residences"
                     />
                   </div>
 
@@ -734,7 +734,7 @@ export default function OffPlanProjectsAdmin() {
                       value={formData.developer}
                       onChange={(e) => setFormData(prev => ({ ...prev, developer: e.target.value }))}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30"
-                      placeholder="e.g., Emaar"
+                      placeholder="Emaar"
                     />
                   </div>
 
@@ -748,7 +748,7 @@ export default function OffPlanProjectsAdmin() {
                       value={formData.area}
                       onChange={(e) => setFormData(prev => ({ ...prev, area: e.target.value }))}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30"
-                      placeholder="e.g., Dubai Creek Harbour"
+                      placeholder="Dubai Creek Harbour"
                     />
                   </div>
 
@@ -762,7 +762,7 @@ export default function OffPlanProjectsAdmin() {
                       value={formData.community}
                       onChange={(e) => setFormData(prev => ({ ...prev, community: e.target.value }))}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30"
-                      placeholder="e.g., Dubai Creek Harbour, Dubai"
+                      placeholder="Dubai Creek Harbour, Dubai"
                     />
                   </div>
 
@@ -777,7 +777,7 @@ export default function OffPlanProjectsAdmin() {
                       value={formData.startingPrice}
                       onChange={(e) => setFormData(prev => ({ ...prev, startingPrice: e.target.value }))}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30"
-                      placeholder="e.g., 1350000"
+                      placeholder="1350000"
                     />
                   </div>
 
@@ -791,7 +791,7 @@ export default function OffPlanProjectsAdmin() {
                       value={formData.unitTypes}
                       onChange={(e) => setFormData(prev => ({ ...prev, unitTypes: e.target.value }))}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30"
-                      placeholder="e.g., 1-3 BR Apartments"
+                      placeholder="1-3 BR Apartments"
                     />
                   </div>
 
@@ -910,7 +910,7 @@ export default function OffPlanProjectsAdmin() {
                     value={formData.paymentPlan}
                     onChange={(e) => setFormData(prev => ({ ...prev, paymentPlan: e.target.value }))}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30"
-                    placeholder="e.g., 60/40 or 80/20 post-handover"
+                    placeholder="60/40 or 80/20 post-handover"
                   />
                 </div>
 

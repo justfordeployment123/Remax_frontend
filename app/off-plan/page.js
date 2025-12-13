@@ -85,7 +85,7 @@ export default function OffPlanDubai() {
     },
     {
       q: "What happens if the project is delayed?",
-      a: "Delays are not unusual with off-plan. Contracts usually give the developer some flexibility on timelines, and only after a certain grace period do compensation or cancellation rights kick in. What happens in practice depends on: the developer's policy (some may offer alternative units, small compensation, or revised handover dates), the exact wording of your SPA (sale and purchase agreement), and whether the delay is due to normal construction issues or more serious problems. In a normal delay scenario, you wait longer and your payment schedule may shift. In more serious cases (e.g. stalled projects), RERA and the escrow framework are meant to step in to restructure, cancel or transfer the project. You shouldn't assume 'it will be fine because it's Dubai' – you should assume delays are possible and plan your timelines and financing accordingly."
+      a: "Delays are not unusual with off-plan. Contracts usually give the developer some flexibility on timelines, and only after a certain grace period do compensation or cancellation rights kick in. What happens in practice depends on: the developer's policy (some may offer alternative units, small compensation, or revised handover dates), the exact wording of your SPA (sale and purchase agreement), and whether the delay is due to normal construction issues or more serious problems. In a normal delay scenario, you wait longer and your payment schedule may shift. In more serious cases (stalled projects), RERA and the escrow framework are meant to step in to restructure, cancel or transfer the project. You shouldn't assume 'it will be fine because it's Dubai' – you should assume delays are possible and plan your timelines and financing accordingly."
     },
     {
       q: "How do escrow and RERA protect me?",
@@ -97,7 +97,7 @@ export default function OffPlanDubai() {
     },
     {
       q: "How do off-plan payment plans work?",
-      a: "Most off-plan deals follow a staged payment structure: an initial booking fee / down payment on reservation and signing the SPA, several construction-linked installments (e.g. at 10%, 30%, 60% completion), a larger handover payment when the unit is ready and you receive keys, and some projects offer post-handover payment plans, where the last chunk is spread over 1–5 years after handover. The key is to map the schedule against your actual cashflow and financing. It's not enough to see '60/40' and think it's easy – you need to know when each amount is due and what happens if you're late."
+      a: "Most off-plan deals follow a staged payment structure: an initial booking fee / down payment on reservation and signing the SPA, several construction-linked installments (at 10%, 30%, 60% completion), a larger handover payment when the unit is ready and you receive keys, and some projects offer post-handover payment plans, where the last chunk is spread over 1–5 years after handover. The key is to map the schedule against your actual cashflow and financing. It's not enough to see '60/40' and think it's easy – you need to know when each amount is due and what happens if you're late."
     },
     {
       q: "Can I sell before handover?",

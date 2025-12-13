@@ -78,13 +78,13 @@ export default function PrivacyPolicy() {
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
               <li>Our website and any microsites linked to it.</li>
-              <li>Forms you submit on our website (e.g. contact forms, "Share Your Requirements", "Join RE/MAX HUB").</li>
+              <li>Forms you submit on our website (contact forms, "Share Your Requirements", "Join RE/MAX HUB").</li>
               <li>Email, phone, WhatsApp or other communication you have with us.</li>
               <li>Enquiries, viewings, negotiations and transactions we handle as part of our real estate brokerage and advisory services.</li>
               <li>Marketing communications and updates we send (where permitted).</li>
             </ul>
             <p className="text-gray-700 leading-relaxed">
-              This Policy does not replace any separate contractual terms you may sign with us (e.g. listing agreements, brokerage agreements, employment contracts), which may include additional privacy and confidentiality terms.
+              This Policy does not replace any separate contractual terms you may sign with us (listing agreements, brokerage agreements, employment contracts), which may include additional privacy and confidentiality terms.
             </p>
           </section>
 
@@ -98,7 +98,7 @@ export default function PrivacyPolicy() {
             <h3 className="text-xl font-bold text-[#00458b] mb-4 mt-8">3.1 Information You Provide Directly</h3>
             <p className="text-gray-700 leading-relaxed mb-3">You may provide personal data to us when you:</p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
-              <li>Fill in forms on our website (e.g. contact, requirements, application).</li>
+              <li>Fill in forms on our website (contact, requirements, application).</li>
               <li>Communicate with us by email, phone, WhatsApp or other channels.</li>
               <li>Meet with us in person or attend viewings or events.</li>
               <li>Enter into a brokerage, listing or other service agreement with us.</li>
@@ -135,10 +135,10 @@ export default function PrivacyPolicy() {
             <h3 className="text-xl font-bold text-[#00458b] mb-4">3.3 Information from Third Parties</h3>
             <p className="text-gray-700 leading-relaxed mb-3">We may receive personal data about you from third parties, such as:</p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
-              <li>Property portals where you have submitted an enquiry (e.g. Bayut, Property Finder, etc.).</li>
+              <li>Property portals where you have submitted an enquiry (Bayut, Property Finder, etc.).</li>
               <li>RE/MAX network offices in other countries referring you to us or receiving a referral from us.</li>
               <li>Mortgage brokers, banks, fit-out partners (such as TrueBuild) and other service providers involved in your transaction, where you have engaged or authorised them.</li>
-              <li>Publicly available sources (e.g. trade registers, public listings) when performing due diligence.</li>
+              <li>Publicly available sources (trade registers, public listings) when performing due diligence.</li>
             </ul>
             <p className="text-gray-700 leading-relaxed">
               We treat this data in line with this Privacy Policy and any applicable obligations agreed with those third parties.
@@ -171,9 +171,9 @@ export default function PrivacyPolicy() {
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
               <li><span className="font-medium">Consent:</span> Where you have given explicit consent, for example, to receive marketing communications or to be contacted about a specific enquiry.</li>
-              <li><span className="font-medium">Contract:</span> Where processing is necessary to enter into or perform a contract with you (e.g. brokerage agreement, agency listing, service engagement).</li>
+              <li><span className="font-medium">Contract:</span> Where processing is necessary to enter into or perform a contract with you (brokerage agreement, agency listing, service engagement).</li>
               <li><span className="font-medium">Legitimate interests:</span> Where processing is necessary for our legitimate business interests (such as responding to enquiries, running our business, improving services, preventing fraud), and those interests are not overridden by your rights and interests.</li>
-              <li><span className="font-medium">Legal obligations:</span> Where we must process personal data to comply with applicable laws and regulations (e.g. anti-money laundering checks, record-keeping duties).</li>
+              <li><span className="font-medium">Legal obligations:</span> Where we must process personal data to comply with applicable laws and regulations (anti-money laundering checks, record-keeping duties).</li>
             </ul>
             <p className="text-gray-700 leading-relaxed">
               We may rely on different legal bases for different processing activities and will apply the appropriate basis in each case.
@@ -219,7 +219,7 @@ export default function PrivacyPolicy() {
               Because we operate in the UAE and are part of the RE/MAX global network, your personal data may be stored or processed in other countries, including:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
-              <li>Where our service providers (e.g. cloud hosting, CRM, email providers) maintain their servers.</li>
+              <li>Where our service providers (cloud hosting, CRM, email providers) maintain their servers.</li>
               <li>Where another RE/MAX office or partner involved in your enquiry or transaction is located.</li>
             </ul>
             <p className="text-gray-700 leading-relaxed">
@@ -236,7 +236,7 @@ export default function PrivacyPolicy() {
             <p className="text-gray-700 leading-relaxed mb-3">In particular:</p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
               <li>Enquiries and communication records may be retained for a period after our last interaction to handle follow-ups, disputes or repeat business.</li>
-              <li>Transaction-related records (e.g. contracts, agreements, invoices, AML documentation) may be retained for longer periods as required by applicable laws or professional rules.</li>
+              <li>Transaction-related records (contracts, agreements, invoices, AML documentation) may be retained for longer periods as required by applicable laws or professional rules.</li>
               <li>Recruitment-related data may be kept for a period after a hiring decision for record-keeping and potential future opportunities, unless you request deletion (subject to legal constraints).</li>
             </ul>
             <p className="text-gray-700 leading-relaxed">

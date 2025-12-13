@@ -122,7 +122,7 @@ export default function CookiePolicy() {
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    <span>Submitting forms (e.g. contact, "Share Your Requirements", applications).</span>
+                    <span>Submitting forms (contact, "Share Your Requirements", applications).</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
@@ -169,7 +169,7 @@ export default function CookiePolicy() {
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    <span>General location information (e.g. city/country) based on IP address.</span>
+                    <span>General location information (city/country) based on IP address.</span>
                   </li>
                 </ul>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
@@ -208,7 +208,7 @@ export default function CookiePolicy() {
                 <ul className="space-y-3 text-gray-700 leading-relaxed mb-4">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    <span>Measure the effectiveness of our campaigns (e.g. which ad led to a visit or enquiry).</span>
+                    <span>Measure the effectiveness of our campaigns (which ad led to a visit or enquiry).</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
@@ -224,7 +224,7 @@ export default function CookiePolicy() {
                     These cookies are typically set by third-party advertising networks. They may track your activity across multiple websites, and the information collected is used to build a profile of your interests.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    You can usually manage preferences for these cookies directly with the relevant platform (e.g. Google Ads settings, Facebook Ad Preferences), in addition to your browser settings.
+                    You can usually manage preferences for these cookies directly with the relevant platform (Google Ads settings, Facebook Ad Preferences), in addition to your browser settings.
                   </p>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
@@ -240,11 +240,11 @@ export default function CookiePolicy() {
                 <ul className="space-y-3 text-gray-700 leading-relaxed mb-6">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    <span>Analytics providers (e.g. Google Analytics or similar).</span>
+                    <span>Analytics providers (Google Analytics or similar).</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    <span>Marketing and advertising platforms (e.g. Google Ads, Meta, LinkedIn, if implemented).</span>
+                    <span>Marketing and advertising platforms (Google Ads, Meta, LinkedIn, if implemented).</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>

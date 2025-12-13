@@ -373,7 +373,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                               type="text"
                               value={communityBuilding}
                               onChange={(e) => setCommunityBuilding(e.target.value)}
-                              placeholder="e.g. Widcombe House 4, Uptown Motor City"
+                              placeholder="Widcombe House 4, Uptown Motor City"
                               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm"
                             />
                           </div>
@@ -418,7 +418,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                               type="number"
                               value={sizeSquft}
                               onChange={(e) => setSizeSquft(e.target.value)}
-                              placeholder="e.g. 1,050"
+                              placeholder="1,050"
                               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm"
                               inputMode="numeric"
                             />
@@ -433,7 +433,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                               type="number"
                               value={expectedPrice}
                               onChange={(e) => setExpectedPrice(e.target.value)}
-                              placeholder="e.g. 1,650,000"
+                              placeholder="1,650,000"
                               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm"
                               inputMode="numeric"
                             />
@@ -551,7 +551,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                             <textarea
                               value={areas}
                               onChange={(e) => setAreas(e.target.value)}
-                              placeholder="e.g. Dubai Marina, Downtown, Motor City…"
+                              placeholder="Dubai Marina, Downtown, Motor City…"
                               rows="2"
                               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm resize-none"
                             />
@@ -638,7 +638,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                           type="text"
                           value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
-                          placeholder="e.g. Ahmed Khan"
+                          placeholder="Ahmed Khan"
                           className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm ${
                             errors.fullName ? 'border-red-500' : 'border-gray-300'
                           }`}
@@ -655,7 +655,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                           type="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          placeholder="e.g. you@example.com"
+                          placeholder="you@example.com"
                           className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm ${
                             errors.email ? 'border-red-500' : 'border-gray-300'
                           }`}
@@ -672,7 +672,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                           type="tel"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          placeholder="e.g. +971 5X XXX XXXX"
+                          placeholder="+971 5X XXX XXXX"
                           className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm ${
                             errors.phone ? 'border-red-500' : 'border-gray-300'
                           }`}

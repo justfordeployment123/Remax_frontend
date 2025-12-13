@@ -305,7 +305,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         name="budget_range"
                         value={formData.budget_range}
                         onChange={handleChange}
-                        placeholder="e.g. AED 2-4M"
+                        placeholder="AED 2-4M"
                         className="w-full px-2.5 py-1.5 rounded-lg border border-gray-300 text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all"
                       />
                     </div>

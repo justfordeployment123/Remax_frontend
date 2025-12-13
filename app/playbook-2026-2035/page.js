@@ -407,7 +407,7 @@ export default function Playbook20262035() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
-                        placeholder="e.g. Omar Al Mansoori"
+                        placeholder="Omar Al Mansoori"
                       />
                     </div>
 
@@ -423,7 +423,7 @@ export default function Playbook20262035() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
-                        placeholder="e.g. you@example.com"
+                        placeholder="you@example.com"
                       />
                     </div>
 
@@ -475,7 +475,7 @@ export default function Playbook20262035() {
                         value={formData.budget}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
-                        placeholder="e.g. AED 1.5M - 5M, or 'Exploring'"
+                        placeholder="AED 1.5M - 5M, or 'Exploring'"
                       />
                     </div>
 

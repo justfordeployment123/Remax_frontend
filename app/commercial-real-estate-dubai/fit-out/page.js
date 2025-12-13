@@ -448,7 +448,7 @@ export default function CommercialFitOut() {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      placeholder="e.g. Sarah Ahmed"
+                      placeholder="Sarah Ahmed"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
@@ -464,7 +464,7 @@ export default function CommercialFitOut() {
                       name="companyName"
                       value={formData.companyName}
                       onChange={handleInputChange}
-                      placeholder="e.g. ABC Technologies FZ-LLC"
+                      placeholder="ABC Technologies FZ-LLC"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                     />
                   </div>
@@ -479,7 +479,7 @@ export default function CommercialFitOut() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="e.g. you@example.com"
+                      placeholder="you@example.com"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
@@ -495,7 +495,7 @@ export default function CommercialFitOut() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="e.g. +971 5X XXX XXXX"
+                      placeholder="+971 5X XXX XXXX"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
@@ -554,7 +554,7 @@ export default function CommercialFitOut() {
                       name="size"
                       value={formData.size}
                       onChange={handleInputChange}
-                      placeholder="e.g. 2,500 sq ft"
+                      placeholder="2,500 sq ft"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
@@ -591,7 +591,7 @@ export default function CommercialFitOut() {
                       name="handoverDate"
                       value={formData.handoverDate}
                       onChange={handleInputChange}
-                      placeholder="e.g. Q4 2026 or specific month"
+                      placeholder="Q4 2026 or specific month"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
@@ -607,7 +607,7 @@ export default function CommercialFitOut() {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      placeholder="e.g. AED 400–600k, or 'Exploring ranges'"
+                      placeholder="AED 400–600k, or 'Exploring ranges'"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                     />
                   </div>

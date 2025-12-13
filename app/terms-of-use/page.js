@@ -133,7 +133,7 @@ export default function TermsOfUsePage() {
               This website may contain links to third-party websites, platforms or services, including:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4 leading-relaxed">
-              <li>Property portals (e.g. listing sites).</li>
+              <li>Property portals (listing sites).</li>
               <li>Developer websites and project pages.</li>
               <li>RE/MAX global network sites.</li>
               <li>Service providers such as mortgage advisors, banks, fit-out partners and other professional firms.</li>

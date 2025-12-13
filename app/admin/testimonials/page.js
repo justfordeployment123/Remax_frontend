@@ -326,7 +326,7 @@ export default function TestimonialManagement() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="e.g., Omar & Aisha"
+                    placeholder="Omar & Aisha"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3668] outline-none"
                   />
@@ -350,7 +350,7 @@ export default function TestimonialManagement() {
                     name="profile"
                     value={formData.profile}
                     onChange={handleInputChange}
-                    placeholder="e.g., Family from Canada"
+                    placeholder="Family from Canada"
                     required
                     maxLength="150"
                     className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#1A3668] outline-none transition-colors ${
@@ -400,7 +400,7 @@ export default function TestimonialManagement() {
                     name="location"
                     value={formData.location}
                     onChange={handleInputChange}
-                    placeholder="e.g., Dubai Hills Estate"
+                    placeholder="Dubai Hills Estate"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3668] outline-none"
                   />
                 </div>

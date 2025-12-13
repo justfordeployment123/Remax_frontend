@@ -368,7 +368,7 @@ export default function AgentForm({ agent, onSave, onCancel, saving }) {
         <label className="block text-sm font-semibold text-gray-800">Languages</label>
         <input
           type="text"
-          placeholder="Enter languages separated by commas (e.g., English, Spanish, French)"
+          placeholder="Enter languages separated by commas (English, Spanish, French)"
           value={languageInput}
           onChange={handleLanguageChange}
           className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-remax-blue focus:border-remax-blue"

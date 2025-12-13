@@ -192,7 +192,7 @@ export default function CommercialRealEstate() {
     },
     {
       question: "How is commercial rent usually structured in Dubai (cheques, deposits, etc.)?",
-      answer: "Traditionally, rent is paid via post-dated cheques, but the market is slowly moving towards online payments / direct debits with some landlords. Typical structure: Rent – Often 1–4 cheques per year (1 = more negotiating leverage, 4–6 = more cashflow friendly but sometimes weaker negotiation power). Security deposit – Usually a percentage of annual rent (commonly one month's rent equivalent), held by the landlord. Agency fee – Usually a percentage of annual rent (e.g. 5%), paid once when the lease is signed. Service charges – Either included in the rent (all-in) or billed separately by the landlord/building. Everything is negotiable to a point, but if you come in with 12 cheques and no deposit, you're not in a strong position."
+      answer: "Traditionally, rent is paid via post-dated cheques, but the market is slowly moving towards online payments / direct debits with some landlords. Typical structure: Rent – Often 1–4 cheques per year (1 = more negotiating leverage, 4–6 = more cashflow friendly but sometimes weaker negotiation power). Security deposit – Usually a percentage of annual rent (commonly one month's rent equivalent), held by the landlord. Agency fee – Usually a percentage of annual rent (5%), paid once when the lease is signed. Service charges – Either included in the rent (all-in) or billed separately by the landlord/building. Everything is negotiable to a point, but if you come in with 12 cheques and no deposit, you're not in a strong position."
     },
     {
       question: "How long are typical office or retail leases?",
@@ -216,7 +216,7 @@ export default function CommercialRealEstate() {
     },
     {
       question: "Can I use a residential property as an office?",
-      answer: "Generally, no – not in a way that's compliant for a proper trade license and real operations. Most licensing authorities require commercial-zoned premises for most business activities, especially if you have staff or clients visiting. There are some edge cases (e.g. certain free-zone flex or \"virtual office\" solutions, or professional activities that allow home-based elements), but if you're planning a proper team or client-facing operation, assume you'll need commercial space that matches your license type."
+      answer: "Generally, no – not in a way that's compliant for a proper trade license and real operations. Most licensing authorities require commercial-zoned premises for most business activities, especially if you have staff or clients visiting. There are some edge cases (certain free-zone flex or \"virtual office\" solutions, or professional activities that allow home-based elements), but if you're planning a proper team or client-facing operation, assume you'll need commercial space that matches your license type."
     },
     {
       question: "How early should I start looking for new premises before my current lease expires?",
