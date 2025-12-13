@@ -104,25 +104,25 @@ export default function SignUpPage() {
     }
   };
 
-  const handleGoogleSignUp = async () => {
-    try {
-      
-      window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/google`;
-    } catch (error) {
-      console.error('Google signup error:', error);
-      alert('Google sign up failed');
-    }
-  };
+  // const handleGoogleSignUp = async () => {
+  //   try {
+  //     
+  //     window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/google`;
+  //   } catch (error) {
+  //     console.error('Google signup error:', error);
+  //     alert('Google sign up failed');
+  //   }
+  // };
 
-  const handleAppleSignUp = async () => {
-    try {
-      
-      window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/apple`;
-    } catch (error) {
-      console.error('Apple signup error:', error);
-      alert('Apple sign up failed');
-    }
-  };
+  // const handleAppleSignUp = async () => {
+  //   try {
+  //     
+  //     window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/apple`;
+  //   } catch (error) {
+  //     console.error('Apple signup error:', error);
+  //     alert('Apple sign up failed');
+  //   }
+  // };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -323,16 +323,16 @@ export default function SignUpPage() {
               )}
             </button>
 
-            <div className="relative mb-6">
+            {/* <div className="relative mb-6">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-200"></div>
               </div>
               <div className="relative flex justify-center text-sm">
                 <span className="px-2 bg-white text-gray-500">Or sign up with</span>
               </div>
-            </div>
+            </div> */}
 
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            {/* <div className="grid grid-cols-2 gap-3 mb-6">
               <button
                 onClick={handleAppleSignUp}
                 className="flex items-center justify-center gap-2 px-4 py-3 border border-gray-300 rounded-md bg-white text-gray-700 font-medium hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 transform hover:translate-y-[-1px] active:translate-y-0"
@@ -354,7 +354,7 @@ export default function SignUpPage() {
                 </svg>
                 Google
               </button>
-            </div>
+            </div> */}
 
             <div className="text-center pt-4 border-t border-gray-100">
               <p className="text-sm text-gray-600">

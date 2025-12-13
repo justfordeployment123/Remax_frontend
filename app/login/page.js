@@ -247,7 +247,7 @@ export default function LoginPage() {
               )}
             </button>
 
-            <div className="relative mb-6">
+            {/* <div className="relative mb-6">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-200"></div>
               </div>
@@ -272,7 +272,7 @@ export default function LoginPage() {
                 </svg>
                 Google
               </button>
-            </div>
+            </div> */}
 
             <div className="text-center pt-4 border-t border-gray-100">
               <p className="text-sm text-gray-600">
