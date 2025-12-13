@@ -232,46 +232,46 @@ export default function CommercialRealEstate() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative py-8 sm:py-12 lg:py-16 xl:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             
             <div>
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-2 sm:mb-4">
                 Commercial Real Estate in Dubai
               </span>
               
-              <h1 className="text-5xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Find the Right Office, Retail or Warehouse Space in Dubai
               </h1>
               
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 Whether you're opening your first office, relocating a team or acquiring an income-generating asset, RE/MAX HUB helps you find and negotiate the right commercial property – not just whatever is on the portals this week.
               </p>
 
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-3 sm:mb-6">
                 <button
                   onClick={openRequirementsForm}
-                  className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+                  className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200 w-full sm:w-auto"
                 >
                   Share Your Commercial Requirements
                 </button>
                 
                 <button
                   onClick={() => openConsultation()}
-                  className="border-2 border-[#00458b] text-[#00458b] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200"
+                  className="border-2 border-[#00458b] text-[#00458b] px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200 w-full sm:w-auto"
                 >
                   Book a Commercial Consultation
                 </button>
               </div>
 
-              <p className="text-sm text-gray-600 italic">
+              <p className="text-xs sm:text-sm text-gray-600 italic">
                 We represent both occupiers and investors. No obligation, no spam.
               </p>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[500px] rounded-lg sm:rounded-2xl overflow-hidden">
               <Image
                 src="/commercial/image-com-hero-1.png"
                 alt="Find the Right Office, Retail or Warehouse Space in Dubai"
@@ -284,7 +284,7 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      <section className="relative py-16 bg-gray-50 overflow-hidden">
+      <section className="relative py-8 sm:py-12 lg:py-16 bg-gray-50 overflow-hidden">
         <div className="absolute inset-0">
             <Image
             src="/commercial/image-com-strip-1.png"
@@ -295,17 +295,17 @@ export default function CommercialRealEstate() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Why Businesses Work With RE/MAX HUB
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {credibilityPoints.map((point, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <div key={index} className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                     {point.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600">
                     {point.description}
                 </p>
                 </div>
@@ -315,13 +315,13 @@ export default function CommercialRealEstate() {
       </section>
 
 
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Who We Help in Commercial Real Estate
           </h2>
 
-          <div className="relative h-[300px] lg:h-[400px] rounded-2xl overflow-hidden mb-12">
+          <div className="relative h-[200px] sm:h-[300px] lg:h-[400px] rounded-lg sm:rounded-2xl overflow-hidden mb-8 sm:mb-12">
             <Image
               src="/commercial/image-com-profiles-1.png"
               alt="Mixed Commercial Users"
@@ -330,51 +330,51 @@ export default function CommercialRealEstate() {
             />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
             {/* Occupiers */}
-            <div className="bg-blue-50 p-8 rounded-xl border-2 border-blue-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <Building2 className="w-6 h-6 text-[#00458b]" />
+            <div className="bg-blue-50 p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border-2 border-blue-200">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
+                <Building2 className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b]" />
                 For Occupiers (Businesses/Tenants)
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Startups and SMEs setting up their first Dubai office</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Startups and SMEs setting up their first Dubai office</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Established companies relocating or upgrading space</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Established companies relocating or upgrading space</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">F&B and retail brands looking for street or mall locations</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">F&B and retail brands looking for street or mall locations</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Warehousing and logistics users needing industrial space</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Warehousing and logistics users needing industrial space</span>
                 </li>
               </ul>
             </div>
 
             {/* Investors */}
-            <div className="bg-green-50 p-8 rounded-xl border-2 border-green-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <TrendingUp className="w-6 h-6 text-green-600" />
+            <div className="bg-green-50 p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border-2 border-green-200">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
+                <TrendingUp className="w-5 sm:w-6 h-5 sm:h-6 text-green-600" />
                 For Owners & Investors
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Investors purchasing income-generating office or retail</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Investors purchasing income-generating office or retail</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Landlords seeking tenants for vacant units</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Landlords seeking tenants for vacant units</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Family offices reviewing commercial portfolios</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Family offices reviewing commercial portfolios</span>
                 </li>
               </ul>
             </div>
@@ -383,7 +383,7 @@ export default function CommercialRealEstate() {
           <div className="text-center">
             <button
               onClick={openRequirementsForm}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Share My Commercial Brief
             </button>
@@ -391,16 +391,16 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-3 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-6 text-center">
             How We Work With You on Commercial Property
           </h2>
-          <p className="text-xl text-gray-600 mb-12 text-center">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-12 text-center">
             From brief to fit-out, not just a list of listings.
           </p>
 
-          <div className="relative h-[300px] rounded-2xl overflow-hidden">
+          <div className="relative h-[200px] sm:h-[300px] lg:h-[400px] rounded-lg sm:rounded-2xl overflow-hidden">
             <Image
               src="/commercial/image-com-process-1.png"
               alt="Commercial Journey"
@@ -409,62 +409,62 @@ export default function CommercialRealEstate() {
             />
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 mb-12">
+          <div className="grid md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             
-            <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
-              <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+            <div className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl border-2 border-[#00458b] shadow-lg h-full">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4">
                 1
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                 Requirements & Strategy
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We define your use (office/retail/warehouse), licensing, headcount, location preferences and budget.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
-              <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+            <div className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl border-2 border-[#00458b] shadow-lg h-full">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4">
                 2
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                 Market Scan & Shortlist
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We search both our own stock and the wider market, then give you a curated shortlist with pros/cons.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
-              <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+            <div className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl border-2 border-[#00458b] shadow-lg h-full">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4">
                 3
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                 Viewings & Negotiation
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We arrange inspections, compare options and negotiate rents, incentives and contract terms on your behalf.
               </p>
             </div>
 
             {/* Step 4 */}
-            <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
-              <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+            <div className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl border-2 border-[#00458b] shadow-lg h-full">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4">
                 4
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                 Contracts, Fit-Out & Handover
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We coordinate with landlords, PROs and fit-out partners so you can focus on running your business, not chasing paperwork.
               </p>
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <button
               onClick={() => openConsultation('Commercial Process')}
-              className="text-[#00458b] hover:text-[#003366] font-medium inline-flex items-center gap-2 group text-lg"
+              className="text-[#00458b] hover:text-[#003366] font-medium inline-flex items-center gap-2 group text-base sm:text-lg"
             >
               Talk Through the Commercial Process
               <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -473,13 +473,13 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             What Kind of Commercial Space Are You Looking For?
           </h2>
 
-          <div className="relative h-[350px] rounded-2xl overflow-hidden mb-6">
+          <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] rounded-lg sm:rounded-2xl overflow-hidden mb-6 sm:mb-8">
             <Image
               src="/commercial/image-com-types-1.png"
               alt="Icon Grid"
@@ -488,13 +488,13 @@ export default function CommercialRealEstate() {
             />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {assetTypes.map((asset, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all hover:border-[#00458b]">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+              <div key={index} className="bg-gradient-to-br from-gray-50 to-white p-4 sm:p-6 rounded-lg sm:rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all hover:border-[#00458b]">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                   {asset.title}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-xs sm:text-sm text-gray-600">
                   {asset.description}
                 </p>
               </div>
@@ -503,13 +503,13 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             What You Need to Get Right with Commercial Property
           </h2>
 
-          <div className="relative h-[500px] rounded-2xl overflow-hidden mb-12">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[550px] rounded-lg sm:rounded-2xl overflow-hidden mb-8 sm:mb-12">
             <Image
               src="/commercial/image-com-guide-1.png"
               alt="Desk with Plans & Laptop"
@@ -518,17 +518,17 @@ export default function CommercialRealEstate() {
             />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {considerations.map((block, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">
+              <div key={index} className="bg-white p-6 sm:p-8 rounded-lg sm:rounded-xl border border-gray-200 shadow-sm">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">
                   {block.title}
                 </h3>
-                <ul className="space-y-4">
+                <ul className="space-y-3 sm:space-y-4">
                   {block.points.map((point, pIndex) => (
                     <li key={pIndex} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-[#00458b] rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-gray-700">{point}</span>
+                      <span className="text-xs sm:text-sm text-gray-700">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -538,13 +538,13 @@ export default function CommercialRealEstate() {
 
           
 
-          <div className="bg-blue-50 p-8 rounded-xl border-l-4 border-[#00458b]">
-            <p className="text-gray-700 mb-4">
+          <div className="bg-blue-50 p-6 sm:p-8 rounded-lg sm:rounded-xl border-l-4 border-[#00458b]">
+            <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4">
               <strong>Not sure how to compare two or three options on a like-for-like basis?</strong>
             </p>
             <button
               onClick={() => openConsultation('Commercial Benchmark')}
-              className="text-[#00458b] hover:text-[#003366] font-medium inline-flex items-center gap-2 group text-lg"
+              className="text-[#00458b] hover:text-[#003366] font-medium inline-flex items-center gap-2 group text-sm sm:text-base"
             >
               Ask us to benchmark them for you
               <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -553,28 +553,29 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Key Commercial Areas We Cover in Dubai
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {commercialDistricts.map((district, index) => (
-              <div key={index} className="group overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                <div className="relative h-[250px] overflow-hidden bg-gray-200">
+              <div key={index} className="group overflow-hidden rounded-lg sm:rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative h-[180px] sm:h-[220px] lg:h-[250px] overflow-hidden bg-gray-200">
                   <Image
                     src={district.image}
                     alt={district.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                 </div>
-                <div className="bg-white p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <div className="bg-white p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">
                     {district.name}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-xs sm:text-sm text-gray-600">
                     {district.description}
                   </p>
                 </div>
@@ -584,51 +585,52 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Left Column - Image */}
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] rounded-lg sm:rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/commercial/image-com-fitout-1.png"
                 alt="Office Fit-Out in Progress"
                 fill
                 className="object-cover"
+                loading="lazy"
               />
             </div>
 
             {/* Right Column - Content */}
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Need Fit-Out, Design or Approvals?
               </h2>
               
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 The right space is only half the story. We work with selected partners, including TrueBuild, to help with interior design, fit-out, authority approvals and move-in planning – so your new office, retail outlet or warehouse is actually ready for business on time.
               </p>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-1" />
-                  <span className="text-gray-700">Space planning and test fits</span>
+                  <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Space planning and test fits</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-1" />
-                  <span className="text-gray-700">Interior design and fit-out execution</span>
+                  <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Interior design and fit-out execution</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-1" />
-                  <span className="text-gray-700">Approvals and compliance (where applicable)</span>
+                  <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Approvals and compliance (where applicable)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-1" />
-                  <span className="text-gray-700">Move-in coordination with landlord and building management</span>
+                  <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Move-in coordination with landlord and building management</span>
                 </li>
               </ul>
 
               <button
                 onClick={() => openConsultation('Commercial Fit-Out')}
-                className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+                className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
               >
                 Discuss Space & Fit-Out Together
               </button>
@@ -637,28 +639,29 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Why Work With RE/MAX HUB for Commercial, Not Just Residential?
           </h2>
 
-          <div className="relative h-[550px] rounded-2xl overflow-hidden mb-12">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[550px] rounded-lg sm:rounded-2xl overflow-hidden mb-8 sm:mb-12">
             <Image
               src="/commercial/image-com-whyus-1.png"
               alt="Team / Boardroom"
               fill
               className="object-cover"
+              loading="lazy"
             />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+              <div key={index} className="bg-gradient-to-br from-blue-50 to-white p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-blue-100 shadow-sm">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600">
                   {benefit.description}
                 </p>
               </div>
@@ -668,7 +671,7 @@ export default function CommercialRealEstate() {
           <div className="text-center">
             <button
               onClick={() => openConsultation('Commercial')}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Start a Commercial Conversation
             </button>
@@ -676,9 +679,9 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             How We've Helped Commercial Clients in Dubai
           </h2>
 
@@ -686,7 +689,7 @@ export default function CommercialRealEstate() {
         </div>
       </section>
 
-        <section className="relative py-16 overflow-hidden">
+        <section className="relative py-8 sm:py-12 lg:py-16 overflow-hidden">
         <div className="absolute inset-0">
             <Image
             src="commercial/buy-residential-dubai-faq-background.png"
@@ -697,21 +700,21 @@ export default function CommercialRealEstate() {
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Commercial Real Estate FAQs in Dubai
             </h2>
 
-            <div className="mb-12">
+            <div className="mb-8 sm:mb-12">
             <FAQAccordion category="commercial-real-estate-dubai" />
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-xl border-l-4 border-[#00458b] text-center">
-            <p className="text-gray-700 mb-4">
+            <div className="bg-blue-50 p-6 sm:p-8 rounded-lg sm:rounded-xl border-l-4 border-[#00458b] text-center">
+            <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4">
                 Still have specific questions about your business or property?
             </p>
             <button
                 onClick={() => openConsultation('Commercial')}
-                className="text-[#00458b] hover:text-[#003366] font-medium inline-flex items-center gap-2 group text-lg"
+                className="text-[#00458b] hover:text-[#003366] font-medium inline-flex items-center gap-2 group text-sm sm:text-base"
             >
                 Ask us directly. Book a Commercial Consultation
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -721,7 +724,7 @@ export default function CommercialRealEstate() {
         </section>
 
 
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
         
         <div className="absolute inset-0">
           <Image
@@ -733,31 +736,31 @@ export default function CommercialRealEstate() {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="text-5xl font-bold text-white mb-3 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-3 text-center">
             Ready to Find the Right Commercial Space in Dubai?
           </h2>
           
-          <p className="text-xl text-white/90 mb-12 text-center max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-8 sm:mb-12 text-center max-w-3xl mx-auto">
             Tell us what you're planning – headcount, use, budget, timing – and we'll come back with a focused, realistic set of options.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center mb-4 sm:mb-8">
             <button
               onClick={openRequirementsForm}
-              className="bg-white text-[#00458b] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+              className="bg-white text-[#00458b] px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
             >
               Share Your Commercial Requirements
             </button>
             
             <button
               onClick={() => openConsultation()}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#00458b] transition-colors duration-200"
+              className="border-2 border-white text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-white hover:text-[#00458b] transition-colors duration-200"
             >
               Book a Commercial Consultation
             </button>
           </div>
-          <p className="text-center text-white/80 text-sm">
+          <p className="text-center text-white/80 text-xs sm:text-sm">
             Prefer WhatsApp? Message us at{" "}
             <a href="tel:+971543983527" className="underline hover:text-white">
               +971 54 398 3527

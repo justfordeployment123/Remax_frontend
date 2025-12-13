@@ -169,45 +169,45 @@ export default function BuyResidentialDubai() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative py-8 sm:py-12 lg:py-16 xl:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             
             <div>
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-2 sm:mb-4">
                 Buying a Home in Dubai
               </span>
               
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Buy Your Next Home in Dubai With a Clear Plan
               </h1>
               
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 Skip the guesswork and portal overload. RE/MAX HUB advisors help you define your brief, filter the market and negotiate the right villa or apartment in Dubai – from first viewing to handover.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-4">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <button
                   onClick={openRequirementsForm}
-                  className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+                  className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200 w-full sm:w-auto"
                 >
                   Share Your Requirements
                 </button>
                 
                 <button
                   onClick={() => openConsultation('Buying a Property')}
-                  className="border-2 border-[#00458b] text-[#00458b] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200"
+                  className="border-2 border-[#00458b] text-[#00458b] px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200 w-full sm:w-auto"
                 >
                   Book a Free Buyer Consultation
                 </button>
               </div>
 
-              <p className="text-sm text-gray-500">
+              <p className="text-xs sm:text-sm text-gray-500">
                 No fees for buyers on most transactions. No spam. Just advice.
               </p>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[500px] rounded-lg sm:rounded-2xl overflow-hidden">
               <Image
                 src="/buy-residential-dubai/buy-residential-dubai-hero.png"
                 alt="Buy Your Next Home in Dubai"
@@ -220,7 +220,7 @@ export default function BuyResidentialDubai() {
         </div>
       </section>
 
-      <section className="relative py-12 bg-gradient-to-r from-[#0B2340] to-[#00458b]">
+      <section className="relative py-8 sm:py-12 bg-gradient-to-r from-[#0B2340] to-[#00458b]">
         <div className="absolute inset-0 opacity-5">
           <Image
             src="/buy-residential-dubai/buy-residential-page-dubai-texture-background.png"
@@ -231,73 +231,73 @@ export default function BuyResidentialDubai() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4">
-          <h3 className="text-lg font-semibold text-white text-center mb-8">
+          <h3 className="text-base sm:text-lg font-semibold text-white text-center mb-6 sm:mb-8">
             Why Buyers Work With RE/MAX HUB
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="w-8 h-8 text-white" />
+              <div className="w-14 sm:w-16 h-14 sm:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Globe className="w-7 sm:w-8 h-7 sm:h-8 text-white" />
               </div>
-              <h4 className="text-white font-bold mb-2">Global RE/MAX Network</h4>
-              <p className="text-white/80 text-sm">Connected to 140,000+ agents worldwide.</p>
+              <h4 className="text-white font-bold mb-1 sm:mb-2 text-sm sm:text-base">Global RE/MAX Network</h4>
+              <p className="text-white/80 text-xs sm:text-sm">Connected to 140,000+ agents worldwide.</p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="w-8 h-8 text-white" />
+              <div className="w-14 sm:w-16 h-14 sm:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <BarChart3 className="w-7 sm:w-8 h-7 sm:h-8 text-white" />
               </div>
-              <h4 className="text-white font-bold mb-2">Data-Backed Advice</h4>
-              <p className="text-white/80 text-sm">Access to REIDIN, Geniemap and more.</p>
+              <h4 className="text-white font-bold mb-1 sm:mb-2 text-sm sm:text-base">Data-Backed Advice</h4>
+              <p className="text-white/80 text-xs sm:text-sm">Access to REIDIN, Geniemap and more.</p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
+              <div className="w-14 sm:w-16 h-14 sm:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Users className="w-7 sm:w-8 h-7 sm:h-8 text-white" />
               </div>
-              <h4 className="text-white font-bold mb-2">End-to-End Support</h4>
-              <p className="text-white/80 text-sm">From requirements to viewing, negotiation and transfer.</p>
+              <h4 className="text-white font-bold mb-1 sm:mb-2 text-sm sm:text-base">End-to-End Support</h4>
+              <p className="text-white/80 text-xs sm:text-sm">From requirements to viewing, negotiation and transfer.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4 text-center">
             How We Help You Buy the Right Property
           </h2>
           
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center">
+          <p className="text-base sm:text-lg lg:text-lg text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto text-center">
             A structured process so you're not just reacting to random listings.
           </p>
 
-          <div className="grid md:grid-cols-4 gap-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-10">
             
             <div className="relative">
-              <div className="bg-gray-50 p-6 rounded-xl border-2 border-[#00458b] h-full">
-                <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+              <div className="bg-gray-50 p-4 sm:p-6 rounded-xl border-2 border-[#00458b] h-full">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4">
                   1
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                   Discovery & Brief
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   We understand your budget, lifestyle, financing and timelines, then translate that into a clear buying brief.
                 </p>
               </div>
             </div>
 
             <div className="relative">
-              <div className="bg-gray-50 p-6 rounded-xl border-2 border-[#00458b] h-full">
-                <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+              <div className="bg-gray-50 p-4 sm:p-6 rounded-xl border-2 border-[#00458b] h-full">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4">
                   2
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                   Curated Shortlist
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   We scan our own listings and the wider market to create a tailored shortlist instead of sending you every portal link.
                 </p>
               </div>
@@ -411,15 +411,15 @@ export default function BuyResidentialDubai() {
           <div className="text-center">
             <button
               onClick={openRequirementsForm}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Share My Requirements
             </button>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="relative h-[600px] rounded-2xl overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 mt-8 sm:mt-12">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[550px] rounded-lg sm:rounded-2xl overflow-hidden">
             <Image
               src="/buy-residential-dubai/buy-residential-age-dubai-is-this-for-you.png"
               alt="Is This For You"
@@ -430,13 +430,13 @@ export default function BuyResidentialDubai() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4 text-center">
             Browse Our Current Dubai Listings
           </h2>
           
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center">
+          <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto text-center">
             We can also source properties beyond our in-house stock, but this is a good starting point.
           </p>
 
@@ -621,12 +621,12 @@ export default function BuyResidentialDubai() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Need Help With Financing?
               </h2>
               
@@ -657,8 +657,8 @@ export default function BuyResidentialDubai() {
               </button>
             </div>
 
-            <div className="bg-gray-50 p-12 rounded-xl border border-gray-200 flex items-center justify-center">
-              <p className="text-gray-500 text-center">
+            <div className="bg-gray-50 p-8 sm:p-12 rounded-lg sm:rounded-xl border border-gray-200 flex items-center justify-center">
+              <p className="text-gray-500 text-center text-sm sm:text-base">
                 Mortgage partner logos coming soon
               </p>
             </div>
@@ -666,22 +666,22 @@ export default function BuyResidentialDubai() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Off-Plan vs Ready Property – What's Right for You?
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10">
             
-            <div className="bg-white p-8 rounded-xl border-2 border-[#00458b]">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Ready Property</h3>
+            <div className="bg-white p-6 sm:p-8 rounded-lg sm:rounded-xl border-2 border-[#00458b]">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Ready Property</h3>
               
-              <div className="mb-6">
-                <h4 className="font-bold text-green-700 mb-3 flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5" /> Pros:
+              <div className="mb-4 sm:mb-6">
+                <h4 className="font-bold text-green-700 mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5" /> Pros:
                 </h4>
-                <ul className="space-y-2 text-gray-700">
+                <ul className="space-y-1.5 sm:space-y-2 text-gray-700 text-xs sm:text-sm">
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 mt-1">•</span>
                     <span>Immediate move-in or rental income.</span>
@@ -697,43 +697,43 @@ export default function BuyResidentialDubai() {
                 <h4 className="font-bold text-red-700 mb-3 flex items-center gap-2">
                   <XCircle className="w-5 h-5" /> Cons:
                 </h4>
-                <ul className="space-y-2 text-gray-700">
+                <ul className="space-y-1.5 sm:space-y-2 text-gray-700 text-xs sm:text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-1">•</span>
+                    <span className="text-red-600 mt-0.5 flex-shrink-0">•</span>
                     <span>Higher upfront cash requirement.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-1">•</span>
+                    <span className="text-red-600 mt-0.5 flex-shrink-0">•</span>
                     <span>Limited choice in layout and floors.</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border-2 border-[#00458b]">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Off-Plan</h3>
+            <div className="bg-white p-6 sm:p-8 rounded-lg sm:rounded-xl border-2 border-[#00458b]">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Off-Plan</h3>
               
-              <div className="mb-6">
-                <h4 className="font-bold text-green-700 mb-3 flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5" /> Pros:
+              <div className="mb-4 sm:mb-6">
+                <h4 className="font-bold text-green-700 mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5" /> Pros:
                 </h4>
-                <ul className="space-y-2 text-gray-700">
+                <ul className="space-y-1.5 sm:space-y-2 text-gray-700 text-xs sm:text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-green-600 mt-0.5 flex-shrink-0">•</span>
                     <span>Payment plans and lower entry price.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-green-600 mt-0.5 flex-shrink-0">•</span>
                     <span>Access to new communities and facilities.</span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="font-bold text-red-700 mb-3 flex items-center gap-2">
-                  <XCircle className="w-5 h-5" /> Cons:
+                <h4 className="font-bold text-red-700 mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
+                  <XCircle className="w-4 sm:w-5 h-4 sm:h-5" /> Cons:
                 </h4>
-                <ul className="space-y-2 text-gray-700">
+                <ul className="space-y-1.5 sm:space-y-2 text-gray-700 text-xs sm:text-sm">
                   <li className="flex items-start gap-2">
                     <span className="text-red-600 mt-1">•</span>
                     <span>Construction and delivery risk.</span>
@@ -758,8 +758,8 @@ export default function BuyResidentialDubai() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="relative h-[550px] rounded-2xl overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 mt-8 sm:mt-12">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[550px] rounded-lg sm:rounded-2xl overflow-hidden">
             <Image
               src="/buy-residential-dubai/buy-residential-dubai-offplan-vs-ready.png"
               alt="Off-Plan vs Ready"
@@ -771,29 +771,30 @@ export default function BuyResidentialDubai() {
       </section>
 
       {/* Neighbourhoods We Help Buyers In */}
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Popular Communities We Help Buyers In
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {communities.map((community, index) => (
               <Link
                 key={index}
                 href={`/properties?community=${encodeURIComponent(community.name)}`}
-                className="group relative h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group relative h-48 sm:h-56 lg:h-64 rounded-lg sm:rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 <Image
                   src={community.image}
                   alt={community.name}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-xl font-bold mb-2">{community.name}</h3>
-                  <p className="text-sm text-white/90">{community.description}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 lg:p-6 text-white">
+                  <h3 className="text-sm sm:text-lg lg:text-xl font-bold mb-1">{community.name}</h3>
+                  <p className="text-xs sm:text-sm text-white/90">{community.description}</p>
                 </div>
               </Link>
             ))}
@@ -802,57 +803,57 @@ export default function BuyResidentialDubai() {
       </section>
 
       {/* Why Work With RE/MAX HUB as a Buyer */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Why Work With RE/MAX HUB as Your Buyer's Advisor
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
-              <div className="w-14 h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-6">
-                <CheckCircle className="w-7 h-7 text-[#00458b]" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-10">
+            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-200">
+              <div className="w-12 sm:w-14 h-12 sm:h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                <CheckCircle className="w-6 sm:w-7 h-6 sm:h-7 text-[#00458b]" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                 Advisory, Not Just Listings
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We're not here to push whatever we have listed. We source across the market and tell you when to walk away.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
-              <div className="w-14 h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-6">
-                <BarChart3 className="w-7 h-7 text-[#00458b]" />
+            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-200">
+              <div className="w-12 sm:w-14 h-12 sm:h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                <BarChart3 className="w-6 sm:w-7 h-6 sm:h-7 text-[#00458b]" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                 Data-Backed Pricing
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We use transaction data and portal analytics to benchmark asking prices and support your negotiation.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
-              <div className="w-14 h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-6">
-                <Globe className="w-7 h-7 text-[#00458b]" />
+            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-200">
+              <div className="w-12 sm:w-14 h-12 sm:h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                <Globe className="w-6 sm:w-7 h-6 sm:h-7 text-[#00458b]" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                 Local & Global Network
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 On-the-ground knowledge in Dubai with access to the global RE/MAX network for future moves.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
-              <div className="w-14 h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-6">
-                <Users className="w-7 h-7 text-[#00458b]" />
+            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-200">
+              <div className="w-12 sm:w-14 h-12 sm:h-14 bg-[#00458b]/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                <Users className="w-6 sm:w-7 h-6 sm:h-7 text-[#00458b]" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                 End-to-End Execution
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 From viewings and offers to bank coordination and transfer, one team stays with you through the process.
               </p>
             </div>
@@ -861,7 +862,7 @@ export default function BuyResidentialDubai() {
           <div className="text-center">
             <button
               onClick={() => openConsultation('Buying a Property')}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Start the Conversation
             </button>
@@ -870,9 +871,9 @@ export default function BuyResidentialDubai() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             What Our Buyers Say
           </h2>
 
@@ -892,21 +893,21 @@ export default function BuyResidentialDubai() {
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Buyer FAQs for Dubai Property
           </h2>
 
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <FAQAccordion category="buy-residential-dubai" />
           </div>
 
           <div className="text-center">
-            <p className="text-lg text-gray-600 mb-4">
+            <p className="text-base sm:text-lg text-gray-600 mb-3 sm:mb-4">
               Still have questions? Ask us directly.
             </p>
             <button
               onClick={() => openConsultation('Buying a Property')}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Contact an Advisor
             </button>
@@ -915,7 +916,7 @@ export default function BuyResidentialDubai() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#0B2340] to-[#00458b]">
+      <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#0B2340] to-[#00458b]">
         <div className="absolute inset-0 opacity-10">
           <Image
             src="/buy-residential-dubai/buy-residential-final-cta-background.png"
@@ -926,25 +927,25 @@ export default function BuyResidentialDubai() {
         </div>
         
         <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6">
             Ready to Start Your Dubai Home Search?
           </h2>
           
-          <p className="text-xl text-white/90 mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 sm:mb-10 leading-relaxed">
             Send us your brief and we'll come back with a tailored plan, not a list of random links.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-4 sm:mb-6">
             <button
               onClick={openRequirementsForm}
-              className="bg-white text-[#00458b] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+              className="bg-white text-[#00458b] px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-gray-100 transition-colors duration-200 w-full sm:w-auto"
             >
               Share Your Requirements
             </button>
             
             <button
               onClick={() => openConsultation('Buying a Property')}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#00458b] transition-colors duration-200"
+              className="border-2 border-white text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-white hover:text-[#00458b] transition-colors duration-200 w-full sm:w-auto"
             >
               Book a Free Buyer Consultation
             </button>

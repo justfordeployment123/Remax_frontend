@@ -121,41 +121,41 @@ export default function OffPlanDubai() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative py-8 sm:py-12 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             <div>
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-2 sm:mb-4">
                 Buying Off-Plan in Dubai
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Invest in Dubai Off-Plan With a Clear Strategy
               </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 We help you choose the right projects, understand payment plans and manage risk-so you're not just buying a brochure and a promise.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-3 sm:mb-6">
                 <button
                   onClick={shareRequirements}
-                  className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-[#003366] transition-colors duration-200"
+                  className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base font-semibold hover:bg-[#003366] transition-colors duration-200 w-full sm:w-auto"
                 >
                   Share Your Off-Plan Requirements
                 </button>
                 <button
                   onClick={bookConsultation}
-                  className="border-2 border-[#00458b] text-[#00458b] px-8 py-4 rounded-lg text-base font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200"
+                  className="border-2 border-[#00458b] text-[#00458b] px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200 w-full sm:w-auto"
                 >
                   Book an Off-Plan Strategy Call
                 </button>
               </div>
 
-              <p className="text-sm text-gray-500">
+              <p className="text-xs sm:text-sm text-gray-500">
                 We work with multiple developers, not just one. No pressure, no spam.
               </p>
             </div>
 
-            <div className="relative h-[500px] lg:h-[600px] rounded-xl overflow-hidden">
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[500px] xl:h-[600px] rounded-lg sm:rounded-xl overflow-hidden">
               <Image
                 src="/off-plan/buy-off-plan-hero.png"
                 alt="Dubai off-plan lifestyle and construction"
@@ -169,7 +169,7 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Credibility Strip */}
-      <section className="relative py-16 bg-[#0B2340] text-white overflow-hidden">
+      <section className="relative py-8 sm:py-12 lg:py-16 bg-[#0B2340] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <Image
             src="/off-plan/buy-off-plan-strip-1.png"
@@ -179,28 +179,28 @@ export default function OffPlanDubai() {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-8 sm:mb-12">
             Why Off-Plan Buyers Work With RE/MAX HUB
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <Building2 className="w-12 h-12 text-white mb-4" />
-              <h3 className="text-xl font-bold mb-3">Multiple Developers</h3>
-              <p className="text-blue-100 leading-relaxed">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg sm:rounded-xl border border-white/20">
+              <Building2 className="w-10 sm:w-12 h-10 sm:h-12 text-white mb-3 sm:mb-4" />
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Multiple Developers</h3>
+              <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
                 We work across projects from Emaar, Sobha, Damac, Binghatti, Beyond and more.
               </p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <FileText className="w-12 h-12 text-white mb-4" />
-              <h3 className="text-xl font-bold mb-3">Data & Due Diligence</h3>
-              <p className="text-blue-100 leading-relaxed">
+            <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg sm:rounded-xl border border-white/20">
+              <FileText className="w-10 sm:w-12 h-10 sm:h-12 text-white mb-3 sm:mb-4" />
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Data & Due Diligence</h3>
+              <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
                 We review masterplans, payment plans and historical track records before recommending anything.
               </p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <CheckCircle className="w-12 h-12 text-white mb-4" />
-              <h3 className="text-xl font-bold mb-3">End-to-End Support</h3>
-              <p className="text-blue-100 leading-relaxed">
+            <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg sm:rounded-xl border border-white/20">
+              <CheckCircle className="w-10 sm:w-12 h-10 sm:h-12 text-white mb-3 sm:mb-4" />
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">End-to-End Support</h3>
+              <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
                 From early launch allocations to handover and leasing/resale strategy.
               </p>
             </div>
@@ -209,55 +209,56 @@ export default function OffPlanDubai() {
       </section>
 
       {/* How We Help Section */}
-      <section className="py-20 bg-white">
+      <section className="py-8 sm:py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">
               How We Help You Choose the Right Off-Plan Project
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               A structured process that balances opportunity and risk.
             </p>
           </div>
 
-          <div className="relative h-[300px] rounded-xl overflow-hidden mb-12">
+          <div className="relative h-[200px] sm:h-[250px] lg:h-[350px] rounded-lg sm:rounded-xl overflow-hidden mb-8 sm:mb-12">
             <Image
               src="/off-plan/buy-off-plan-process-1.png"
               alt="Off-plan process timeline"
               fill
               className="object-cover"
+              loading="lazy"
             />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-[#00458b]">
-              <div className="text-4xl font-bold text-[#00458b] mb-3">01</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Strategy & Budget</h3>
-              <p className="text-gray-600 leading-relaxed">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="bg-gray-50 p-4 sm:p-6 rounded-lg sm:rounded-xl border-l-4 border-[#00458b]">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00458b] mb-2 sm:mb-3">01</div>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Strategy & Budget</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 Clarify your goal (home vs investment), risk tolerance, budget and time horizon.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-[#00458b]">
-              <div className="text-4xl font-bold text-[#00458b] mb-3">02</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Project & Developer Selection</h3>
-              <p className="text-gray-600 leading-relaxed">
+            <div className="bg-gray-50 p-4 sm:p-6 rounded-lg sm:rounded-xl border-l-4 border-[#00458b]">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00458b] mb-2 sm:mb-3">02</div>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Project & Developer Selection</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We shortlist projects and developers that match your profile, showing pros/cons-not just launch hype.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-[#00458b]">
-              <div className="text-4xl font-bold text-[#00458b] mb-3">03</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Payment Plan & Contract Review</h3>
-              <p className="text-gray-600 leading-relaxed">
+            <div className="bg-gray-50 p-4 sm:p-6 rounded-lg sm:rounded-xl border-l-4 border-[#00458b]">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00458b] mb-2 sm:mb-3">03</div>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Payment Plan & Contract Review</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We explain the payment schedule, escrow, DLD registration and key contract points in plain English.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-[#00458b]">
-              <div className="text-4xl font-bold text-[#00458b] mb-3">04</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Construction Updates & Exit Plan</h3>
-              <p className="text-gray-600 leading-relaxed">
+            <div className="bg-gray-50 p-4 sm:p-6 rounded-lg sm:rounded-xl border-l-4 border-[#00458b]">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00458b] mb-2 sm:mb-3">04</div>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Construction Updates & Exit Plan</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                 We stay involved through construction, handover and help you plan leasing or exit when the time is right.
               </p>
             </div>
@@ -266,7 +267,7 @@ export default function OffPlanDubai() {
           <div className="text-center">
             <button
               onClick={bookConsultation}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Talk Through the Off-Plan Process
             </button>
@@ -275,87 +276,88 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Is Off-Plan Right for You */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
             Is Off-Plan Actually Right for You?
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-12">
-            <div className="bg-white p-8 rounded-xl border-l-4 border-[#00458b]">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Off-Plan may be a good fit if:</h3>
-              <ul className="space-y-4">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
+            <div className="bg-white p-4 sm:p-8 rounded-lg sm:rounded-xl border-l-4 border-[#00458b]">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Off-Plan may be a good fit if:</h3>
+              <ul className="space-y-3 sm:space-y-4">
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700">You have a 2–7 year horizon and don't need to move in immediately.</span>
+                  <span className="text-xs sm:text-sm text-gray-700">You have a 2–7 year horizon and don't need to move in immediately.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700">You want payment plans or lower entry price vs ready property.</span>
+                  <span className="text-xs sm:text-sm text-gray-700">You want payment plans or lower entry price vs ready property.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700">You're comfortable with some construction and timeline risk.</span>
+                  <span className="text-xs sm:text-sm text-gray-700">You're comfortable with some construction and timeline risk.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700">You care about new communities, amenities and facilities.</span>
+                  <span className="text-xs sm:text-sm text-gray-700">You care about new communities, amenities and facilities.</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border-l-4 border-gray-300">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Off-Plan is probably not for you if:</h3>
-              <ul className="space-y-4">
+            <div className="bg-white p-4 sm:p-8 rounded-lg sm:rounded-xl border-l-4 border-gray-300">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Off-Plan is probably not for you if:</h3>
+              <ul className="space-y-3 sm:space-y-4">
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 sm:w-6 h-5 sm:h-6 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                  <span className="text-gray-600">You need to move in within the next 6–12 months.</span>
+                  <span className="text-xs sm:text-sm text-gray-600">You need to move in within the next 6–12 months.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 sm:w-6 h-5 sm:h-6 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                  <span className="text-gray-600">You're depending on immediate rental income.</span>
+                  <span className="text-xs sm:text-sm text-gray-600">You're depending on immediate rental income.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 sm:w-6 h-5 sm:h-6 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                  <span className="text-gray-600">You can't tolerate construction delays or design changes.</span>
+                  <span className="text-xs sm:text-sm text-gray-600">You can't tolerate construction delays or design changes.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 sm:w-6 h-5 sm:h-6 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                  <span className="text-gray-600">You're chasing "quick flip" rumors more than fundamentals.</span>
+                  <span className="text-xs sm:text-sm text-gray-600">You're chasing "quick flip" rumors more than fundamentals.</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="relative h-[400px] rounded-xl overflow-hidden mb-8">
+          <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] rounded-lg sm:rounded-xl overflow-hidden mb-6 sm:mb-8">
             <Image
               src="/off-plan/buy-off-plan-fit-1.png"
               alt="Buyer reviewing off-plan model"
               fill
               className="object-cover"
+              loading="lazy"
             />
           </div>
 
           <div className="text-center">
             <button
               onClick={shareRequirements}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Share My Off-Plan Requirements
             </button>
@@ -364,33 +366,33 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-white">
+      <section className="py-8 sm:py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">
               Featured Off-Plan Projects We Currently Recommend
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Handpicked based on developer track record, location and payment terms.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {featuredProjects.map((project) => (
-              <div key={project.id} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-[#00458b] hover:shadow-lg transition-all duration-200">
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Building2 className="w-5 h-5 text-[#00458b]" />
-                    <span className="text-sm font-semibold text-[#00458b]">{project.developer}</span>
+              <div key={project.id} className="bg-white border border-gray-200 rounded-lg sm:rounded-xl overflow-hidden hover:border-[#00458b] hover:shadow-lg transition-all duration-200">
+                <div className="p-4 sm:p-6">
+                  <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                    <Building2 className="w-4 sm:w-5 h-4 sm:h-5 text-[#00458b]" />
+                    <span className="text-xs sm:text-sm font-semibold text-[#00458b]">{project.developer}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{project.location}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{project.name}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">{project.location}</p>
                   
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
                     {project.bullets.map((bullet, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-[#00458b] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700">{bullet}</span>
+                        <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4 text-[#00458b] flex-shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm text-gray-700">{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -398,7 +400,7 @@ export default function OffPlanDubai() {
                   <div className="flex flex-col gap-2">
                     <button
                       onClick={shareRequirements}
-                      className="text-sm text-[#00458b] font-semibold hover:underline"
+                      className="text-xs sm:text-sm text-[#00458b] font-semibold hover:underline"
                     >
                       Discuss This Project →
                     </button>
@@ -411,7 +413,7 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Developers We Work With */}
-      <section className="relative py-20 bg-gray-50 overflow-hidden">
+      <section className="relative py-8 sm:py-12 lg:py-20 bg-gray-50 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <Image
             src="/off-plan/buy-off-plan-developers-1.png"
@@ -421,18 +423,18 @@ export default function OffPlanDubai() {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-3 sm:mb-6">
             Developers We Work With (and Why)
           </h2>
-          <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 text-center mb-8 sm:mb-12 max-w-3xl mx-auto">
             We don't push a single developer's stock. We work across multiple UAE developers and give you a view on track record, delivery, and after-sales.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {developers.map((dev, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-xl border border-gray-200">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{dev.name}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{dev.description}</p>
+              <div key={idx} className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl border border-gray-200">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{dev.name}</h3>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{dev.description}</p>
               </div>
             ))}
           </div>
@@ -440,56 +442,58 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Payment Plans Explained */}
-      <section className="py-20 bg-white">
+      <section className="py-8 sm:py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">
               How Off-Plan Payment Plans Actually Work
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Understand the cashflow before you sign anything.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-12">
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] rounded-lg sm:rounded-xl overflow-hidden">
               <Image
                 src="/off-plan/payment-plan-diagram.png"
                 alt="Payment plan diagram"
                 fill
                 className="object-contain bg-gray-50"
+                loading="lazy"
               />
             </div>
 
             <div>
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4 sm:mb-6">
                 Most off-plan purchases start with a <strong>booking fee</strong> and signing the SPA (sale and purchase agreement). After that, your payments are usually tied to <strong>construction milestones</strong> – for example, a percentage at foundation, structure, and completion of key stages.
               </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4 sm:mb-6">
                 A larger chunk is due at <strong>handover</strong> when you receive the keys, and some projects offer <strong>post-handover payment plans</strong>, where the final portion is paid over 1–5 years after you move in or start renting the unit.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                 The key is to map this schedule against your actual cashflow and financing, not just the developer's marketing slide.
               </p>
             </div>
           </div>
 
-          <div className="relative h-[550px] rounded-xl overflow-hidden mb-8">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[550px] rounded-lg sm:rounded-xl overflow-hidden mb-6 sm:mb-8">
             <Image
               src="/off-plan/payment-plan-milestones.png"
               alt="Payment plan milestones example"
               fill
               className="object-cover"
+              loading="lazy"
             />
           </div>
 
-          <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-[#00458b] text-center">
-            <p className="text-gray-700 mb-4">
+          <div className="bg-gray-50 p-4 sm:p-6 rounded-lg sm:rounded-xl border-l-4 border-[#00458b] text-center">
+            <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4">
               Want us to stress-test a payment plan against your cashflow?
             </p>
             <button
               onClick={bookConsultation}
-              className="text-[#00458b] font-semibold hover:underline"
+              className="text-xs sm:text-sm text-[#00458b] font-semibold hover:underline"
             >
               Send us your numbers →
             </button>
@@ -498,109 +502,110 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Off-Plan vs Ready Comparison */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
             Off-Plan vs Ready – The Real Trade-Offs
           </h2>
 
-          <div className="relative h-[400px] rounded-xl overflow-hidden mb-12">
+          <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] rounded-lg sm:rounded-xl overflow-hidden mb-8 sm:mb-12">
             <Image
               src="/off-plan/buy-residential-dubai-offplan-vs-ready.png"
               alt="Off-plan vs ready comparison"
               fill
               className="object-cover"
+              loading="lazy"
             />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Ready Property</h3>
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
+            <div className="bg-white p-4 sm:p-8 rounded-lg sm:rounded-xl border border-gray-200">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Ready Property</h3>
               
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-green-700 mb-3">Pros:</h4>
-                <ul className="space-y-2">
+              <div className="mb-4 sm:mb-6">
+                <h4 className="text-base sm:text-lg font-semibold text-green-700 mb-2 sm:mb-3">Pros:</h4>
+                <ul className="space-y-1.5 sm:space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Immediate move-in or rental income</span>
+                    <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-700">Immediate move-in or rental income</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">What you see is what you get</span>
+                    <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-700">What you see is what you get</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Easier mortgage approval</span>
+                    <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-700">Easier mortgage approval</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">No construction risk</span>
+                    <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-700">No construction risk</span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold text-red-700 mb-3">Cons:</h4>
-                <ul className="space-y-2">
+                <h4 className="text-base sm:text-lg font-semibold text-red-700 mb-2 sm:mb-3">Cons:</h4>
+                <ul className="space-y-1.5 sm:space-y-2">
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-0.5">✕</span>
-                    <span className="text-gray-700">Higher upfront cost</span>
+                    <span className="text-red-600 mt-0.5 text-sm">✕</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Higher upfront cost</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-0.5">✕</span>
-                    <span className="text-gray-700">Less payment flexibility</span>
+                    <span className="text-red-600 mt-0.5 text-sm">✕</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Less payment flexibility</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-0.5">✕</span>
-                    <span className="text-gray-700">May need maintenance/upgrades</span>
+                    <span className="text-red-600 mt-0.5 text-sm">✕</span>
+                    <span className="text-xs sm:text-sm text-gray-700">May need maintenance/upgrades</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Off-Plan</h3>
+            <div className="bg-white p-4 sm:p-8 rounded-lg sm:rounded-xl border border-gray-200">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Off-Plan</h3>
               
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-green-700 mb-3">Pros:</h4>
-                <ul className="space-y-2">
+              <div className="mb-4 sm:mb-6">
+                <h4 className="text-base sm:text-lg font-semibold text-green-700 mb-2 sm:mb-3">Pros:</h4>
+                <ul className="space-y-1.5 sm:space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Lower entry price (10-30% cheaper)</span>
+                    <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-700">Lower entry price (10-30% cheaper)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Flexible payment plans (2-5 years)</span>
+                    <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-700">Flexible payment plans (2-5 years)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Brand new with warranty</span>
+                    <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-700">Brand new with warranty</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Potential capital appreciation</span>
+                    <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-700">Potential capital appreciation</span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold text-red-700 mb-3">Cons:</h4>
-                <ul className="space-y-2">
+                <h4 className="text-base sm:text-lg font-semibold text-red-700 mb-2 sm:mb-3">Cons:</h4>
+                <ul className="space-y-1.5 sm:space-y-2">
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-0.5">✕</span>
-                    <span className="text-gray-700">2-4 year wait until handover</span>
+                    <span className="text-red-600 mt-0.5 text-sm">✕</span>
+                    <span className="text-xs sm:text-sm text-gray-700">2-4 year wait until handover</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-0.5">✕</span>
-                    <span className="text-gray-700">Construction/delivery risk</span>
+                    <span className="text-red-600 mt-0.5 text-sm">✕</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Construction/delivery risk</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-0.5">✕</span>
-                    <span className="text-gray-700">Market price uncertainty</span>
+                    <span className="text-red-600 mt-0.5 text-sm">✕</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Market price uncertainty</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 mt-0.5">✕</span>
-                    <span className="text-gray-700">Less liquidity during construction</span>
+                    <span className="text-red-600 mt-0.5 text-sm">✕</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Less liquidity during construction</span>
                   </li>
                 </ul>
               </div>
@@ -608,12 +613,12 @@ export default function OffPlanDubai() {
           </div>
 
           <div className="text-center">
-            <p className="text-gray-700 mb-4">
+            <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4">
               Not sure which route makes more sense for you right now?
             </p>
             <button
               onClick={bookConsultation}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Book a 20-Minute Call
             </button>
@@ -622,53 +627,54 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Market Insight & Playbook */}
-      <section className="py-20 bg-white">
+      <section className="py-8 sm:py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">
               See Where Dubai Is Heading, Not Just What's Launching
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Our 2026–2035 Playbook outlines our expectations for key corridors, asset types and off-plan cycles.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-8">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-6 sm:mb-8">
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] rounded-lg sm:rounded-xl overflow-hidden">
               <Image
                 src="/off-plan/image-offplan-playbook-1.png"
                 alt="Analytics and Dubai map"
                 fill
                 className="object-cover"
+                loading="lazy"
               />
             </div>
 
             <div>
-              <ul className="space-y-4 mb-6">
+              <ul className="space-y-2 sm:space-y-4 mb-4 sm:mb-6">
                 <li className="flex items-start gap-3">
-                  <TrendingUp className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Demand trends by area and asset type.</span>
+                  <TrendingUp className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Demand trends by area and asset type.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <TrendingUp className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Where off-plan stock is concentrated.</span>
+                  <TrendingUp className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Where off-plan stock is concentrated.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <TrendingUp className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Our view on risk, timelines and pricing cycles.</span>
+                  <TrendingUp className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">Our view on risk, timelines and pricing cycles.</span>
                 </li>
               </ul>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                 <button
                   onClick={downloadPlaybook}
-                  className="bg-[#00458b] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#003366] transition-colors duration-200"
+                  className="bg-[#00458b] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#003366] transition-colors duration-200 w-full sm:w-auto"
                 >
                   Download Off-Plan Playbook Extract
                 </button>
                 <button
                   onClick={bookConsultation}
-                  className="border-2 border-[#00458b] text-[#00458b] px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200"
+                  className="border-2 border-[#00458b] text-[#00458b] px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200 w-full sm:w-auto"
                 >
                   Talk Through the Insights
                 </button>
@@ -679,44 +685,45 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Risk Management */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
             How We Help You Manage Off-Plan Risk
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] rounded-lg sm:rounded-xl overflow-hidden">
               <Image
                 src="/off-plan/shield.jpeg"
                 alt="Risk management illustration"
                 fill
                 className="object-contain bg-white"
+                loading="lazy"
               />
             </div>
 
             <div>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 <li className="flex items-start gap-3">
-                  <Shield className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">We look at developer track record (delays, handover quality, service charges).</span>
+                  <Shield className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">We look at developer track record (delays, handover quality, service charges).</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Shield className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">We check escrow, RERA registration and project status before you commit.</span>
+                  <Shield className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">We check escrow, RERA registration and project status before you commit.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Shield className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">We highlight contract clauses that you should pay attention to (delays, variations, cancellation).</span>
+                  <Shield className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">We highlight contract clauses that you should pay attention to (delays, variations, cancellation).</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Shield className="w-6 h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">We help plan exit scenarios (hold, rent, sell around handover).</span>
+                  <Shield className="w-5 sm:w-6 h-5 sm:h-6 text-[#00458b] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-gray-700">We help plan exit scenarios (hold, rent, sell around handover).</span>
                 </li>
               </ul>
 
-              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
-                <p className="text-sm text-gray-700">
+              <div className="bg-yellow-50 border border-yellow-200 p-3 sm:p-4 rounded-lg">
+                <p className="text-xs sm:text-sm text-gray-700">
                   <strong>Disclaimer:</strong> We are not a law firm or financial advisor, but we help you ask the right questions before you sign.
                 </p>
               </div>
@@ -726,9 +733,9 @@ export default function OffPlanDubai() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-8 sm:py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
             What Our Off-Plan Buyers Say
           </h2>
 
@@ -736,7 +743,7 @@ export default function OffPlanDubai() {
         </div>
       </section>
 
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-8 sm:py-12 lg:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-50">
           <Image
             src="/off-plan/buy-residential-dubai-faq-background.png"
@@ -746,21 +753,21 @@ export default function OffPlanDubai() {
           />
         </div>
         <div className="relative max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
             Off-Plan FAQs for Dubai Property
           </h2>
 
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <FAQAccordion category="off-plan" />
           </div>
 
           <div className="text-center">
-            <p className="text-gray-700 mb-4">
+            <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4">
               Still unsure whether a specific project is worth it? Ask us to review it with you.
             </p>
             <button
               onClick={bookConsultation}
-              className="text-[#00458b] font-semibold hover:underline"
+              className="text-xs sm:text-sm text-[#00458b] font-semibold hover:underline"
             >
               Book Consultation →
             </button>
@@ -768,7 +775,7 @@ export default function OffPlanDubai() {
         </div>
       </section>
 
-    <section className="relative py-20 overflow-hidden text-gray-900">
+    <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden text-gray-900">
     <div className="absolute inset-0">
         <Image
         src="/off-plan/buy-residential-final-cta-background.png"
@@ -779,31 +786,31 @@ export default function OffPlanDubai() {
     </div>
 
     <div className="relative max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
         Ready to Build an Off-Plan Plan?
         </h2>
 
-        <p className="text-lg mb-8 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
         Tell us what you're considering and we'll come back with a structured view—projects we like, ones we'd avoid, and what fits your budget.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center mb-4 sm:mb-6">
         <button
             onClick={shareRequirements}
-            className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-[#003a75] transition-colors duration-200"
+            className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base font-semibold hover:bg-[#003a75] transition-colors duration-200"
         >
             Share Your Off-Plan Requirements
         </button>
 
         <button
             onClick={bookConsultation}
-            className="border-2 border-[#00458b] text-[#00458b] px-8 py-4 rounded-lg text-base font-semibold hover:bg-[#00458b]/10 transition-colors duration-200"
+            className="border-2 border-[#00458b] text-[#00458b] px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base font-semibold hover:bg-[#00458b]/10 transition-colors duration-200"
         >
             Book an Off-Plan Strategy Call
         </button>
         </div>
 
-        <p className="text-sm text-gray-800">
+        <p className="text-xs sm:text-sm text-gray-800">
         Prefer WhatsApp? Message us at <a href="tel:+97143983527" className="font-semibold underline">+971 54 398 3527 </a> with "Off-plan enquiry" and the projects you're looking at.
         </p>
     </div>

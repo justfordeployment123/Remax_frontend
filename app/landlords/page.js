@@ -69,35 +69,35 @@ export default function Landlords() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative py-8 sm:py-12 lg:py-20 xl:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Left Column - Content */}
             <div>
               <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
                 For Landlords in Dubai
               </span>
               
-              <h1 className="text-5xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Lease Out Your Property With the Right Tenants, Not Just the First Ones
               </h1>
               
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
                 We help Dubai landlords set realistic rents, market properly and screen tenants carefully – so you're not chasing payments or regretting a rushed lease six months later.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4">
                 <button
                   onClick={openPropertyForm}
-                  className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+                  className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200 w-full sm:w-auto"
                 >
                   Share My Property Details
                 </button>
                 
                 <button
                   onClick={() => openConsultation('Landlord / Leasing')}
-                  className="border-2 border-[#00458b] text-[#00458b] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200"
+                  className="border-2 border-[#00458b] text-[#00458b] px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#00458b] hover:text-white transition-colors duration-200 w-full sm:w-auto"
                 >
                   Talk to a Landlord Advisor
                 </button>
@@ -109,7 +109,7 @@ export default function Landlords() {
             </div>
 
             {/* Right Column - Image */}
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[500px] rounded-lg sm:rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/landlords/image-sell-hero-1.png"
                 alt="Lease Out Your Property in Dubai"
@@ -123,37 +123,37 @@ export default function Landlords() {
       </section>
 
       {/* Who This Is For */}
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center">
             Is This Page For You?
           </h2>
           
-          <p className="text-lg text-gray-600 mb-12 text-center">
+          <p className="text-base sm:text-lg lg:text-lg text-gray-600 mb-12 text-center">
             We work best with landlords who treat their property like a real asset, not a lottery ticket.
           </p>
 
           {/* Two Columns */}
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-10">
             {/* Left Column - Right Place */}
-            <div className="bg-green-50 p-8 rounded-xl border-2 border-green-200">
+            <div className="bg-green-50 p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border-2 border-green-200">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
                   <CheckCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                   You're in the right place if:
                 </h3>
               </div>
               
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">You own an apartment, villa, townhouse or small building in Dubai.</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm lg:text-base text-gray-700">You own an apartment, villa, townhouse or small building in Dubai.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">You want reliable, screened tenants rather than the fastest possible cheque.</span>
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm lg:text-base text-gray-700">You want reliable, screened tenants rather than the fastest possible cheque.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -171,24 +171,24 @@ export default function Landlords() {
             </div>
 
             {/* Right Column - Not Right */}
-            <div className="bg-red-50 p-8 rounded-xl border-2 border-red-200">
+            <div className="bg-red-50 p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border-2 border-red-200">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
                   <XCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                   This is probably not for you if:
                 </h3>
               </div>
               
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <XCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">You only want to list at well above market rent and refuse to adjust.</span>
+                  <XCircle className="w-4 sm:w-5 h-4 sm:h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm lg:text-base text-gray-700">You only want to list at well above market rent and refuse to adjust.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <XCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">You're not prepared to keep the property in reasonable condition.</span>
+                  <XCircle className="w-4 sm:w-5 h-4 sm:h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm lg:text-base text-gray-700">You're not prepared to keep the property in reasonable condition.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <XCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -206,7 +206,7 @@ export default function Landlords() {
           <div className="text-center">
             <button
               onClick={openPropertyForm}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Share My Property Details
             </button>
@@ -214,7 +214,7 @@ export default function Landlords() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="relative h-[550px] rounded-2xl overflow-hidden">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[550px] rounded-lg sm:rounded-2xl overflow-hidden">
             <Image
               src="/landlords/image-sell-fit-1.png"
               alt="Is This Right For You"
@@ -226,28 +226,28 @@ export default function Landlords() {
       </section>
 
       {/* Leasing Process Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center">
             How We Lease Out Your Property
           </h2>
           
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center">
+          <p className="text-base sm:text-lg lg:text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center">
             A clear process from first conversation to signed tenancy and Ejari.
           </p>
 
           {/* 4-Step Process */}
-          <div className="grid md:grid-cols-4 gap-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-8 mb-10">
             {/* Step 1 */}
             <div className="relative">
-              <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
-                <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+              <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg sm:rounded-xl border-2 border-[#00458b] shadow-lg h-full">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-base sm:text-xl mb-4">
                   1
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
                   Brief & Property Review
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   We discuss your goals, property details and any existing tenants. Then we review current rents and competition in your building and area.
                 </p>
               </div>
@@ -255,14 +255,14 @@ export default function Landlords() {
 
             {/* Step 2 */}
             <div className="relative">
-              <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
-                <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+              <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg sm:rounded-xl border-2 border-[#00458b] shadow-lg h-full">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-base sm:text-xl mb-4">
                   2
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
                   Pricing & Listing Setup
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   We agree on a realistic asking rent and strategy, then prepare photography and listing copy for key portals and our own channels.
                 </p>
               </div>
@@ -270,14 +270,14 @@ export default function Landlords() {
 
             {/* Step 3 */}
             <div className="relative">
-              <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
-                <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+              <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg sm:rounded-xl border-2 border-[#00458b] shadow-lg h-full">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-base sm:text-xl mb-4">
                   3
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
                   Enquiries, Viewings & Screening
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   We manage enquiries, schedule viewings, and screen interested tenants for basic suitability (income, employment, family profile, etc.).
                 </p>
               </div>
@@ -285,14 +285,14 @@ export default function Landlords() {
 
             {/* Step 4 */}
             <div className="relative">
-              <div className="bg-white p-6 rounded-xl border-2 border-[#00458b] shadow-lg h-full">
-                <div className="w-12 h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+              <div className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg sm:rounded-xl border-2 border-[#00458b] shadow-lg h-full">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#00458b] rounded-full flex items-center justify-center text-white font-bold text-base sm:text-xl mb-4">
                   4
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
                   Lease Terms, Signing & Ejari
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   We help negotiate terms, coordinate documents, get the tenancy contract signed and support you with Ejari registration guidance.
                 </p>
               </div>
@@ -303,7 +303,7 @@ export default function Landlords() {
           <div className="text-center">
             <button
               onClick={() => openConsultation('Landlord / Leasing')}
-              className="bg-[#00458b] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
+              className="bg-[#00458b] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200"
             >
               Walk Me Through the Process
             </button>
@@ -312,7 +312,7 @@ export default function Landlords() {
 
         {/* Process Illustration */}
         <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="relative h-[300px] rounded-2xl overflow-hidden">
+          <div className="relative h-[200px] sm:h-[250px] lg:h-[300px] rounded-lg sm:rounded-2xl overflow-hidden">
             <Image
               src="/landlords/image-sell-process-1.png"
               alt="Leasing Process"
@@ -323,26 +323,26 @@ export default function Landlords() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 Tenant Screening and Risk Management
               </h2>
               
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-lg text-gray-600 mb-8 leading-relaxed">
                 A fast lease with the wrong tenant is far more expensive than a slightly longer vacancy. We focus on basic but important checks so you have a clearer picture of who you're renting to.
               </p>
 
              
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What we typically look at:</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">What we typically look at:</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-[#00458b] flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">Employment & income – does it realistically support the rent?</span>
+                    <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-[#00458b] flex-shrink-0 mt-1" />
+                    <span className="text-xs sm:text-sm lg:text-base text-gray-700">Employment & income – does it realistically support the rent?</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-[#00458b] flex-shrink-0 mt-1" />
@@ -364,11 +364,11 @@ export default function Landlords() {
               </div>
 
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What we don't do:</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">What we don't do:</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">We don't promise "zero risk" or guarantee perfect tenants.</span>
+                    <XCircle className="w-4 sm:w-5 h-4 sm:h-5 text-red-500 flex-shrink-0 mt-1" />
+                    <span className="text-xs sm:text-sm lg:text-base text-gray-700">We don't promise "zero risk" or guarantee perfect tenants.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
@@ -390,7 +390,7 @@ export default function Landlords() {
               </Link>
             </div>
 
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-lg sm:rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/landlords/image-landlord-risk-1.png"
                 alt="Tenant Screening"
@@ -402,9 +402,9 @@ export default function Landlords() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center">
             Frequently Asked Questions (FAQs)
           </h2>
 
@@ -450,14 +450,14 @@ export default function Landlords() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={openPropertyForm}
-              className="bg-white text-[#00458b] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+              className="bg-white text-[#00458b] px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-gray-100 transition-colors duration-200 w-full sm:w-auto"
             >
               Share My Property Details
             </button>
             
             <button
               onClick={() => openConsultation('Landlord / Leasing')}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#00458b] transition-colors duration-200"
+              className="border-2 border-white text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-white hover:text-[#00458b] transition-colors duration-200 w-full sm:w-auto"
             >
               Book a Landlord Consultation
             </button>
