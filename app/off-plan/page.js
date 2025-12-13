@@ -804,7 +804,7 @@ export default function OffPlanDubai() {
         </div>
 
         <p className="text-sm text-gray-800">
-        Prefer WhatsApp? Message us at <a href="tel:+97143983527" className="font-semibold underline">+971 4 398 3527</a> with "Off-plan enquiry" and the projects you're looking at.
+        Prefer WhatsApp? Message us at <a href="tel:+97143983527" className="font-semibold underline">+971 54 398 3527 </a> with "Off-plan enquiry" and the projects you're looking at.
         </p>
     </div>
     </section>
