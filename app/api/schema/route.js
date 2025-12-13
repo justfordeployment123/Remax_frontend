@@ -42,10 +42,10 @@ export async function GET() {
       "Rental Properties"
     ],
     "sameAs": [
-      "https://www.facebook.com/remax",
-      "https://www.instagram.com/remax",
-      "https://www.linkedin.com/company/remax",
-      "https://www.twitter.com/remax"
+      "https://www.facebook.com/remaxhubdubai",
+      "https://www.instagram.com/remaxhubdubai/",
+      "https://www.linkedin.com/company/remaxhubdubai/",
+      "https://www.linkedin.com/company/remaxhubdubai/",
     ]
   };
 

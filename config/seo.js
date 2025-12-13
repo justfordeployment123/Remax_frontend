@@ -4,14 +4,14 @@ const SEO_CONFIG = {
   description: 'Leading real estate agency in Dubai offering luxury properties, residential apartments, and commercial spaces',
   keywords: ['real estate Dubai', 'luxury villas', 'apartments Dubai', 'property search', 'property investment'],
   socialLinks: {
-    facebook: 'https://www.facebook.com/remax',
-    instagram: 'https://www.instagram.com/remax',
-    linkedin: 'https://www.linkedin.com/company/remax',
-    twitter: 'https://www.twitter.com/remax',
+    facebook: 'https://www.facebook.com/remaxhubdubai',
+    instagram: 'https://www.instagram.com/remaxhubdubai/',
+    linkedin: 'https://www.linkedin.com/company/remaxhubdubai/',
+    twitter: 'https://www.youtube.com/@remaxhubdubai',
   },
   contact: {
     email: 'info@remax.com',
-    phone: '+971-XXXXXXXXX',
+    phone: '+971 54 398 3527',
     address: 'Dubai, UAE',
   },
   pages: {

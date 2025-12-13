@@ -47,7 +47,7 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex items-center gap-4">
               <a 
-                href="https://facebook.com/remaxhub" 
+                href="https://www.facebook.com/remaxhubdubai" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="RE/MAX HUB on Facebook"
@@ -58,7 +58,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://instagram.com/remaxhub" 
+                href="https://www.instagram.com/remaxhubdubai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="RE/MAX HUB on Instagram"
@@ -69,7 +69,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com/company/remaxhub" 
+                href="https://www.linkedin.com/company/remaxhubdubai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="RE/MAX HUB on LinkedIn"
@@ -80,7 +80,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://youtube.com/@remaxhub" 
+                href="https://www.youtube.com/@remaxhubdubai" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="RE/MAX HUB on YouTube"

@@ -33,7 +33,7 @@ export default function InvestorsPage() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative py-10 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -114,7 +114,7 @@ export default function InvestorsPage() {
             <div className="text-center">
               <div className="w-12 h-12 bg-[#00458b]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-6 h-6 text-[#00458b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 10.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <h3 className="text-base font-semibold text-gray-900 mb-2">Local & Global Clients</h3>
@@ -134,7 +134,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             Is This Page For You as an Investor?
@@ -221,7 +221,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             Our Approach to Dubai Property Investment
@@ -274,7 +274,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             Investment Strategies We Work With
@@ -341,7 +341,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -399,7 +399,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             How We Work With You as an Investor
@@ -459,7 +459,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             Examples of How We've Helped Investors
@@ -499,7 +499,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             How We Help You Think About Risk
@@ -557,7 +557,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             What Our Investor Clients Say
@@ -567,7 +567,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
@@ -594,7 +594,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="relative py-20 bg-gradient-to-br from-[#0B2340] to-[#00458b] text-white overflow-hidden">
+      <section className="relative py-10 bg-gradient-to-br from-[#0B2340] to-[#00458b] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <Image
             src="/investors/buy-residential-final-cta-background.png"

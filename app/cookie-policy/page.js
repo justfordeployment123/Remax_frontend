@@ -244,7 +244,7 @@ export default function CookiePolicy() {
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    <span>Marketing and advertising platforms (Google Ads, Meta, LinkedIn, if implemented).</span>
+                    <span>Marketing and advertising platforms.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>

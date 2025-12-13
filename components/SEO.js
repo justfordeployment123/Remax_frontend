@@ -22,10 +22,10 @@ export default function Canonical() {
             "logo": "https://remax.com/logo.png",
             "description": "Leading real estate agency in Dubai",
             "sameAs": [
-              "https://www.facebook.com/remax",
-              "https://www.instagram.com/remax",
-              "https://www.linkedin.com/company/remax",
-              "https://www.twitter.com/remax"
+              "https://www.facebook.com/remaxhubdubai",
+              "https://www.instagram.com/remaxhubdubai/",
+              "https://www.linkedin.com/company/remaxhubdubai/",
+              "https://www.youtube.com/@remaxhubdubai"
             ]
           })
         }}
