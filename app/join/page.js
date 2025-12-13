@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export default function JoinRemaxHub() {
   const formRef = useRef(null);
@@ -511,6 +512,21 @@ export default function JoinRemaxHub() {
               </div>
             </form>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600">
+              Find answers to common questions about joining RE/MAX
+            </p>
+          </div>
+          <FAQAccordion category="join" />
         </div>
       </section>
 

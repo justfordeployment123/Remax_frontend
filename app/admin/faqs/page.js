@@ -13,6 +13,7 @@ const categoryOptions = [
   { value: "buy-residential-dubai", label: "Buy Residential" },
   { value: "playbook-2026-2035", label: "Playbook 2026-2035" },
   { value: "investors", label: "Investors" },
+  { value: "join", label: "Join" },
   { value: "general", label: "General" }
 ];
 
