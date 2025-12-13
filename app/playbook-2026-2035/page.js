@@ -136,7 +136,7 @@ export default function Playbook20262035() {
               </p>
             </div>
 
-            <div className="relative h-[420px] lg:h-[550px] rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[550px] rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="/playbook/iamge-playbook-cover-1.png"
                 alt="RE/MAX HUB 2026-2035 Playbook Cover"
@@ -235,7 +235,7 @@ export default function Playbook20262035() {
           </p>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[750px] rounded-xl overflow-hidden bg-white p-3">
+            <div className="relative h-[500px] sm:h-[600px] lg:h-[750px] rounded-xl overflow-hidden bg-white p-3">
               <Image
                 src="/playbook/image-playbook-contenct-1.png"
                 alt="Playbook content overview"
@@ -302,7 +302,7 @@ export default function Playbook20262035() {
             The Playbook includes simplified versions of the models and charts we use internally - not to overwhelm you with data, but to frame decisions clearly.
           </p>
 
-          <div className="relative h-[400px] rounded-xl overflow-hidden mb-12">
+          <div className="relative h-[250px] sm:h-[320px] lg:h-[450px] rounded-xl overflow-hidden mb-12">
             <Image
               src="/playbook/image-playbook-dashboard-1.png"
               alt="Playbook analytics dashboard"

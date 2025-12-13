@@ -64,7 +64,7 @@ export default function InvestorsPage() {
                 No mass mailing lists. No hype launches. Just a focused discussion around your goals.
               </p>
             </div>
-            <div className="relative h-[400px] lg:h-[600px] rounded-xl overflow-hidden">
+            <div className="relative h-[280px] sm:h-[350px] lg:h-[500px] xl:h-[600px] rounded-xl overflow-hidden">
               <Image
                 src="/investors/image-invest-hero-1.png"
                 alt="Investor analyzing Dubai property data"
@@ -201,7 +201,7 @@ export default function InvestorsPage() {
             </div>
           </div>
 
-          <div className="relative h-[300px] rounded-xl overflow-hidden mb-8">
+          <div className="relative h-[200px] sm:h-[250px] lg:h-[350px] rounded-xl overflow-hidden mb-8">
             <Image
               src="/investors/invest-fit-1.png"
               alt="Investor profiles"
@@ -262,12 +262,12 @@ export default function InvestorsPage() {
               </div>
             </div>
 
-            <div className="relative h-[500px] rounded-xl overflow-hidden">
+            <div className="relative h-[250px] sm:h-[300px] lg:h-[450px] rounded-xl overflow-hidden">
               <Image
                 src="/investors/IMAGE-INVEST-APPROACH-1.png"
                 alt="Investment framework illustration"
                 fill
-                className="object-contain bg-white"
+                className="object-cover"
               />
             </div>
           </div>
@@ -280,7 +280,7 @@ export default function InvestorsPage() {
             Investment Strategies We Work With
           </h2>
 
-          <div className="relative h-[300px] rounded-xl overflow-hidden mb-12">
+          <div className="relative h-[220px] sm:h-[280px] lg:h-[400px] rounded-xl overflow-hidden mb-12">
             <Image
               src="/investors/image-invest-strategies-1.png"
               alt="Investment strategies"
@@ -353,7 +353,7 @@ export default function InvestorsPage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
+            <div className="relative h-[280px] sm:h-[350px] lg:h-[480px] rounded-xl overflow-hidden">
               <Image
                 src="/investors/image-offplan-playbook-1.png"
                 alt="Analytics and market data"
@@ -465,7 +465,7 @@ export default function InvestorsPage() {
             Examples of How We've Helped Investors
           </h2>
 
-          <div className="relative h-[300px] rounded-xl overflow-hidden mb-12">
+          <div className="relative h-[200px] sm:h-[260px] lg:h-[360px] rounded-xl overflow-hidden mb-12">
             <Image
               src="/investors/image-invest-snapshot-1.png"
               alt="Investment case studies"
@@ -506,7 +506,7 @@ export default function InvestorsPage() {
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
+            <div className="relative h-[280px] sm:h-[350px] lg:h-[480px] rounded-xl overflow-hidden">
               <Image
                 src="/investors/image-invest-risk-1.png"
                 alt="Risk management"
