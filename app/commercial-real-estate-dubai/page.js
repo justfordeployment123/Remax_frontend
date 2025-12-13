@@ -757,9 +757,12 @@ export default function CommercialRealEstate() {
               Book a Commercial Consultation
             </button>
           </div>
-
           <p className="text-center text-white/80 text-sm">
-            Prefer WhatsApp? Message us at +971 54 398 3527  with "Commercial enquiry" and a brief of what you're looking for.
+            Prefer WhatsApp? Message us at{" "}
+            <a href="tel:+971543983527" className="underline hover:text-white">
+              +971 54 398 3527
+            </a>{" "}
+            with "Commercial enquiry" and a brief of what you're looking for.
           </p>
         </div>
       </section>

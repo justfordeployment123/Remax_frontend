@@ -625,7 +625,11 @@ export default function InvestorsPage() {
             </button>
           </div>
           <p className="text-sm text-blue-100">
-            Prefer WhatsApp? Message us at +971 54 398 3527  with "Investor enquiry" and a quick overview of your goals.
+            Prefer WhatsApp? Message us at{" "}
+            <a href="tel:+971543983527" className="underline hover:text-white">
+              +971 54 398 3527
+            </a>{" "}
+            with "Investor enquiry" and a quick overview of your goals.
           </p>
         </div>
       </section>
