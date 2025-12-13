@@ -71,7 +71,7 @@ export default function RentalSearch() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Address, City, ZIP, and More"
+                  placeholder="Dubai Marina, Downtown, Motor City..."
                   value={searchFilters.address}
                   onChange={(e) => handleFilterChange("address", e.target.value)}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent transition-all duration-200"
