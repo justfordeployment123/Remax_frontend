@@ -1,14 +1,26 @@
+# RE/MAX Dubai robots.txt
+# Main crawler rules
 User-agent: *
 Allow: /
-
 Disallow: /admin/
 Disallow: /api/
 Disallow: /account/
 Disallow: /login
 Disallow: /sign-up
+Disallow: /verify-email
+Disallow: /*utm*
+Disallow: /?*
 
-Sitemap: https://remax.com/sitemap.xml
+# Prioritized crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
 
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block AI crawlers and bad bots
 User-agent: GPTBot
 Disallow: /
 
@@ -17,3 +29,18 @@ Disallow: /
 
 User-agent: CCBot
 Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemaps
+Sitemap: https://remax.com/sitemap.xml

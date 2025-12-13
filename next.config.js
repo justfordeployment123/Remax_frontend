@@ -47,6 +47,32 @@ const nextConfig = {
         {
           key: 'Referrer-Policy',
           value: 'strict-origin-when-cross-origin'
+        },
+        {
+          key: 'Permissions-Policy',
+          value: 'geolocation=(), microphone=(), camera=()'
+        },
+        {
+          key: 'Content-Security-Policy',
+          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self'; object-src 'none'"
+        }
+      ]
+    },
+    {
+      source: '/robots.txt',
+      headers: [
+        {
+          key: 'Content-Type',
+          value: 'text/plain'
+        }
+      ]
+    },
+    {
+      source: '/sitemap.xml',
+      headers: [
+        {
+          key: 'Content-Type',
+          value: 'application/xml'
         }
       ]
     }
