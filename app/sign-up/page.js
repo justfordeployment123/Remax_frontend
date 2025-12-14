@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { MdEmail, MdLock, MdVisibility, MdVisibilityOff, MdPerson, MdCheckCircle } from 'react-icons/md';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -16,39 +17,6 @@ export default function SignUpPage() {
   const [loading, setLoading] = useState(false);
   const [showVerificationMessage, setShowVerificationMessage] = useState(false);
   const [verificationEmail, setVerificationEmail] = useState('');
-
-  
-  const UserIcon = () => (
-    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-    </svg>
-  );
-
-  const MailIcon = () => (
-    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    </svg>
-  );
-
-  const LockIcon = () => (
-    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-    </svg>
-  );
-
-  const EyeIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-    </svg>
-  );
-
-  const EyeOffIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-4.803m5.596-3.856a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3l18 18" />
-    </svg>
-  );
 
   const handleInputChange = (e) => {
     setFormData({
@@ -139,9 +107,7 @@ export default function SignUpPage() {
           <div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-100 text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <MdCheckCircle className="w-8 h-8 text-green-600" />
               </div>
 
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Verify Your Email</h2>
@@ -216,7 +182,7 @@ export default function SignUpPage() {
                   </label>
                   <div className="relative">
                     <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                      <UserIcon />
+                      <MdPerson className="w-5 h-5 text-gray-400" />
                     </div>
                     <input
                       type="text"
@@ -236,7 +202,7 @@ export default function SignUpPage() {
                   </label>
                   <div className="relative">
                     <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                      <UserIcon />
+                      <MdPerson className="w-5 h-5 text-gray-400" />
                     </div>
                     <input
                       type="text"
@@ -257,7 +223,7 @@ export default function SignUpPage() {
                 </label>
                 <div className="relative">
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <MailIcon />
+                    <MdEmail className="w-5 h-5 text-gray-400" />
                   </div>
                   <input
                     type="email"
@@ -277,7 +243,7 @@ export default function SignUpPage() {
                 </label>
                 <div className="relative">
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <LockIcon />
+                    <MdLock className="w-5 h-5 text-gray-400" />
                   </div>
                   <input
                     type={showPassword ? "text" : "password"}
@@ -293,7 +259,7 @@ export default function SignUpPage() {
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded hover:bg-gray-100"
                     type="button"
                   >
-                    {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                    {showPassword ? <MdVisibilityOff className="w-5 h-5" /> : <MdVisibility className="w-5 h-5" />}
                   </button>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">Password must be at least 6 characters long</p>
