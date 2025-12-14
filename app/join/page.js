@@ -526,7 +526,9 @@ export default function JoinRemaxHub() {
               Find answers to common questions about joining RE/MAX
             </p>
           </div>
-          <FAQAccordion category="join" />
+          <div className="max-w-3xl mx-auto">
+            <FAQAccordion category="join" />
+          </div>
         </div>
       </section>
 
