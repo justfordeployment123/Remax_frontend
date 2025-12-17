@@ -375,7 +375,7 @@ export default function Header() {
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Rental Guides</div>
-                        <div className="text-xs text-gray-500 mt-0.5">For tenants & landlords.</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Process, costs & timelines</div>
                       </Link>
                     </li>
                   </ul>
