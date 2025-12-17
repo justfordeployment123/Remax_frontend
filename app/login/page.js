@@ -101,12 +101,12 @@ export default function LoginPage() {
                   Back to Login
                 </button>
 
-                <p className="text-sm text-gray-600">
+                {/* <p className="text-sm text-gray-600">
                   Don't have an account?{' '}
                   <a href="/sign-up" className="text-[#1A3668] hover:text-[#15294d] font-semibold">
                     Create one
                   </a>
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -246,14 +246,14 @@ export default function LoginPage() {
               </button>
             </div> */}
 
-            <div className="text-center pt-4 border-t border-gray-100">
+            {/* <div className="text-center pt-4 border-t border-gray-100">
               <p className="text-sm text-gray-600">
                 Don't have an account?{' '}
                 <a href="/sign-up" className="text-[#1A3668] hover:text-[#15294d] font-semibold transition-colors hover:underline">
                   Create account
                 </a>
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

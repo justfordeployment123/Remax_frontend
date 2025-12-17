@@ -566,11 +566,6 @@ export default function Header() {
                       Log In
                     </button>
                   </Link>
-                  <Link href="/sign-up">
-                    <button className="bg-[#00458b] text-white px-4 py-1.5 rounded-lg hover:bg-remax-dark-blue font-medium shadow-sm hover:shadow transition-all text-sm">
-                      Sign Up
-                    </button>
-                  </Link>
                 </>
               )}
             </div>
@@ -840,13 +835,6 @@ export default function Header() {
                     className="block text-sm text-gray-700 hover:text-remax-blue transition-colors"
                   >
                     Log In
-                  </Link>
-                  <Link
-                    href="/sign-up"
-                    onClick={handleMobileLinkClick}
-                    className="inline-flex items-center justify-center w-full bg-[#00458b] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-remax-dark-blue transition-colors"
-                  >
-                    Sign Up
                   </Link>
                 </>
               )}
