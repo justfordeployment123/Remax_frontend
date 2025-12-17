@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { FiMenu, FiX, FiChevronLeft, FiChevronRight, FiLogOut, FiBarChart2, FiUsers, FiCheckSquare, FiHome, FiSettings, FiFileText } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronLeft, FiChevronRight, FiLogOut, FiBarChart2, FiUsers, FiCheckSquare, FiHome, FiSettings, FiFileText, FiBriefcase, FiMail, FiAward, FiBook, FiClipboard, FiMessageSquare, FiList } from 'react-icons/fi';
 
 export default function AdminLayout({ children }) {
   const [user, setUser] = useState(null);
@@ -56,23 +56,30 @@ export default function AdminLayout({ children }) {
     router.push('/login');
   };
 
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return 'Good Morning';
+    if (hour < 18) return 'Good Afternoon';
+    return 'Good Evening';
+  };
+
   const navigation = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: FiBarChart2 },
     { name: 'Users', href: '/admin/users', icon: FiUsers },
-    { name: 'Agents', href: '/admin/agents', icon: FiCheckSquare },
+    { name: 'Agents', href: '/admin/agents', icon: FiBriefcase },
     { name: 'Properties', href: '/admin/properties', icon: FiHome },
-    { name: 'Off-Plan Projects', href: '/admin/off-plan-projects', icon: FiHome },
-    { name: 'Guide Articles', href: '/admin/guide-articles', icon: FiFileText },
+    { name: 'Off-Plan Projects', href: '/admin/off-plan-projects', icon: FiClipboard },
+    { name: 'Guide Articles', href: '/admin/guide-articles', icon: FiBook },
     { name: 'Guide Submissions', href: '/admin/guide-submissions', icon: FiFileText },
-    { name: 'Agent Applications', href: '/admin/agent-applications', icon: FiFileText },
-    { name: 'Contact Submissions', href: '/admin/contact-submissions', icon: FiFileText },
-    { name: 'Fit-Out Submissions', href: '/admin/fit-out-submissions', icon: FiFileText },
-    { name: 'Playbook Submissions', href: '/admin/playbook-submissions', icon: FiFileText },
-    { name: 'Consultations', href: '/admin/consultations', icon: FiFileText },
-    { name: 'Requirements', href: '/admin/requirements', icon: FiFileText },
-    { name: 'Testimonials', href: '/admin/testimonials', icon: FiFileText },
+    { name: 'Agent Applications', href: '/admin/agent-applications', icon: FiAward },
+    { name: 'Contact Submissions', href: '/admin/contact-submissions', icon: FiMail },
+    { name: 'Fit-Out Submissions', href: '/admin/fit-out-submissions', icon: FiClipboard },
+    { name: 'Playbook Submissions', href: '/admin/playbook-submissions', icon: FiBook },
+    { name: 'Consultations', href: '/admin/consultations', icon: FiMessageSquare },
+    { name: 'Requirements', href: '/admin/requirements', icon: FiList },
+    { name: 'Testimonials', href: '/admin/testimonials', icon: FiAward },
     { name: 'FAQs', href: '/admin/faqs', icon: FiFileText },
-    { name: 'Settings', href: '/admin/settings', icon: FiSettings },
+    { name: 'Settings', href: '/account/settings', icon: FiSettings },
   ];
 
   if (loading) {
@@ -186,14 +193,14 @@ export default function AdminLayout({ children }) {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
+                className={`flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
                   pathname === item.href
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
                 title={sidebarCollapsed ? item.name : ''}
               >
-                <Icon size={18} />
+                <Icon size={sidebarCollapsed ? 20 : 18} />
                 {!sidebarCollapsed && <span className="ml-3">{item.name}</span>}
               </Link>
             );
@@ -244,6 +251,27 @@ export default function AdminLayout({ children }) {
               <span className="ml-2 text-sm text-gray-500">Admin</span>
             </div>
             <div className="w-6"></div>
+          </div>
+        </div>
+
+        {/* Desktop Header with Greeting */}
+        <div className="hidden lg:block sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
+          <div className="px-8 py-4 flex items-center justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">{getGreeting()}, {user?.firstName}! 👋</h2>
+              <p className="text-sm text-gray-500 mt-1">Welcome back to your admin dashboard</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="text-right">
+                <p className="text-sm font-medium text-gray-700">{user?.firstName} {user?.lastName}</p>
+                <p className="text-xs text-gray-500 capitalize">{user?.role}</p>
+              </div>
+              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-medium text-sm">
+                  {user?.firstName?.charAt(0)}{user?.lastName?.charAt(0)}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 

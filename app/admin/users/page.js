@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FiSearch, FiTrash2, FiEdit2, FiShield, FiUser } from "react-icons/fi";
+import { FiSearch, FiTrash2, FiEdit2, FiShield, FiUser, FiPlus, FiMail, FiLock, FiUsers, FiBriefcase, FiUserCheck } from "react-icons/fi";
 
 export default function AdminUsers() {
   const [users, setUsers] = useState([]);
@@ -12,6 +12,15 @@ export default function AdminUsers() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [updateRole, setUpdateRole] = useState("");
+  const [showAddUserModal, setShowAddUserModal] = useState(false);
+  const [newUserForm, setNewUserForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    role: "user"
+  });
+  const [creatingUser, setCreatingUser] = useState(false);
 
   useEffect(() => {
     fetchUsers();
@@ -98,6 +107,56 @@ export default function AdminUsers() {
     }
   };
 
+  const handleAddUser = async (e) => {
+    e.preventDefault();
+    
+    if (!newUserForm.firstName || !newUserForm.lastName || !newUserForm.email || !newUserForm.password) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    setCreatingUser(true);
+    try {
+      const token = localStorage.getItem("token");
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          firstName: newUserForm.firstName,
+          lastName: newUserForm.lastName,
+          email: newUserForm.email,
+          password: newUserForm.password,
+          role: newUserForm.role,
+          isVerified: newUserForm.role !== "user", // Auto-verify admin/agent accounts
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to create user");
+      }
+
+      fetchUsers();
+      setShowAddUserModal(false);
+      setNewUserForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        role: "user"
+      });
+      alert("User created successfully!");
+    } catch (err) {
+      alert(err.message || "Failed to create user");
+      console.error(err);
+    } finally {
+      setCreatingUser(false);
+    }
+  };
+
   const filteredUsers = users.filter((user) => {
     const matchesSearch =
       user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -126,21 +185,52 @@ export default function AdminUsers() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow">
-            <p className="text-gray-600 text-sm font-medium">Total Users</p>
-            <p className="text-3xl font-bold text-blue-600 mt-2">{stats.total}</p>
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border-l-4 border-blue-600">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Total Users</p>
+                <p className="text-3xl font-bold text-blue-600 mt-2">{stats.total}</p>
+              </div>
+              <div className="bg-blue-100 p-3 rounded-lg">
+                <FiUsers size={24} className="text-blue-600" />
+              </div>
+            </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow">
-            <p className="text-gray-600 text-sm font-medium">Admins</p>
-            <p className="text-3xl font-bold text-purple-600 mt-2">{stats.admins}</p>
+          
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border-l-4 border-purple-600">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Admins</p>
+                <p className="text-3xl font-bold text-purple-600 mt-2">{stats.admins}</p>
+              </div>
+              <div className="bg-purple-100 p-3 rounded-lg">
+                <FiShield size={24} className="text-purple-600" />
+              </div>
+            </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow">
-            <p className="text-gray-600 text-sm font-medium">Agents</p>
-            <p className="text-3xl font-bold text-green-600 mt-2">{stats.agents}</p>
+          
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border-l-4 border-green-600">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Agents</p>
+                <p className="text-3xl font-bold text-green-600 mt-2">{stats.agents}</p>
+              </div>
+              <div className="bg-green-100 p-3 rounded-lg">
+                <FiBriefcase size={24} className="text-green-600" />
+              </div>
+            </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow">
-            <p className="text-gray-600 text-sm font-medium">Users</p>
-            <p className="text-3xl font-bold text-orange-600 mt-2">{stats.customers}</p>
+          
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border-l-4 border-orange-600">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Customers</p>
+                <p className="text-3xl font-bold text-orange-600 mt-2">{stats.customers}</p>
+              </div>
+              <div className="bg-orange-100 p-3 rounded-lg">
+                <FiUserCheck size={24} className="text-orange-600" />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -149,6 +239,13 @@ export default function AdminUsers() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <h2 className="text-lg font-semibold text-gray-900">All Users</h2>
               <div className="flex flex-col md:flex-row gap-4">
+                <button
+                  onClick={() => setShowAddUserModal(true)}
+                  className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  <FiPlus size={18} />
+                  Add User
+                </button>
                 <div className="relative">
                   <FiSearch className="absolute left-3 top-3 text-gray-400" size={18} />
                   <input
@@ -317,6 +414,126 @@ export default function AdminUsers() {
                   </button>
                 </div>
               </div>
+            </div>
+          </div>
+        )}
+
+        {showAddUserModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Create New User</h2>
+
+              <form onSubmit={handleAddUser} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    value={newUserForm.firstName}
+                    onChange={(e) => setNewUserForm({ ...newUserForm, firstName: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    placeholder="John"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    value={newUserForm.lastName}
+                    onChange={(e) => setNewUserForm({ ...newUserForm, lastName: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    placeholder="Doe"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+                    <FiMail size={16} />
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    value={newUserForm.email}
+                    onChange={(e) => setNewUserForm({ ...newUserForm, email: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+                    <FiLock size={16} />
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    value={newUserForm.password}
+                    onChange={(e) => setNewUserForm({ ...newUserForm, password: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    placeholder="••••••••"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+                    <FiShield size={16} />
+                    Role
+                  </label>
+                  <select
+                    value={newUserForm.role}
+                    onChange={(e) => setNewUserForm({ ...newUserForm, role: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  >
+                    <option value="user">User</option>
+                    <option value="agent">Agent</option>
+                    <option value="admin">Admin</option>
+                  </select>
+                </div>
+
+                <div className="flex gap-3 justify-end pt-4">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowAddUserModal(false);
+                      setNewUserForm({
+                        firstName: "",
+                        lastName: "",
+                        email: "",
+                        password: "",
+                        role: "user"
+                      });
+                    }}
+                    className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={creatingUser}
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center gap-2 disabled:bg-blue-400"
+                  >
+                    {creatingUser ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                        Creating...
+                      </>
+                    ) : (
+                      <>
+                        <FiPlus size={18} />
+                        Create User
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         )}

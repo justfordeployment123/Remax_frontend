@@ -521,7 +521,7 @@ export default function Header() {
                           My Goals
                         </Link>
                         
-                        <Link
+                        {/* <Link
                           href="/account/searches"
                           className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                           onClick={() => setIsProfileOpen(false)}
@@ -530,9 +530,9 @@ export default function Header() {
                             <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
                           </svg>
                           Saved Searches
-                        </Link>
+                        </Link> */}
                         
-                        <Link
+                        {/* <Link
                           href="/account/favorites"
                           className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                           onClick={() => setIsProfileOpen(false)}
@@ -541,7 +541,7 @@ export default function Header() {
                             <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                           </svg>
                           My Favourites
-                        </Link>
+                        </Link> */}
                       </div>
 
                       {}
@@ -795,6 +795,7 @@ export default function Header() {
                     My Goals
                   </Link>
                   
+                  {/*                   
                   <Link
                     href="/account/searches"
                     onClick={handleMobileLinkClick}
@@ -804,9 +805,9 @@ export default function Header() {
                       <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
                     </svg>
                     Saved Searches
-                  </Link>
+                  </Link> */}
                   
-                  <Link
+                  {/* <Link
                     href="/account/favorites"
                     onClick={handleMobileLinkClick}
                     className="flex items-center text-sm text-gray-700 py-2 hover:text-remax-blue transition-colors"
@@ -815,7 +816,7 @@ export default function Header() {
                       <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                     </svg>
                     My Favourites
-                  </Link>
+                  </Link> */}
                   
                   <button
                     onClick={handleLogout}

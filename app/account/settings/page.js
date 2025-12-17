@@ -1,17 +1,20 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { User, Mail, MapPin, Phone, Bell, Edit2, Save, X, Plus, Home } from 'lucide-react';
+import { FiUser, FiMail, FiPhone, FiMapPin, FiBell, FiEdit2, FiSave, FiX, FiPlus, FiArrowLeft, FiCheck } from 'react-icons/fi';
+import Link from 'next/link';
+import { toast, Toaster } from 'sonner';
 
 export default function AccountSettings() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('contact');
-  const [editingField, setEditingField] = useState(null);
-  const [editData, setEditData] = useState({});
-  const [newAddress, setNewAddress] = useState({});
-  const [newPhone, setNewPhone] = useState({});
+  const [activeTab, setActiveTab] = useState('profile');
+  const [editMode, setEditMode] = useState(false);
+  const [formData, setFormData] = useState({});
   const [showAddAddress, setShowAddAddress] = useState(false);
   const [showAddPhone, setShowAddPhone] = useState(false);
+  const [newAddress, setNewAddress] = useState({});
+  const [newPhone, setNewPhone] = useState({});
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     fetchUserProfile();
@@ -27,9 +30,9 @@ export default function AccountSettings() {
       });
       
       const data = await response.json();
-      
       if (data.success) {
         setUser(data.data.user);
+        setFormData(data.data.user);
       }
     } catch (error) {
       console.error('Error fetching user profile:', error);
@@ -38,7 +41,8 @@ export default function AccountSettings() {
     }
   };
 
-  const updateProfile = async (field, value) => {
+  const saveProfile = async () => {
+    setSaving(true);
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/profile`, {
@@ -47,18 +51,23 @@ export default function AccountSettings() {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ [field]: value })
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName
+        })
       });
       
       const data = await response.json();
-      
       if (data.success) {
         setUser(data.data.user);
-        setEditingField(null);
-        setEditData({});
+        setEditMode(false);
+        toast.success('Profile updated successfully!');
       }
     } catch (error) {
       console.error('Error updating profile:', error);
+      toast.error('Failed to update profile');
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -75,14 +84,15 @@ export default function AccountSettings() {
       });
       
       const data = await response.json();
-      
       if (data.success) {
         setUser(data.data.user);
         setNewAddress({});
         setShowAddAddress(false);
+        toast.success('Address added successfully!');
       }
     } catch (error) {
       console.error('Error adding address:', error);
+      toast.error('Failed to add address');
     }
   };
 
@@ -99,47 +109,22 @@ export default function AccountSettings() {
       });
       
       const data = await response.json();
-      
       if (data.success) {
         setUser(data.data.user);
         setNewPhone({});
         setShowAddPhone(false);
+        toast.success('Phone number added successfully!');
       }
     } catch (error) {
       console.error('Error adding phone:', error);
+      toast.error('Failed to add phone number');
     }
-  };
-
-  const updateNotification = async (field, value) => {
-    try {
-      const token = localStorage.getItem('token');
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/notifications`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({ [field]: value })
-      });
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        setUser(data.data.user);
-      }
-    } catch (error) {
-      console.error('Error updating notification:', error);
-    }
-  };
-
-  const navigateToHome = () => {
-    window.location.href = '/';
   };
 
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-remax-blue"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
       </div>
     );
   }
@@ -148,7 +133,10 @@ export default function AccountSettings() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-600">Please log in to view account settings</p>
+          <p className="text-gray-600 mb-4">Please log in to view account settings</p>
+          <Link href="/login" className="text-blue-600 hover:text-blue-700">
+            Go to Login
+          </Link>
         </div>
       </div>
     );
@@ -156,26 +144,22 @@ export default function AccountSettings() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <Toaster position="top-right" richColors />
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-3">
-              <button
-                onClick={navigateToHome}
-                className="flex items-center space-x-2 text-remax-blue hover:text-remax-dark-blue transition-colors"
-              >
-                <Home className="w-6 h-6" />
-                <span className="font-semibold">Back to Home</span>
-              </button>
-            </div>
-            <div className="flex items-center space-x-4">
+            <Link href="/" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition">
+              <FiArrowLeft size={20} />
+              <span className="font-medium">Back</span>
+            </Link>
+            <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="font-medium text-gray-900">{user.firstName} {user.lastName}</p>
+                <p className="font-semibold text-gray-900">{user.firstName} {user.lastName}</p>
                 <p className="text-sm text-gray-600">{user.email}</p>
               </div>
-              <div className="w-10 h-10 bg-remax-blue rounded-full flex items-center justify-center">
-                <span className="text-white font-semibold">
+              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-semibold text-lg">
                   {user.firstName?.[0]}{user.lastName?.[0]}
                 </span>
               </div>
@@ -185,378 +169,336 @@ export default function AccountSettings() {
       </header>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {}
+        {/* Page Title */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Account Settings</h1>
-          <p className="text-gray-600 mt-2">Manage your contact information and notification preferences</p>
+          <p className="text-gray-600 mt-2">Manage your profile, contact information, and preferences</p>
         </div>
 
-        {}
-        <div className="flex space-x-8 border-b border-gray-200 mb-8">
+        {/* Tab Navigation */}
+        <div className="flex gap-2 mb-8 border-b border-gray-200 overflow-x-auto">
           <button
-            onClick={() => setActiveTab('contact')}
-            className={`pb-4 px-1 font-medium text-sm border-b-2 transition-colors ${
-              activeTab === 'contact'
-                ? 'border-remax-blue text-remax-blue'
-                : 'border-transparent text-gray-500 hover:text-gray-700'
+            onClick={() => setActiveTab('profile')}
+            className={`pb-4 px-4 font-medium text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${
+              activeTab === 'profile'
+                ? 'border-blue-600 text-blue-600'
+                : 'border-transparent text-gray-600 hover:text-gray-900'
             }`}
           >
-            <User className="w-4 h-4 inline mr-2" />
-            My Contact Info
+            <FiUser size={18} />
+            Profile
+          </button>
+          <button
+            onClick={() => setActiveTab('contact')}
+            className={`pb-4 px-4 font-medium text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${
+              activeTab === 'contact'
+                ? 'border-blue-600 text-blue-600'
+                : 'border-transparent text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            <FiPhone size={18} />
+            Contact Info
           </button>
           <button
             onClick={() => setActiveTab('notifications')}
-            className={`pb-4 px-1 font-medium text-sm border-b-2 transition-colors ${
+            className={`pb-4 px-4 font-medium text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${
               activeTab === 'notifications'
-                ? 'border-remax-blue text-remax-blue'
-                : 'border-transparent text-gray-500 hover:text-gray-700'
+                ? 'border-blue-600 text-blue-600'
+                : 'border-transparent text-gray-600 hover:text-gray-900'
             }`}
           >
-            <Bell className="w-4 h-4 inline mr-2" />
+            <FiBell size={18} />
             Notifications
           </button>
         </div>
 
-        {}
-        {activeTab === 'contact' && (
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+        {/* Profile Tab */}
+        {activeTab === 'profile' && (
+          <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-gray-900">My Contact Info</h2>
-              <p className="text-gray-600 text-sm mt-1">
-                View, edit, or update your contact information and sign-in preferences.
-              </p>
+              <div className="flex justify-between items-center">
+                <div>
+                  <h2 className="text-xl font-semibold text-gray-900">Profile Information</h2>
+                  <p className="text-sm text-gray-600 mt-1">Update your basic profile details</p>
+                </div>
+                {!editMode && (
+                  <button
+                    onClick={() => setEditMode(true)}
+                    className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                  >
+                    <FiEdit2 size={16} />
+                    Edit Profile
+                  </button>
+                )}
+              </div>
             </div>
 
-            <div className="p-6 space-y-6">
-              {}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name*
-                  </label>
-                  <div className="flex items-center space-x-3">
-                    {editingField === 'firstName' ? (
-                      <div className="flex-1 flex space-x-2">
-                        <input
-                          type="text"
-                          value={editData.firstName || user.firstName}
-                          onChange={(e) => setEditData({ ...editData, firstName: e.target.value })}
-                          className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-remax-blue"
-                        />
-                        <button
-                          onClick={() => updateProfile('firstName', editData.firstName)}
-                          className="p-2 text-green-600 hover:bg-green-50 rounded-lg"
-                        >
-                          <Save className="w-4 h-4" />
-                        </button>
-                        <button
-                          onClick={() => setEditingField(null)}
-                          className="p-2 text-gray-600 hover:bg-gray-50 rounded-lg"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="flex-1 flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
-                        <span className="text-gray-900">{user.firstName}</span>
-                        <button
-                          onClick={() => setEditingField('firstName')}
-                          className="text-gray-400 hover:text-gray-600"
-                        >
-                          <Edit2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    )}
+            <div className="p-6">
+              {editMode ? (
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                    <input
+                      type="text"
+                      value={formData.firstName || ''}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                    <input
+                      type="text"
+                      value={formData.lastName || ''}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                  <div className="flex gap-3 justify-end pt-4">
+                    <button
+                      onClick={() => {
+                        setEditMode(false);
+                        setFormData(user);
+                      }}
+                      className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition font-medium"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={saveProfile}
+                      disabled={saving}
+                      className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium disabled:bg-blue-400"
+                    >
+                      <FiSave size={16} />
+                      {saving ? 'Saving...' : 'Save Changes'}
+                    </button>
                   </div>
                 </div>
-
-                {}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name*
-                  </label>
-                  <div className="flex items-center space-x-3">
-                    {editingField === 'lastName' ? (
-                      <div className="flex-1 flex space-x-2">
-                        <input
-                          type="text"
-                          value={editData.lastName || user.lastName}
-                          onChange={(e) => setEditData({ ...editData, lastName: e.target.value })}
-                          className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-remax-blue"
-                        />
-                        <button
-                          onClick={() => updateProfile('lastName', editData.lastName)}
-                          className="p-2 text-green-600 hover:bg-green-50 rounded-lg"
-                        >
-                          <Save className="w-4 h-4" />
-                        </button>
-                        <button
-                          onClick={() => setEditingField(null)}
-                          className="p-2 text-gray-600 hover:bg-gray-50 rounded-lg"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="flex-1 flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
-                        <span className="text-gray-900">{user.lastName}</span>
-                        <button
-                          onClick={() => setEditingField('lastName')}
-                          className="text-gray-400 hover:text-gray-600"
-                        >
-                          <Edit2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    )}
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">First Name</p>
+                    <p className="text-lg font-medium text-gray-900">{user.firstName}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Last Name</p>
+                    <p className="text-lg font-medium text-gray-900">{user.lastName}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Email</p>
+                    <p className="text-lg font-medium text-gray-900">{user.email}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Status</p>
+                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
+                      user.isVerified 
+                        ? 'bg-green-100 text-green-800' 
+                        : 'bg-yellow-100 text-yellow-800'
+                    }`}>
+                      {user.isVerified ? 'Verified' : 'Pending Verification'}
+                    </span>
                   </div>
                 </div>
-              </div>
+              )}
+            </div>
+          </div>
+        )}
 
-              {}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address*
-                </label>
-                <div className="flex items-center space-x-3">
-                  <div className="flex-1 flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
-                    <div className="flex items-center space-x-2">
-                      <Mail className="w-4 h-4 text-gray-400" />
-                      <span className="text-gray-900">{user.email}</span>
-                    </div>
-                    <span className="text-xs text-gray-500">Cannot be changed</span>
+        {/* Contact Info Tab */}
+        {activeTab === 'contact' && (
+          <div className="space-y-6">
+            {/* Phone Numbers */}
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
+              <div className="p-6 border-b border-gray-200">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900">Phone Numbers</h2>
+                    <p className="text-sm text-gray-600 mt-1">Add or manage your phone numbers</p>
                   </div>
+                  {!showAddPhone && (
+                    <button
+                      onClick={() => setShowAddPhone(true)}
+                      className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                    >
+                      <FiPlus size={16} />
+                      Add Phone
+                    </button>
+                  )}
                 </div>
               </div>
 
-              {}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-medium text-gray-900">Addresses</h3>
-                  <button
-                    onClick={() => setShowAddAddress(true)}
-                    className="flex items-center space-x-2 text-remax-blue hover:text-remax-dark-blue"
-                  >
-                    <Plus className="w-4 h-4" />
-                    <span>Add Primary Address</span>
-                  </button>
-                </div>
-
-                {showAddAddress && (
-                  <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                      <input
-                        type="text"
-                        placeholder="Street"
-                        value={newAddress.street || ''}
-                        onChange={(e) => setNewAddress({ ...newAddress, street: e.target.value })}
-                        className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-remax-blue"
-                      />
-                      <input
-                        type="text"
-                        placeholder="City"
-                        value={newAddress.city || ''}
-                        onChange={(e) => setNewAddress({ ...newAddress, city: e.target.value })}
-                        className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-remax-blue"
-                      />
-                      <input
-                        type="text"
-                        placeholder="State"
-                        value={newAddress.state || ''}
-                        onChange={(e) => setNewAddress({ ...newAddress, state: e.target.value })}
-                        className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-remax-blue"
-                      />
-                      <input
-                        type="text"
-                        placeholder="ZIP Code"
-                        value={newAddress.zipCode || ''}
-                        onChange={(e) => setNewAddress({ ...newAddress, zipCode: e.target.value })}
-                        className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-remax-blue"
-                      />
-                    </div>
-                    <div className="flex space-x-2">
-                      <button
-                        onClick={addAddress}
-                        className="bg-remax-blue text-white px-4 py-2 rounded-lg hover:bg-remax-dark-blue"
-                      >
-                        Save Address
-                      </button>
-                      <button
-                        onClick={() => setShowAddAddress(false)}
-                        className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50"
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                {user.addresses && user.addresses.length > 0 ? (
-                  <div className="space-y-3">
-                    {user.addresses.map((address, index) => (
-                      <div key={index} className="flex items-center justify-between bg-gray-50 rounded-lg p-4">
-                        <div className="flex items-center space-x-3">
-                          <MapPin className="w-4 h-4 text-gray-400" />
-                          <div>
-                            <p className="text-gray-900">{address.street}</p>
-                            <p className="text-sm text-gray-600">
-                              {address.city}, {address.state} {address.zipCode}
-                            </p>
-                          </div>
-                        </div>
-                        <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                          {address.type}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-gray-500 text-sm">No addresses added yet.</p>
-                )}
-              </div>
-
-              {}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-medium text-gray-900">Phone Numbers</h3>
-                  <button
-                    onClick={() => setShowAddPhone(true)}
-                    className="flex items-center space-x-2 text-remax-blue hover:text-remax-dark-blue"
-                  >
-                    <Plus className="w-4 h-4" />
-                    <span>Add Primary Phone</span>
-                  </button>
-                </div>
-
-                {showAddPhone && (
-                  <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                    <div className="mb-4">
+              <div className="p-6">
+                {showAddPhone ? (
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                       <input
                         type="tel"
-                        placeholder="Phone Number"
-                        value={newPhone.number || ''}
-                        onChange={(e) => setNewPhone({ ...newPhone, number: e.target.value })}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-remax-blue"
+                        value={newPhone.phoneNumber || ''}
+                        onChange={(e) => setNewPhone({ ...newPhone, phoneNumber: e.target.value })}
+                        placeholder="+971123456789"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
-                    <div className="flex space-x-2">
+                    <div className="flex gap-3 justify-end">
                       <button
-                        onClick={addPhoneNumber}
-                        className="bg-remax-blue text-white px-4 py-2 rounded-lg hover:bg-remax-dark-blue"
-                      >
-                        Save Phone
-                      </button>
-                      <button
-                        onClick={() => setShowAddPhone(false)}
-                        className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50"
+                        onClick={() => {
+                          setShowAddPhone(false);
+                          setNewPhone({});
+                        }}
+                        className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition"
                       >
                         Cancel
                       </button>
+                      <button
+                        onClick={addPhoneNumber}
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                      >
+                        <FiPlus size={16} />
+                        Add Phone
+                      </button>
                     </div>
                   </div>
-                )}
-
-                {user.phoneNumbers && user.phoneNumbers.length > 0 ? (
+                ) : user.phoneNumbers && user.phoneNumbers.length > 0 ? (
                   <div className="space-y-3">
-                    {user.phoneNumbers.map((phone, index) => (
-                      <div key={index} className="flex items-center justify-between bg-gray-50 rounded-lg p-4">
-                        <div className="flex items-center space-x-3">
-                          <Phone className="w-4 h-4 text-gray-400" />
-                          <span className="text-gray-900">{phone.number}</span>
+                    {user.phoneNumbers.map((phone, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <FiPhone className="text-gray-400" size={18} />
+                          <span className="text-gray-900 font-medium">{phone.phoneNumber}</span>
                         </div>
-                        <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                          {phone.type}
-                        </span>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-gray-500 text-sm">No phone numbers added yet.</p>
+                  <p className="text-gray-600">No phone numbers added yet.</p>
+                )}
+              </div>
+            </div>
+
+            {/* Addresses */}
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
+              <div className="p-6 border-b border-gray-200">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900">Addresses</h2>
+                    <p className="text-sm text-gray-600 mt-1">Add or manage your addresses</p>
+                  </div>
+                  {!showAddAddress && (
+                    <button
+                      onClick={() => setShowAddAddress(true)}
+                      className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                    >
+                      <FiPlus size={16} />
+                      Add Address
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <div className="p-6">
+                {showAddAddress ? (
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Street Address</label>
+                      <input
+                        type="text"
+                        value={newAddress.address || ''}
+                        onChange={(e) => setNewAddress({ ...newAddress, address: e.target.value })}
+                        placeholder="Street address"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
+                        <input
+                          type="text"
+                          value={newAddress.city || ''}
+                          onChange={(e) => setNewAddress({ ...newAddress, city: e.target.value })}
+                          placeholder="City"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Zip Code</label>
+                        <input
+                          type="text"
+                          value={newAddress.zipCode || ''}
+                          onChange={(e) => setNewAddress({ ...newAddress, zipCode: e.target.value })}
+                          placeholder="Zip code"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-3 justify-end">
+                      <button
+                        onClick={() => {
+                          setShowAddAddress(false);
+                          setNewAddress({});
+                        }}
+                        className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={addAddress}
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                      >
+                        <FiPlus size={16} />
+                        Add Address
+                      </button>
+                    </div>
+                  </div>
+                ) : user.addresses && user.addresses.length > 0 ? (
+                  <div className="space-y-3">
+                    {user.addresses.map((addr, idx) => (
+                      <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                        <FiMapPin className="text-gray-400 mt-1" size={18} />
+                        <div>
+                          <p className="text-gray-900 font-medium">{addr.address}</p>
+                          <p className="text-sm text-gray-600">{addr.city}, {addr.zipCode}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-gray-600">No addresses added yet.</p>
                 )}
               </div>
             </div>
           </div>
         )}
 
-        {}
+        {/* Notifications Tab */}
         {activeTab === 'notifications' && (
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+          <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-gray-900">Notifications</h2>
-              <p className="text-gray-600 text-sm mt-1">
-                Customize the frequency and types of subscriptions you want to receive.
-              </p>
+              <h2 className="text-xl font-semibold text-gray-900">Notification Preferences</h2>
+              <p className="text-sm text-gray-600 mt-1">Manage how you receive notifications</p>
             </div>
-
             <div className="p-6">
-              <div className="mb-8">
-                <p className="text-gray-700 mb-4">
-                  Get notifications from REMAX so you can stay on top of your journey home. Turn off anytime.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                {}
-                <div className="flex items-center justify-between py-4 border-b border-gray-200">
-                  <div className="flex-1">
-                    <h3 className="font-medium text-gray-900">REMAX Listing Alerts</h3>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Updated property listings based on your searches
-                    </p>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div>
+                    <p className="font-medium text-gray-900">Email Notifications</p>
+                    <p className="text-sm text-gray-600">Receive updates via email</p>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <label className="relative inline-flex items-center cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={user.notifications?.listingAlerts || false}
-                        onChange={(e) => updateNotification('listingAlerts', e.target.checked)}
-                        className="sr-only peer"
-                      />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-remax-blue"></div>
-                    </label>
-                  </div>
+                  <input type="checkbox" defaultChecked className="w-5 h-5 rounded" />
                 </div>
-
-                {}
-                <div className="flex items-center justify-between py-4 border-b border-gray-200">
-                  <div className="flex-1">
-                    <h3 className="font-medium text-gray-900">Favorites</h3>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Updated property listings based on your favorite homes
-                    </p>
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div>
+                    <p className="font-medium text-gray-900">Marketing Communications</p>
+                    <p className="text-sm text-gray-600">Receive promotional offers</p>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <label className="relative inline-flex items-center cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={user.notifications?.favorites || false}
-                        onChange={(e) => updateNotification('favorites', e.target.checked)}
-                        className="sr-only peer"
-                      />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-remax-blue"></div>
-                    </label>
-                  </div>
+                  <input type="checkbox" defaultChecked className="w-5 h-5 rounded" />
                 </div>
-
-                {}
-                <div className="flex items-center justify-between py-4">
-                  <div className="flex-1">
-                    <h3 className="font-medium text-gray-900">REMAX Bring It Home Newsletter</h3>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Informative articles, up-to-date real estate trends, contests, and curated listings tailored to your goals
-                    </p>
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div>
+                    <p className="font-medium text-gray-900">Property Updates</p>
+                    <p className="text-sm text-gray-600">Get alerts on new properties</p>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <label className="relative inline-flex items-center cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={user.notifications?.newsletter || false}
-                        onChange={(e) => updateNotification('newsletter', e.target.checked)}
-                        className="sr-only peer"
-                      />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-remax-blue"></div>
-                    </label>
-                  </div>
+                  <input type="checkbox" defaultChecked className="w-5 h-5 rounded" />
                 </div>
               </div>
             </div>
