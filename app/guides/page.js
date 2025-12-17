@@ -24,7 +24,6 @@ export default function GuidesPage() {
   const [displayedArticles, setDisplayedArticles] = useState([]);
   const searchParams = useSearchParams();
 
-  // Read URL query parameters on mount
   useEffect(() => {
     const categoryParam = searchParams.get('category');
     if (categoryParam) {
@@ -61,7 +60,6 @@ export default function GuidesPage() {
       if (data.success) {
         setArticles(data.data);
         
-        // Separate featured articles
         if (!selectedCategory && !searchTerm) {
           const featured = data.data.filter(article => article.featured).slice(0, 3);
           setFeaturedArticles(featured);
@@ -103,52 +101,49 @@ export default function GuidesPage() {
   const ArticleCard = ({ article, featured = false }) => (
     <Link
       href={`/guides/${article.slug}`}
-      className={`group bg-white rounded-xl border-2 border-gray-100 overflow-hidden hover:border-[#00458b] hover:shadow-xl transition-all duration-300 ${
-        featured ? 'md:col-span-1' : ''
-      }`}
+      className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#00458b] hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
     >
       {article.heroImage && (
-        <div className={`relative w-full overflow-hidden ${featured ? 'h-64' : 'h-52'}`}>
+        <div className={`relative w-full overflow-hidden bg-gray-200 ${featured ? 'h-48 sm:h-56' : 'h-40 sm:h-48'}`}>
           <img
             src={article.heroImage}
             alt={article.title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           {featured && (
-            <div className="absolute top-4 left-4 bg-[#00458b] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-[#00458b] text-white px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
               Featured
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
       )}
-      <div className={`p-${featured ? '6' : '5'}`}>
-        <span className={`inline-block px-3 py-1 text-xs font-bold rounded-full mb-3 ${getCategoryColor(article.category)}`}>
+      <div className={`flex flex-col flex-1 ${featured ? 'p-5 sm:p-6' : 'p-4 sm:p-5'}`}>
+        <span className={`inline-block px-2.5 py-1 text-xs font-bold rounded-full mb-3 w-fit ${getCategoryColor(article.category)}`}>
           {article.category}
         </span>
-        <h3 className={`font-bold text-gray-900 mb-3 group-hover:text-[#00458b] transition-colors leading-snug ${
-          featured ? 'text-2xl' : 'text-lg'
+        <h3 className={`font-bold text-gray-900 mb-2 group-hover:text-[#00458b] transition-colors leading-snug ${
+          featured ? 'text-xl sm:text-2xl' : 'text-lg'
         }`}>
           {article.title}
         </h3>
         {article.summary && (
-          <p className="text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+          <p className="text-gray-600 mb-4 line-clamp-2 leading-relaxed text-sm sm:text-base flex-grow">
             {article.summary}
           </p>
         )}
-        <div className="flex items-center gap-4 text-sm text-gray-500 pt-3 border-t border-gray-100">
+        <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-500 pt-4 border-t border-gray-100 mt-auto">
           <div className="flex items-center gap-1.5">
-            <FiClock className="w-4 h-4" />
-            <span>{article.readTime} min</span>
+            <FiClock className="w-4 h-4 flex-shrink-0" />
+            <span className="whitespace-nowrap">{article.readTime} min</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <FiEye className="w-4 h-4" />
-            <span>{article.views.toLocaleString()}</span>
+            <FiEye className="w-4 h-4 flex-shrink-0" />
+            <span className="whitespace-nowrap">{article.views.toLocaleString()}</span>
           </div>
-          <span className="text-xs">{new Date(article.publishedAt).toLocaleDateString('en-US', { 
+          <span className="text-xs whitespace-nowrap ml-auto">{new Date(article.publishedAt).toLocaleDateString('en-US', { 
             month: 'short', 
-            day: 'numeric', 
-            year: 'numeric' 
+            day: 'numeric'
           })}</span>
         </div>
       </div>
@@ -159,44 +154,46 @@ export default function GuidesPage() {
     <>
       <Header />
       
-      <main className="min-h-screen bg-gray-50">
+      <main className="min-h-screen bg-white">
         
-        <div className="relative py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="max-w-7xl mx-auto px-4">
+        {/* Hero Section */}
+        <div className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#00458b]/5 via-white to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#00458b]/70 block mb-3 sm:mb-4">
                 Expert Insights
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-                Dubai Real Estate Guides & Insights
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 leading-tight">
+                Dubai Real Estate Guides
               </h1>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 leading-relaxed px-2">
                 Expert advice and comprehensive guides to help you navigate Dubai's real estate market with confidence
               </p>
               
               <div className="relative max-w-2xl mx-auto">
-                <FiSearch className="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search for guides, topics, or advice..."
+                  placeholder="Search guides..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-14 pr-6 py-5 rounded-xl text-gray-900 border-2 border-gray-200 focus:ring-2 focus:ring-[#00458b] focus:border-[#00458b] focus:outline-none shadow-sm text-lg"
+                  className="w-full pl-12 pr-4 py-3 sm:py-4 rounded-xl text-gray-900 border-2 border-gray-200 focus:ring-2 focus:ring-[#00458b] focus:border-[#00458b] focus:outline-none shadow-sm text-base"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="flex items-center gap-3 overflow-x-auto py-5">
+        {/* Filter Bar - Mobile friendly */}
+        <div className="bg-white border-b border-gray-100 sticky top-0 z-10 shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex items-center gap-3 overflow-x-auto py-4 scrollbar-hide">
               <FiFilter className="w-5 h-5 text-[#00458b] flex-shrink-0" />
               {CATEGORIES.map((category) => (
                 <button
                   key={category.value}
                   onClick={() => setSelectedCategory(category.value)}
-                  className={`px-6 py-2.5 rounded-lg font-semibold transition-all whitespace-nowrap ${
+                  className={`px-4 sm:px-5 py-2 rounded-lg font-semibold transition-all whitespace-nowrap text-sm sm:text-base ${
                     selectedCategory === category.value
                       ? 'bg-[#00458b] text-white shadow-md'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
@@ -209,20 +206,22 @@ export default function GuidesPage() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 py-16">
+        {/* Content Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           {loading ? (
             <div className="flex items-center justify-center py-20">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00458b]"></div>
             </div>
           ) : (
             <>
+              {/* Featured Section */}
               {featuredArticles.length > 0 && !searchTerm && (
-                <div className="mb-16">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="h-1 w-12 bg-[#00458b] rounded"></div>
-                    <h2 className="text-4xl font-bold text-gray-900">Featured Guides</h2>
+                <div className="mb-12 sm:mb-16">
+                  <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                    <div className="h-1.5 w-8 sm:w-12 bg-[#00458b] rounded-full"></div>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Featured Guides</h2>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {featuredArticles.map((article) => (
                       <ArticleCard key={article._id} article={article} featured={true} />
                     ))}
@@ -230,29 +229,30 @@ export default function GuidesPage() {
                 </div>
               )}
 
+              {/* All Guides Section */}
               <div>
-                <div className="flex justify-between items-center mb-8">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0 mb-6 sm:mb-8">
                   <div className="flex items-center gap-3">
-                    <div className="h-1 w-12 bg-[#00458b] rounded"></div>
-                    <h2 className="text-4xl font-bold text-gray-900">
+                    <div className="h-1.5 w-8 sm:w-12 bg-[#00458b] rounded-full"></div>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                       {selectedCategory 
                         ? `${CATEGORIES.find(c => c.value === selectedCategory)?.label} Guides` 
                         : 'All Guides'
                       }
                     </h2>
                   </div>
-                  <span className="text-gray-600 font-medium">
+                  <span className="text-sm sm:text-base text-gray-600 font-medium">
                     {displayedArticles.length} {displayedArticles.length === 1 ? 'guide' : 'guides'}
                   </span>
                 </div>
 
                 {displayedArticles.length === 0 ? (
-                  <div className="text-center py-20 bg-gray-50 rounded-2xl">
+                  <div className="text-center py-16 sm:py-20 bg-gray-50 rounded-2xl">
                     <div className="text-gray-300 mb-4">
-                      <FiSearch className="w-20 h-20 mx-auto" />
+                      <FiSearch className="w-16 h-16 sm:w-20 sm:h-20 mx-auto" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">No guides found</h3>
-                    <p className="text-lg text-gray-600">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">No guides found</h3>
+                    <p className="text-base sm:text-lg text-gray-600 px-4">
                       {searchTerm 
                         ? 'Try adjusting your search terms or filters'
                         : 'Check back soon for new content'
@@ -260,7 +260,7 @@ export default function GuidesPage() {
                     </p>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {displayedArticles.map((article) => (
                       <ArticleCard key={article._id} article={article} />
                     ))}
@@ -271,27 +271,28 @@ export default function GuidesPage() {
           )}
         </div>
 
-        <div className="bg-gradient-to-br from-gray-50 to-white border-t border-gray-200 py-20">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#00458b]/70 block mb-4">
-              Get Expert Help
+        {/* CTA Section */}
+        <div className="bg-gradient-to-br from-[#00458b] to-[#003366] py-12 sm:py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/70 block mb-3 sm:mb-4">
+              Need Expert Help?
             </span>
-            <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
-              Need Personalized Guidance?
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
+              Get Personalized Guidance
             </h2>
-            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Our expert team is ready to help you find your perfect property in Dubai with tailored advice and support
+            <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
+              Our expert team is ready to help you find your perfect property in Dubai
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href="/contact-us"
-                className="px-8 py-4 bg-[#00458b] text-white rounded-lg hover:bg-[#003366] transition-colors font-semibold text-lg shadow-md"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#00458b] rounded-lg hover:bg-gray-100 transition-colors font-semibold text-base sm:text-lg shadow-lg"
               >
                 Contact Us
               </Link>
               <Link
                 href="/find-agent"
-                className="px-8 py-4 bg-white text-[#00458b] border-2 border-[#00458b] rounded-lg hover:bg-[#00458b] hover:text-white transition-colors font-semibold text-lg"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#00458b] text-white border-2 border-white rounded-lg hover:bg-white hover:text-[#00458b] transition-colors font-semibold text-base sm:text-lg"
               >
                 Find an Agent
               </Link>
