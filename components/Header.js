@@ -183,7 +183,7 @@ export default function Header() {
                       </li>
                       <li>
                         <Link
-                          href="/guides/investment"
+                          href="/guides?category=INVEST"
                           className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                         >
                           <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Data & Insights</div>
@@ -333,11 +333,11 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/guides/renting"
+                        href="/guides?category=SELL%20%26%20RENT"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
-                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Rental Guide</div>
-                        <div className="text-xs text-gray-500 mt-0.5">Tenant info.</div>
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Investment Guides</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Investor strategies.</div>
                       </Link>
                     </li>
                   </ul>
@@ -371,11 +371,11 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/guides/selling"
+                        href="/guides?category=SELL%20%26%20RENT"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
-                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Selling Guide</div>
-                        <div className="text-xs text-gray-500 mt-0.5">Step-by-step guide.</div>
+                        <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">Rental Guides</div>
+                        <div className="text-xs text-gray-500 mt-0.5">For tenants & landlords.</div>
                       </Link>
                     </li>
                   </ul>
@@ -409,7 +409,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/guides/buying"
+                        href="/guides?category=BUY"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">For Buyers</div>
@@ -418,7 +418,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/guides/investment"
+                        href="/guides?category=INVEST"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">For Investors</div>
@@ -427,7 +427,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/guides/selling-landlords"
+                        href="/guides?category=LANDLORDS"
                         className="block px-4 py-2 hover:bg-blue-50 transition-colors group"
                       >
                         <div className="font-medium text-sm text-gray-900 group-hover:text-[#00458b]">For Landlords</div>
@@ -619,8 +619,8 @@ export default function Header() {
                   <Link href="/playbook-2026-2035" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     2026–2035 Market Playbook
                   </Link>
-                  <Link href="/guides/investment" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
-                    Data & Insights (Investor)
+                  <Link href="/guides?category=INVEST" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Investment Guides
                   </Link>
                 </div>
               )}
@@ -694,8 +694,8 @@ export default function Header() {
                   <Link href="/rental-search" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Browse Rental Listings
                   </Link>
-                  <Link href="/guides/renting" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
-                    Rental Guide
+                  <Link href="/guides?category=SELL%20%26%20RENT" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Rental Guides
                   </Link>
                 </div>
               )}
@@ -715,8 +715,8 @@ export default function Header() {
                   <Link href="/sell" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
                     Sell Your Property
                   </Link>
-                  <Link href="/guides/selling" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
-                    Selling Guide
+                  <Link href="/guides?category=SELL%20%26%20RENT" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
+                    Selling Guides
                   </Link>
                 </div>
               )}
@@ -734,16 +734,7 @@ export default function Header() {
               {mobileSubmenu === "guides" && (
                 <div className="space-y-3 pl-4">
                   <Link href="/guides" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
-                    All Guides & Articles
-                  </Link>
-                  <Link href="/guides/buying" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
-                    For Buyers & End-Users
-                  </Link>
-                  <Link href="/guides/investment" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
-                    For Investors
-                  </Link>
-                  <Link href="/guides/selling-landlords" onClick={handleMobileLinkClick} className="block text-sm text-gray-600 py-1 hover:text-remax-blue transition-colors">
-                    For Landlords & Sellers
+                    All Guides
                   </Link>
                 </div>
               )}

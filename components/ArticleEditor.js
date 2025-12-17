@@ -557,6 +557,7 @@ export default function ArticleEditor({ article, onClose, onSave }) {
                     <option value="OFF-PLAN">Off-Plan</option>
                     <option value="COMMERCIAL">Commercial</option>
                     <option value="SELL & RENT">Sell & Rent</option>
+                    <option value="LANDLORDS">Landlords</option>
                   </select>
                 </div>
 

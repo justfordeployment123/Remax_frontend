@@ -12,7 +12,8 @@ const CATEGORIES = [
   { value: 'INVEST', label: 'Invest' },
   { value: 'OFF-PLAN', label: 'Off-Plan' },
   { value: 'COMMERCIAL', label: 'Commercial' },
-  { value: 'SELL & RENT', label: 'Sell & Rent' }
+  { value: 'SELL & RENT', label: 'Sell & Rent' },
+  { value: 'LANDLORDS', label: 'Landlords' }
 ];
 
 export default function GuidesPage() {
@@ -33,6 +34,8 @@ export default function GuidesPage() {
       if (matchedCategory) {
         setSelectedCategory(matchedCategory.value);
       }
+    } else {
+      setSelectedCategory('');
     }
   }, [searchParams]);
 
@@ -93,7 +96,8 @@ export default function GuidesPage() {
       'INVEST': 'bg-purple-100 text-purple-800',
       'OFF-PLAN': 'bg-orange-100 text-orange-800',
       'COMMERCIAL': 'bg-green-100 text-green-800',
-      'SELL & RENT': 'bg-red-100 text-red-800'
+      'SELL & RENT': 'bg-red-100 text-red-800',
+      'LANDLORDS': 'bg-amber-100 text-amber-800'
     };
     return colors[category] || 'bg-gray-100 text-gray-800';
   };
