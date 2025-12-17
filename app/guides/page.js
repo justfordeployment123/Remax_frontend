@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -21,6 +22,20 @@ export default function GuidesPage() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [displayedArticles, setDisplayedArticles] = useState([]);
+  const searchParams = useSearchParams();
+
+  // Read URL query parameters on mount
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam) {
+      const matchedCategory = CATEGORIES.find(
+        cat => cat.value.toUpperCase() === categoryParam.toUpperCase()
+      );
+      if (matchedCategory) {
+        setSelectedCategory(matchedCategory.value);
+      }
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     fetchArticles();
