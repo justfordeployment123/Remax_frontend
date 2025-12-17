@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiSearch, FiTrash2, FiEdit2, FiShield, FiUser, FiPlus, FiMail, FiLock, FiUsers, FiBriefcase, FiUserCheck } from "react-icons/fi";
+import { toast, Toaster } from "sonner";
 
 export default function AdminUsers() {
   const [users, setUsers] = useState([]);
@@ -77,7 +78,7 @@ export default function AdminUsers() {
       setUsers(users.filter((u) => u._id !== id));
       fetchUsers();
     } catch (err) {
-      alert("Failed to delete user");
+      toast.error("Failed to delete user");
       console.error(err);
     }
   };
@@ -102,7 +103,7 @@ export default function AdminUsers() {
       setSelectedUser(null);
       setUpdateRole("");
     } catch (err) {
-      alert("Failed to update user");
+      toast.error("Failed to update user");
       console.error(err);
     }
   };
@@ -111,7 +112,7 @@ export default function AdminUsers() {
     e.preventDefault();
     
     if (!newUserForm.firstName || !newUserForm.lastName || !newUserForm.email || !newUserForm.password) {
-      alert("Please fill in all fields");
+      toast.error("Please fill in all fields");
       return;
     }
 
@@ -148,9 +149,9 @@ export default function AdminUsers() {
         password: "",
         role: "user"
       });
-      alert("User created successfully!");
+      toast.success("User created successfully!");
     } catch (err) {
-      alert(err.message || "Failed to create user");
+      toast.error(err.message || "Failed to create user");
       console.error(err);
     } finally {
       setCreatingUser(false);
@@ -538,6 +539,7 @@ export default function AdminUsers() {
           </div>
         )}
       </div>
+      <Toaster position="top-right" richColors />
     </div>
   );
 }

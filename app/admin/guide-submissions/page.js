@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { FiSearch, FiTrash2, FiCheck, FiEdit2 } from "react-icons/fi";
+import { toast, Toaster } from "sonner";
 
 export default function GuideSubmissions() {
   const router = useRouter();
@@ -74,7 +75,7 @@ export default function GuideSubmissions() {
       setSubmissions(submissions.filter((s) => s._id !== id));
       fetchStats();
     } catch (err) {
-      alert("Failed to delete submission");
+      toast.error("Failed to delete submission");
       console.error(err);
     }
   };
@@ -101,7 +102,7 @@ export default function GuideSubmissions() {
       setUpdateStatus("");
       setUpdateNotes("");
     } catch (err) {
-      alert("Failed to update submission");
+      toast.error("Failed to update submission");
       console.error(err);
     }
   };
@@ -351,6 +352,7 @@ export default function GuideSubmissions() {
           </div>
         )}
       </div>
+      <Toaster position="top-right" richColors />
     </div>
   );
 }

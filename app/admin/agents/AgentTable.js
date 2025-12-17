@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from 'react';
+import { toast, Toaster } from 'sonner';
 import { 
   UserCheck, 
   Search, 
@@ -107,11 +108,11 @@ export default function AgentTable({ agents, onEdit, onDelete, onImageUpload }) 
           onImageUpload();
         }
       } else {
-        alert(data.message || 'Failed to upload image');
+        toast.error(data.message || 'Failed to upload image');
       }
     } catch (error) {
       console.error('Error uploading image:', error);
-      alert('Failed to upload image. Please try again.');
+      toast.error('Failed to upload image. Please try again.');
     } finally {
       setUploading(null);
     }
@@ -599,6 +600,7 @@ export default function AgentTable({ agents, onEdit, onDelete, onImageUpload }) 
           </div>
         </div>
       )}
+      <Toaster position="top-right" richColors />
     </div>
   );
 }

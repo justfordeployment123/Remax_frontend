@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiSearch, FiTrash2, FiEdit2, FiEye, FiX } from "react-icons/fi";
+import { toast, Toaster } from "sonner";
 
 export default function AgentApplications() {
   const [applications, setApplications] = useState([]);
@@ -74,7 +75,7 @@ export default function AgentApplications() {
       setApplications(applications.filter((a) => a._id !== id));
       fetchStats();
     } catch (err) {
-      alert("Failed to delete application");
+      toast.error("Failed to delete application");
       console.error(err);
     }
   };
@@ -101,7 +102,7 @@ export default function AgentApplications() {
       setUpdateStatus("");
       setUpdateNotes("");
     } catch (err) {
-      alert("Failed to update application");
+      toast.error("Failed to update application");
       console.error(err);
     }
   };
@@ -475,6 +476,7 @@ export default function AgentApplications() {
           </div>
         )}
       </div>
+      <Toaster position="top-right" richColors />
     </div>
   );
 }

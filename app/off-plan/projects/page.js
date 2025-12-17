@@ -335,7 +335,10 @@ export default function OffPlanProjects() {
                   <div className="relative h-48 bg-gray-200 overflow-hidden">
                     <Image
                       src={project.images && project.images.length > 0 
-                        ? `${process.env.NEXT_PUBLIC_API_URL}${project.images.find(img => img.isPrimary)?.url || project.images[0].url}`
+                        ? (() => {
+                            const imageUrl = project.images.find(img => img.isPrimary)?.url || project.images[0].url;
+                            return imageUrl.startsWith('http') ? imageUrl : `${process.env.NEXT_PUBLIC_API_URL}${imageUrl}`;
+                          })()
                         : '/off-plan/buy-off-plan-hero.png'
                       }
                       alt={project.name}

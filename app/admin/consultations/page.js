@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiSearch, FiTrash2, FiEdit2, FiEye, FiX } from "react-icons/fi";
+import { toast, Toaster } from "sonner";
 
 export default function ConsultationsManagement() {
   const [consultations, setConsultations] = useState([]);
@@ -83,7 +84,7 @@ export default function ConsultationsManagement() {
       setConsultations(consultations.filter((c) => c._id !== id));
       fetchStats();
     } catch (err) {
-      alert("Failed to delete consultation");
+      toast.error("Failed to delete consultation");
       console.error(err);
     }
   };
@@ -112,7 +113,7 @@ export default function ConsultationsManagement() {
       setUpdateNotes("");
       setAssignedTo("");
     } catch (err) {
-      alert("Failed to update consultation");
+      toast.error("Failed to update consultation");
       console.error(err);
     }
   };
@@ -488,6 +489,7 @@ export default function ConsultationsManagement() {
           </div>
         </div>
       )}
+      <Toaster position="top-right" richColors />
     </div>
   );
 }

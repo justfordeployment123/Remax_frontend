@@ -131,7 +131,10 @@ export default function ProjectDetail() {
             <div className="relative h-96 lg:h-[500px] bg-gray-200 rounded-xl overflow-hidden">
               {primaryImage ? (
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL}${primaryImage.url}`}
+                  src={(() => {
+                    const imageUrl = primaryImage.url;
+                    return imageUrl.startsWith('http') ? imageUrl : `${process.env.NEXT_PUBLIC_API_URL}${imageUrl}`;
+                  })()}
                   alt={project.name}
                   fill
                   className="object-cover"

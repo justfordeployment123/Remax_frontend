@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { FiPlus, FiEdit2, FiTrash2, FiEye, FiFilter, FiSearch } from 'react-icons/fi';
+import { toast, Toaster } from 'sonner';
 import ArticleEditor from '../../../components/ArticleEditor';
 
 export default function GuideArticlesAdmin() {
@@ -90,13 +91,13 @@ export default function GuideArticlesAdmin() {
       );
 
       if (response.ok) {
-        alert('Article deleted successfully');
+        toast.success('Article deleted successfully');
         fetchArticles();
         fetchStats();
       }
     } catch (error) {
       console.error('Error deleting article:', error);
-      alert('Failed to delete article');
+      toast.error('Failed to delete article');
     }
   };
 
@@ -354,6 +355,7 @@ export default function GuideArticlesAdmin() {
           }}
         />
       )}
+      <Toaster position="top-right" richColors />
     </div>
   );
 }

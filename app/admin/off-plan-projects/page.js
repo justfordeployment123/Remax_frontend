@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { toast, Toaster } from 'sonner';
 import { 
   Building2, Plus, Search, Edit, Trash2, X, Eye, Star, 
   Calendar, MapPin, Home, TrendingUp, CheckCircle, AlertCircle 
@@ -209,14 +210,14 @@ export default function OffPlanProjectsAdmin() {
       const data = await response.json();
 
       if (data.success) {
-        alert('Project deleted successfully');
+        toast.success('Project deleted successfully');
         fetchProjects();
       } else {
-        alert(data.message || 'Failed to delete project');
+        toast.error(data.message || 'Failed to delete project');
       }
     } catch (err) {
       console.error('Error deleting project:', err);
-      alert('Failed to delete project');
+      toast.error('Failed to delete project');
     }
   };
 
@@ -225,7 +226,7 @@ export default function OffPlanProjectsAdmin() {
 
     // Validate image for create mode
     if (modalMode === 'create' && !imageFile) {
-      alert('Please upload a project image');
+      toast.error('Please upload a project image');
       return;
     }
 
@@ -249,9 +250,13 @@ export default function OffPlanProjectsAdmin() {
         }
       });
 
-      // Append image if selected
+      // Append image if selected (for create mode or if replacing image in edit mode)
       if (imageFile) {
         formDataToSend.append('image', imageFile);
+      } else if (modalMode === 'edit' && selectedProject?.imageUrl) {
+        // Preserve existing image URL if no new image is being uploaded
+        formDataToSend.append('preserveImage', 'true');
+        formDataToSend.append('existingImageUrl', selectedProject.imageUrl);
       }
 
       const response = await fetch(url, {
@@ -266,15 +271,15 @@ export default function OffPlanProjectsAdmin() {
       const data = await response.json();
 
       if (data.success) {
-        alert(modalMode === 'create' ? 'Project created successfully' : 'Project updated successfully');
+        toast.success(modalMode === 'create' ? 'Project created successfully' : 'Project updated successfully');
         setShowModal(false);
         fetchProjects();
       } else {
-        alert(data.message || 'Failed to save project');
+        toast.error(data.message || 'Failed to save project');
       }
     } catch (err) {
       console.error('Error saving project:', err);
-      alert('Failed to save project');
+      toast.error('Failed to save project');
     }
   };
 
@@ -300,13 +305,13 @@ export default function OffPlanProjectsAdmin() {
     if (file) {
       // Validate file type
       if (!file.type.startsWith('image/')) {
-        alert('Please select an image file');
+        toast.error('Please select an image file');
         return;
       }
       
       // Validate file size (5MB)
       if (file.size > 5 * 1024 * 1024) {
-        alert('Image size must be less than 5MB');
+        toast.error('Image size must be less than 5MB');
         return;
       }
 
@@ -605,7 +610,7 @@ export default function OffPlanProjectsAdmin() {
               </h2>
               <button
                 onClick={() => setShowModal(false)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-600 hover:text-gray-900"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -696,10 +701,13 @@ export default function OffPlanProjectsAdmin() {
                           : 'Optional. Upload new image to replace current. Max size: 5MB'}
                       </p>
                     </div>
-                    {(imagePreview || (modalMode === 'edit' && selectedProject?.images?.[0])) && (
+                    {(imagePreview || (modalMode === 'edit' && selectedProject?.images?.length > 0) || (modalMode === 'edit' && selectedProject?.imageUrl)) && (
                       <div className="w-32 h-32 border border-gray-300 rounded-lg overflow-hidden">
                         <img
-                          src={imagePreview || `${process.env.NEXT_PUBLIC_API_URL}${selectedProject.images.find(img => img.isPrimary)?.url || selectedProject.images[0].url}`}
+                          src={imagePreview || (selectedProject?.images?.length > 0 ? (() => {
+                            const imageUrl = selectedProject.images.find(img => img.isPrimary)?.url || selectedProject.images[0].url;
+                            return imageUrl.startsWith('http') ? imageUrl : `${process.env.NEXT_PUBLIC_API_URL}${imageUrl}`;
+                          })() : selectedProject?.imageUrl)}
                           alt="Preview"
                           className="w-full h-full object-cover"
                         />
@@ -1004,6 +1012,7 @@ export default function OffPlanProjectsAdmin() {
           </div>
         </div>
       )}
+      <Toaster position="top-right" richColors />
     </div>
   );
 }

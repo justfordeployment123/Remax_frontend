@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiSearch, FiTrash2, FiEdit2, FiEye, FiX } from "react-icons/fi";
+import { toast, Toaster } from "sonner";
 
 export default function ContactSubmissions() {
   const [submissions, setSubmissions] = useState([]);
@@ -74,7 +75,7 @@ export default function ContactSubmissions() {
       setSubmissions(submissions.filter((s) => s._id !== id));
       fetchStats();
     } catch (err) {
-      alert("Failed to delete submission");
+      toast.error("Failed to delete submission");
       console.error(err);
     }
   };
@@ -101,7 +102,7 @@ export default function ContactSubmissions() {
       setUpdateStatus("");
       setUpdateNotes("");
     } catch (err) {
-      alert("Failed to update submission");
+      toast.error("Failed to update submission");
       console.error(err);
     }
   };
@@ -465,6 +466,7 @@ export default function ContactSubmissions() {
           </div>
         )}
       </div>
+      <Toaster position="top-right" richColors />
     </div>
   );
 }

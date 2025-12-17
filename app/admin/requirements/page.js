@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiSearch, FiTrash2, FiEdit2, FiEye, FiX } from "react-icons/fi";
+import { toast, Toaster } from "sonner";
 
 export default function RequirementsManagement() {
   const [requirements, setRequirements] = useState([]);
@@ -84,7 +85,7 @@ export default function RequirementsManagement() {
       setRequirements(requirements.filter((r) => r._id !== id));
       fetchStats();
     } catch (err) {
-      alert("Failed to delete requirement");
+      toast.error("Failed to delete requirement");
       console.error(err);
     }
   };
@@ -113,7 +114,7 @@ export default function RequirementsManagement() {
       setUpdateNotes("");
       setAssignedTo("");
     } catch (err) {
-      alert("Failed to update requirement");
+      toast.error("Failed to update requirement");
       console.error(err);
     }
   };
@@ -457,6 +458,7 @@ export default function RequirementsManagement() {
           </div>
         </div>
       )}
+      <Toaster position="top-right" richColors />
     </div>
   );
 }
