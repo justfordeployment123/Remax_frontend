@@ -101,14 +101,8 @@ export default function VerifyEmailPage() {
                   
                   <div className="space-y-3">
                     <button
-                      onClick={() => router.push('/sign-up')}
-                      className="w-full bg-[#1A3668] text-white py-3 rounded-md font-semibold hover:bg-[#15294d] transition-all"
-                    >
-                      Back to Sign Up
-                    </button>
-                    <button
                       onClick={() => router.push('/login')}
-                      className="w-full border border-gray-300 text-gray-700 py-3 rounded-md font-semibold hover:bg-gray-50 transition-all"
+                      className="w-full bg-[#1A3668] text-white py-3 rounded-md font-semibold hover:bg-[#15294d] transition-all"
                     >
                       Go to Login
                     </button>

@@ -7,7 +7,6 @@ export async function GET(request) {
     '/admin': 'noindex, nofollow',
     '/account': 'noindex, nofollow',
     '/login': 'noindex, nofollow',
-    '/sign-up': 'noindex, nofollow',
     '/find-agent': 'index, follow',
     '/property-search': 'index, follow',
     '/buying-guide': 'index, follow',
