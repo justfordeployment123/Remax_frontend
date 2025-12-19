@@ -12,9 +12,16 @@ export default function AdminLayout({ children }) {
   const pathname = usePathname();
   const router = useRouter();
 
+  // Skip auth check for login page
+  const isLoginPage = pathname === '/admin/login';
+
   useEffect(() => {
-    checkAdminAccess();
-  }, []);
+    if (!isLoginPage) {
+      checkAdminAccess();
+    } else {
+      setLoading(false);
+    }
+  }, [pathname]);
 
   const checkAdminAccess = async () => {
     try {
@@ -22,7 +29,7 @@ export default function AdminLayout({ children }) {
       const token = localStorage.getItem('token');
       
       if (!userData || !token) {
-        router.push('/login');
+        router.push('/admin/login');
         return;
       }
 
@@ -40,11 +47,11 @@ export default function AdminLayout({ children }) {
       if (data.success && data.data.user.role === 'admin') {
         setUser(data.data.user);
       } else {
-        router.push('/');
+        router.push('/admin/login');
       }
     } catch (error) {
       console.error('Error verifying admin access:', error);
-      router.push('/login');
+      router.push('/admin/login');
     } finally {
       setLoading(false);
     }
@@ -53,7 +60,7 @@ export default function AdminLayout({ children }) {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    router.push('/login');
+    router.push('/admin/login');
   };
 
   const getGreeting = () => {
@@ -89,6 +96,11 @@ export default function AdminLayout({ children }) {
         </div>
       </div>
     );
+  }
+
+  // Render login page without admin layout
+  if (isLoginPage) {
+    return children;
   }
 
   if (!user) {
