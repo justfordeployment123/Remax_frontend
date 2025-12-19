@@ -99,7 +99,7 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3668] focus:border-transparent outline-none transition-all"
+                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3668] focus:border-transparent outline-none transition-all text-gray-900 bg-white placeholder-gray-400"
                 placeholder="admin@remaxhubs.ae"
                 disabled={loading}
               />
@@ -120,7 +120,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="w-full pl-12 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3668] focus:border-transparent outline-none transition-all"
+                className="w-full pl-12 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3668] focus:border-transparent outline-none transition-all text-gray-900 bg-white placeholder-gray-400"
                 placeholder="Enter your password"
                 disabled={loading}
               />
