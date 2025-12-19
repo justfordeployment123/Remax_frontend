@@ -5,7 +5,7 @@ export function middleware(request) {
   const url = request.nextUrl;
 
   // Check if request is from admin subdomain
-  const isAdminDomain = hostname?.startsWith('cms.');
+  const isAdminDomain = hostname?.startsWith('admin.');
   
   // Check if the path is an admin route
   const isAdminPath = url.pathname.startsWith('/admin');
