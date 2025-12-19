@@ -18,25 +18,14 @@ export function middleware(request) {
     return NextResponse.rewrite(adminUrl);
   }
 
-  // If NOT on admin subdomain but trying to access admin path, redirect to admin subdomain
+  // Block admin routes on main domain (no redirect, just 404)
   if (!isAdminDomain && isAdminPath) {
-    // Remove port from hostname if present (e.g., localhost:3000 -> localhost)
-    const cleanHostname = hostname?.split(':')[0];
-    const adminDomain = cleanHostname?.replace(/^(www\.)?/, 'cms.');
-    const redirectUrl = new URL(request.url);
-    redirectUrl.hostname = adminDomain || `cms.${cleanHostname}`;
-    redirectUrl.port = ''; // Remove port for production
-    return NextResponse.redirect(redirectUrl);
+    return NextResponse.rewrite(new URL('/not-found', request.url));
   }
 
   // If on admin subdomain and admin path, allow
   if (isAdminDomain && isAdminPath) {
     return NextResponse.next();
-  }
-
-  // For main domain, block admin routes
-  if (!isAdminDomain && isAdminPath) {
-    return NextResponse.redirect(new URL('/', request.url));
   }
 
   return NextResponse.next();
