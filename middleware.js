@@ -5,7 +5,7 @@ export function middleware(request) {
   const url = request.nextUrl;
 
   // Check if request is from admin subdomain
-  const isAdminDomain = hostname?.startsWith('admin.');
+  const isAdminDomain = hostname?.startsWith('cms.');
   
   // Check if the path is an admin route
   const isAdminPath = url.pathname.startsWith('/admin');
@@ -20,9 +20,12 @@ export function middleware(request) {
 
   // If NOT on admin subdomain but trying to access admin path, redirect to admin subdomain
   if (!isAdminDomain && isAdminPath) {
-    const adminDomain = hostname?.replace(/^(www\.)?/, 'admin.');
+    // Remove port from hostname if present (e.g., localhost:3000 -> localhost)
+    const cleanHostname = hostname?.split(':')[0];
+    const adminDomain = cleanHostname?.replace(/^(www\.)?/, 'cms.');
     const redirectUrl = new URL(request.url);
-    redirectUrl.hostname = adminDomain || `admin.${hostname}`;
+    redirectUrl.hostname = adminDomain || `cms.${cleanHostname}`;
+    redirectUrl.port = ''; // Remove port for production
     return NextResponse.redirect(redirectUrl);
   }
 
