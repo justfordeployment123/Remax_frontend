@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, X, Heart } from "lucide-react";
+import ConsultationModal from "../../../../components/ConsultationModal";
 
 export default function PropertyDetails() {
   const params = useParams();
@@ -13,6 +14,7 @@ export default function PropertyDetails() {
   const [isLiked, setIsLiked] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
   const [showFullDescription, setShowFullDescription] = useState(false);
+  const [showConsultationModal, setShowConsultationModal] = useState(false);
 
   useEffect(() => {
     const fetchProperty = async () => {
@@ -41,6 +43,35 @@ export default function PropertyDetails() {
     setCurrentImageIndex((current) =>
       current === 0 ? property.photos.length - 1 : current - 1
     );
+  };
+
+  const handleShare = async () => {
+    if (!property) return;
+    
+    const shareData = {
+      title: property.title || "Property",
+      text: `Check out this property: ${property.title}`,
+      url: typeof window !== 'undefined' ? window.location.href : "",
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // User cancelled the share
+        console.log("Share cancelled");
+      }
+    } else {
+      // Fallback: Copy to clipboard
+      try {
+        await navigator.clipboard.writeText(
+          `${property.title} - ${typeof window !== 'undefined' ? window.location.href : ""}`
+        );
+        alert("Link copied to clipboard!");
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
+    }
   };
 
   if (loading) {
@@ -272,7 +303,7 @@ export default function PropertyDetails() {
               </div>
               
               <div className="text-gray-600 text-sm">
-                Listed By {property.agent?.name || 'Jamie Realty Group'}, {property.agent?.phone || ''}
+                Listed By {property.agent?.name || 'REMAX/HUB DUBAI'}, {property.agent?.phone || ''}
               </div>
               
               {}
@@ -405,6 +436,7 @@ export default function PropertyDetails() {
                   Favorite
                 </button>
                 <button 
+                  onClick={handleShare}
                   className="w-full bg-white border-2 border-gray-300 text-gray-700 hover:border-[#1A3668] hover:text-[#1A3668] py-3 px-4 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -421,19 +453,17 @@ export default function PropertyDetails() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Tour with a RE/MAX Agent</h3>
               <div className="space-y-3">
                 <button 
+                  onClick={() => {
+                    const phoneNumber = property.agent?.phone || '+971543983527';
+                    window.location.href = `tel:${phoneNumber}`;
+                  }}
                   className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-all"
                 >
                   Schedule a Tour
                 </button>
                 <div className="text-center text-gray-500 text-sm font-semibold">OR</div>
                 <button 
-                  onClick={() => {
-                    if (property.agent.phone) {
-                      window.location.href = `tel:${property.agent.phone}`;
-                    } else if (property.agent.email) {
-                      window.location.href = `mailto:${property.agent.email}`;
-                    }
-                  }}
+                  onClick={() => setShowConsultationModal(true)}
                   className="w-full bg-white border-2 border-[#1A3668] text-[#1A3668] hover:bg-blue-50 font-bold py-3 px-4 rounded-lg transition-all"
                 >
                   Contact an Agent
@@ -443,6 +473,11 @@ export default function PropertyDetails() {
           </div>
         </div>
       </div>
+      <ConsultationModal 
+        isOpen={showConsultationModal} 
+        onClose={() => setShowConsultationModal(false)}
+        preselectedTopic="Booking a Property Tour"
+      />
     </div>
   );
 }
