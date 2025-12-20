@@ -130,7 +130,7 @@ export default function BuyingGuide() {
           <div className="mb-12">
             <div className="relative  overflow-hidden">
               <img
-                src="https://blog.remax.com/wp-content/uploads/sites/4/2025/04/REMAX-Home-Buyers-Guide.jpg?w=1500&format=auto"
+                src="https://blog.remaxhub.ae/wp-content/uploads/sites/4/2025/04/REMAX-Home-Buyers-Guide.jpg?w=1500&format=auto"
                 alt="REMAX Home Buying"
                 className="w-full h-auto object-cover"
               />

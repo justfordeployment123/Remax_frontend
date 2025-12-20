@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Buy Residential Property in Dubai',
     description: 'Your complete guide to buying residential property in Dubai with RE/MAX Dubai.',
-    url: 'https://remax.com/buy-residential-dubai',
+    url: 'https://remaxhub.ae/buy-residential-dubai',
     type: 'website',
   },
   twitter: {

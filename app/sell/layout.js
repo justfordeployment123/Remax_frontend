@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Sell Property in Dubai',
     description: 'Expert property sales services in Dubai with RE/MAX Dubai.',
-    url: 'https://remax.com/sell',
+    url: 'https://remaxhub.ae/sell',
     type: 'website',
   },
   twitter: {

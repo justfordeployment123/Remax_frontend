@@ -4,9 +4,9 @@ export async function GET() {
     "@type": "RealEstateAgent",
     "name": "RE/MAX Dubai",
     "description": "Leading real estate agency in Dubai offering luxury properties, residential apartments, and commercial spaces",
-    "url": "https://remax.com",
+    "url": "https://remaxhub.ae",
     "telephone": "+971-XXXXXXXXX",
-    "email": "info@remax.com",
+    "email": "info@remaxhub.ae",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Dubai, UAE",

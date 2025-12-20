@@ -42,4 +42,4 @@ User-agent: DotBot
 Disallow: /
 
 # Sitemaps
-Sitemap: https://remax.com/sitemap.xml
+Sitemap: https://remaxhub.ae/sitemap.xml

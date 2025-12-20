@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Commercial Real Estate Dubai',
     description: 'Expert commercial real estate services in Dubai for offices, retail, and industrial properties.',
-    url: 'https://remax.com/commercial-real-estate-dubai',
+    url: 'https://remaxhub.ae/commercial-real-estate-dubai',
     type: 'website',
   },
   twitter: {

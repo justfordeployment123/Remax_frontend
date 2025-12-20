@@ -5,7 +5,7 @@ import SEO from '../components/SEO'
 const montserrat = Montserrat({ subsets: ['latin'], display: 'swap' })
 
 export const metadata = {
-  metadataBase: new URL('https://remax.com'),
+  metadataBase: new URL('https://remaxhub.ae'),
   title: 'RE/MAX Dubai - Luxury Real Estate & Properties for Sale',
   description: 'Find luxury villas, modern apartments, and commercial properties in Dubai with RE/MAX. Expert agents, premium locations, and comprehensive real estate solutions.',
   keywords: 'real estate Dubai, luxury villas Dubai, apartments Dubai, property search, RE/MAX Dubai, property for sale, property investment',
@@ -22,7 +22,7 @@ export const metadata = {
     description: 'Find luxury villas, modern apartments, and commercial properties in Dubai with RE/MAX.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://remax.com',
+    url: 'https://remaxhub.ae',
     siteName: 'RE/MAX Dubai',
   },
   twitter: {

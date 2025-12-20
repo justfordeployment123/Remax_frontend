@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Off-Plan Property Dubai',
     description: 'Off-plan property opportunities in Dubai with flexible payment plans and expert guidance.',
-    url: 'https://remax.com/off-plan',
+    url: 'https://remaxhub.ae/off-plan',
     type: 'website',
   },
   twitter: {

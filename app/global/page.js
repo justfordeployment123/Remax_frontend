@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 export default function Global() {
     useEffect(() => {
         
-        window.location.href = 'https://global.remax.com/';
+        window.location.href = 'https://global.remaxhub.ae/';
     }, []);
 
     return (

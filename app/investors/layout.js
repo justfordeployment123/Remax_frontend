@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Property Investment Dubai',
     description: 'Expert investment strategies for Dubai real estate portfolio growth.',
-    url: 'https://remax.com/investors',
+    url: 'https://remaxhub.ae/investors',
     type: 'website',
   },
   twitter: {

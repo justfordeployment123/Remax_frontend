@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Landlord Services Dubai',
     description: 'Complete landlord and property leasing services in Dubai with RE/MAX.',
-    url: 'https://remax.com/landlords',
+    url: 'https://remaxhub.ae/landlords',
     type: 'website',
   },
   twitter: {

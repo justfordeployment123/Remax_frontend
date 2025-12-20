@@ -29,8 +29,8 @@ export default function SEO() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "RE/MAX Dubai",
-            "url": "https://remax.com",
-            "logo": "https://remax.com/logo.png",
+            "url": "https://remaxhub.ae",
+            "logo": "https://remaxhub.ae/logo.png",
             "description": "Leading real estate agency in Dubai offering luxury properties, investment opportunities, and expert advisory services.",
             "sameAs": [
               "https://www.facebook.com/remaxhubdubai",
@@ -57,7 +57,7 @@ export default function SEO() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "RE/MAX Dubai",
-            "image": "https://remax.com/logo.png",
+            "image": "https://remaxhub.ae/logo.png",
             "description": "Premium real estate brokerage in Dubai",
             "address": {
               "@type": "PostalAddress",
@@ -82,7 +82,7 @@ export default function SEO() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://remax.com"
+                "item": "https://remaxhub.ae"
               }
             ]
           })

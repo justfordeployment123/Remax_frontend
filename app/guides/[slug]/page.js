@@ -620,7 +620,7 @@ export default function GuideArticlePage({ params }) {
 
   const renderBodyWithCTAs = (body, inlineCtas) => {
     if (!inlineCtas || inlineCtas.length === 0) {
-      return <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: body }} />;
+      return <div className="prose prose-lg max-w-none text-gray-900 prose-headings:text-gray-900 prose-strong:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-a:text-[#00458b]" dangerouslySetInnerHTML={{ __html: body }} />;
     }
 
     // Split body into paragraphs
@@ -645,7 +645,7 @@ export default function GuideArticlePage({ params }) {
       // Add the accumulated HTML
       if (currentHtml) {
         content.push(
-          <div key={`content-${ctaIndex}`} className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: currentHtml }} />
+          <div key={`content-${ctaIndex}`} className="prose prose-lg max-w-none text-gray-900 prose-headings:text-gray-900 prose-strong:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-a:text-[#00458b]" dangerouslySetInnerHTML={{ __html: currentHtml }} />
         );
         currentHtml = '';
       }
@@ -662,7 +662,7 @@ export default function GuideArticlePage({ params }) {
 
     if (currentHtml) {
       content.push(
-        <div key="content-final" className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: currentHtml }} />
+        <div key="content-final" className="prose prose-lg max-w-none text-gray-900 prose-headings:text-gray-900 prose-strong:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-a:text-[#00458b]" dangerouslySetInnerHTML={{ __html: currentHtml }} />
       );
     }
 
@@ -863,6 +863,13 @@ export default function GuideArticlePage({ params }) {
                 <style>{`
                   .prose h2, .prose h3, .prose h4 {
                     font-weight: 700;
+                    color: #111827;
+                  }
+                  .prose p, .prose li, .prose td {
+                    color: #374151;
+                  }
+                  .prose strong {
+                    color: #111827;
                   }
                 `}</style>
                 {renderBodyWithCTAs(article.body, article.inlineCtas)}

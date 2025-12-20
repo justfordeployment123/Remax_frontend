@@ -105,7 +105,7 @@ export default function GuidesPage() {
   const ArticleCard = ({ article, featured = false }) => (
     <Link
       href={`/guides/${article.slug}`}
-      className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#00458b] hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
+      className="group bg-white rounded-md border border-gray-200 overflow-hidden hover:border-[#00458b] hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
     >
       {article.heroImage && (
         <div className={`relative w-full overflow-hidden bg-gray-200 ${featured ? 'h-48 sm:h-56' : 'h-40 sm:h-48'}`}>
@@ -115,7 +115,7 @@ export default function GuidesPage() {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           {featured && (
-            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-[#00458b] text-white px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-[#00458b] text-white px-3 py-1 sm:px-4 sm:py-1.5 rounded-md text-xs font-bold uppercase tracking-wider shadow-lg">
               Featured
             </div>
           )}
@@ -123,7 +123,7 @@ export default function GuidesPage() {
         </div>
       )}
       <div className={`flex flex-col flex-1 ${featured ? 'p-5 sm:p-6' : 'p-4 sm:p-5'}`}>
-        <span className={`inline-block px-2.5 py-1 text-xs font-bold rounded-full mb-3 w-fit ${getCategoryColor(article.category)}`}>
+        <span className={`inline-block px-2.5 py-1 text-xs font-bold rounded-md mb-3 w-fit ${getCategoryColor(article.category)}`}>
           {article.category}
         </span>
         <h3 className={`font-bold text-gray-900 mb-2 group-hover:text-[#00458b] transition-colors leading-snug ${
@@ -197,7 +197,7 @@ export default function GuidesPage() {
                 <button
                   key={category.value}
                   onClick={() => setSelectedCategory(category.value)}
-                  className={`px-4 sm:px-5 py-2 rounded-lg font-semibold transition-all whitespace-nowrap text-sm sm:text-base ${
+                  className={`px-4 sm:px-5 py-2 rounded-md font-semibold transition-all whitespace-nowrap text-sm sm:text-base ${
                     selectedCategory === category.value
                       ? 'bg-[#00458b] text-white shadow-md'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
@@ -214,7 +214,7 @@ export default function GuidesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00458b]"></div>
+              <div className="animate-spin rounded-md h-12 w-12 border-b-2 border-[#00458b]"></div>
             </div>
           ) : (
             <>
@@ -222,7 +222,7 @@ export default function GuidesPage() {
               {featuredArticles.length > 0 && !searchTerm && (
                 <div className="mb-12 sm:mb-16">
                   <div className="flex items-center gap-3 mb-6 sm:mb-8">
-                    <div className="h-1.5 w-8 sm:w-12 bg-[#00458b] rounded-full"></div>
+                    <div className="h-1.5 w-8 sm:w-12 bg-[#00458b] rounded-md"></div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Featured Guides</h2>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -237,7 +237,7 @@ export default function GuidesPage() {
               <div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0 mb-6 sm:mb-8">
                   <div className="flex items-center gap-3">
-                    <div className="h-1.5 w-8 sm:w-12 bg-[#00458b] rounded-full"></div>
+                    <div className="h-1.5 w-8 sm:w-12 bg-[#00458b] rounded-md"></div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                       {selectedCategory 
                         ? `${CATEGORIES.find(c => c.value === selectedCategory)?.label} Guides` 
@@ -251,7 +251,7 @@ export default function GuidesPage() {
                 </div>
 
                 {displayedArticles.length === 0 ? (
-                  <div className="text-center py-16 sm:py-20 bg-gray-50 rounded-2xl">
+                  <div className="text-center py-16 sm:py-20 bg-gray-50 rounded-md">
                     <div className="text-gray-300 mb-4">
                       <FiSearch className="w-16 h-16 sm:w-20 sm:h-20 mx-auto" />
                     </div>
@@ -290,13 +290,13 @@ export default function GuidesPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href="/contact-us"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#00458b] rounded-lg hover:bg-gray-100 transition-colors font-semibold text-base sm:text-lg shadow-lg"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#00458b] rounded-md hover:bg-gray-100 transition-colors font-semibold text-base sm:text-lg shadow-lg"
               >
                 Contact Us
               </Link>
               <Link
                 href="/find-agent"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#00458b] text-white border-2 border-white rounded-lg hover:bg-white hover:text-[#00458b] transition-colors font-semibold text-base sm:text-lg"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#00458b] text-white border-2 border-white rounded-md hover:bg-white hover:text-[#00458b] transition-colors font-semibold text-base sm:text-lg"
               >
                 Find an Agent
               </Link>

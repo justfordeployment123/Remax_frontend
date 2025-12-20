@@ -1,6 +1,6 @@
 const SEO_CONFIG = {
   siteName: 'RE/MAX Dubai',
-  siteUrl: 'https://remax.com',
+  siteUrl: 'https://remaxhub.ae',
   description: 'Leading real estate agency in Dubai offering luxury properties, residential apartments, and commercial spaces',
   keywords: ['real estate Dubai', 'luxury villas', 'apartments Dubai', 'property search', 'property investment'],
   socialLinks: {
@@ -10,7 +10,7 @@ const SEO_CONFIG = {
     twitter: 'https://www.youtube.com/@remaxhubdubai',
   },
   contact: {
-    email: 'info@remax.com',
+    email: 'info@remaxhub.ae',
     phone: '+971 54 398 3527',
     address: 'Dubai, UAE',
   },

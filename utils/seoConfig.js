@@ -4,9 +4,9 @@
  */
 
 export const seoConfig = {
-  baseUrl: 'https://remax.com',
+  baseUrl: 'https://remaxhub.ae',
   siteName: 'RE/MAX Dubai',
-  defaultImage: 'https://remax.com/og-image.png',
+  defaultImage: 'https://remaxhub.ae/og-image.png',
   twitterHandle: '@remaxdubai',
   locale: 'en_US',
 }

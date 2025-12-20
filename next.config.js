@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'static-images.remax.com',
+        hostname: 'static-images.remaxhub.ae',
       },
       {
         protocol: 'https',

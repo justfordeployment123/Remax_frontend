@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Dubai Real Estate Guides',
     description: 'Your complete resource for Dubai property information and market insights.',
-    url: 'https://remax.com/guides',
+    url: 'https://remaxhub.ae/guides',
     type: 'website',
   },
   twitter: {

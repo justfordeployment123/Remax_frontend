@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Dubai Real Estate Playbook 2026-2035',
     description: 'Strategic market insights and real estate outlook for Dubai\'s next decade.',
-    url: 'https://remax.com/playbook-2026-2035',
+    url: 'https://remaxhub.ae/playbook-2026-2035',
     type: 'website',
   },
   twitter: {
