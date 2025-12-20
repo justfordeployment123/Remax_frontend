@@ -49,7 +49,7 @@ export default function AboutPage() {
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
                   <Link 
-                    href="/contact"
+                    href="/contact-us"
                     className="inline-flex items-center justify-center px-4 sm:px-8 py-2.5 sm:py-4 bg-[#00458b] text-white font-semibold rounded-lg text-xs sm:text-base lg:text-lg hover:bg-[#0B2340] transition-colors w-full sm:w-auto"
                   >
                     Work With Us
