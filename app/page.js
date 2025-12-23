@@ -118,8 +118,8 @@ export default function Home() {
       partners: [
         {
           name: 'TrueBuild',
-          logo: 'https://truebuild.ae/images/logo3.png',
-          url: '#',
+          logo: '/partners/true-build.png',
+          url: 'https://truebuild.ae/',
           tooltip: 'TrueBuild - interior design and fit-out partner',
           description: 'TrueBuild is our interior design and fit-out partner, delivering high-quality residential and commercial spaces across Dubai.'
         }
