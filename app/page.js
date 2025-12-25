@@ -92,7 +92,7 @@ export default function Home() {
         },
         {
           name: 'Object One',
-          logo: 'https://www.object-1.com/wp-content/themes/dubai-theme/images/logo.svg',
+          logo: '/partners/object1.png',
           url: 'https://www.object-1.com/',
           tooltip: 'Object One - property developer'
         },
