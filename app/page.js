@@ -86,7 +86,7 @@ export default function Home() {
         },
         {
           name: 'Mira',
-          logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQHwbkZpHCu4VQ/company-logo_200_200/B4DZfQCVf.GkAI-/0/1751541963230/mira_developments_logo?e=1766620800&v=beta&t=_F20frRC_kgq-Y0LRgc02MhZ4RZgnhmQwHuMAZiB-tw',
+          logo: '/partners/mira.png',
           url: 'https://miradevelopments.ae/',
           tooltip: 'Mira - property developer'
         },
