@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { FaBed, FaBath, FaRulerCombined, FaMapMarkerAlt, FaSearch, FaFilter } from "react-icons/fa";
 
-export default function RentalSearch() {
+function RentalSearchContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchFilters, setSearchFilters] = useState({
@@ -196,5 +196,17 @@ export default function RentalSearch() {
       </section>
       <Footer />
     </main>
+  );
+}
+
+export default function RentalSearch() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-4 border-t-[#00458b]"></div>
+      </div>
+    }>
+      <RentalSearchContent />
+    </Suspense>
   );
 }

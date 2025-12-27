@@ -1,10 +1,10 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-export default function VerifyEmailPage() {
+function VerifyEmailContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [status, setStatus] = useState('verifying'); 
@@ -116,5 +116,17 @@ export default function VerifyEmailPage() {
       
       <Footer />
     </main>
+  );
+}
+
+export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-4 border-t-[#00458b]"></div>
+      </div>
+    }>
+      <VerifyEmailContent />
+    </Suspense>
   );
 }

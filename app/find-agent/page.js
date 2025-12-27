@@ -1,11 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Search, ChevronDown, MapPin, Phone, X, Loader2, Calendar, Languages, Award } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-export default function FindAgent() {
+function FindAgentContent() {
   const searchParams = useSearchParams();
   const [searchCity, setSearchCity] = useState("");
   const [searchName, setSearchName] = useState("");
@@ -618,5 +618,17 @@ export default function FindAgent() {
       </section>
       <Footer />
     </main>
+  );
+}
+
+export default function FindAgent() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-4 border-t-[#00458b]"></div>
+      </div>
+    }>
+      <FindAgentContent />
+    </Suspense>
   );
 }

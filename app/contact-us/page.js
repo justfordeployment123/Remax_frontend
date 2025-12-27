@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,7 +7,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import FAQAccordion from '../../components/FAQAccordion';
 
-export default function ContactUs() {
+function ContactUsContent() {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
@@ -426,5 +426,17 @@ export default function ContactUs() {
 
       <Footer />
     </main>
+  );
+}
+
+export default function ContactUs() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-4 border-t-[#00458b]"></div>
+      </div>
+    }>
+      <ContactUsContent />
+    </Suspense>
   );
 }

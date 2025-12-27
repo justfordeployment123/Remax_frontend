@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Header from '../../components/Header';
@@ -16,7 +16,7 @@ const CATEGORIES = [
   { value: 'LANDLORDS', label: 'Landlords' }
 ];
 
-export default function GuidesPage() {
+function GuidesContent() {
   const [articles, setArticles] = useState([]);
   const [featuredArticles, setFeaturedArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -214,7 +214,7 @@ export default function GuidesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <div className="animate-spin rounded-md h-12 w-12 border-b-2 border-[#00458b]"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-4 border-t-[#00458b]"></div>
             </div>
           ) : (
             <>
@@ -307,5 +307,17 @@ export default function GuidesPage() {
 
       <Footer />
     </>
+  );
+}
+
+export default function GuidesPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-4 border-t-[#00458b]"></div>
+      </div>
+    }>
+      <GuidesContent />
+    </Suspense>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Header from "../../components/Header";
@@ -8,7 +8,7 @@ import Link from "next/link";
 import { FaBed, FaBath, FaRuler, FaParking, FaFileContract } from "react-icons/fa";
 
 
-export default function HomesForSale() {
+function HomesForSaleContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [properties, setProperties] = useState([]);
@@ -353,5 +353,17 @@ export default function HomesForSale() {
 
       <Footer />
     </main>
+  );
+}
+
+export default function HomesForSale() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-4 border-t-[#00458b]"></div>
+      </div>
+    }>
+      <HomesForSaleContent />
+    </Suspense>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo, use } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -345,7 +345,8 @@ function CalloutBox({ type = 'info', title, children }) {
   );
 }
 
-export default function GuideArticlePage({ params }) {
+export default function GuideArticlePage({ params: paramsProp }) {
+  const params = use(paramsProp);
   const router = useRouter();
   const searchParams = useSearchParams();
   const [article, setArticle] = useState(null);
@@ -354,7 +355,6 @@ export default function GuideArticlePage({ params }) {
   const [expandedFaq, setExpandedFaq] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [showMobileCTA, setShowMobileCTA] = useState(false);
-  const [viewsIncremented, setViewsIncremented] = useState(false);
   
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [consultationTopic, setConsultationTopic] = useState('');
@@ -363,11 +363,18 @@ export default function GuideArticlePage({ params }) {
   
   const contentRef = useRef(null);
   const trackedScrollDepths = useRef(new Set());
+  const currentArticleIdRef = useRef(null);
 
   useEffect(() => {
+    let isMounted = true;
+
     if (params?.slug) {
-      fetchArticle(params.slug);
+      fetchArticle(params.slug, isMounted);
     }
+
+    return () => {
+      isMounted = false;
+    };
   }, [params?.slug]);
 
   // Scroll depth tracking
@@ -403,12 +410,15 @@ export default function GuideArticlePage({ params }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [article?.slug]);
 
-  const fetchArticle = async (slug) => {
+  const fetchArticle = async (slug, isMounted = true) => {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/guide-articles/slug/${slug}`
       );
       const data = await response.json();
+      
+      // Abort if component unmounted (Strict Mode)
+      if (!isMounted) return;
       
       if (data.success) {
         const article = data.data;
@@ -422,16 +432,30 @@ export default function GuideArticlePage({ params }) {
         
         setArticle(article);
         
-        // Increment views only once per session
-        if (!viewsIncremented) {
-          try {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/guide-articles/${article._id}/increment-views`, {
-              method: 'POST'
-            }).catch(() => {});
-          } catch (error) {
-            console.error('Error incrementing views:', error);
+        // Increment views with -1 then +1 to handle race conditions
+        if (typeof window !== 'undefined') {
+          const viewedGuidesKey = 'remax_viewed_guides';
+          const viewedGuides = JSON.parse(sessionStorage.getItem(viewedGuidesKey) || '[]');
+          
+          if (!viewedGuides.includes(article._id)) {
+            try {
+              // First send -1 to clear any accidental double increments
+              fetch(`${process.env.NEXT_PUBLIC_API_URL}/guide-articles/${article._id}/decrement-views`, {
+                method: 'POST'
+              }).catch(() => {});
+              
+              // Then send +1 to increment properly
+              fetch(`${process.env.NEXT_PUBLIC_API_URL}/guide-articles/${article._id}/increment-views`, {
+                method: 'POST'
+              }).catch(() => {});
+              
+              // Mark guide as viewed in this session
+              viewedGuides.push(article._id);
+              sessionStorage.setItem(viewedGuidesKey, JSON.stringify(viewedGuides));
+            } catch (error) {
+              console.error('Error updating views:', error);
+            }
           }
-          setViewsIncremented(true);
         }
         
         // Extract headings from body
@@ -472,7 +496,11 @@ export default function GuideArticlePage({ params }) {
       );
       const data = await response.json();
       if (data.success) {
-        setRelatedGuides(data.data);
+        // Deduplicate guides by _id
+        const uniqueGuides = Array.from(
+          new Map(data.data.map(guide => [guide._id, guide])).values()
+        );
+        setRelatedGuides(uniqueGuides);
       }
     } catch (error) {
       console.error('Error fetching related guides:', error);
