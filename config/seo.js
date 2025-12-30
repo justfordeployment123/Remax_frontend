@@ -11,7 +11,7 @@ const SEO_CONFIG = {
   },
   contact: {
     email: 'info@remaxhub.ae',
-    phone: '+971 54 398 3527',
+    phone: '+971 50 210 4130',
     address: 'Dubai, UAE',
   },
   pages: {

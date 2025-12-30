@@ -762,8 +762,8 @@ export default function CommercialRealEstate() {
           </div>
           <p className="text-center text-white/80 text-xs sm:text-sm">
             Prefer WhatsApp? Message us at{" "}
-            <a href="tel:+971543983527" className="underline hover:text-white">
-              +971 54 398 3527
+            <a href="tel:+971502104130" className="underline hover:text-white">
+              +971 50 210 4130
             </a>{" "}
             with "Commercial enquiry" and a brief of what you're looking for.
           </p>

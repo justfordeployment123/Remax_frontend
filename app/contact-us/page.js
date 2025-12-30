@@ -327,7 +327,7 @@ function ContactUsContent() {
               </div>
               <h3 className="text-sm font-semibold text-gray-900 mb-2">Phone</h3>
               <a href="tel:+97143983527" className="text-base text-[#00458b] hover:underline font-medium">
-                +971 54 398 3527 
+                +971 50 210 4130 
               </a>
             </div>
 
@@ -339,7 +339,7 @@ function ContactUsContent() {
               </div>
               <h3 className="text-sm font-semibold text-gray-900 mb-2">WhatsApp</h3>
               <a href="https://wa.me/97143983527" target="_blank" rel="noopener noreferrer" className="text-base text-[#00458b] hover:underline font-medium">
-                +971 54 398 3527 
+                +971 50 210 4130 
               </a>
             </div>
 

@@ -21,12 +21,12 @@ export default function Footer() {
               </div>
               <div>
                 <a href="tel:+97143983527" className="text-gray-300 hover:text-white transition-colors">
-                  Phone: +971 54 398 3527 
+                  Phone: +971 50 210 4130 
                 </a>
               </div>
               <div>
                 <a 
-                  href="https://wa.me/971543983527" 
+                  href="https://api.whatsapp.com/send/?phone=971502104130" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1.5"

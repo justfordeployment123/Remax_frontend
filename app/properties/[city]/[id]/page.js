@@ -454,7 +454,7 @@ export default function PropertyDetails() {
               <div className="space-y-3">
                 <button 
                   onClick={() => {
-                    const phoneNumber = property.agent?.phone || '+971543983527';
+                    const phoneNumber = property.agent?.phone || '+971502104130';
                     window.location.href = `tel:${phoneNumber}`;
                   }}
                   className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-all"

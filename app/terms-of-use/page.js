@@ -331,7 +331,7 @@ export default function TermsOfUsePage() {
                     Phone:
                   </p>
                   <a href="tel:+97143983527" className="text-[#00458b] hover:text-[#003366] font-medium transition-colors">
-                    +971 54 398 3527 
+                    +971 50 210 4130 
                   </a>
                 </div>
               </div>
