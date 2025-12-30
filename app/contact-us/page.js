@@ -338,7 +338,7 @@ function ContactUsContent() {
                 </svg>
               </div>
               <h3 className="text-sm font-semibold text-gray-900 mb-2">WhatsApp</h3>
-              <a href="https://wa.me/97143983527" target="_blank" rel="noopener noreferrer" className="text-base text-[#00458b] hover:underline font-medium">
+              <a href="https://api.whatsapp.com/send/?phone=971502104130" target="_blank" rel="noopener noreferrer" className="text-base text-[#00458b] hover:underline font-medium">
                 +971 50 210 4130 
               </a>
             </div>
