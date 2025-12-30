@@ -20,7 +20,7 @@ export default function Footer() {
                 <span className="block">Dubai Media City, Dubai, UAE</span>
               </div>
               <div>
-                <a href="tel:+97143983527" className="text-gray-300 hover:text-white transition-colors">
+                <a href="tel:+971502104130" className="text-gray-300 hover:text-white transition-colors">
                   Phone: +971 50 210 4130 
                 </a>
               </div>

@@ -326,7 +326,7 @@ function ContactUsContent() {
                 </svg>
               </div>
               <h3 className="text-sm font-semibold text-gray-900 mb-2">Phone</h3>
-              <a href="tel:+97143983527" className="text-base text-[#00458b] hover:underline font-medium">
+              <a href="tel:+971502104130" className="text-base text-[#00458b] hover:underline font-medium">
                 +971 50 210 4130 
               </a>
             </div>

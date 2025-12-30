@@ -454,7 +454,7 @@ export default function CookiePolicy() {
                         </div>
                         <div className="ml-4">
                           <h4 className="font-bold text-gray-900 mb-2">Phone:</h4>
-                          <a href="tel:+97143983527" className="text-[#00458b] hover:underline text-lg">
+                          <a href="tel:+971502104130" className="text-[#00458b] hover:underline text-lg">
                             +971 50 210 4130 
                           </a>
                         </div>
