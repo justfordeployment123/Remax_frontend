@@ -406,7 +406,7 @@ export default function Playbook20262035() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                         placeholder="Omar Al Mansoori"
                       />
                     </div>
@@ -422,7 +422,7 @@ export default function Playbook20262035() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -438,7 +438,7 @@ export default function Playbook20262035() {
                         value={formData.country}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                         placeholder="Select your country"
                       />
                     </div>
@@ -453,7 +453,7 @@ export default function Playbook20262035() {
                         value={formData.profileType}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                       >
                         <option value="">Select your profile</option>
                         <option value="End-user / Homebuyer">End-user / Homebuyer</option>
@@ -474,7 +474,7 @@ export default function Playbook20262035() {
                         name="budget"
                         value={formData.budget}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                         placeholder="AED 1.5M - 5M, or 'Exploring'"
                       />
                     </div>
@@ -518,7 +518,7 @@ export default function Playbook20262035() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full bg-[#00458b] text-white px-6 py-4 rounded-lg text-base font-semibold hover:bg-[#003366] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-[#00458b] text-white px-6 py-4 rounded-lg text-base font-semibold hover:bg-[#003366] active:bg-[#002244] disabled:bg-[#00458b] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200"
                     >
                       {loading ? 'Sending...' : 'Send Me the Playbook'}
                     </button>
@@ -541,7 +541,7 @@ export default function Playbook20262035() {
                   <div className="flex flex-col gap-3">
                     <button
                       onClick={bookConsultation}
-                      className="w-full bg-[#00458b] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#003366] transition-colors duration-200"
+                      className="w-full bg-[#00458b] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#003366] active:bg-[#002244] transition-colors duration-200"
                     >
                       Book a Strategy Consultation
                     </button>

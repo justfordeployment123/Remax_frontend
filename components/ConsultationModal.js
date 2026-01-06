@@ -229,7 +229,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         name="topic"
                         value={formData.topic}
                         onChange={handleChange}
-                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
+                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
                           errors.topic ? 'border-red-500' : 'border-gray-300'
                         }`}
                       >
@@ -256,7 +256,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         name="preferred_date"
                         value={formData.preferred_date}
                         onChange={handleChange}
-                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
+                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
                           errors.preferred_date ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
@@ -278,7 +278,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         name="preferred_time"
                         value={formData.preferred_time}
                         onChange={handleChange}
-                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
+                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
                           errors.preferred_time ? 'border-red-500' : 'border-gray-300'
                         }`}
                       >
@@ -306,7 +306,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         value={formData.budget_range}
                         onChange={handleChange}
                         placeholder="AED 2-4M"
-                        className="w-full px-2.5 py-1.5 rounded-lg border border-gray-300 text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all"
+                        className="w-full px-2.5 py-1.5 rounded-lg border border-gray-300 text-xs text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all"
                       />
                     </div>
                   </div>
@@ -324,7 +324,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         value={formData.full_name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
+                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
                           errors.full_name ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
@@ -344,7 +344,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="you@example.com"
-                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
+                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
                           errors.email ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
@@ -367,7 +367,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+971 50 123 4567"
-                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
+                        className={`w-full px-2.5 py-1.5 rounded-lg border text-xs text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all ${
                           errors.phone ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
@@ -387,7 +387,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                         onChange={handleChange}
                         placeholder="Brief notes..."
                         rows="2"
-                        className="w-full px-2.5 py-1.5 rounded-lg border border-gray-300 text-xs focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all resize-none"
+                        className="w-full px-2.5 py-1.5 rounded-lg border border-gray-300 text-xs text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b] transition-all resize-none"
                       />
                     </div>
                   </div>
@@ -435,7 +435,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedTopic = 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#00458b] text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-[#003366] disabled:bg-gray-400 transition-colors text-sm mt-2"
+                    className="w-full bg-[#00458b] text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-[#003366] active:bg-[#002244] disabled:bg-[#00458b] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200 text-sm mt-2"
                   >
                     {isSubmitting ? 'Submitting...' : 'Confirm Consultation'}
                   </button>

@@ -148,7 +148,7 @@ function ContactUsContent() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
                         placeholder="Your full name"
                       />
                     </div>
@@ -164,7 +164,7 @@ function ContactUsContent() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -180,7 +180,7 @@ function ContactUsContent() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
                         placeholder="+971 XX XXX XXXX"
                       />
                     </div>
@@ -195,7 +195,7 @@ function ContactUsContent() {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
                       >
                         <option value="">Select a topic</option>
                         <option value="Buy">Buy Property</option>
@@ -219,7 +219,7 @@ function ContactUsContent() {
                         onChange={handleInputChange}
                         required
                         rows={4}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors resize-none bg-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors resize-none bg-white"
                         placeholder="Tell us more about your needs..."
                       />
                     </div>
@@ -233,7 +233,7 @@ function ContactUsContent() {
                         name="hearAboutUs"
                         value={formData.hearAboutUs}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors bg-white"
                       >
                         <option value="">Select an option</option>
                         <option value="Referral">Referral from a friend</option>
@@ -263,7 +263,7 @@ function ContactUsContent() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full bg-[#00458b] text-white px-6 py-4 rounded-lg text-base font-semibold hover:bg-[#003366] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-[#00458b] text-white px-6 py-4 rounded-lg text-base font-semibold hover:bg-[#003366] active:bg-[#002244] disabled:bg-[#00458b] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200"
                     >
                       {loading ? 'Sending...' : 'Send Message'}
                     </button>

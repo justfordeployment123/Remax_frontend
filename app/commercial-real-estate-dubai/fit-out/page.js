@@ -451,7 +451,7 @@ export default function CommercialFitOut() {
                       value={formData.fullName}
                       onChange={handleInputChange}
                       placeholder="Sarah Ahmed"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
                   </div>
@@ -467,7 +467,7 @@ export default function CommercialFitOut() {
                       value={formData.companyName}
                       onChange={handleInputChange}
                       placeholder="ABC Technologies FZ-LLC"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                     />
                   </div>
 
@@ -482,7 +482,7 @@ export default function CommercialFitOut() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="you@example.com"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
                   </div>
@@ -498,7 +498,7 @@ export default function CommercialFitOut() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="+971 5X XXX XXXX"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
                   </div>
@@ -557,7 +557,7 @@ export default function CommercialFitOut() {
                       value={formData.size}
                       onChange={handleInputChange}
                       placeholder="2,500 sq ft"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
                   </div>
@@ -571,7 +571,7 @@ export default function CommercialFitOut() {
                       name="spaceType"
                       value={formData.spaceType}
                       onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     >
                       <option value="">Select space type</option>
@@ -594,7 +594,7 @@ export default function CommercialFitOut() {
                       value={formData.handoverDate}
                       onChange={handleInputChange}
                       placeholder="Q4 2026 or specific month"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
                   </div>
@@ -610,7 +610,7 @@ export default function CommercialFitOut() {
                       value={formData.budget}
                       onChange={handleInputChange}
                       placeholder="AED 400–600k, or 'Exploring ranges'"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                     />
                   </div>
 
@@ -625,7 +625,7 @@ export default function CommercialFitOut() {
                       onChange={handleInputChange}
                       placeholder="Headcount, ways of working (open plan vs more enclosed), any must-have areas (boardroom, client lounge, storage, etc.)"
                       rows="4"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm lg:text-sm text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]"
                       required
                     />
                   </div>
@@ -649,7 +649,7 @@ export default function CommercialFitOut() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[#00458b] text-white py-2.5 sm:py-3 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] transition-colors duration-200 disabled:opacity-50"
+                    className="w-full bg-[#00458b] text-white py-2.5 sm:py-3 rounded-lg text-xs sm:text-base lg:text-lg font-semibold hover:bg-[#003366] active:bg-[#002244] disabled:bg-[#00458b] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200"
                   >
                     {loading ? 'Submitting...' : 'Submit Fit-Out Enquiry'}
                   </button>

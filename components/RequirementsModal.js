@@ -251,7 +251,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                   resetForm();
                   onClose();
                 }}
-                className="inline-block px-8 py-3 bg-[#00458b] text-white rounded-lg font-semibold hover:bg-[#003366] transition-colors"
+                className="inline-block px-8 py-3 bg-[#00458b] text-white rounded-lg font-semibold hover:bg-[#003366] active:bg-[#002244] transition-colors duration-200"
               >
                 Back to Home
               </button>
@@ -374,7 +374,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                               value={communityBuilding}
                               onChange={(e) => setCommunityBuilding(e.target.value)}
                               placeholder="Widcombe House 4, Uptown Motor City"
-                              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm"
+                              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                             />
                           </div>
 
@@ -419,7 +419,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                               value={sizeSquft}
                               onChange={(e) => setSizeSquft(e.target.value)}
                               placeholder="1,050"
-                              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm"
+                              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                               inputMode="numeric"
                             />
                           </div>
@@ -434,7 +434,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                               value={expectedPrice}
                               onChange={(e) => setExpectedPrice(e.target.value)}
                               placeholder="1,650,000"
-                              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm"
+                              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                               inputMode="numeric"
                             />
                             <p className="text-xs text-gray-500 mt-1">
@@ -526,7 +526,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                                 value={budgetMin}
                                 onChange={(e) => setBudgetMin(e.target.value)}
                                 placeholder="Min budget"
-                                className={`px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm ${
+                                className={`px-4 py-2 border rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors ${
                                   errors.budget ? 'border-red-500' : 'border-gray-300'
                                 }`}
                                 inputMode="numeric"
@@ -536,7 +536,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                                 value={budgetMax}
                                 onChange={(e) => setBudgetMax(e.target.value)}
                                 placeholder="Max budget"
-                                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm"
+                                className="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors"
                                 inputMode="numeric"
                               />
                             </div>
@@ -639,7 +639,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                           value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
                           placeholder="Ahmed Khan"
-                          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm ${
+                          className={`w-full px-4 py-2 border rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors ${
                             errors.fullName ? 'border-red-500' : 'border-gray-300'
                           }`}
                         />
@@ -656,7 +656,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="you@example.com"
-                          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm ${
+                          className={`w-full px-4 py-2 border rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors ${
                             errors.email ? 'border-red-500' : 'border-gray-300'
                           }`}
                         />
@@ -673,7 +673,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder="+971 5X XXX XXXX"
-                          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm ${
+                          className={`w-full px-4 py-2 border rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors ${
                             errors.phone ? 'border-red-500' : 'border-gray-300'
                           }`}
                           inputMode="tel"
@@ -710,7 +710,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                       <button
                         type="submit"
                         disabled={loading}
-                        className="w-full md:w-auto px-8 py-3 bg-[#00458b] text-white rounded-lg font-semibold hover:bg-[#003366] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full md:w-auto px-8 py-3 bg-[#00458b] text-white rounded-lg font-semibold hover:bg-[#003366] active:bg-[#002244] disabled:bg-[#00458b] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200"
                       >
                         {loading ? 'Sending...' : 'Send My Requirements'}
                       </button>

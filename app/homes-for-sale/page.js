@@ -73,7 +73,7 @@ export default function HomesForSale() {
                   placeholder="Dubai Marina, Downtown, Motor City..."
                   value={searchFilters.address}
                   onChange={(e) => handleFilterChange("address", e.target.value)}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent transition-all duration-200"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent transition-all duration-200"
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                   <FaMapMarkerAlt className="w-4 sm:w-5 h-4 sm:h-5 text-gray-400" />
@@ -92,7 +92,7 @@ export default function HomesForSale() {
                     placeholder="No Min"
                     value={searchFilters.minPrice}
                     onChange={(e) => handleFilterChange("minPrice", e.target.value)}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent transition-all duration-200"
                   />
                 </div>
                 <span className="text-gray-400 text-xs sm:text-base">to</span>
@@ -102,7 +102,7 @@ export default function HomesForSale() {
                     placeholder="No Max"
                     value={searchFilters.maxPrice}
                     onChange={(e) => handleFilterChange("maxPrice", e.target.value)}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A3668] focus:border-transparent transition-all duration-200"
                   />
                 </div>
               </div>
