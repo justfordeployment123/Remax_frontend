@@ -553,7 +553,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                               onChange={(e) => setAreas(e.target.value)}
                               placeholder="Dubai Marina, Downtown, Motor City…"
                               rows="2"
-                              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm resize-none"
+                              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors resize-none"
                             />
                           </div>
 
@@ -618,7 +618,7 @@ export default function RequirementsModal({ isOpen, onClose, pageSource = 'websi
                               onChange={(e) => setRequirementsExtra(e.target.value)}
                               placeholder="Views, layout, finance, tenant profile, any must-haves…"
                               rows="3"
-                              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors text-sm resize-none"
+                              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00458b]/30 focus:border-[#00458b] transition-colors resize-none"
                             />
                           </div>
                         </>
